@@ -1,0 +1,191 @@
+FORMAT: 1A
+HOST: http://www.google.com
+
+# mlbapi
+MLB API is a database that holds Major League Baseball information by Player, Team, and Year.
+
+# Group Player
+Player related resources of the **MLB API**
+
+## Players [/players]
+### List all Players [GET]
++ Response 200 (application/json)
+
+        {
+            "id": 1,
+            "name": "Bryce Harper",
+            "posistion": "LF",
+            "bats": "L",
+            "throws": "L",
+            "height": 74,
+            "weight": 230,
+            "school": "College of Southern Nevada",
+            "years": [{
+                "year": 2012,
+            },{
+                "year": 2013
+            }]    
+        }, {
+            "id": 2,
+            "name": "Mike Trout",
+            "posistion": "CF",
+            "bats": "R",
+            "throws": "R",
+            "height": 74,
+            "weight": 230,
+            "school": "Millville Senior HS",
+            "years": [{
+                "year": 2011,
+            },{
+                "year": 2012,
+            },{
+                "year": 2013
+            }]
+        }
+
+### Create a Player [POST]
++ Request (application/json)
+
+        {
+            "name": "Bryce Harper",
+            "posistion": "LF",
+            "bats": "L",
+            "throws": "L",
+            "height": 74,
+            "weight": 230,
+            "school": "College of Southern Nevada",
+            "years": [{
+                "year": 2012,
+            },{
+                "year": 2013
+            }]    
+        }
+
++ Response 201 (application/json)
+
+        {
+            "id": 3,
+            "name": "Bryce Harper",
+            "posistion": "LF",
+            "bats": "L",
+            "throws": "L",
+            "height": 74,
+            "weight": 230,
+            "school": "College of Southern Nevada",
+            "years": [{
+                "year": 2012,
+            },{
+                "year": 2013
+            }]    
+        }
+
+## Player [/players/{id}]
+A single Player object with all its details
+
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Player.
+
+### Retrieve Information on a Player [GET]
++ Response 200 (application/json)
+
+        {
+            "id": 3,
+            "name": "Bryce Harper",
+            "posistion": "LF",
+            "bats": "L",
+            "throws": "L",
+            "height": 74,
+            "weight": 230,
+            "school": "College of Southern Nevada",
+            "years": [{
+                "year": 2012,
+            },{
+                "year": 2013
+            }]    
+        }
+
+### Modify a Player [PUT]
++ Request (application/json)
+
+        {
+            "posistion": "RF"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "id": 3,
+            "name": "Bryce Harper",
+            "posistion": "RF",
+            "bats": "L",
+            "throws": "L",
+            "height": 74,
+            "weight": 230,
+            "school": "College of Southern Nevada",
+            "years": [{
+                "year": 2012,
+            },{
+                "year": 2013
+            }]    
+        }
+
+### Delete a Player [DELETE]
++ Response 204
+
+## Player Years [/players/{id}/years]
+### List all the years that a player played [GET]
++ Response 200 (application/json)
+
+        {
+            "id": 1,
+            "year": "2012",
+            "type": "hitter",
+            "games": 139,
+            "avg": .270,
+            "obp": .340,
+            "slg": .477,
+            "hr": 22,
+            "rbi": 59,
+            "player_id": 1
+        },{
+        {
+            "id": 2,
+            "year": "2013",
+            "type": "hitter",
+            "games": 118,
+            "avg": .274,
+            "obp": .368,
+            "slg": .486,
+            "hr": 20,
+            "rbi": 58,
+            "player_id": 1
+        }
+        
+### Create a player year [POST]
++ Request (application/json)
+
+        {
+            "year": "2012",
+            "type": "hitter",
+            "games": 139,
+            "avg": .270,
+            "obp": .340,
+            "slg": .477,
+            "hr": 22,
+            "rbi": 59
+        }
+
++ Response 201 (application/json)
+
+        {
+            "id": 1, 
+            "year": "2012",
+            "type": "hitter",
+            "games": 139,
+            "avg": .270,
+            "obp": .340,
+            "slg": .477,
+            "hr": 22,
+            "rbi": 59,
+            "player_id": 1
+        }
