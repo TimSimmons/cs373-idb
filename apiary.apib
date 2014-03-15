@@ -14,33 +14,25 @@ Player related resources of the **MLB API**
         {
             "id": 1,
             "name": "Bryce Harper",
-            "posistion": "LF",
+            "posistion": "OF",
+            "number": "34",
             "bats": "L",
             "throws": "L",
             "height": 74,
             "weight": 230,
             "school": "College of Southern Nevada",
-            "years": [{
-                "year": 2012,
-            },{
-                "year": 2013
-            }]    
+            "years": ["2012", "2013"]   
         }, {
             "id": 2,
             "name": "Mike Trout",
-            "posistion": "CF",
+            "posistion": "OF",
+            "number": "27",
             "bats": "R",
             "throws": "R",
             "height": 74,
             "weight": 230,
             "school": "Millville Senior HS",
-            "years": [{
-                "year": 2011,
-            },{
-                "year": 2012,
-            },{
-                "year": 2013
-            }]
+            "years": ["2011", "2012", "2013"]
         }
 
 ### Create a Player [POST]
@@ -48,17 +40,14 @@ Player related resources of the **MLB API**
 
         {
             "name": "Bryce Harper",
-            "posistion": "LF",
+            "posistion": "OF",
+            "number": "34",
             "bats": "L",
             "throws": "L",
             "height": 74,
             "weight": 230,
             "school": "College of Southern Nevada",
-            "years": [{
-                "year": 2012,
-            },{
-                "year": 2013
-            }]    
+            "years": ["2012", "2013"]     
         }
 
 + Response 201 (application/json)
@@ -66,17 +55,13 @@ Player related resources of the **MLB API**
         {
             "id": 3,
             "name": "Bryce Harper",
-            "posistion": "LF",
+            "posistion": "OF",
+            "number": "34",
             "bats": "L",
             "throws": "L",
             "height": 74,
             "weight": 230,
             "school": "College of Southern Nevada",
-            "years": [{
-                "year": 2012,
-            },{
-                "year": 2013
-            }]    
         }
 
 ## Player [/players/{id}]
@@ -91,24 +76,23 @@ A single Player object with all its details
         {
             "id": 3,
             "name": "Bryce Harper",
-            "posistion": "LF",
+            "number": "34"
+            "posistion": "OF",
+            "number": "34",
             "bats": "L",
             "throws": "L",
             "height": 74,
             "weight": 230,
             "school": "College of Southern Nevada",
-            "years": [{
-                "year": 2012,
-            },{
-                "year": 2013
-            }]    
+            "years": ["2012", "2013"]     
+   
         }
 
 ### Modify a Player [PUT]
 + Request (application/json)
 
         {
-            "posistion": "RF"
+            "posistion": "1B"
         }
 
 + Response 200 (application/json)
@@ -116,17 +100,14 @@ A single Player object with all its details
         {
             "id": 3,
             "name": "Bryce Harper",
-            "posistion": "RF",
+            "posistion": "1B",
+            "number": "34",
             "bats": "L",
             "throws": "L",
             "height": 74,
             "weight": 230,
             "school": "College of Southern Nevada",
-            "years": [{
-                "year": 2012,
-            },{
-                "year": 2013
-            }]    
+            "years": ["2012", "2013"]   
         }
 
 ### Delete a Player [DELETE]
@@ -139,20 +120,23 @@ A single Player object with all its details
         {
             "id": 1,
             "year": "2012",
+            "team": "WSN"
             "type": "hitter",
             "games": 139,
+            "pa": 597,
             "avg": .270,
             "obp": .340,
             "slg": .477,
             "hr": 22,
             "rbi": 59,
             "player_id": 1
-        },{
-        {
+        }, {
             "id": 2,
-            "year": "2013",
+            "year": "2013",            
+            "team": "WSN"
             "type": "hitter",
             "games": 118,
+            "pa": 497
             "avg": .274,
             "obp": .368,
             "slg": .486,
@@ -166,13 +150,15 @@ A single Player object with all its details
 
         {
             "year": "2012",
+            "team": "WSN"
             "type": "hitter",
             "games": 139,
+            "pa": 597,
             "avg": .270,
             "obp": .340,
             "slg": .477,
             "hr": 22,
-            "rbi": 59
+            "rbi": 59,
         }
 
 + Response 201 (application/json)
@@ -180,8 +166,10 @@ A single Player object with all its details
         {
             "id": 1, 
             "year": "2012",
+            "team": "WSN"
             "type": "hitter",
             "games": 139,
+            "pa": 597,
             "avg": .270,
             "obp": .340,
             "slg": .477,
@@ -189,3 +177,49 @@ A single Player object with all its details
             "rbi": 59,
             "player_id": 1
         }
+        
+## Player Year [/players/{id}/years/{id}]
+### Get details for a specific player year [GET]
++ Response 200 (application/json)
+
+        {
+            "id": 1, 
+            "year": "2012",
+            "team": "WSN"
+            "type": "hitter",
+            "games": 139,
+            "pa": 597,
+            "avg": .270,
+            "obp": .340,
+            "slg": .477,
+            "hr": 22,
+            "rbi": 59,
+            "player_id": 1
+        }
+        
+### Modify a player year [PUT]
++ Request (application/json)
+
+        {
+            "team": "TEX"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "id": 1, 
+            "year": "2012",
+            "team": "TEX"
+            "type": "hitter",
+            "games": 139,
+            "pa": 597,
+            "avg": .270,
+            "obp": .340,
+            "slg": .477,
+            "hr": 22,
+            "rbi": 59,
+            "player_id": 1
+        }
+        
+### Delete a Player [DELETE]
++ Response 204
