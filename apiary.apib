@@ -12,25 +12,25 @@ Player related resources of the **MLB API**
 + Response 200 (application/json)
 
         {
-            "id": 1,
+            "id": "1",
             "name": "Bryce Harper",
             "posistion": "OF",
             "number": "34",
             "bats": "L",
             "throws": "L",
-            "height": 74,
-            "weight": 230,
+            "height": "74",
+            "weight": "230",
             "school": "College of Southern Nevada",
             "years": ["2012", "2013"]   
         }, {
-            "id": 2,
+            "id": "2",
             "name": "Mike Trout",
             "posistion": "OF",
             "number": "27",
             "bats": "R",
             "throws": "R",
-            "height": 74,
-            "weight": 230,
+            "height": "74",
+            "weight": "230",
             "school": "Millville Senior HS",
             "years": ["2011", "2012", "2013"]
         }
@@ -44,8 +44,8 @@ Player related resources of the **MLB API**
             "number": "34",
             "bats": "L",
             "throws": "L",
-            "height": 74,
-            "weight": 230,
+            "height": "74",
+            "weight": "230",
             "school": "College of Southern Nevada",
             "years": ["2012", "2013"]     
         }
@@ -53,36 +53,36 @@ Player related resources of the **MLB API**
 + Response 201 (application/json)
 
         {
-            "id": 3,
+            "id": "3",
             "name": "Bryce Harper",
             "posistion": "OF",
             "number": "34",
             "bats": "L",
             "throws": "L",
-            "height": 74,
-            "weight": 230,
-            "school": "College of Southern Nevada",
+            "height": "74",
+            "weight": "230",
+            "school": "College of Southern Nevada"
         }
 
 ## Player [/players/{id}]
 A single Player object with all its details
 
 + Parameters
-    + id (required, number, `1`) ... Numeric `id` of the Player.
+    + id (required, number, `3`) ... Numeric `id` of the Player.
 
 ### Retrieve Information on a Player [GET]
 + Response 200 (application/json)
 
         {
-            "id": 3,
+            "id": "3",
             "name": "Bryce Harper",
             "number": "34"
             "posistion": "OF",
             "number": "34",
             "bats": "L",
             "throws": "L",
-            "height": 74,
-            "weight": 230,
+            "height": "74",
+            "weight": "230",
             "school": "College of Southern Nevada",
             "years": ["2012", "2013"]     
    
@@ -98,14 +98,14 @@ A single Player object with all its details
 + Response 200 (application/json)
 
         {
-            "id": 3,
+            "id": "3",
             "name": "Bryce Harper",
             "posistion": "1B",
             "number": "34",
             "bats": "L",
             "throws": "L",
-            "height": 74,
-            "weight": 230,
+            "height": "74",
+            "weight": "230",
             "school": "College of Southern Nevada",
             "years": ["2012", "2013"]   
         }
@@ -118,31 +118,31 @@ A single Player object with all its details
 + Response 200 (application/json)
 
         {
-            "id": 1,
+            "id": "1",
             "year": "2012",
             "team": "WSN"
             "type": "hitter",
-            "games": 139,
-            "pa": 597,
-            "avg": .270,
-            "obp": .340,
-            "slg": .477,
-            "hr": 22,
-            "rbi": 59,
-            "player_id": 1
+            "games": "139",
+            "pa": "597",
+            "avg": ".270",
+            "obp": ".340",
+            "slg": ".477",
+            "hr": "22",
+            "rbi": "59",
+            "player_id": "1"
         }, {
-            "id": 2,
+            "id": "2",
             "year": "2013",            
-            "team": "WSN"
+            "team": "WSN",
             "type": "hitter",
-            "games": 118,
-            "pa": 497
-            "avg": .274,
-            "obp": .368,
-            "slg": .486,
-            "hr": 20,
-            "rbi": 58,
-            "player_id": 1
+            "games": "118",
+            "pa": "497
+            "avg": ".274",
+            "obp": ".368",
+            "slg": ".486",
+            "hr": "20",
+            "rbi": "58",
+            "player_id": "1"
         }
         
 ### Create a player year [POST]
@@ -150,32 +150,32 @@ A single Player object with all its details
 
         {
             "year": "2012",
-            "team": "WSN"
+            "team": "WSN",
             "type": "hitter",
-            "games": 139,
-            "pa": 597,
-            "avg": .270,
-            "obp": .340,
-            "slg": .477,
-            "hr": 22,
-            "rbi": 59,
+            "games": "139",
+            "pa": "597",
+            "avg": ".270",
+            "obp": ".340",
+            "slg": ".477",
+            "hr": "22",
+            "rbi": "59"
         }
 
 + Response 201 (application/json)
 
         {
-            "id": 1, 
+            "id": "1", 
             "year": "2012",
-            "team": "WSN"
+            "team": "WSN",
             "type": "hitter",
-            "games": 139,
-            "pa": 597,
-            "avg": .270,
-            "obp": .340,
-            "slg": .477,
-            "hr": 22,
-            "rbi": 59,
-            "player_id": 1
+            "games": "139",
+            "pa": "597",
+            "avg": ".270",
+            "obp": ".340",
+            "slg": ".477",
+            "hr": "22",
+            "rbi": "59",
+            "player_id": "1"
         }
         
 ## Player Year [/players/{id}/years/{id}]
@@ -183,18 +183,18 @@ A single Player object with all its details
 + Response 200 (application/json)
 
         {
-            "id": 1, 
+            "id": "1", 
             "year": "2012",
-            "team": "WSN"
+            "team": "WSN",
             "type": "hitter",
-            "games": 139,
-            "pa": 597,
-            "avg": .270,
-            "obp": .340,
-            "slg": .477,
-            "hr": 22,
-            "rbi": 59,
-            "player_id": 1
+            "games": "139",
+            "pa": "597",
+            "avg": ".270",
+            "obp": ".340",
+            "slg": ".477",
+            "hr": "22",
+            "rbi": "59",
+            "player_id": "1"
         }
         
 ### Modify a player year [PUT]
@@ -207,19 +207,217 @@ A single Player object with all its details
 + Response 200 (application/json)
 
         {
-            "id": 1, 
+            "id": "1", 
             "year": "2012",
             "team": "TEX"
             "type": "hitter",
-            "games": 139,
-            "pa": 597,
-            "avg": .270,
-            "obp": .340,
-            "slg": .477,
-            "hr": 22,
-            "rbi": 59,
-            "player_id": 1
+            "games": "139",
+            "pa": "597",
+            "avg": ".270",
+            "obp": ".340",
+            "slg": ".477",
+            "hr": "22",
+            "rbi": "59",
+            "player_id": "1"
         }
         
 ### Delete a Player [DELETE]
 + Response 204
+
+
+# Group Team
+Team related resources of the **MLB API**
+
+## Teams [/teams]
+### List all Teams [GET]
++ Response 200 (application/json)
+
+        {
+            "id": "1",
+            "name": "Los Angeles Angels of Anaheim",
+            "city": "Los Angeles",
+            "state": "CA",
+            "park": "Angel Stadium of Anaheim",
+            "division": "AL West",
+            "social media": "@Angels",
+            "Manager": "Mike Scioscia",
+            "years": ["2004","2005","2006","2007","2008","2009","2010","2011","2012", "2013"]
+        }, {
+            "id": "2",
+            "name": "St. Louis Cardinals",
+            "city": "St. Louis",
+            "state": "MO",
+            "park": "Busch Stadium III",
+            "division": "NL Central",
+            "social media": "@Cardinals",
+            "Manager": "Mike Matheny",
+            "years": ["2004","2005","2006","2007","2008","2009","2010","2011","2012", "2013"]
+        }
+
+### Create a Team [POST]
++ Request (application/json)
+
+        {
+            "name": "Los Angeles Dodgers",
+            "city": "Los Angeles",
+            "state": "CA",
+            "park": "Dodger Stadium",
+            "division": "NL West",
+            "social media": "@Dodgers",
+            "Manager": "Don Mattingly",
+            "years": ["2004","2005","2006","2007","2008","2009","2010","2011","2012", "2013"]
+        }
+
++ Response 201 (application/json)
+
+        {
+            "id": "3",
+            "name": "Los Angeles Dodgers",
+            "city": "Los Angeles",
+            "state": "CA",
+            "park": "Dodger Stadium",
+            "division": "NL West",
+            "social media": "@Dodgers",
+            "Manager": "Don Mattingly",
+            "years": ["2004","2005","2006","2007","2008","2009","2010","2011","2012", "2013"]
+        }
+
+## Team [/teams/{id}]
+A single Team object with all its details
+
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Team.
+
+### Retrieve Information on a Team [GET]
++ Response 200 (application/json)
+
+        {
+            "id": "1",
+            "name": "Los Angeles Angels of Anaheim",
+            "city": "Los Angeles",
+            "state": "CA",
+            "park": "Angel Stadium of Anaheim",
+            "division": "AL West",
+            "social media": "@Angels",
+            "Manager": "Mike Scioscia",
+            "years": ["2004","2005","2006","2007","2008","2009","2010","2011","2012", "2013"]
+        }
+
+### Modify a Team [PUT]
++ Request (application/json)
+
+        {
+            "social media": "@LA_Angels"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "id": "1",
+            "name": "Los Angeles Angels of Anaheim",
+            "city": "Los Angeles",
+            "state": "CA",
+            "park": "Angel Stadium of Anaheim",
+            "division": "AL West",
+            "social media": "@LA_Angels",
+            "Manager": "Mike Scioscia",
+            "years": ["2004","2005","2006","2007","2008","2009","2010","2011","2012", "2013"]
+        }
+
+### Delete a Team [DELETE]
++ Response 204
+
+## Team Years [/teams/{id}/years]
+### List all the years that a team played [GET]
++ Response 200 (application/json)
+
+        {
+            "id": "1",
+            "year": "2013",
+            "wins": "78",
+            "losses": "84",
+            "standings": "4/15",
+            "playoffs": "N",
+            "attendance": "3019505",
+            "payroll": "$116032500",
+            "team_id": "1"
+        }, {
+            "id": "2",
+            "year": "2012",
+            "wins": "89",
+            "losses": "73",
+            "standings": "3/14",
+            "playoffs": "N",
+            "attendance": "3061770",
+            "payroll": "$140581000",
+            "team_id": "1"
+        }
+        
+### Create a team year [POST]
++ Request (application/json)
+
+        {
+            "year": "2011",
+            "wins": "86",
+            "losses": "76",
+            "standings": "3/14",
+            "playoffs": "N",
+            "attendance": "3166321",
+            "payroll": "$138543166",
+            "team_id": "1"
+        }
+
++ Response 201 (application/json)
+
+        {
+            "id": "3",
+            "year": "2011",
+            "wins": "86",
+            "losses": "76",
+            "standings": "3/14",
+            "playoffs": "N",
+            "attendance": "3166321",
+            "payroll": "$138543166",
+            "team_id": "1"
+        }
+        
+## Team Year [/teams/{id}/years/{id}]
+### Get details for a specific team year [GET]
++ Response 200 (application/json)
+
+        {
+            "id": "1",
+            "year": "2013",
+            "wins": "78",
+            "losses": "84",
+            "standings": "4/15",
+            "playoffs": "N",
+            "attendance": "3019505",
+            "payroll": "$116032500",
+            "team_id": "1"
+        }
+        
+### Modify a team year [PUT]
++ Request (application/json)
+
+        {
+            "wins": "79"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "id": "1",
+            "year": "2013",
+            "wins": "78",
+            "losses": "84",
+            "standings": "4/15",
+            "playoffs": "N",
+            "attendance": "3019505",
+            "payroll": "$116032500",
+            "team_id": "1"
+        }
+        
+### Delete a Team [DELETE]
++ Response 204
+
