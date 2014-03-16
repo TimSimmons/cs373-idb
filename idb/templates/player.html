@@ -1,0 +1,43 @@
+<html>
+<body>
+<h1> INDEX </h1>
+Name: {{ player.name }} <br>
+Number: {{ player.number }} <br>
+<img src=" {{ player.images }} "><br>
+Social: {{player.social}} <br>
+Position: <br>
+Bats: <br>
+Throws: <br>
+Height: <br>
+Weight: <br>
+School: <br>
+Years: <br>
+<table> 
+{% if player.years.0.type == "hitter" %}
+<tr>
+<b>
+      <td>Year</td><td>Team</td><td>Games</td><td>Plate Appearances</td><td>Batting Average</td><td>On Base Percentage</td><td>Slugging Percentage</td><td>Home Runs</td><td>Runs Batted In</td>
+</b>
+</tr>
+{% else %}
+<tr>
+<b>
+      <td>Year</td><td>Team</td><td>Wins</td><td>Losses</td><td>Games</td><td>Games Started</td><td>Saves</td><td>Innings Pitched</td><td>WHIP</td>
+</b>
+</tr>
+{% endif %}
+
+{% for year in player.years %}
+<tr>
+      {% if year.type == "hitter" %}
+            <td>{{ year.year }}</td><td> {{year.team }} </td><td> {{ year.games }}</td><td>{{ year.pa }}</td><td>{{ year.avg }}</td><td>{{ year.obp }}</td><td>{{ year.slg }}</td><td>{{ year.hr }}</td><td>{{ year.rbi }}</td>
+            
+      {% else %}
+            <td>{{ year.year }}</td><td> {{year.team }} </td><td>{{ year.w }}</td><td>{{ year.l }}</td><td> {{ year.games }}</td><td> {{ year.gs }}</td><td> {{ year.s }}</td><td>{{ year.ip }}</td><td>{{ year.whip }}</td>
+      {% endif %}
+</tr>
+{% endfor %}
+
+
+</body>
+</html>
