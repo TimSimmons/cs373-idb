@@ -10,7 +10,7 @@ class Player(models.Model):
 	height = models.IntegerField()
 	weight = models.IntegerField()
 	school = models.CharField(max_length=100)
-	years = models.ManyToManyField(Year)
+	player_years = models.OneToManyField(Player_Year)
 	twitter_handle = models.CharField(max_length=100)
 	image = models.URLField()
 
@@ -30,11 +30,11 @@ class Year(model.Model):
 	#?standings
 	player_years = models.ManyToManyField(Player_Year)
 	team_years = models.ManyToManyField(Team_Year)
-	champion = models.ForeignKey(Team)
-	mvp_nl = models.ForeignKey(Player)
-	mvp_al = models.ForeignKey(Player)
-	cy_young_nl = models.ForeignKey(Player)
-	cy_young_al = models.ForeignKey(Player)
+	champion = models.CharField(Team)
+	mvp_nl = models.CharField(Player)
+	mvp_al = models.CharField(Player)
+	cy_young_nl = models.CharField(Player)
+	cy_young_al = models.CharField(Player)
 
 
 class Player_Year(model.Model):
@@ -46,4 +46,5 @@ class Player_Year(model.Model):
 
 
 class Team_Years(models.Model):
+	#TODO
 		
