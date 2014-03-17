@@ -1,0 +1,29 @@
+<html>
+<body>
+<h1> INDEX </h1>
+
+Name: {{ team.name }} <br>
+Logo: <img src=" {{ team.images }} "><br>
+Twitter: {{ team.social }} <br>
+City: {{ team.city }} <br>
+State <br>
+Park (picture) <br>
+Division: <br>
+Manager: <br>
+years: <br>
+
+<table>
+<tr>
+<b>
+      <td>Year</td><td>Wins</td><td>Losses</td><td>Place</td><td>Attendance</td><td>Playoffs</td><td>Payroll</td>
+</b>
+</tr>
+{% for year in team.years %}
+<tr>
+      <td>{{ year.year }}</td><td>{{ year.w }}</td><td>{{ year.l }}</td><td>{{ year.standings }}</td><td>{{ year.attend }}</td><td>{{ year.playoffs }}</td><td>{{ year.payroll }}</td>
+</tr>
+{% endfor %}
+<table>
+
+</body>
+</html>
