@@ -10,7 +10,6 @@ class Player(models.Model):
 	height = models.IntegerField()
 	weight = models.IntegerField()
 	school = models.CharField(max_length=100)
-	player_years = models.OneToManyField(Player_Year)
 	twitter_handle = models.CharField(max_length=100)
 	image = models.URLField()
 
@@ -21,15 +20,12 @@ class Team(model.Model):
 	state = models.CharField(max_length=100)
 	park = models.CharField(max_length=100)
 	division = models.CharField(max_length=100)
-	years = models.ManyToManyField(Year)
+	team_years = models.CommaSeparatedIntegerField()
 	twitter_handle = models.CharField(max_length=100)
 	image = models.URLField()
 
 
 class Year(model.Model):
-	#?standings
-	player_years = models.ManyToManyField(Player_Year)
-	team_years = models.ManyToManyField(Team_Year)
 	champion = models.CharField(Team)
 	mvp_nl = models.CharField(Player)
 	mvp_al = models.CharField(Player)
@@ -38,13 +34,25 @@ class Year(model.Model):
 
 
 class Player_Year(model.Model):
+	player = models.ForeignKey(Player)
+	team_year = models.ForeignKey(Team_Year)
 	year = models.ForeignKey(Year)
-	team = models.ForeignKey(Team)
+	
 	plate_appearances = models.IntegerField()
 	games_played = models.IntegerField()
-	batting_avg = models.CharField(max_length=10)
+	batting_avg = models.FloatField()
 
 
 class Team_Years(models.Model):
-	#TODO
+	team = models.ForeignKey(Team)
+	year = models.ForeignKey(Year)
+		
+	wins = models.IntegerField()
+	losses = models.IntegerField()
+	manager = models.CharField()
+	standing = models.IntegerField()
+	playoffs = models.BooleanField()
+	attendance = models.IntegerField()
+	
+	
 		
