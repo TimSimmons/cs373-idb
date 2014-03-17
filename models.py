@@ -20,7 +20,7 @@ class Team(model.Model):
 	state = models.CharField(max_length=100)
 	park = models.CharField(max_length=100)
 	division = models.CharField(max_length=100)
-	team_years = models.CommaSeparatedIntegerField()
+	manager = models.CharField(max_length=100)
 	twitter_handle = models.CharField(max_length=100)
 	image = models.URLField()
 
