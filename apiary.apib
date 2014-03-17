@@ -14,6 +14,7 @@ Player related resources of the **MLB API**
         {
             "id": "1",
             "name": "Bryce Harper",
+            "social": "@Bharper3407",
             "posistion": "OF",
             "number": "34",
             "bats": "L",
@@ -21,10 +22,12 @@ Player related resources of the **MLB API**
             "height": "74",
             "weight": "230",
             "school": "College of Southern Nevada",
-            "years": ["2012", "2013"]   
+            "years": ["2012", "2013"],
+            "images": ["http://mlb.com/images/players/525x330/547180.jpg"]
         }, {
             "id": "2",
             "name": "Mike Trout",
+            "social": "@Trouty20",
             "posistion": "OF",
             "number": "27",
             "bats": "R",
@@ -32,7 +35,8 @@ Player related resources of the **MLB API**
             "height": "74",
             "weight": "230",
             "school": "Millville Senior HS",
-            "years": ["2011", "2012", "2013"]
+            "years": ["2011", "2012", "2013"],
+            "images": ["http://mlb.com/images/players/525x330/545361.jpg"]
         }
 
 ### Create a Player [POST]
@@ -40,6 +44,7 @@ Player related resources of the **MLB API**
 
         {
             "name": "Bryce Harper",
+            "social": "@Bharper3407",
             "posistion": "OF",
             "number": "34",
             "bats": "L",
@@ -47,7 +52,8 @@ Player related resources of the **MLB API**
             "height": "74",
             "weight": "230",
             "school": "College of Southern Nevada",
-            "years": ["2012", "2013"]     
+            "years": ["2012", "2013"],
+            "images": ["http://mlb.com/images/players/525x330/547180.jpg"]    
         }
 
 + Response 201 (application/json)
@@ -55,13 +61,16 @@ Player related resources of the **MLB API**
         {
             "id": "3",
             "name": "Bryce Harper",
+            "social": "@Bharper3407",
             "posistion": "OF",
             "number": "34",
             "bats": "L",
             "throws": "L",
             "height": "74",
             "weight": "230",
-            "school": "College of Southern Nevada"
+            "school": "College of Southern Nevada",
+            "years": ["2012", "2013"],
+            "images": ["http://mlb.com/images/players/525x330/547180.jpg"]
         }
 
 ## Player [/players/{id}]
@@ -76,7 +85,7 @@ A single Player object with all its details
         {
             "id": "3",
             "name": "Bryce Harper",
-            "number": "34"
+            "social": "@Bharper3407",
             "posistion": "OF",
             "number": "34",
             "bats": "L",
@@ -84,8 +93,8 @@ A single Player object with all its details
             "height": "74",
             "weight": "230",
             "school": "College of Southern Nevada",
-            "years": ["2012", "2013"]     
-   
+            "years": ["2012", "2013"],
+            "images": ["http://mlb.com/images/players/525x330/547180.jpg"]
         }
 
 ### Modify a Player [PUT]
@@ -100,6 +109,7 @@ A single Player object with all its details
         {
             "id": "3",
             "name": "Bryce Harper",
+            "social": "@Bharper3407",
             "posistion": "1B",
             "number": "34",
             "bats": "L",
@@ -107,7 +117,8 @@ A single Player object with all its details
             "height": "74",
             "weight": "230",
             "school": "College of Southern Nevada",
-            "years": ["2012", "2013"]   
+            "years": ["2012", "2013"],
+            "images": ["http://mlb.com/images/players/525x330/547180.jpg"]  
         }
 
 ### Delete a Player [DELETE]
@@ -120,7 +131,7 @@ A single Player object with all its details
         {
             "id": "1",
             "year": "2012",
-            "team": "WSN"
+            "team": "WSN",
             "type": "hitter",
             "games": "139",
             "pa": "597",
@@ -136,7 +147,7 @@ A single Player object with all its details
             "team": "WSN",
             "type": "hitter",
             "games": "118",
-            "pa": "497
+            "pa": "497",
             "avg": ".274",
             "obp": ".368",
             "slg": ".486",
@@ -209,7 +220,7 @@ A single Player object with all its details
         {
             "id": "1", 
             "year": "2012",
-            "team": "TEX"
+            "team": "TEX",
             "type": "hitter",
             "games": "139",
             "pa": "597",
@@ -235,23 +246,27 @@ Team related resources of the **MLB API**
         {
             "id": "1",
             "name": "Los Angeles Angels of Anaheim",
+            "abbr": "LAA",
             "city": "Los Angeles",
             "state": "CA",
             "park": "Angel Stadium of Anaheim",
             "div": "AL West",
             "social": "@Angels",
             "mgr": "Mike Scioscia",
-            "years": ["2004","2005","2006","2007","2008","2009","2010","2011","2012", "2013"]
+            "years": ["2004","2005","2006","2007","2008","2009","2010","2011","2012", "2013"],
+            "images": ["http://content.sportslogos.net/logos/53/922/thumbs/wsghhaxkh5qq0hdkbt1b5se41.gif"]
         }, {
             "id": "2",
             "name": "St. Louis Cardinals",
+            "abbr": "STL",
             "city": "St. Louis",
             "state": "MO",
             "park": "Busch Stadium III",
             "div": "NL Central",
             "social": "@Cardinals",
             "mgr": "Mike Matheny",
-            "years": ["2004","2005","2006","2007","2008","2009","2010","2011","2012", "2013"]
+            "years": ["2004","2005","2006","2007","2008","2009","2010","2011","2012", "2013"],
+            "images": ["http://content.sportslogos.net/logos/54/72/thumbs/3zhma0aeq17tktge1huh7yok5.gif"]
         }
 
 ### Create a Team [POST]
@@ -259,13 +274,15 @@ Team related resources of the **MLB API**
 
         {
             "name": "Los Angeles Dodgers",
+            "abbr": "LAD",
             "city": "Los Angeles",
             "state": "CA",
             "park": "Dodger Stadium",
             "div": "NL West",
             "social": "@Dodgers",
             "mgr": "Don Mattingly",
-            "years": ["2004","2005","2006","2007","2008","2009","2010","2011","2012", "2013"]
+            "years": ["2004","2005","2006","2007","2008","2009","2010","2011","2012", "2013"],
+            "images": ["http://content.sportslogos.net/logos/54/63/thumbs/efvfv5b5g1zgpsf56gb04lthx.gif"]
         }
 
 + Response 201 (application/json)
@@ -273,13 +290,15 @@ Team related resources of the **MLB API**
         {
             "id": "3",
             "name": "Los Angeles Dodgers",
+            "abbr": "LAD",
             "city": "Los Angeles",
             "state": "CA",
             "park": "Dodger Stadium",
             "div": "NL West",
             "social": "@Dodgers",
             "mgr": "Don Mattingly",
-            "years": ["2004","2005","2006","2007","2008","2009","2010","2011","2012", "2013"]
+            "years": ["2004","2005","2006","2007","2008","2009","2010","2011","2012", "2013"],
+            "images": ["http://content.sportslogos.net/logos/54/63/thumbs/efvfv5b5g1zgpsf56gb04lthx.gif"]
         }
 
 ## Team [/teams/{id}]
@@ -294,13 +313,15 @@ A single Team object with all its details
         {
             "id": "1",
             "name": "Los Angeles Angels of Anaheim",
+            "abbr": "LAA",
             "city": "Los Angeles",
             "state": "CA",
             "park": "Angel Stadium of Anaheim",
             "div": "AL West",
             "social": "@Angels",
             "mgr": "Mike Scioscia",
-            "years": ["2004","2005","2006","2007","2008","2009","2010","2011","2012", "2013"]
+            "years": ["2004","2005","2006","2007","2008","2009","2010","2011","2012", "2013"],
+            "images": ["http://content.sportslogos.net/logos/54/72/thumbs/3zhma0aeq17tktge1huh7yok5.gif"]
         }
 
 ### Modify a Team [PUT]
@@ -315,13 +336,15 @@ A single Team object with all its details
         {
             "id": "1",
             "name": "Los Angeles Angels of Anaheim",
+            "abbr": "LAA",
             "city": "Los Angeles",
             "state": "CA",
             "park": "Angel Stadium of Anaheim",
             "div": "AL West",
             "social": "@LA_Angels",
             "mgr": "Mike Scioscia",
-            "years": ["2004","2005","2006","2007","2008","2009","2010","2011","2012", "2013"]
+            "years": ["2004","2005","2006","2007","2008","2009","2010","2011","2012", "2013"],
+            "images": ["http://content.sportslogos.net/logos/54/72/thumbs/3zhma0aeq17tktge1huh7yok5.gif"]
         }
 
 ### Delete a Team [DELETE]
@@ -336,7 +359,7 @@ A single Team object with all its details
             "year": "2013",
             "wins": "78",
             "losses": "84",
-            "standings": "4/15",
+            "standing": "4",
             "playoffs": "N",
             "attend": "3019505",
             "payroll": "$116032500",
@@ -346,7 +369,7 @@ A single Team object with all its details
             "year": "2012",
             "wins": "89",
             "losses": "73",
-            "standings": "3/14",
+            "standing": "3",
             "playoffs": "N",
             "attend": "3061770",
             "payroll": "$140581000",
@@ -360,7 +383,7 @@ A single Team object with all its details
             "year": "2011",
             "wins": "86",
             "losses": "76",
-            "standings": "3/14",
+            "standing": "2",
             "playoffs": "N",
             "attend": "3166321",
             "payroll": "$138543166",
@@ -374,7 +397,7 @@ A single Team object with all its details
             "year": "2011",
             "wins": "86",
             "losses": "76",
-            "standings": "3/14",
+            "standing": "2",
             "playoffs": "N",
             "attend": "3166321",
             "payroll": "$138543166",
@@ -390,7 +413,7 @@ A single Team object with all its details
             "year": "2013",
             "wins": "78",
             "losses": "84",
-            "standings": "4/15",
+            "standing": "4",
             "playoffs": "N",
             "attend": "3019505",
             "payroll": "$116032500",
@@ -411,7 +434,7 @@ A single Team object with all its details
             "year": "2013",
             "wins": "78",
             "losses": "84",
-            "standings": "4/15",
+            "standing": "4",
             "playoffs": "N",
             "attend": "3019505",
             "payroll": "$116032500",
