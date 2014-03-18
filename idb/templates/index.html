@@ -28,22 +28,33 @@
   </head>
 
   <body>
+    <!--
+    <style>
+
+
+      .col-centered{
+      float: none;
+      margin: 0 auto;
+      }
+    </style>
+  -->
 
 	  <div class="jumbotron">
 
-      <div class="container">
+      <div class="container-fluid text-center">
         <h1>The Internet Baseball Database</h1>
-		<a href = "#" class = "btn btn-large btn-success">Get Started</a>
+		    <!--<a href = "#" class = "btn btn-large btn-success">Get Started</a>-->
       </div>
 	  <div class = "row">
-		  <div class = "span2">
+      <div class="col-md-3"></div>
+		  <div class = "col-md-2">
           	<p>Made by:.<br> Clare Coleman<br> Tim Simmons<br> Jordan Graves<br> Deneb Garza<br> Kendall Ahrendsen<br> Jung Yoon</p>
 		  </div>
-		  <div class = "span10">
-			  <div class="container">
-			  <img src="{%static "mlb.gif" %}" alt = "MLB"/>
-		  </div>
-	      </div>
+		  <div class = "col-md-7">
+			  <div class="container-fluid">
+			     <img src="{%static "mlb.gif" %}" alt = "MLB"/>
+		    </div>
+	    </div>
 
 	  </div><!-- /.container -->
 
