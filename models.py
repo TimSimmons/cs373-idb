@@ -3,7 +3,7 @@ from django.db import models
 
 class Player(models.Model):
 	name = models.CharField(max_length=30)
-	number = models.IntegerField(2)
+	number = models.IntegerField()
 	position = models.CharField(max_length=3)
 	bats = models.CharField(max_length=1)
 	throws = models.CharField(max_length=1)
@@ -27,11 +27,11 @@ class Team(model.Model):
 
 
 class Year(model.Model):
-	champion = models.CharField(30)
-	AL_MVP = models.CharField(30)
-	NL_MVP = models.CharField(30)
-	NL_CY = models.CharField(30)
-	AL_CY = models.CharField(30)
+	champion = models.CharField(max_length=30)
+	AL_MVP = models.CharField(max_length=30)
+	NL_MVP = models.CharField(max_length=30)
+	NL_CY = models.CharField(max_length=30)
+	AL_CY = models.CharField(max_length=30)
 
 
 class Player_Year(model.Model):
@@ -39,6 +39,7 @@ class Player_Year(model.Model):
 	team_year = models.ForeignKey(Team_Year, related_name='player_years')
 	year = models.ForeignKey(Year, related_name='player_years')
 	
+	# hitting stats
 	pa = models.IntegerField()
 	games = models.IntegerField()
 	avg = models.FloatField()
@@ -46,19 +47,26 @@ class Player_Year(model.Model):
 	slg = models.FloatField()
 	hr = models.IntegerField()
 	rbi = models.IntegerField()
-
-
+	
+	#pictching stats
+	wins = models.IntegerField()
+	losses = models.IntegerField()
+	era = models.FloatField()
+	games_pitched = models.IntegerField()
+	games_started = models.IntegerField()
+	saves = models.IntegerField()
+	innings_pitched = models.IntegerField()
+	walks_per_inning = models.FloatField()
+	pitched = models.Floatfield()
+	
 class Team_Years(models.Model):
 	team = models.ForeignKey(Team, related_name='team_years')
 	year = models.ForeignKey(Year, related_name='team_years')
-		
+
 	wins = models.IntegerField()
 	losses = models.IntegerField()
-	manager = models.CharField(20)
+	manager = models.CharField(max_length=20)
 	standing = models.IntegerField()
-	playoffs = models.CharField(max_length=1)
+	playoffs = models.CharField(max_length=20)
 	attend = models.IntegerField()
 	payroll = models.IntegerField()
-	
-	
-		
