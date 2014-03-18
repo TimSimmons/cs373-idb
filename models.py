@@ -35,9 +35,9 @@ class Year(model.Model):
 
 
 class Player_Year(model.Model):
-	player = models.ForeignKey(Player)
-	team_year = models.ForeignKey(Team_Year)
-	year = models.ForeignKey(Year)
+	player = models.ForeignKey(Player, related_name='player_years')
+	team_year = models.ForeignKey(Team_Year, related_name='player_years')
+	year = models.ForeignKey(Year, related_name='player_years')
 	
 	pa = models.IntegerField()
 	games = models.IntegerField()
@@ -49,8 +49,8 @@ class Player_Year(model.Model):
 
 
 class Team_Years(models.Model):
-	team = models.ForeignKey(Team)
-	year = models.ForeignKey(Year)
+	team = models.ForeignKey(Team, related_name='team_years')
+	year = models.ForeignKey(Year, related_name='team_years')
 		
 	wins = models.IntegerField()
 	losses = models.IntegerField()
