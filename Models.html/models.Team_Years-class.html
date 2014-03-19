@@ -3,7 +3,7 @@
           "DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <title>models.Player</title>
+  <title>models.Team_Years</title>
   <link rel="stylesheet" href="epydoc.css" type="text/css" />
   <script type="text/javascript" src="epydoc.js"></script>
 </head>
@@ -38,7 +38,7 @@
     <td width="100%">
       <span class="breadcrumbs">
         <a href="models-module.html">Module&nbsp;models</a> ::
-        Class&nbsp;Player
+        Class&nbsp;Team_Years
       </span>
     </td>
     <td>
@@ -48,21 +48,27 @@
     onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
         <tr><td align="right"><span class="options"
             >[<a href="frames.html" target="_top">frames</a
-            >]&nbsp;|&nbsp;<a href="models.Player-class.html"
+            >]&nbsp;|&nbsp;<a href="models.Team_Years-class.html"
             target="_top">no&nbsp;frames</a>]</span></td></tr>
       </table>
     </td>
   </tr>
 </table>
 <!-- ==================== CLASS DESCRIPTION ==================== -->
-<h1 class="epydoc">Class Player</h1><p class="nomargin-top"><span class="codelink"><a href="models-pysrc.html#Player">source&nbsp;code</a></span></p>
+<h1 class="epydoc">Class Team_Years</h1><p class="nomargin-top"><span class="codelink"><a href="models-pysrc.html#Team_Years">source&nbsp;code</a></span></p>
 <pre class="base-tree">
 django.db.models.Model --+
                          |
-                        <strong class="uidshort">Player</strong>
+                        <strong class="uidshort">Team_Years</strong>
 </pre>
 
 <hr />
+<p>Contains team statistics for a given year.</p>
+  <p>The Team_Year model, like the Player_Year model, contains information 
+  about a team for a spicific year.</p>
+  <p>The Team_Yeam model has a many to one relationship with the Year and 
+  Team models.</p>
+
 <!-- ==================== CLASS VARIABLES ==================== -->
 <a name="section-ClassVariables"></a>
 <table class="summary" border="1" cellpadding="3"
@@ -84,70 +90,63 @@ django.db.models.Model --+
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="name"></a><span class="summary-name">name</span> = <code title="models.CharField(max_length= 30)">models.CharField(max_length= 30)</code>
+        <a name="team"></a><span class="summary-name">team</span> = <code title="models.ForeignKey(Team, related_name= 'team_years')">models.ForeignKey(Team, related_name= 'team_years')</code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="number"></a><span class="summary-name">number</span> = <code title="models.IntegerField()">models.IntegerField()</code>
+        <a name="year"></a><span class="summary-name">year</span> = <code title="models.ForeignKey(Year, related_name= 'team_years')">models.ForeignKey(Year, related_name= 'team_years')</code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="position"></a><span class="summary-name">position</span> = <code title="models.CharField(max_length= 3)">models.CharField(max_length= 3)</code>
+        <a name="wins"></a><span class="summary-name">wins</span> = <code title="models.IntegerField()">models.IntegerField()</code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="bats"></a><span class="summary-name">bats</span> = <code title="models.CharField(max_length= 1)">models.CharField(max_length= 1)</code>
+        <a name="losses"></a><span class="summary-name">losses</span> = <code title="models.IntegerField()">models.IntegerField()</code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="throws"></a><span class="summary-name">throws</span> = <code title="models.CharField(max_length= 1)">models.CharField(max_length= 1)</code>
+        <a name="manager"></a><span class="summary-name">manager</span> = <code title="models.CharField(max_length= 20)">models.CharField(max_length= 20)</code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="height"></a><span class="summary-name">height</span> = <code title="models.IntegerField()">models.IntegerField()</code>
+        <a name="standing"></a><span class="summary-name">standing</span> = <code title="models.IntegerField()">models.IntegerField()</code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="weight"></a><span class="summary-name">weight</span> = <code title="models.IntegerField()">models.IntegerField()</code>
+        <a name="playoffs"></a><span class="summary-name">playoffs</span> = <code title="models.CharField(max_length= 20)">models.CharField(max_length= 20)</code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="school"></a><span class="summary-name">school</span> = <code title="models.CharField(max_length= 30)">models.CharField(max_length= 30)</code>
+        <a name="attend"></a><span class="summary-name">attend</span> = <code title="models.IntegerField()">models.IntegerField()</code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="social"></a><span class="summary-name">social</span> = <code title="models.CharField(max_length= 30)">models.CharField(max_length= 30)</code>
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-        <a name="image"></a><span class="summary-name">image</span> = <code title="models.URLField()">models.URLField()</code>
+        <a name="payroll"></a><span class="summary-name">payroll</span> = <code title="models.IntegerField()">models.IntegerField()</code>
     </td>
   </tr>
 </table>
@@ -177,7 +176,7 @@ django.db.models.Model --+
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Tue Mar 18 18:30:18 2014
+    Generated by Epydoc 3.0.1 on Tue Mar 18 22:37:02 2014
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"
