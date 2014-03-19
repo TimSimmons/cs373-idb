@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--link rel="shortcut icon" href="../../assets/ico/favicon.ico"-->
+
+    <title>Internet Baseball Database - {{name}}</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="starter-template.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+<body>
+<div class="jumbotron">
+	<div class = "container-fluid">
+	<div class="row">
+		<h1> {{ name }}  </h1>
+		<h2>#{{ number }}</h2>
+	</div>
+	<div class = "row">
+		<div class="col-md-4">
+			<img src=" {{ images }} "><br>
+		</div>
+		<div class="col-md-6">
+			Social: {{social}} <br>
+			Position: {{position}}<br>
+			Bats: {{bats}}<br>
+			Throws: {{throws}}<br>
+			Height: {{height}}<br>
+			Weight: {{weight}}<br>
+			School: {{school}}<br>
+			Years: <br>
+			{%for year in years%}
+			{{year.year}}
+			{%endfor%}
+		</div>
+	</div>
+	</div>
+</div>
+
+<div class="row">
+<div class="container-fluid">
+<div class="table-responsive">
+<table class="table table-striped">
+<thead>
+{% if years.0.type == "hitter" %}
+<tr>
+<b>
+      <td>Year</td><td>Team</td><td>Games</td><td>Plate Appearances</td><td>Batting Average</td><td>On Base Percentage</td><td>Slugging Percentage</td><td>Home Runs</td><td>Runs Batted In</td>
+</b>
+</tr>
+{% else %}
+<tr>
+<b>
+      <td>Year</td><td>Team</td><td>Wins</td><td>Losses</td><td>Games</td><td>Games Started</td><td>Saves</td><td>Innings Pitched</td><td>WHIP</td>
+</b>
+</tr>
+{% endif %}
+</thead>
+
+<tbody>
+{% for year in years %}
+<tr>
+      {% if year.type == "hitter" %}
+            <td>{{ year.year }}</td><td> {{year.team }} </td><td> {{ year.games }}</td><td>{{ year.pa }}</td><td>{{ year.avg }}</td><td>{{ year.obp }}</td><td>{{ year.slg }}</td><td>{{ year.hr }}</td><td>{{ year.rbi }}</td>
+            
+      {% else %}
+            <td>{{ year.year }}</td><td> {{year.team }} </td><td>{{ year.w }}</td><td>{{ year.l }}</td><td> {{ year.games }}</td><td> {{ year.gs }}</td><td> {{ year.s }}</td><td>{{ year.ip }}</td><td>{{ year.whip }}</td>
+      {% endif %}
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+
+
+</div>
+</div>
+<div class="row">
+	<div class="col-md-6">
+
+   <!--This is the form of the feed we are supposed to be using, but I don't know how to eliminate the @ from social. You can't do it inside the template and editing data.py doesn't seem to work
+
+
+	<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/mlb"
+   data-widget-id="446046951486676992"data-show-replies="false"
+   data-tweet-limit="5">Tweets by MLB</a>
+   <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+-->
+   <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/{{social}}"
+   data-widget-id="446046951486676992"
+   data-screen-name="{{social|slice:"1:"}}" data-show-replies="false"
+   data-tweet-limit="5">Tweets by {{social}}</a>
+   <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	
+</div>
+</div>
+<!--
+{% if years.0.type == "hitter" %}
+
+<b>
+      <div class = "col-md-1">Year</div><div class = "col-md-1">Team</div><div class = "col-md-1">Games</div><div class = "col-md-1">Plate Appearances</div><div class = "col-md-1">Batting Average</div><div class = "col-md-1">On Base Percentage</div><div class = "col-md-1">Slugging Percentage</div><div class = "col-md-1">Home Runs</div><div class = "col-md-1">Runs Batted In</div>
+</b>
+{% else %}
+
+<b>
+      <div class = "col-md-1">Year</div><div class = "col-md-1">Team</div><div class = "col-md-1">Wins</div><div class = "col-md-1">Losses</div><div class = "col-md-1">Games</div><div class = "col-md-1">Games Started</div><div class = "col-md-1">Saves</div><div class = "col-md-1">Innings Pitched</div><div class = "col-md-1">WHIP</div>
+</b>
+
+{% endif %}
+</div>
+{% for year in years %}
+<div class="row">
+      {% if year.type == "hitter" %}
+            <div class = "col-md-1">{{ year.year }}</div>
+            <div class = "col-md-1"> {{year.team }} </div>
+            <div class = "col-md-1"> {{ year.games }}</div>
+            <div class = "col-md-1">{{ year.pa }}</div>
+            <div class = "col-md-1">{{ year.avg }}</div>
+            <div class = "col-md-1">{{ year.obp }}</div>
+            <div class = "col-md-1">{{ year.slg }}</div>
+            <div class = "col-md-1">{{ year.hr }}</div>
+            <div class = "col-md-1">{{ year.rbi }}</div>
+            
+      {% else %}
+            <div class = "col-md-1">{{ year.year }}</div><div class = "col-md-1"> {{year.team }} </div><div class = "col-md-1">{{ year.w }}</div><div class = "col-md-1">{{ year.l }}</div><div class = "col-md-1"> {{ year.games }}</div><div class = "col-md-1"> {{ year.gs }}</div><div class = "col-md-1"> {{ year.s }}</div><div class = "col-md-1">{{ year.ip }}</div><div class = "col-md-1">{{ year.whip }}</div>
+      {% endif %}
+</div>
+{% endfor %}
+-->
+
+<!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../static/js/jquery-2.1.0.min.js"></script>
+    <script src="../../static/js/bootstrap.min.js"></script>
+</body>
+</html>

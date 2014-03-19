@@ -1,5 +1,5 @@
 FORMAT: 1A
-HOST: http://www.google.com
+HOST: http://frozen-plateau-5382.herokuapp.com/api/
 
 # mlbapi
 MLB API is a database that holds Major League Baseball information by Player, Team, and Year.
@@ -12,27 +12,31 @@ Player related resources of the **MLB API**
 + Response 200 (application/json)
 
         {
-            "id": 1,
+            "id": "1",
             "name": "Bryce Harper",
-            "posistion": "OF",
+            "social": "@Bharper3407",
+            "position": "OF",
             "number": "34",
             "bats": "L",
             "throws": "L",
-            "height": 74,
-            "weight": 230,
+            "height": "74",
+            "weight": "230",
             "school": "College of Southern Nevada",
-            "years": ["2012", "2013"]   
+            "years": ["2012", "2013"],
+            "images": ["http://mlb.com/images/players/525x330/547180.jpg"]
         }, {
-            "id": 2,
+            "id": "2",
             "name": "Mike Trout",
-            "posistion": "OF",
+            "social": "@Trouty20",
+            "position": "OF",
             "number": "27",
             "bats": "R",
             "throws": "R",
-            "height": 74,
-            "weight": 230,
+            "height": "74",
+            "weight": "230",
             "school": "Millville Senior HS",
-            "years": ["2011", "2012", "2013"]
+            "years": ["2011", "2012", "2013"],
+            "images": ["http://mlb.com/images/players/525x330/545361.jpg"]
         }
 
 ### Create a Player [POST]
@@ -40,74 +44,81 @@ Player related resources of the **MLB API**
 
         {
             "name": "Bryce Harper",
-            "posistion": "OF",
+            "social": "@Bharper3407",
+            "position": "OF",
             "number": "34",
             "bats": "L",
             "throws": "L",
-            "height": 74,
-            "weight": 230,
+            "height": "74",
+            "weight": "230",
             "school": "College of Southern Nevada",
-            "years": ["2012", "2013"]     
+            "years": ["2012", "2013"],
+            "images": ["http://mlb.com/images/players/525x330/547180.jpg"]    
         }
 
 + Response 201 (application/json)
 
         {
-            "id": 3,
+            "id": "3",
             "name": "Bryce Harper",
-            "posistion": "OF",
+            "social": "@Bharper3407",
+            "position": "OF",
             "number": "34",
             "bats": "L",
             "throws": "L",
-            "height": 74,
-            "weight": 230,
+            "height": "74",
+            "weight": "230",
             "school": "College of Southern Nevada",
+            "years": ["2012", "2013"],
+            "images": ["http://mlb.com/images/players/525x330/547180.jpg"]
         }
 
 ## Player [/players/{id}]
 A single Player object with all its details
 
 + Parameters
-    + id (required, number, `1`) ... Numeric `id` of the Player.
+    + id (required, number, `3`) ... Numeric `id` of the Player.
 
 ### Retrieve Information on a Player [GET]
 + Response 200 (application/json)
 
         {
-            "id": 3,
+            "id": "3",
             "name": "Bryce Harper",
-            "number": "34"
-            "posistion": "OF",
+            "social": "@Bharper3407",
+            "position": "OF",
             "number": "34",
             "bats": "L",
             "throws": "L",
-            "height": 74,
-            "weight": 230,
+            "height": "74",
+            "weight": "230",
             "school": "College of Southern Nevada",
-            "years": ["2012", "2013"]     
-   
+            "years": ["2012", "2013"],
+            "images": ["http://mlb.com/images/players/525x330/547180.jpg"]
         }
 
 ### Modify a Player [PUT]
 + Request (application/json)
 
         {
-            "posistion": "1B"
+            "position": "1B"
         }
 
 + Response 200 (application/json)
 
         {
-            "id": 3,
+            "id": "3",
             "name": "Bryce Harper",
-            "posistion": "1B",
+            "social": "@Bharper3407",
+            "position": "1B",
             "number": "34",
             "bats": "L",
             "throws": "L",
-            "height": 74,
-            "weight": 230,
+            "height": "74",
+            "weight": "230",
             "school": "College of Southern Nevada",
-            "years": ["2012", "2013"]   
+            "years": ["2012", "2013"],
+            "images": ["http://mlb.com/images/players/525x330/547180.jpg"]  
         }
 
 ### Delete a Player [DELETE]
@@ -118,31 +129,31 @@ A single Player object with all its details
 + Response 200 (application/json)
 
         {
-            "id": 1,
+            "id": "1",
             "year": "2012",
-            "team": "WSN"
+            "team": "WSN",
             "type": "hitter",
-            "games": 139,
-            "pa": 597,
-            "avg": .270,
-            "obp": .340,
-            "slg": .477,
-            "hr": 22,
-            "rbi": 59,
-            "player_id": 1
+            "games": "139",
+            "pa": "597",
+            "avg": ".270",
+            "obp": ".340",
+            "slg": ".477",
+            "hr": "22",
+            "rbi": "59",
+            "player_id": "1"
         }, {
-            "id": 2,
+            "id": "2",
             "year": "2013",            
-            "team": "WSN"
+            "team": "WSN",
             "type": "hitter",
-            "games": 118,
-            "pa": 497
-            "avg": .274,
-            "obp": .368,
-            "slg": .486,
-            "hr": 20,
-            "rbi": 58,
-            "player_id": 1
+            "games": "118",
+            "pa": "497",
+            "avg": ".274",
+            "obp": ".368",
+            "slg": ".486",
+            "hr": "20",
+            "rbi": "58",
+            "player_id": "1"
         }
         
 ### Create a player year [POST]
@@ -150,32 +161,32 @@ A single Player object with all its details
 
         {
             "year": "2012",
-            "team": "WSN"
+            "team": "WSN",
             "type": "hitter",
-            "games": 139,
-            "pa": 597,
-            "avg": .270,
-            "obp": .340,
-            "slg": .477,
-            "hr": 22,
-            "rbi": 59,
+            "games": "139",
+            "pa": "597",
+            "avg": ".270",
+            "obp": ".340",
+            "slg": ".477",
+            "hr": "22",
+            "rbi": "59"
         }
 
 + Response 201 (application/json)
 
         {
-            "id": 1, 
+            "id": "1", 
             "year": "2012",
-            "team": "WSN"
+            "team": "WSN",
             "type": "hitter",
-            "games": 139,
-            "pa": 597,
-            "avg": .270,
-            "obp": .340,
-            "slg": .477,
-            "hr": 22,
-            "rbi": 59,
-            "player_id": 1
+            "games": "139",
+            "pa": "597",
+            "avg": ".270",
+            "obp": ".340",
+            "slg": ".477",
+            "hr": "22",
+            "rbi": "59",
+            "player_id": "1"
         }
         
 ## Player Year [/players/{id}/years/{id}]
@@ -183,18 +194,18 @@ A single Player object with all its details
 + Response 200 (application/json)
 
         {
-            "id": 1, 
+            "id": "1", 
             "year": "2012",
-            "team": "WSN"
+            "team": "WSN",
             "type": "hitter",
-            "games": 139,
-            "pa": 597,
-            "avg": .270,
-            "obp": .340,
-            "slg": .477,
-            "hr": 22,
-            "rbi": 59,
-            "player_id": 1
+            "games": "139",
+            "pa": "597",
+            "avg": ".270",
+            "obp": ".340",
+            "slg": ".477",
+            "hr": "22",
+            "rbi": "59",
+            "player_id": "1"
         }
         
 ### Modify a player year [PUT]
@@ -207,19 +218,319 @@ A single Player object with all its details
 + Response 200 (application/json)
 
         {
-            "id": 1, 
+            "id": "1", 
             "year": "2012",
-            "team": "TEX"
+            "team": "TEX",
             "type": "hitter",
-            "games": 139,
-            "pa": 597,
-            "avg": .270,
-            "obp": .340,
-            "slg": .477,
-            "hr": 22,
-            "rbi": 59,
-            "player_id": 1
+            "games": "139",
+            "pa": "597",
+            "avg": ".270",
+            "obp": ".340",
+            "slg": ".477",
+            "hr": "22",
+            "rbi": "59",
+            "player_id": "1"
         }
         
 ### Delete a Player [DELETE]
++ Response 204
+
+
+# Group Team
+Team related resources of the **MLB API**
+
+## Teams [/teams]
+### List all Teams [GET]
++ Response 200 (application/json)
+
+        {
+            "id": "1",
+            "name": "Los Angeles Angels of Anaheim",
+            "abbr": "LAA",
+            "city": "Los Angeles",
+            "state": "CA",
+            "park": "Angel Stadium of Anaheim",
+            "div": "AL West",
+            "social": "@Angels",
+            "mgr": "Mike Scioscia",
+            "years": ["2004","2005","2006","2007","2008","2009","2010","2011","2012", "2013"],
+            "images": ["http://content.sportslogos.net/logos/53/922/thumbs/wsghhaxkh5qq0hdkbt1b5se41.gif"]
+        }, {
+            "id": "2",
+            "name": "St. Louis Cardinals",
+            "abbr": "STL",
+            "city": "St. Louis",
+            "state": "MO",
+            "park": "Busch Stadium III",
+            "div": "NL Central",
+            "social": "@Cardinals",
+            "mgr": "Mike Matheny",
+            "years": ["2004","2005","2006","2007","2008","2009","2010","2011","2012", "2013"],
+            "images": ["http://content.sportslogos.net/logos/54/72/thumbs/3zhma0aeq17tktge1huh7yok5.gif"]
+        }
+
+### Create a Team [POST]
++ Request (application/json)
+
+        {
+            "name": "Los Angeles Dodgers",
+            "abbr": "LAD",
+            "city": "Los Angeles",
+            "state": "CA",
+            "park": "Dodger Stadium",
+            "div": "NL West",
+            "social": "@Dodgers",
+            "mgr": "Don Mattingly",
+            "years": ["2004","2005","2006","2007","2008","2009","2010","2011","2012", "2013"],
+            "images": ["http://content.sportslogos.net/logos/54/63/thumbs/efvfv5b5g1zgpsf56gb04lthx.gif"]
+        }
+
++ Response 201 (application/json)
+
+        {
+            "id": "3",
+            "name": "Los Angeles Dodgers",
+            "abbr": "LAD",
+            "city": "Los Angeles",
+            "state": "CA",
+            "park": "Dodger Stadium",
+            "div": "NL West",
+            "social": "@Dodgers",
+            "mgr": "Don Mattingly",
+            "years": ["2004","2005","2006","2007","2008","2009","2010","2011","2012", "2013"],
+            "images": ["http://content.sportslogos.net/logos/54/63/thumbs/efvfv5b5g1zgpsf56gb04lthx.gif"]
+        }
+
+## Team [/teams/{id}]
+A single Team object with all its details
+
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Team.
+
+### Retrieve Information on a Team [GET]
++ Response 200 (application/json)
+
+        {
+            "id": "1",
+            "name": "Los Angeles Angels of Anaheim",
+            "abbr": "LAA",
+            "city": "Los Angeles",
+            "state": "CA",
+            "park": "Angel Stadium of Anaheim",
+            "div": "AL West",
+            "social": "@Angels",
+            "mgr": "Mike Scioscia",
+            "years": ["2004","2005","2006","2007","2008","2009","2010","2011","2012", "2013"],
+            "images": ["http://content.sportslogos.net/logos/54/72/thumbs/3zhma0aeq17tktge1huh7yok5.gif"]
+        }
+
+### Modify a Team [PUT]
++ Request (application/json)
+
+        {
+            "social": "@LA_Angels"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "id": "1",
+            "name": "Los Angeles Angels of Anaheim",
+            "abbr": "LAA",
+            "city": "Los Angeles",
+            "state": "CA",
+            "park": "Angel Stadium of Anaheim",
+            "div": "AL West",
+            "social": "@LA_Angels",
+            "mgr": "Mike Scioscia",
+            "years": ["2004","2005","2006","2007","2008","2009","2010","2011","2012", "2013"],
+            "images": ["http://content.sportslogos.net/logos/54/72/thumbs/3zhma0aeq17tktge1huh7yok5.gif"]
+        }
+
+### Delete a Team [DELETE]
++ Response 204
+
+## Team Years [/teams/{id}/years]
+### List all the years that a team played [GET]
++ Response 200 (application/json)
+
+        {
+            "id": "1",
+            "year": "2013",
+            "wins": "78",
+            "losses": "84",
+            "standing": "4",
+            "playoffs": "N",
+            "attend": "3019505",
+            "payroll": "$116032500",
+            "team_id": "1"
+        }, {
+            "id": "2",
+            "year": "2012",
+            "wins": "89",
+            "losses": "73",
+            "standing": "3",
+            "playoffs": "N",
+            "attend": "3061770",
+            "payroll": "$140581000",
+            "team_id": "1"
+        }
+        
+### Create a team year [POST]
++ Request (application/json)
+
+        {
+            "year": "2011",
+            "wins": "86",
+            "losses": "76",
+            "standing": "2",
+            "playoffs": "N",
+            "attend": "3166321",
+            "payroll": "$138543166",
+            "team_id": "1"
+        }
+
++ Response 201 (application/json)
+
+        {
+            "id": "3",
+            "year": "2011",
+            "wins": "86",
+            "losses": "76",
+            "standing": "2",
+            "playoffs": "N",
+            "attend": "3166321",
+            "payroll": "$138543166",
+            "team_id": "1"
+        }
+        
+## Team Year [/teams/{id}/years/{id}]
+### Get details for a specific team year [GET]
++ Response 200 (application/json)
+
+        {
+            "id": "1",
+            "year": "2013",
+            "wins": "78",
+            "losses": "84",
+            "standing": "4",
+            "playoffs": "N",
+            "attend": "3019505",
+            "payroll": "$116032500",
+            "team_id": "1"
+        }
+        
+### Modify a team year [PUT]
++ Request (application/json)
+
+        {
+            "wins": "79"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "id": "1",
+            "year": "2013",
+            "wins": "78",
+            "losses": "84",
+            "standing": "4",
+            "playoffs": "N",
+            "attend": "3019505",
+            "payroll": "$116032500",
+            "team_id": "1"
+        }
+        
+### Delete a Team [DELETE]
++ Response 204
+
+# Group Year
+Year-related resources of the **MLB API**
+
+## Years [/years]
+### List all Years [GET]
++ Response 200 (application/json)
+
+        {
+            "id": "2013",
+            "champion": "Boston Red Sox",
+            "standings": ["BOS", "STL", "OAK", "ATL", "PIT", "DET", "LAD", "CLE", "TBR", "TEX", "CIN", "WSN", "KCR", "NYY", "BAL", "ARI", "LAA", "SDP", "SFG", "NYM", "MIL", "TOR", "COL", "PHI", "SEA", "MIN", "CHC", "CHW", "MIA", "HOU"],
+            "AL_MVP": "Cabrera",
+            "NL_MVP": "McCutchen",
+            "AL_CY": "Max Scherzer",
+            "NL_CY": "Clayton Kershaw"
+        }, {
+            "id": "2012",
+            "champion": "San Francisco Giants",
+            "standings": ["WSN", "CIN", "NYY", "OAK", "SFG", "ATL", "BAL", "TEX", "TBR", "LAA", "DET", "STL", "LAD", "CHW", "MIL", "PHI", "ARI", "PIT", "SDP", "SEA", "NYM", "TOR", "KCR", "MIA", "BOS", "CLE", "MIN", "COL", "CHC", "HOU"],
+            "AL_MVP": "Cabrera",
+            "NL_MVP": "Buster Posey",
+            "AL_CY": "David Price",
+            "NL_CY": "RA Dickey"
+        }
+
+### Create a Year [POST]
++ Request (application/json)
+
+        {
+            "id": "2011",
+            "champion": "St. Louis Cardinals",
+            "standings": ["PHI", "NYY", "MIL", "TEX", "ARI", "DET", "TBR", "STL", "BOS", "ATL", "LAA", "SFG", "LAD", "TOR", "WSN", "CLE", "CHW", "CIN", "NYM", "OAK", "COL", "PIT", "FLA", "KCR", "SDP", "CHC", "BAL", "SEA", "MIN", "HOU"],
+            "AL_MVP": "Justin Verlander",
+            "NL_MVP": "Ryan Braun",
+            "AL_CY": "Justin Verlander",
+            "NL_CY": "Clayton Kershaw"
+        }
+
++ Response 201 (application/json)
+
+        {
+            "id": "2011",
+            "champion": "St. Louis Cardinals",
+            "standings": ["PHI", "NYY", "MIL", "TEX", "ARI", "DET", "TBR", "STL", "BOS", "ATL", "LAA", "SFG", "LAD", "TOR", "WSN", "CLE", "CHW", "CIN", "NYM", "OAK", "COL", "PIT", "FLA", "KCR", "SDP", "CHC", "BAL", "SEA", "MIN", "HOU"],
+            "AL_MVP": "Justin Verlander",
+            "NL_MVP": "Ryan Braun",
+            "AL_CY": "Justin Verlander",
+            "NL_CY": "Clayton Kershaw"
+        }
+
+## Year [/years/{id}]
+A single Year object with all its details
+
++ Parameters
+    + id (required, number, `2013`) ... Numeric `id` of the Year.
+
+### Retrieve Information on a Year [GET]
++ Response 200 (application/json)
+
+        {
+            "id": "2013",
+            "champion": "Boston Red Sox",
+            "standings": ["BOS", "STL", "OAK", "ATL", "PIT", "DET", "LAD", "CLE", "TBR", "TEX", "CIN", "WSN", "KCR", "NYY", "BAL", "ARI", "LAA", "SDP", "SFG", "NYM", "MIL", "TOR", "COL", "PHI", "SEA", "MIN", "CHC", "CHW", "MIA", "HOU"],
+            "AL_MVP": "Cabrera",
+            "NL_MVP": "McCutchen",
+            "AL_CY": "Max Scherzer",
+            "NL_CY": "Clayton Kershaw"
+        }
+
+### Modify a Year [PUT]
++ Request (application/json)
+
+        {
+            "NL_MVP": "Ryan Braun"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "id": "2013",
+            "champion": "Boston Red Sox",
+            "standings": ["BOS", "STL", "OAK", "ATL", "PIT", "DET", "LAD", "CLE", "TBR", "TEX", "CIN", "WSN", "KCR", "NYY", "BAL", "ARI", "LAA", "SDP", "SFG", "NYM", "MIL", "TOR", "COL", "PHI", "SEA", "MIN", "CHC", "CHW", "MIA", "HOU"],
+            "AL_MVP": "Cabrera",
+            "NL_MVP": "Ryan Braun",
+            "AL_CY": "Max Scherzer",
+            "NL_CY": "Clayton Kershaw"
+        }
+
+### Delete a Year [DELETE]
 + Response 204

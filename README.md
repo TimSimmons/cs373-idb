@@ -1,5 +1,13 @@
 cs373-idb
 =========
+Heroku site: http://frozen-plateau-5382.herokuapp.com/
+
+* Clare Coleman
+* Tim Simmons
+* Jordan Graves
+* Deneb Garza
+* Kendall Ahrendsen
+
 
 Git Workflow
 http://codeinthehole.com/writing/pull-requests-and-other-good-practices-for-teams-using-github/
@@ -20,3 +28,4 @@ Models
 https://docs.google.com/document/d/1k86alwHlzcQONmxUWoG2PVz8ROMbQDVvl9HKYDHyX-o/edit
 
 Raw Data https://docs.google.com/document/d/1ygZTiD2LrHtd2YMofYu2EzR6mofFDBQF923ZMFDXlpg/edit
+
