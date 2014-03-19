@@ -8,7 +8,6 @@ def home(request):
 
 def player(request, player_id):
     if player_id == "01":
-        player.social=player.social[1:]
         return render(request, "player.html", bryce)
     return render(request, "player.html")
 

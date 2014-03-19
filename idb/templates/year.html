@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <!--link rel="shortcut icon" href="../../assets/ico/favicon.ico"-->
 
-    <title>Internet Baseball Database - {{year.id}}</title>
+    <title>Internet Baseball Database - {{id}}</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../static/css/bootstrap.min.css" rel="stylesheet">
@@ -33,15 +33,15 @@
 <div class="jumbotron">
 	<div class = "container-fluid">
 	<div class="row">
-		<h1> {{ year.id }}  </h1>
+		<h1> {{ id }}  </h1>
 	</div>
 	<div class = "row">
 		<div class="col-md-6">
-			Champion: {{ year.champion }}<br>
-			AL MVP: {{year.AL_MVP}}<br>
-			NL MVP: {{year.NL_MVP}}<br>
-			AL Cy Young: {{year.AL_CY}}<br>
-			NL CY Young: {{year.NL_CY}}<br>
+			Champion: {{ champion }}<br>
+			AL MVP: {{AL_MVP}}<br>
+			NL MVP: {{NL_MVP}}<br>
+			AL Cy Young: {{AL_CY}}<br>
+			NL CY Young: {{NL_CY}}<br>
 		</div>
 	</div>
 	</div>
@@ -62,7 +62,7 @@
 </tr>
 </thead>
 <tbody>
-{% for y in year.standings %}
+{% for y in standings %}
 <tr>
       <td>{{ y.rank }}</td><td>{{ y.team }}</td><td>{{ y.league }}</td><td>{{ y.w }}</td><td>{{ y.l }}</td>
 </tr>
