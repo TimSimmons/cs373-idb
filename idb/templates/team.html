@@ -57,50 +57,27 @@
 
 <div class="row">
 
+<div class="container-fluid">
 
-<div class="col-md-1">
-	<b>Year</b><br>
-	{%for year in team.years%}
-		{{year.year}}<br>
-	{%endfor%}
-</div>
-<div class="col-md-1">
-	<b>Wins</b><br>
-	{%for year in team.years%}
-		{{year.w}}<br>
-	{%endfor%}
-</div>
-<div class="col-md-1">
-	<b>Losses</b><br>
-	{%for year in team.years%}
-		{{year.l}}<br>
-	{%endfor%}
-</div>
-<div class="col-md-1">
-	<b>Place</b><br>
-	{%for year in team.years%}
-		{{year.standings}}<br>
-	{%endfor%}
-</div>
-<div class="col-md-1">
-	<b>Attendance</b><br>
-	{%for year in team.years%}
-		{{year.attend}}<br>
-	{%endfor%}
-</div>
-<div class="col-md-1">
-	<b>Playoffs</b><br>
-	{%for year in team.years%}
-		{{year.playoffs}}<br>
-	{%endfor%}
-</div>
-<div class="col-md-1">
-	<b>Payroll</b><br>
-	{%for year in team.years%}
-		{{year.payroll}}<br>
-	{%endfor%}
+<div class="table-responsive">
+<table class="table table-striped">
+<thead>
+<tr>
+
+      <td>Year</td><td>Wins</td><td>Losses</td><td>Place</td><td>Attendance</td><td>Playoffs</td><td>Payroll</td>
+</tr>
+</thead>
+<tbody>
+{% for year in team.years %}
+<tr>
+      <td>{{ year.year }}</td><td>{{ year.w }}</td><td>{{ year.l }}</td><td>{{ year.standings }}</td><td>{{ year.attend }}</td><td>{{ year.playoffs }}</td><td>{{ year.payroll }}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
 </div>
 
+</div>
 
 
 </div>
