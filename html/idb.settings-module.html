@@ -3,7 +3,7 @@
           "DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <title>models.Player_Year</title>
+  <title>idb.settings</title>
   <link rel="stylesheet" href="epydoc.css" type="text/css" />
   <script type="text/javascript" src="epydoc.js"></script>
 </head>
@@ -16,7 +16,7 @@
   <tr valign="middle">
   <!-- Home link -->
       <th>&nbsp;&nbsp;&nbsp;<a
-        href="models-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+        href="idb-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
 
   <!-- Tree link -->
       <th>&nbsp;&nbsp;&nbsp;<a
@@ -37,8 +37,8 @@
   <tr valign="top">
     <td width="100%">
       <span class="breadcrumbs">
-        <a href="models-module.html">Module&nbsp;models</a> ::
-        Class&nbsp;Player_Year
+        <a href="idb-module.html">Package&nbsp;idb</a> ::
+        Module&nbsp;settings
       </span>
     </td>
     <td>
@@ -48,40 +48,31 @@
     onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
         <tr><td align="right"><span class="options"
             >[<a href="frames.html" target="_top">frames</a
-            >]&nbsp;|&nbsp;<a href="models.Player_Year-class.html"
+            >]&nbsp;|&nbsp;<a href="idb.settings-module.html"
             target="_top">no&nbsp;frames</a>]</span></td></tr>
       </table>
     </td>
   </tr>
 </table>
-<!-- ==================== CLASS DESCRIPTION ==================== -->
-<h1 class="epydoc">Class Player_Year</h1><p class="nomargin-top"><span class="codelink"><a href="models-pysrc.html#Player_Year">source&nbsp;code</a></span></p>
-<pre class="base-tree">
-??-5 --+
-       |
-      <strong class="uidshort">Player_Year</strong>
-</pre>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module settings</h1><p class="nomargin-top"><span class="codelink"><a href="idb.settings-pysrc.html">source&nbsp;code</a></span></p>
+<p>Django settings for idb project.</p>
+  <p>For more information on this file, see 
+  https://docs.djangoproject.com/en/1.6/topics/settings/</p>
+  <p>For the full list of settings and their values, see 
+  https://docs.djangoproject.com/en/1.6/ref/settings/</p>
 
-<hr />
-<p>Contains player statistics for a given year.</p>
-  <p>The Player_Year model holds information about a player which is likely
-  to change from year to year. For example, any yearly statistics such as 
-  batting average or the team the player played for that specific year 
-  would be attributes of this model.</p>
-  <p>The Player_Year model has a many to one relationship with the 
-  Team_Year, Year, and Player models.</p>
-
-<!-- ==================== CLASS VARIABLES ==================== -->
-<a name="section-ClassVariables"></a>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
 <table class="summary" border="1" cellpadding="3"
        cellspacing="0" width="100%" bgcolor="white">
 <tr bgcolor="#70b0f0" class="table-header">
   <td colspan="2" class="table-header">
     <table border="0" cellpadding="0" cellspacing="0" width="100%">
       <tr valign="top">
-        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="left"><span class="table-header">Variables</span></td>
         <td align="right" valign="top"
-         ><span class="options">[<a href="#section-ClassVariables"
+         ><span class="options">[<a href="#section-Variables"
          class="privatelink" onclick="toggle_private();"
          >hide private</a>]</span></td>
       </tr>
@@ -92,147 +83,154 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="player"></a><span class="summary-name">player</span> = <code title="models.ForeignKey(Player, related_name= 'player_years')">models.ForeignKey(Player, related_name= 'player_years')</code>
+        <a name="BASE_DIR"></a><span class="summary-name">BASE_DIR</span> = <code title="os.path.dirname(os.path.dirname(__file__))">os.path.dirname(os.path.dirname(__file__))</code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a href="models.Player_Year-class.html#team_year" class="summary-name">team_year</a> = <code title="models.ForeignKey(Team_Year, related_name= 'player_years')">models.ForeignKey(Team_Year, related_name= 'player<code class="variable-ellipsis">...</code></code>
+        <a name="SECRET_KEY"></a><span class="summary-name">SECRET_KEY</span> = <code title="'h#tb420ho@#ob%u&amp;a=rc&amp;t2e6*m!4s-e-m538zzywi9k^8xcz@'">'h#tb420ho@#ob%u&amp;a=rc&amp;t2e6*m!4s-e-m538zzywi9k^8xcz@'</code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="year"></a><span class="summary-name">year</span> = <code title="models.ForeignKey(Year, related_name= 'player_years')">models.ForeignKey(Year, related_name= 'player_years')</code>
+        <a name="DEBUG"></a><span class="summary-name">DEBUG</span> = <code title="True">True</code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="pa"></a><span class="summary-name">pa</span> = <code title="models.IntegerField()">models.IntegerField()</code>
+        <a name="TEMPLATE_DEBUG"></a><span class="summary-name">TEMPLATE_DEBUG</span> = <code title="True">True</code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="games"></a><span class="summary-name">games</span> = <code title="models.IntegerField()">models.IntegerField()</code>
+        <a name="ALLOWED_HOSTS"></a><span class="summary-name">ALLOWED_HOSTS</span> = <code title="['*']">['*']</code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="avg"></a><span class="summary-name">avg</span> = <code title="models.FloatField()">models.FloatField()</code>
+        <a href="idb.settings-module.html#INSTALLED_APPS" class="summary-name">INSTALLED_APPS</a> = <code title="'django.contrib.admin', 'django.contrib.auth', 'django.contrib.content\
+types', 'django.contrib.sessions', 'django.contrib.messages', 'django.\
+contrib.staticfiles',">'django.contrib.admin', 'django.contrib.auth'<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="obp"></a><span class="summary-name">obp</span> = <code title="models.FloatField()">models.FloatField()</code>
+        <a href="idb.settings-module.html#MIDDLEWARE_CLASSES" class="summary-name">MIDDLEWARE_CLASSES</a> = <code title="'django.contrib.sessions.middleware.SessionMiddleware', 'django.middle\
+ware.common.CommonMiddleware', 'django.middleware.csrf.CsrfViewMiddlew\
+are', 'django.contrib.auth.middleware.AuthenticationMiddleware', 'djan\
+go.contrib.messages.middleware.MessageMiddleware', 'django.middleware.\
+clickjacking.XFrameOptionsMiddleware',">'django.contrib.sessions.middleware.Sessi<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="slg"></a><span class="summary-name">slg</span> = <code title="models.FloatField()">models.FloatField()</code>
+        <a name="ROOT_URLCONF"></a><span class="summary-name">ROOT_URLCONF</span> = <code title="'idb.urls'">'idb.urls'</code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="hr"></a><span class="summary-name">hr</span> = <code title="models.IntegerField()">models.IntegerField()</code>
+        <a name="WSGI_APPLICATION"></a><span class="summary-name">WSGI_APPLICATION</span> = <code title="'idb.wsgi.application'">'idb.wsgi.application'</code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="rbi"></a><span class="summary-name">rbi</span> = <code title="models.IntegerField()">models.IntegerField()</code>
+        <a href="idb.settings-module.html#DATABASES" class="summary-name">DATABASES</a> = <code title="{'default': dj_database_url.config(default= 'sqlite:///'+ os.path.join\
+(BASE_DIR, 'db.sqlite3'))}">{'default': dj_database_url.config(default= 'sqlit<code class="variable-ellipsis">...</code></code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="wins"></a><span class="summary-name">wins</span> = <code title="models.IntegerField()">models.IntegerField()</code>
+        <a name="LANGUAGE_CODE"></a><span class="summary-name">LANGUAGE_CODE</span> = <code title="'en-us'">'en-us'</code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="losses"></a><span class="summary-name">losses</span> = <code title="models.IntegerField()">models.IntegerField()</code>
+        <a name="TIME_ZONE"></a><span class="summary-name">TIME_ZONE</span> = <code title="'UTC'">'UTC'</code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="era"></a><span class="summary-name">era</span> = <code title="models.FloatField()">models.FloatField()</code>
+        <a name="USE_I18N"></a><span class="summary-name">USE_I18N</span> = <code title="True">True</code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="games_pitched"></a><span class="summary-name">games_pitched</span> = <code title="models.IntegerField()">models.IntegerField()</code>
+        <a name="USE_L10N"></a><span class="summary-name">USE_L10N</span> = <code title="True">True</code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="games_started"></a><span class="summary-name">games_started</span> = <code title="models.IntegerField()">models.IntegerField()</code>
+        <a name="USE_TZ"></a><span class="summary-name">USE_TZ</span> = <code title="True">True</code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="saves"></a><span class="summary-name">saves</span> = <code title="models.IntegerField()">models.IntegerField()</code>
+        <a name="STATIC_ROOT"></a><span class="summary-name">STATIC_ROOT</span> = <code title="'staticfiles'">'staticfiles'</code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="innings_pitched"></a><span class="summary-name">innings_pitched</span> = <code title="models.IntegerField()">models.IntegerField()</code>
+        <a name="STATIC_URL"></a><span class="summary-name">STATIC_URL</span> = <code title="'/static/'">'/static/'</code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="walks_per_inning"></a><span class="summary-name">walks_per_inning</span> = <code title="models.FloatField()">models.FloatField()</code>
+        <a name="STATICFILES_DIRS"></a><span class="summary-name">STATICFILES_DIRS</span> = <code title="os.path.join(BASE_DIR, 'static'),">os.path.join(BASE_DIR, 'static'),</code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="pitched"></a><span class="summary-name">pitched</span> = <code title="models.Floatfield()">models.Floatfield()</code>
+        <a name="TEMPLATE_DIRS"></a><span class="summary-name">TEMPLATE_DIRS</span> = <code title="os.path.join(BASE_DIR, 'idb/templates'),">os.path.join(BASE_DIR, 'idb/templates'),</code>
     </td>
   </tr>
 </table>
-<!-- ==================== CLASS VARIABLE DETAILS ==================== -->
-<a name="section-ClassVariableDetails"></a>
+<!-- ==================== VARIABLES DETAILS ==================== -->
+<a name="section-VariablesDetails"></a>
 <table class="details" border="1" cellpadding="3"
        cellspacing="0" width="100%" bgcolor="white">
 <tr bgcolor="#70b0f0" class="table-header">
   <td colspan="2" class="table-header">
     <table border="0" cellpadding="0" cellspacing="0" width="100%">
       <tr valign="top">
-        <td align="left"><span class="table-header">Class Variable Details</span></td>
+        <td align="left"><span class="table-header">Variables Details</span></td>
         <td align="right" valign="top"
-         ><span class="options">[<a href="#section-ClassVariableDetails"
+         ><span class="options">[<a href="#section-VariablesDetails"
          class="privatelink" onclick="toggle_private();"
          >hide private</a>]</span></td>
       </tr>
@@ -240,19 +238,62 @@
   </td>
 </tr>
 </table>
-<a name="team_year"></a>
+<a name="INSTALLED_APPS"></a>
 <div>
 <table class="details" border="1" cellpadding="3"
        cellspacing="0" width="100%" bgcolor="white">
 <tr><td>
-  <h3 class="epydoc">team_year</h3>
+  <h3 class="epydoc">INSTALLED_APPS</h3>
   
   <dl class="fields">
   </dl>
   <dl class="fields">
     <dt>Value:</dt>
       <dd><table><tr><td><pre class="variable">
-models.ForeignKey(Team_Year, related_name= 'player_years')
+'django.contrib.admin', 'django.contrib.auth', 'django.contrib.content<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+types', 'django.contrib.sessions', 'django.contrib.messages', 'django.<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+contrib.staticfiles',
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="MIDDLEWARE_CLASSES"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">MIDDLEWARE_CLASSES</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+'django.contrib.sessions.middleware.SessionMiddleware', 'django.middle<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+ware.common.CommonMiddleware', 'django.middleware.csrf.CsrfViewMiddlew<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+are', 'django.contrib.auth.middleware.AuthenticationMiddleware', 'djan<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+go.contrib.messages.middleware.MessageMiddleware', 'django.middleware.<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+clickjacking.XFrameOptionsMiddleware',
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="DATABASES"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">DATABASES</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+{'default': dj_database_url.config(default= 'sqlite:///'+ os.path.join<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+(BASE_DIR, 'db.sqlite3'))}
 </pre></td></tr></table>
 </dd>
   </dl>
@@ -265,7 +306,7 @@ models.ForeignKey(Team_Year, related_name= 'player_years')
   <tr valign="middle">
   <!-- Home link -->
       <th>&nbsp;&nbsp;&nbsp;<a
-        href="models-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+        href="idb-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
 
   <!-- Tree link -->
       <th>&nbsp;&nbsp;&nbsp;<a
@@ -285,7 +326,7 @@ models.ForeignKey(Team_Year, related_name= 'player_years')
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Tue Mar 18 22:37:02 2014
+    Generated by Epydoc 3.0.1 on Wed Mar 19 16:08:52 2014
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"
