@@ -3,7 +3,7 @@
           "DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <title>models.Player</title>
+  <title>idb.views</title>
   <link rel="stylesheet" href="epydoc.css" type="text/css" />
   <script type="text/javascript" src="epydoc.js"></script>
 </head>
@@ -16,7 +16,7 @@
   <tr valign="middle">
   <!-- Home link -->
       <th>&nbsp;&nbsp;&nbsp;<a
-        href="models-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+        href="idb-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
 
   <!-- Tree link -->
       <th>&nbsp;&nbsp;&nbsp;<a
@@ -37,8 +37,8 @@
   <tr valign="top">
     <td width="100%">
       <span class="breadcrumbs">
-        <a href="models-module.html">Module&nbsp;models</a> ::
-        Class&nbsp;Player
+        <a href="idb-module.html">Package&nbsp;idb</a> ::
+        Module&nbsp;views
       </span>
     </td>
     <td>
@@ -48,41 +48,25 @@
     onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
         <tr><td align="right"><span class="options"
             >[<a href="frames.html" target="_top">frames</a
-            >]&nbsp;|&nbsp;<a href="models.Player-class.html"
+            >]&nbsp;|&nbsp;<a href="idb.views-module.html"
             target="_top">no&nbsp;frames</a>]</span></td></tr>
       </table>
     </td>
   </tr>
 </table>
-<!-- ==================== CLASS DESCRIPTION ==================== -->
-<h1 class="epydoc">Class Player</h1><p class="nomargin-top"><span class="codelink"><a href="models-pysrc.html#Player">source&nbsp;code</a></span></p>
-<pre class="base-tree">
-django.db.models.Model --+
-                         |
-                        <strong class="uidshort">Player</strong>
-</pre>
-
-<hr />
-<p>Contains static information about a player.</p>
-  <p>The Player model serves as somewhat of a parent class and container to
-  the Player_Year model. Each Player model contains information about an 
-  individual player which remains persistent throughout a player's career. 
-  For example, a player's name, school and handedness are contained in this
-  model.</p>
-  <p>The Player model has a one to many relationship with the Player_Year 
-  model.</p>
-
-<!-- ==================== CLASS VARIABLES ==================== -->
-<a name="section-ClassVariables"></a>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module views</h1><p class="nomargin-top"><span class="codelink"><a href="idb.views-pysrc.html">source&nbsp;code</a></span></p>
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
 <table class="summary" border="1" cellpadding="3"
        cellspacing="0" width="100%" bgcolor="white">
 <tr bgcolor="#70b0f0" class="table-header">
   <td colspan="2" class="table-header">
     <table border="0" cellpadding="0" cellspacing="0" width="100%">
       <tr valign="top">
-        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="left"><span class="table-header">Functions</span></td>
         <td align="right" valign="top"
-         ><span class="options">[<a href="#section-ClassVariables"
+         ><span class="options">[<a href="#section-Functions"
          class="privatelink" onclick="toggle_private();"
          >hide private</a>]</span></td>
       </tr>
@@ -93,70 +77,67 @@ django.db.models.Model --+
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="name"></a><span class="summary-name">name</span> = <code title="models.CharField(max_length= 30)">models.CharField(max_length= 30)</code>
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="home"></a><span class="summary-sig-name">home</span>(<span class="summary-sig-arg">request</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="idb.views-pysrc.html#home">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="number"></a><span class="summary-name">number</span> = <code title="models.IntegerField()">models.IntegerField()</code>
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="player"></a><span class="summary-sig-name">player</span>(<span class="summary-sig-arg">request</span>,
+        <span class="summary-sig-arg">player_id</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="idb.views-pysrc.html#player">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="position"></a><span class="summary-name">position</span> = <code title="models.CharField(max_length= 3)">models.CharField(max_length= 3)</code>
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="team"></a><span class="summary-sig-name">team</span>(<span class="summary-sig-arg">request</span>,
+        <span class="summary-sig-arg">team_id</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="idb.views-pysrc.html#team">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="bats"></a><span class="summary-name">bats</span> = <code title="models.CharField(max_length= 1)">models.CharField(max_length= 1)</code>
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-        <a name="throws"></a><span class="summary-name">throws</span> = <code title="models.CharField(max_length= 1)">models.CharField(max_length= 1)</code>
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-        <a name="height"></a><span class="summary-name">height</span> = <code title="models.IntegerField()">models.IntegerField()</code>
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-        <a name="weight"></a><span class="summary-name">weight</span> = <code title="models.IntegerField()">models.IntegerField()</code>
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-        <a name="school"></a><span class="summary-name">school</span> = <code title="models.CharField(max_length= 30)">models.CharField(max_length= 30)</code>
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-        <a name="social"></a><span class="summary-name">social</span> = <code title="models.CharField(max_length= 30)">models.CharField(max_length= 30)</code>
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-        <a name="image"></a><span class="summary-name">image</span> = <code title="models.URLField()">models.URLField()</code>
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="year"></a><span class="summary-sig-name">year</span>(<span class="summary-sig-arg">request</span>,
+        <span class="summary-sig-arg">year_id</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="idb.views-pysrc.html#year">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
     </td>
   </tr>
 </table>
@@ -166,7 +147,7 @@ django.db.models.Model --+
   <tr valign="middle">
   <!-- Home link -->
       <th>&nbsp;&nbsp;&nbsp;<a
-        href="models-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+        href="idb-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
 
   <!-- Tree link -->
       <th>&nbsp;&nbsp;&nbsp;<a
@@ -186,7 +167,7 @@ django.db.models.Model --+
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Tue Mar 18 22:37:02 2014
+    Generated by Epydoc 3.0.1 on Wed Mar 19 16:08:52 2014
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"
