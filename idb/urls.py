@@ -14,3 +14,4 @@ urlpatterns = patterns('',
     url(r'^years/(\d{4})/$', year),
     url(r'^admin/', include(admin.site.urls)),
 )
+
