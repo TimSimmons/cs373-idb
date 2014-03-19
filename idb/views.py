@@ -1,7 +1,7 @@
 from django.shortcuts import render
 import datetime
 from django.http import HttpResponse
-from data import *
+from idb.data import *
 
 def home(request):
     return render(request, "index.html")

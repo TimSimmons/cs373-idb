@@ -1,29 +1,104 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--link rel="shortcut icon" href="../../assets/ico/favicon.ico"-->
+
+    <title>Internet Baseball Database - {{team.name}}</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="starter-template.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+
+
 <body>
-<h1> INDEX </h1>
+<div class="jumbotron">
+	<div class = "container-fluid">
+	<div class="row">
+		<div class="col-md-2">
+			<img src=" {{ team.images }} "><br>
+		</div>
+		<h1> {{ team.name }}  </h1>
+	</div>
+	<div class = "row">
+		<div class="col-md-6">
+			Twitter: {{team.social}} <br>
+			City: {{team.city}}<br>
+			State: {{team.state}}<br>
+			Park: {{team.park}}<br>
+			Division: {{team.div}}<br>
+			Manager: {{team.mgr}}<br>
+			Years:<br>
+			{%for year in team.years%}
+			{{year.year}}
+			{%endfor%}
+		</div>
+	</div>
+	</div>
+</div>
 
-Name: {{ team.name }} <br>
-Logo: <img src=" {{ team.images }} "><br>
-Twitter: {{ team.social }} <br>
-City: {{ team.city }} <br>
-State <br>
-Park (picture) <br>
-Division: <br>
-Manager: <br>
-years: <br>
+<div class="row">
 
-<table>
+<div class="container-fluid">
+
+<div class="table-responsive">
+<table class="table table-striped">
+<thead>
 <tr>
-<b>
+
       <td>Year</td><td>Wins</td><td>Losses</td><td>Place</td><td>Attendance</td><td>Playoffs</td><td>Payroll</td>
-</b>
 </tr>
+</thead>
+<tbody>
 {% for year in team.years %}
 <tr>
       <td>{{ year.year }}</td><td>{{ year.w }}</td><td>{{ year.l }}</td><td>{{ year.standings }}</td><td>{{ year.attend }}</td><td>{{ year.playoffs }}</td><td>{{ year.payroll }}</td>
 </tr>
 {% endfor %}
-<table>
+</tbody>
+</table>
+</div>
+
+</div>
+
+
+</div>
+<div class="row">
+	<div class="col-md-2">
+
+
+   <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/{{team.social}}"
+   data-widget-id="446046951486676992"
+   data-screen-name="{{team.social|slice:"1:"}}" data-show-replies="false"
+   data-tweet-limit="5">Tweets by {{team.social}}</a>
+   <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	
+</div>
+</div>
+
+
+
+
+    <script src="../../static/js/jquery-2.1.0.min.js"></script>
+    <script src="../../static/js/bootstrap.min.js"></script>
 
 </body>
 </html>

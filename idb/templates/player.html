@@ -56,129 +56,47 @@
 </div>
 
 <div class="row">
-
+<div class="container-fluid">
+<div class="table-responsive">
+<table class="table table-striped">
+<thead>
 {% if player.years.0.type == "hitter" %}
+<tr>
+<b>
+      <td>Year</td><td>Team</td><td>Games</td><td>Plate Appearances</td><td>Batting Average</td><td>On Base Percentage</td><td>Slugging Percentage</td><td>Home Runs</td><td>Runs Batted In</td>
+</b>
+</tr>
+{% else %}
+<tr>
+<b>
+      <td>Year</td><td>Team</td><td>Wins</td><td>Losses</td><td>Games</td><td>Games Started</td><td>Saves</td><td>Innings Pitched</td><td>WHIP</td>
+</b>
+</tr>
+{% endif %}
+</thead>
 
-<div class="col-md-1">
-	<b>Year</b><br>
-	{%for year in player.years%}
-		{{year.year}}<br>
-	{%endfor%}
-</div>
-<div class="col-md-1">
-	<b>Team</b><br>
-	{%for year in player.years%}
-		{{year.team}}<br>
-	{%endfor%}
-</div>
-<div class="col-md-1">
-	<b>Games</b><br>
-	{%for year in player.years%}
-		{{year.games}}<br>
-	{%endfor%}
-</div>
-<div class="col-md-1">
-	<b>Plate Appearances</b><br>
-	{%for year in player.years%}
-		{{year.pa}}<br>
-	{%endfor%}
-</div>
-<div class="col-md-1">
-	<b>Batting Average</b><br>
-	{%for year in player.years%}
-		{{year.ba}}<br>
-	{%endfor%}
-</div>
-<div class="col-md-2">
-	<b>On Base Percentage</b><br>
-	{%for year in player.years%}
-		{{year.obp}}<br>
-	{%endfor%}
-</div>
-<div class="col-md-2">
-	<b>Slugging Percentage</b><br>
-	{%for year in player.years%}
-		{{year.slg}}<br>
-	{%endfor%}
-</div>
-<div class="col-md-1">
-	<b>Home Runs</b><br>
-	{%for year in player.years%}
-		{{year.hr}}<br>
-	{%endfor%}
-</div>
-<div class="col-md-1">
-	<b>Runs Batted In</b><br>
-	{%for year in player.years%}
-		{{year.rbi}}<br>
-	{%endfor%}
-
-
-{%else%}
-
-
-<div class="col-md-1">
-	<b>Year</b><br>
-	{%for year in player.years%}
-		{{year.year}}<br>
-	{%endfor%}
-</div>
-<div class="col-md-1">
-	<b>Team</b><br>
-	{%for year in player.years%}
-		{{year.team}}<br>
-	{%endfor%}
-</div>
-<div class="col-md-1">
-	<b>Wins</b><br>
-	{%for year in player.years%}
-		{{year.w}}<br>
-	{%endfor%}
-</div>
-<div class="col-md-1">
-	<b>Losses</b><br>
-	{%for year in player.years%}
-		{{year.l}}<br>
-	{%endfor%}
-</div>
-<div class="col-md-1">
-	<b>Games</b><br>
-	{%for year in player.years%}
-		{{year.games}}<br>
-	{%endfor%}
-</div>
-<div class="col-md-1">
-	<b>Games Started</b><br>
-	{%for year in player.years%}
-		{{year.gs}}<br>
-	{%endfor%}
-</div>
-<div class="col-md-1">
-	<b>Saves</b><br>
-	{%for year in player.years%}
-		{{year.s}}<br>
-	{%endfor%}
-</div>
-<div class="col-md-1">
-	<b>Innings Pitched</b><br>
-	{%for year in player.years%}
-		{{year.ip}}<br>
-	{%endfor%}
-</div>
-<div class="col-md-1">
-	<b>WHIP</b><br>
-	{%for year in player.years%}
-		{{year.whip}}<br>
-	{%endfor%}
+<tbody>
+{% for year in player.years %}
+<tr>
+      {% if year.type == "hitter" %}
+            <td>{{ year.year }}</td><td> {{year.team }} </td><td> {{ year.games }}</td><td>{{ year.pa }}</td><td>{{ year.avg }}</td><td>{{ year.obp }}</td><td>{{ year.slg }}</td><td>{{ year.hr }}</td><td>{{ year.rbi }}</td>
+            
+      {% else %}
+            <td>{{ year.year }}</td><td> {{year.team }} </td><td>{{ year.w }}</td><td>{{ year.l }}</td><td> {{ year.games }}</td><td> {{ year.gs }}</td><td> {{ year.s }}</td><td>{{ year.ip }}</td><td>{{ year.whip }}</td>
+      {% endif %}
+</tr>
+{% endfor %}
+</tbody>
+</table>
 </div>
 
 
-{%endif%}
-
-
+</div>
 </div>
 <div class="row">
-	<div class="col-md-2">
+	<div class="col-md-6">
+
+   <!--This is the form of the feed we are supposed to be using, but I don't know how to eliminate the @ from player.social. You can't do it inside the template and editing data.py doesn't seem to work
 
 
 	<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/mlb"
@@ -186,13 +104,13 @@
    data-tweet-limit="5">Tweets by MLB</a>
    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
-   <!--This is the form of the feed we are supposed to be using, but I don't know how to eliminate the @ from player.social. You can't do it inside the template and editing data.py doesn't seem to work
+-->
    <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/{{player.social}}"
    data-widget-id="446046951486676992"
-   data-screen-name="{{player.social}}" data-show-replies="false"
+   data-screen-name="{{player.social|slice:"1:"}}" data-show-replies="false"
    data-tweet-limit="5">Tweets by {{player.social}}</a>
    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-	-->
+	
 </div>
 </div>
 <!--
