@@ -12,6 +12,10 @@ import unittest
 
 class TestIDB(unittest.TestCase):
 
+    # -----------------
+    # Test Player Group
+    # -----------------
+
     def test_list_players(self):
         headers = {"Content-Type": "application/json"}
     
@@ -76,6 +80,10 @@ class TestIDB(unittest.TestCase):
         self.assertTrue(response.getcode() == 204)
         self.assertTrue(request.get_method() == "DELETE") # bit superfluous
     
+    # ----------------------
+    # Test Player Year Group
+    # ----------------------
+
     def test_list_playerYears(self):
         headers = {"Content-Type": "application/json"}
     
@@ -141,6 +149,10 @@ class TestIDB(unittest.TestCase):
         self.assertTrue(response.getcode() == 204)
         self.assertTrue(request.get_method() == "DELETE") # bit superfluous
     
+    # ----------------
+    # Test Team Group
+    # ----------------
+
     def test_list_teams(self):
         headers = {"Content-Type": "application/json"}
     
@@ -204,37 +216,144 @@ class TestIDB(unittest.TestCase):
 
         self.assertTrue(response.getcode() == 204)
         self.assertTrue(request.get_method() == "DELETE") # bit superfluous
-    
+
+    # --------------------
+    # Test Team Year Group
+    # --------------------
+
     def test_list_teamYears(self):
-        pass
+        headers = {"Content-Type": "application/json"}
+    
+        request = Request("http://mlbapi.apiary-mock.com/api/teams/1/years", headers=headers)
+        response = urlopen(request)
+        data = json.loads(response.readall().decode('utf-8'))
+
+        self.assertTrue(request.get_method() == "GET")
+        self.assertTrue(response.getcode() == 200)
+        self.assertTrue(len(data) == 2)
+        self.assertTrue(len(data[0]) == len(data[1]))
+        self.assertTrue(len(data[0]) == 9)
+        self.assertTrue(data[0]["standing"] == "4")
     
     def test_create_teamYear(self):
-        pass
+        headers = {"Content-Type": "application/json"}
+        values = dumps({ "bats": "R" }) # dummy
+        vbin = values.encode("utf-8") 
     
+        request = Request("http://mlbapi.apiary-mock.com/api/teams/1/years", data=vbin, headers=headers)
+        response = urlopen(request)
+        data = json.loads(response.readall().decode('utf-8'))
+
+        self.assertTrue(request.get_method() == "POST")
+        self.assertTrue(response.getcode() == 201)
+        self.assertTrue(len(data) == 9)
+        self.assertTrue(data["year"] == "2011")
+        self.assertTrue(data["team_id"] == "1")
+
     def test_get_teamYear(self):
-        pass
+        headers = {"Content-Type": "application/json"}
     
+        request = Request("http://mlbapi.apiary-mock.com/api/teams/1/years/1", headers=headers)
+        response = urlopen(request)
+        data = json.loads(response.readall().decode('utf-8'))
+
+        self.assertTrue(request.get_method() == "GET")
+        self.assertTrue(response.getcode() == 200)
+        self.assertTrue(len(data) == 9)
+        self.assertTrue(data["year"] == "2013")
+        self.assertTrue(data["id"] == "1")
+   
     def test_modify_teamYear(self):
-        pass
+        headers = {"Content-Type": "application/json"}
     
-    def test_delete_teamYear(self):
-        pass
+        request = Request("http://mlbapi.apiary-mock.com/api/teams/1/years/1", headers=headers)
+        request.get_method = lambda: 'PUT' 
+        response = urlopen(request)
+        data = json.loads(response.readall().decode('utf-8'))
+
+        self.assertTrue(request.get_method() == "PUT") # bit superfluous
+        self.assertTrue(response.getcode() == 200)
+        self.assertTrue(len(data) == 9)
+        self.assertTrue(data["wins"] == "78")
     
+    def test_delete_teamYears(self):
+        headers = {"Content-Type": "application/json"}
+    
+        request = Request("http://mlbapi.apiary-mock.com/api/teams/1/years/1", headers=headers)
+        request.get_method = lambda: 'DELETE' 
+        response = urlopen(request)
+
+        self.assertTrue(response.getcode() == 204)
+        self.assertTrue(request.get_method() == "DELETE") # bit superfluous
+    
+    # ---------------
+    # Test Year Group
+    # ---------------
+
     def test_list_years(self):
-        pass
+        headers = {"Content-Type": "application/json"}
+    
+        request = Request("http://mlbapi.apiary-mock.com/api/years", headers=headers)
+        response = urlopen(request)
+        data = json.loads(response.readall().decode('utf-8'))
+
+        self.assertTrue(request.get_method() == "GET")
+        self.assertTrue(response.getcode() == 200)
+        self.assertTrue(len(data) == 2)
+        self.assertTrue(len(data[0]) == len(data[1]))
+        self.assertTrue(len(data[0]) == 7)
+        self.assertTrue(data[0]["id"] == "2013")
     
     def test_create_year(self):
-        pass
+        headers = {"Content-Type": "application/json"}
+        values = dumps({ "bats": "R" }) # dummy
+        vbin = values.encode("utf-8") 
     
+        request = Request("http://mlbapi.apiary-mock.com/api/years", data=vbin, headers=headers)
+        response = urlopen(request)
+        data = json.loads(response.readall().decode('utf-8'))
+
+        self.assertTrue(request.get_method() == "POST")
+        self.assertTrue(response.getcode() == 201)
+        self.assertTrue(len(data) == 7)
+        self.assertTrue(data["id"] == "2011")
+        self.assertTrue(data["champion"] == "St. Louis Cardinals")
+
     def test_get_year(self):
-        pass
+        headers = {"Content-Type": "application/json"}
     
+        request = Request("http://mlbapi.apiary-mock.com/api/years/1", headers=headers)
+        response = urlopen(request)
+        data = json.loads(response.readall().decode('utf-8'))
+
+        self.assertTrue(request.get_method() == "GET")
+        self.assertTrue(response.getcode() == 200)
+        self.assertTrue(len(data) == 7)
+        self.assertTrue(data["id"] == "2013")
+   
     def test_modify_year(self):
-        pass
+        headers = {"Content-Type": "application/json"}
     
-    def test_delete_year(self):
-        pass
+        request = Request("http://mlbapi.apiary-mock.com/api/years/1", headers=headers)
+        request.get_method = lambda: 'PUT' 
+        response = urlopen(request)
+        data = json.loads(response.readall().decode('utf-8'))
+
+        self.assertTrue(request.get_method() == "PUT") # bit superfluous
+        self.assertTrue(response.getcode() == 200)
+        self.assertTrue(len(data) == 7)
+        self.assertTrue(data["NL_MVP"] == "Ryan Braun")
     
+    def test_delete_years(self):
+        headers = {"Content-Type": "application/json"}
+    
+        request = Request("http://mlbapi.apiary-mock.com/api/years/1", headers=headers)
+        request.get_method = lambda: 'DELETE' 
+        response = urlopen(request)
+
+        self.assertTrue(response.getcode() == 204)
+        self.assertTrue(request.get_method() == "DELETE") # bit superfluous
+
     # Initial setup code taken from Eric Wehrmeister, Piazza
     def test_post(self):
     
