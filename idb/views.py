@@ -9,6 +9,10 @@ def home(request):
 def player(request, player_id):
     if player_id == "01":
         return render(request, "player.html", bryce)
+    if player_id == "02":
+        return render(request, "player.html", yu)
+    if player_id == "03":
+        return render(request, "player.html", mike)
     return render(request, "player.html")
 
 def team(request, team_id):
@@ -33,8 +37,6 @@ def team(request, team_id):
         return render(request, "team.html", pirates)
     if team_id == "det":
         return render(request, "team.html", tigers)
-
-    
     return render(request, "team.html")
 
 def year(request, year_id):
