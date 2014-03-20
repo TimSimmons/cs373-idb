@@ -1,99 +1,112 @@
 #!/usr/bin/env python3
 
-# Initial setup code taken from Eric Wehrmeister
 from urllib.request import urlopen
 from urllib.request import Request
 from json import dumps
 import json
+import unittest
 
-def test_list_players():
-    pass
+# ----------------
+# Unit Tests - IDB
+# ----------------
 
-def test_create_player():
-    pass
+class TestIDB(unittest.TestCase):
 
-def test_get_player():
-    pass
+    def test_list_players(self):
+        pass
+    
+    def test_create_player(self):
+        pass
+    
+    def test_get_player(self):
+        pass
+    
+    def test_modify_player(self):
+        pass
+    
+    def test_delete_player(self):
+        pass
+    
+    def test_list_playerYears(self):
+        pass
+    
+    def test_create_playerYear(self):
+        pass
+    
+    def test_get_playerYear(self):
+        pass
+    
+    def test_modify_playerYear(self):
+        pass
+    
+    def test_delete_playerYears(self):
+        pass
+    
+    def test_list_teams(self):
+        pass
+    
+    def test_create_team(self):
+        pass
+    
+    def test_get_team(self):
+        pass
+    
+    def test_modify_team(self):
+        pass
+    
+    def test_delete_team(self):
+        pass
+    
+    def test_list_teamYears(self):
+        pass
+    
+    def test_create_teamYear(self):
+        pass
+    
+    def test_get_teamYear(self):
+        pass
+    
+    def test_modify_teamYear(self):
+        pass
+    
+    def test_delete_teamYear(self):
+        pass
+    
+    def test_list_years(self):
+        pass
+    
+    def test_create_year(self):
+        pass
+    
+    def test_get_year(self):
+        pass
+    
+    def test_modify_year(self):
+        pass
+    
+    def test_delete_year(self):
+        pass
+    
+    # Initial setup code taken from Eric Wehrmeister, Piazza
+    def test_post(self):
+    
+        values = dumps({ "title": "Buy cheese and bread for breakfast." })
+        headers = {"Content-Type": "application/json"}
+    
+        vbin = values.encode("utf-8") 
+    
+        request = Request("http://ccoleman812.apiary.io/notes", data=vbin, headers=headers)
+        response = urlopen(request).readall().decode('utf-8')
+    
+        data = json.loads(response)
+    
+        #print(data)
+        self.assertTrue(True)
 
-def test_modify_player():
-    pass
+# ----
+# main
+# ----
 
-def test_delete_player():
-    pass
-
-def test_list_playerYears():
-    pass
-
-def test_create_playerYear():
-    pass
-
-def test_get_playerYear():
-    pass
-
-def test_modify_playerYear():
-    pass
-
-def test_delete_playerYears():
-    pass
-
-def test_list_teams():
-    pass
-
-def test_create_team():
-    pass
-
-def test_get_team():
-    pass
-
-def test_modify_team():
-    pass
-
-def test_delete_team():
-    pass
-
-def test_list_teamYears():
-    pass
-
-def test_create_teamYear():
-    pass
-
-def test_get_teamYear():
-    pass
-
-def test_modify_teamYear():
-    pass
-
-def test_delete_teamYear():
-    pass
-
-def test_list_years():
-    pass
-
-def test_create_year():
-    pass
-
-def test_get_year():
-    pass
-
-def test_modify_year():
-    pass
-
-def test_delete_year():
-    pass
-
-
-def test_post():
-
-    values = dumps({ "title": "Buy cheese and bread for breakfast." })
-    headers = {"Content-Type": "application/json"}
-
-    vbin = values.encode("utf-8") 
-
-    request = Request("http://ccoleman812.apiary.io/notes", data=vbin, headers=headers)
-    response = urlopen(request).readall().decode('utf-8')
-
-    data = json.loads(response)
-
-    print(data)
-
-test_post()
+print("Start IDB testing...")
+unittest.main()
+print("Done.")
