@@ -38,7 +38,7 @@
 		<div class="col-md-4">
 			<img src=" {{ images }} " class="img-responsive"><br>
 		</div>
-		<div class="col-md-6">
+		<div class="col-md-2">
 			Social: {{social}} <br>
 			Position: {{position}}<br>
 			Bats: {{bats}}<br>
@@ -51,6 +51,19 @@
 			{{year.year}}
 			{%endfor%}
 		</div>
+		<div class="container-fluid">
+			<div class="col-md-6">
+	<div class="col-md-6">
+
+   <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/{{social}}"
+   data-widget-id="446046951486676992"
+   data-screen-name="{{social|slice:"1:"}}" data-show-replies="false"
+   data-tweet-limit="5">Tweets by {{social}}</a>
+   <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+   			</div>
+		</div>
+	
+
 	</div>
 	</div>
 </div>
@@ -94,24 +107,6 @@
 </div>
 </div>
 <div class="row">
-	<div class="col-md-6">
-
-   <!--This is the form of the feed we are supposed to be using, but I don't know how to eliminate the @ from social. You can't do it inside the template and editing data.py doesn't seem to work
-
-
-	<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/mlb"
-   data-widget-id="446046951486676992"data-show-replies="false"
-   data-tweet-limit="5">Tweets by MLB</a>
-   <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
--->
-   <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/{{social}}"
-   data-widget-id="446046951486676992"
-   data-screen-name="{{social|slice:"1:"}}" data-show-replies="false"
-   data-tweet-limit="5">Tweets by {{social}}</a>
-   <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-	
-</div>
 </div>
 <!--
 {% if years.0.type == "hitter" %}
