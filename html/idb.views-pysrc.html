@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>idb.views</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="idb-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="idb-module.html">Package&nbsp;idb</a> ::
+        Module&nbsp;views
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="idb.views-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="idb.views-module.html">Module idb.views</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">django</tt><tt class="py-op">.</tt><tt class="py-name">shortcuts</tt> <tt class="py-keyword">import</tt> <tt class="py-name">render</tt> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">datetime</tt> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">django</tt><tt class="py-op">.</tt><tt class="py-name">http</tt> <tt class="py-keyword">import</tt> <tt class="py-name">HttpResponse</tt> </tt>
+<a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Package idb=idb-module.html"><a title="idb" class="py-name" href="#" onclick="return doclink('link-0', 'idb', 'link-0');">idb</a></tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Module idb.data=idb.data-module.html"><a title="idb.data" class="py-name" href="#" onclick="return doclink('link-1', 'data', 'link-1');">data</a></tt> <tt class="py-keyword">import</tt> <tt class="py-op">*</tt> </tt>
+<a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line"> </tt>
+<a name="home"></a><div id="home-def"><a name="L6"></a><tt class="py-lineno"> 6</tt> <a class="py-toggle" href="#" id="home-toggle" onclick="return toggle('home');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="idb.views-module.html#home">home</a><tt class="py-op">(</tt><tt class="py-param">request</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="home-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="home-expanded"><a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">render</tt><tt class="py-op">(</tt><tt class="py-name">request</tt><tt class="py-op">,</tt> <tt class="py-string">"index.html"</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line"> </tt>
+<a name="player"></a><div id="player-def"><a name="L9"></a><tt class="py-lineno"> 9</tt> <a class="py-toggle" href="#" id="player-toggle" onclick="return toggle('player');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="idb.views-module.html#player">player</a><tt class="py-op">(</tt><tt class="py-param">request</tt><tt class="py-op">,</tt> <tt class="py-param">player_id</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="player-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="player-expanded"><a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">player_id</tt> <tt class="py-op">==</tt> <tt class="py-string">"01"</tt><tt class="py-op">:</tt> </tt>
+<a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">render</tt><tt class="py-op">(</tt><tt class="py-name">request</tt><tt class="py-op">,</tt> <tt class="py-string">"player.html"</tt><tt class="py-op">,</tt> <tt id="link-2" class="py-name" targets="Variable idb.data.bryce=idb.data-module.html#bryce"><a title="idb.data.bryce" class="py-name" href="#" onclick="return doclink('link-2', 'bryce', 'link-2');">bryce</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">render</tt><tt class="py-op">(</tt><tt class="py-name">request</tt><tt class="py-op">,</tt> <tt class="py-string">"player.html"</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line"> </tt>
+<a name="team"></a><div id="team-def"><a name="L14"></a><tt class="py-lineno">14</tt> <a class="py-toggle" href="#" id="team-toggle" onclick="return toggle('team');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="idb.views-module.html#team">team</a><tt class="py-op">(</tt><tt class="py-param">request</tt><tt class="py-op">,</tt> <tt class="py-param">team_id</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="team-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="team-expanded"><a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">team_id</tt> <tt class="py-op">==</tt> <tt class="py-string">"20"</tt><tt class="py-op">:</tt> </tt>
+<a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">render</tt><tt class="py-op">(</tt><tt class="py-name">request</tt><tt class="py-op">,</tt> <tt class="py-string">"team.html"</tt><tt class="py-op">,</tt> <tt id="link-3" class="py-name" targets="Variable idb.data.angels=idb.data-module.html#angels"><a title="idb.data.angels" class="py-name" href="#" onclick="return doclink('link-3', 'angels', 'link-3');">angels</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">render</tt><tt class="py-op">(</tt><tt class="py-name">request</tt><tt class="py-op">,</tt> <tt class="py-string">"team.html"</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line"> </tt>
+<a name="year"></a><div id="year-def"><a name="L19"></a><tt class="py-lineno">19</tt> <a class="py-toggle" href="#" id="year-toggle" onclick="return toggle('year');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="idb.views-module.html#year">year</a><tt class="py-op">(</tt><tt class="py-param">request</tt><tt class="py-op">,</tt> <tt class="py-param">year_id</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="year-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="year-expanded"><a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">year_id</tt> <tt class="py-op">==</tt> <tt class="py-string">"2013"</tt><tt class="py-op">:</tt> </tt>
+<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">render</tt><tt class="py-op">(</tt><tt class="py-name">request</tt><tt class="py-op">,</tt> <tt class="py-string">"year.html"</tt><tt class="py-op">,</tt> <tt id="link-4" class="py-name" targets="Variable idb.data.year_2013=idb.data-module.html#year_2013"><a title="idb.data.year_2013" class="py-name" href="#" onclick="return doclink('link-4', 'year_2013', 'link-4');">year_2013</a></tt> <tt class="py-op">)</tt> </tt>
+<a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">render</tt><tt class="py-op">(</tt><tt class="py-name">request</tt><tt class="py-op">,</tt> <tt class="py-string">"year.html"</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="idb-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed Mar 19 16:08:52 2014
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>
