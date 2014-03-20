@@ -24,8 +24,9 @@ http://www.django-rest-framework.org/
 Apiary
 http://docs.mlbapi.apiary.io/
 
-Models
+Project Report
 https://docs.google.com/document/d/1k86alwHlzcQONmxUWoG2PVz8ROMbQDVvl9HKYDHyX-o/edit
 
-Raw Data https://docs.google.com/document/d/1ygZTiD2LrHtd2YMofYu2EzR6mofFDBQF923ZMFDXlpg/edit
+Raw Data
+https://docs.google.com/document/d/1ygZTiD2LrHtd2YMofYu2EzR6mofFDBQF923ZMFDXlpg/edit
 
