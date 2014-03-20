@@ -63,13 +63,13 @@
 {% if years.0.type == "hitter" %}
 <tr>
 <b>
-      <td>Year</td><td>Team</td><td>Games</td><td>Plate Appearances</td><td>Batting Average</td><td>On Base Percentage</td><td>Slugging Percentage</td><td>Home Runs</td><td>Runs Batted In</td>
+      <td>Year</td><td>Team</td><td>G</td><td>PA</td><td>BA</td><td>OBP</td><td>SLG</td><td>HR</td><td>RBI</td>
 </b>
 </tr>
 {% else %}
 <tr>
 <b>
-      <td>Year</td><td>Team</td><td>Wins</td><td>Losses</td><td>Games</td><td>Games Started</td><td>Saves</td><td>Innings Pitched</td><td>WHIP</td>
+      <td>Year</td><td>Team</td><td>W</td><td>L</td><td>G</td><td>GS</td><td>S</td><td>IP</td><td>WHIP</td>
 </b>
 </tr>
 {% endif %}
@@ -112,6 +112,37 @@
    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 	
 </div>
+</div>
+<div class="col-md-5">
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script><div style="width:600px;"><div style="overflow:hidden;height:500px;width:600px;"><div id="gmap_canvas" style="height:500px; width:600px;"></div><style>.gmap{position:relative;line-height:1.12;overflow:hidden;color:#000;white-space:nowrap;display:block;margin-bottom:2px;font-weight:500;}</style><iframe src="http://www.embed-google-map.com/addmap.php"><a href="http://www.addlikebutton.net" class="map-data">addlikebutton.net</a></iframe></div>
+
+<script type="text/javascript">
+
+function httpGet(theUrl) {
+    var xmlHttp = null;
+
+    xmlHttp = new XMLHttpRequest();
+    xmlHttp.open("GET", theUrl, false);
+    xmlHttp.send(null);
+    return xmlHttp.responseText;
+}
+
+
+
+  function init_map(){
+      var address = encodeURIComponent("{{school}}")
+      var jsonResponse = jQuery.parseJSON(httpGet("https://maps.googleapis.com/maps/api/geocode/json?address="+address+"&sensor=false&key=AIzaSyBActeEqWee-gv7iH32gAfTpUbfMzym2uA"))
+      var lat = jsonResponse.results[0].geometry.location.lat
+      var lng = jsonResponse.results[0].geometry.location.lng
+      var myOptions = {zoom:14,center:new google.maps.LatLng(lat,lng),mapTypeId: google.maps.MapTypeId.ROADMAP};
+        map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);marker = new google.maps.Marker(
+          {map: map,position: new google.maps.LatLng(lat, lng)});
+            infowindow = new google.maps.InfoWindow(
+              {content:"<span class='gmap'><b>{{park}}</b></span><span class='gmap'>"+jsonResponse.results[0].address_components[1].long_name+" "+jsonResponse.results[0].address_components[2].long_name+"</span><span class='gmap'> "+jsonResponse.results[0].address_components[3].long_name+","+jsonResponse.results[0].address_components[4].long_name+"</span>" });google.maps.event.addListener(marker, "click", function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, "load", init_map);
+        </script>
+</div>
+
+
 </div>
 <!--
 {% if years.0.type == "hitter" %}
