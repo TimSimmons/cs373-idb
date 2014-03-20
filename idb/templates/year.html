@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load humanize %}
 {% load staticfiles %}
   <head>
     <meta charset="utf-8">
@@ -41,7 +42,7 @@
 			AL MVP: {{AL_MVP}}<br>
 			NL MVP: {{NL_MVP}}<br>
 			AL Cy Young: {{AL_CY}}<br>
-			NL CY Young: {{NL_CY}}<br>
+			NL Cy Young: {{NL_CY}}<br>
 		</div>
 	</div>
 	</div>
@@ -56,8 +57,7 @@
 <thead>
 <tr>
 
-      <td>Rank</td><td>Team</td><td>League</td><td>Wins</td><td>Losses</td>
-
+      <th>Rank</th><th>Team</th><th>League</th><th>Wins</th><th>Losses</th>
 
 </tr>
 </thead>
