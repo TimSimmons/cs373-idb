@@ -39,17 +39,12 @@
 			<img src=" {{ images }} " class="img-responsive"><br>
 		</div>
 		<div class="col-md-2">
-			Social: {{social}} <br>
 			Position: {{position}}<br>
 			Bats: {{bats}}<br>
 			Throws: {{throws}}<br>
 			Height: {{height}}<br>
 			Weight: {{weight}}<br>
 			School: {{school}}<br>
-			Years: <br>
-			{%for year in years%}
-			{{year.year}}
-			{%endfor%}
 		</div>
 		<div class="container-fluid">
 	<div class="col-md-3">
@@ -100,19 +95,15 @@ function httpGet(theUrl) {
 <div class="table-responsive">
 <table class="table table-striped">
 <thead>
+<tr>
+<b>
 {% if years.0.type == "hitter" %}
-<tr>
-<b>
-      <td>Year</td><td>Team</td><td>G</td><td>PA</td><td>BA</td><td>OBP</td><td>SLG</td><td>HR</td><td>RBI</td>
-</b>
-</tr>
+      <th>Year</th><th>Team</th><th>G</th><th>PA</th><th>BA</th><th>OBP</th><th>SLG</th><th>HR</th><th>RBI</th>
 {% else %}
-<tr>
-<b>
-      <td>Year</td><td>Team</td><td>W</td><td>L</td><td>G</td><td>GS</td><td>S</td><td>IP</td><td>WHIP</td>
+      <th>Year</th><th>Team</th><th>W</th><th>L</th><th>G</th><th>GS</th><th>S</th><th>IP</th><th>WHIP</th>
+{% endif %}
 </b>
 </tr>
-{% endif %}
 </thead>
 
 <tbody>

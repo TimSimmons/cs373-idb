@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load humanize %}
 {% load staticfiles %}
   <head>
     <meta charset="utf-8">
@@ -40,16 +41,11 @@
 	</div>
 	<div class = "row">
 		<div class="col-md-2">
-			Twitter: {{social}} <br>
 			City: {{city}}<br>
 			State: {{state}}<br>
 			Park: {{park}}<br>
 			Division: {{div}}<br>
 			Manager: {{mgr}}<br>
-			Years:<br>
-			{%for year in years%}
-			{{year.year}}
-			{%endfor%}
 		</div>
 		<div class=container-fluid>
 		<div class="col-md-3">
@@ -108,13 +104,13 @@ function httpGet(theUrl) {
 <thead>
 <tr>
 
-      <td>Year</td><td>Wins</td><td>Losses</td><td>Place</td><td>Attendance</td><td>Playoffs</td><td>Payroll</td>
+<th>Year</th><th>Wins</th><th>Losses</th><th>Place</th><th>Attendance</th><th>Playoffs</th><th>Payroll</th>
 </tr>
 </thead>
 <tbody>
 {% for year in years %}
 <tr>
-      <td>{{ year.year }}</td><td>{{ year.w }}</td><td>{{ year.l }}</td><td>{{ year.standings }}</td><td>{{ year.attend }}</td><td>{{ year.playoffs }}</td><td>{{ year.payroll }}</td>
+      <td>{{ year.year }}</td><td>{{ year.w }}</td><td>{{ year.l }}</td><td>{{ year.standings }}</td><td>{{ year.attend|intcomma }}</td><td>{{ year.playoffs }}</td><td>${{ year.payroll|slice:"1:"|intcomma }}</td>
 </tr>
 {% endfor %}
 </tbody>
