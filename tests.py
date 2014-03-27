@@ -86,7 +86,6 @@ class TestIDB(unittest.TestCase):
         self.assertTrue(request.get_method() == "POST")
         self.assertTrue(response.getcode() == 201)
         self.assertTrue(len(data) == 12)
-        self.assertTrue(data["name"] == "Bryce Harper")
         self.assertTrue(data == expected)
 
     def test_get_player(self):
@@ -113,8 +112,6 @@ class TestIDB(unittest.TestCase):
         self.assertTrue(request.get_method() == "GET")
         self.assertTrue(response.getcode() == 200)
         self.assertTrue(len(data) == 12)
-        self.assertTrue(data["name"] == "Bryce Harper")
-        self.assertTrue(data["position"] == "OF")
         self.assertTrue(data == expected)
    
     def test_modify_player(self):
@@ -142,8 +139,6 @@ class TestIDB(unittest.TestCase):
         self.assertTrue(request.get_method() == "PUT") # bit superfluous
         self.assertTrue(response.getcode() == 200)
         self.assertTrue(len(data) == 12)
-        self.assertTrue(data["name"] == "Bryce Harper")
-        self.assertTrue(data["position"] == "1B")
         self.assertTrue(data == expected)
     
     def test_delete_player(self):
@@ -201,7 +196,6 @@ class TestIDB(unittest.TestCase):
         self.assertTrue(len(data) == 2)
         self.assertTrue(len(data[0]) == len(data[1]))
         self.assertTrue(len(data[0]) == 12)
-        self.assertTrue(data[0]["hr"] == "22")
         self.assertTrue(data == expected)
     
     def test_create_playerYear(self):
@@ -230,8 +224,6 @@ class TestIDB(unittest.TestCase):
         self.assertTrue(request.get_method() == "POST")
         self.assertTrue(response.getcode() == 201)
         self.assertTrue(len(data) == 12)
-        self.assertTrue(data["year"] == "2012")
-        self.assertTrue(data["pa"] == "597")
         self.assertTrue(data == expected)
 
     def test_get_playerYear(self):
