@@ -1,10 +1,19 @@
 from django.shortcuts import render
 import datetime
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 from idb.data import *
+from idb.models import *
+from django.forms.models import model_to_dict
 
 def home(request):
     return render(request, "index.html")
+
+def player_model(request, player_id):
+    try:
+        player = Player.objects.get(id=player_id)
+    except Player.DoesNotExist:
+       raise Http404
+    return render(request, "player_model.html", {'player':player} )
 
 def player(request, player_id):
     if player_id == "01":
