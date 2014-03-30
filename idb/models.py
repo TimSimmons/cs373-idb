@@ -75,7 +75,7 @@ class Player_Year(models.Model):
     Player models.
     """
     player = models.ForeignKey(Player, related_name='years')
-    #team_year = models.ForeignKey('Team_Year', related_name='player_years') #Let's add this a little later
+    team_year = models.ForeignKey('Team_Year', related_name='player_years') 
     year = models.ForeignKey(Year, related_name='player_years')
     games = models.IntegerField()
     type = models.CharField(max_length=10) #choices = hitter/pitcher
