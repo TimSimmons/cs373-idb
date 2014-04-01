@@ -24,6 +24,7 @@ class Player(models.Model):
     social = models.CharField(max_length=30)
 
 
+
 class Team(models.Model):
     """
     Conatins static information about a team.
@@ -42,6 +43,17 @@ class Team(models.Model):
     div = models.CharField(max_length=10)
     mgr = models.CharField(max_length=30)
     social = models.CharField(max_length=30)
+    
+    def __str__(self):
+      return "name: " + self.name + \
+      "\nabbr: " + self.abbr + \
+      "\ncity: " + self.city + \
+      "\nstate: " + self.state + \
+      "\npark: " + self.park + \
+      "\ndiv: " + self.div + \
+      "\nmgr: " + self.mgr + \
+      "\nsocial: " + self.social
+      
 
 
 class Year(models.Model):
@@ -113,6 +125,16 @@ class Team_Year(models.Model):
     playoffs = models.CharField(max_length=20)
     attend = models.IntegerField()
     payroll = models.IntegerField()
+    
+    def __str__(self):
+      return "team: " + self.team.name + \
+	     "\nyear: " + self.year.year + \
+	     "\nwins: " + str(self.wins) + \
+	     "\nlosses: " + str(self.losses) + \
+	     "\nstanding: " + str(self.standing) + \
+	     "\nplayoffs: " + self.playoffs + \
+	     "\nattend: " + str(self.attend) + \
+	     "\npayroll: " + str(self.payroll)
 
 class Player_Image(models.Model):
     """
@@ -127,5 +149,9 @@ class Team_Image(models.Model):
     """
     team = models.ForeignKey(Team, related_name='images')
     image = models.URLField()
-    type = models.CharField(max_length=10) #choices logo/park?
-
+    kind = models.CharField(max_length=10) #choices logo/park?
+  
+    def __str__(self):
+      return "team: " + str(self.team.name) + \
+	     "\nimage: " + str(self.image) + \
+	     "\nkind: " + str(self.kind)
