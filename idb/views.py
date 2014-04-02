@@ -23,7 +23,7 @@ def team_model(request, team_id):
 
 def year_model(request, year_id):
     try:
-        year = Year.objects.get(id=year_id)
+        year = Year.objects.get(year=year_id)
         standings = json.loads(year.standings)
     except Year.DoesNotExist:
        raise Http404
