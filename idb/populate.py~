@@ -15,7 +15,7 @@ def populate_teams():
   for team in teams:
     # Create a Team and Team_Image model
     t = Team(**team["team"])
-    i = Team_Image(team=t, image=team["image"], kind="default")
+    i = Team_Image(team=t, image=team["image"])
     t.save()
     i.save()
     print "\n" + str(t) 
