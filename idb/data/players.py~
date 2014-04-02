@@ -24,5 +24,3 @@ yu = dict(player=yu_player, image=yu_image, years=yu_years)
 
 # Leave out yu because we don't have a Texas team in the DB
 players = [bryce, mike]
-
-print hey
