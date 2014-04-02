@@ -5,12 +5,13 @@ import os
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings")
 from models import *
 
+
 def populate_years():
   for year in years:
     y = Year(**year)
     y.save()
-  print Year.objects.all()
   
+
 def populate_teams():
   for team in teams:
     # Create a Team and Team_Image model
@@ -18,17 +19,16 @@ def populate_teams():
     i = Team_Image(team=t, image=team["image"], kind="default")
     t.save()
     i.save()
-    print "\n" + str(t) 
-    print "\n" + str(i)
     for team_year in team["years"]:
       y = Year.objects.get(year=team_year.pop("year", None))      
       ty = Team_Year(team=t, year=y, **team_year)
       ty.save()
-    
+
+
 def populate_players():
   for player in players:
     p = Player(**player["player"])
-    i = Player_Image(image=player["image"])
+    i = Player_Image(image=player["image"], kind="default")
     p.save()
     i.save()
     for player_year in player["years"]:
@@ -36,6 +36,5 @@ def populate_players():
       t = Team.objects.get(name=player_year.pop("team", None))
       py = Player_Year(player=p, team=t, **player_year)
       py.save()
-  
-#endfor
+
    

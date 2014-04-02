@@ -46,13 +46,13 @@ class Team(models.Model):
     
     def __str__(self):
       return "name: " + self.name + \
-      "\nabbr: " + self.abbr + \
-      "\ncity: " + self.city + \
-      "\nstate: " + self.state + \
-      "\npark: " + self.park + \
-      "\ndiv: " + self.div + \
-      "\nmgr: " + self.mgr + \
-      "\nsocial: " + self.social
+             "\nabbr: " + self.abbr + \
+             "\ncity: " + self.city + \
+             "\nstate: " + self.state + \
+             "\npark: " + self.park + \
+             "\ndiv: " + self.div + \
+             "\nmgr: " + self.mgr + \
+             "\nsocial: " + self.social
       
 
 
@@ -86,7 +86,6 @@ class Player_Year(models.Model):
     The Player_Year model has a many to one relationship with the Team_Year, Year, and
     Player models.
     """
-    _id = models.AutoField(primary_key=True)
     player = models.ForeignKey(Player, related_name='years')
     team_year = models.ForeignKey('Team_Year', related_name='player_years') 
     year = models.ForeignKey(Year, related_name='player_years')
@@ -129,13 +128,13 @@ class Team_Year(models.Model):
     
     def __str__(self):
       return "team: " + self.team.name + \
-	     "\nyear: " + self.year.year + \
-	     "\nwins: " + str(self.wins) + \
-	     "\nlosses: " + str(self.losses) + \
-	     "\nstanding: " + str(self.standing) + \
-	     "\nplayoffs: " + self.playoffs + \
-	     "\nattend: " + str(self.attend) + \
-	     "\npayroll: " + str(self.payroll)
+    	     "\nyear: " + self.year.year + \
+    	     "\nwins: " + str(self.wins) + \
+    	     "\nlosses: " + str(self.losses) + \
+    	     "\nstanding: " + str(self.standing) + \
+    	     "\nplayoffs: " + self.playoffs + \
+    	     "\nattend: " + str(self.attend) + \
+    	     "\npayroll: " + str(self.payroll)
 
 class Player_Image(models.Model):
     """
@@ -155,5 +154,5 @@ class Team_Image(models.Model):
   
     def __str__(self):
       return "team: " + str(self.team.name) + \
-	     "\nimage: " + str(self.image) + \
-	     "\nkind: " + str(self.kind)
+    	     "\nimage: " + str(self.image) + \
+    	     "\nkind: " + str(self.kind)
