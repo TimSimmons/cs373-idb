@@ -22,8 +22,9 @@ class Player(models.Model):
     weight = models.IntegerField()
     school = models.CharField(max_length=50)
     social = models.CharField(max_length=30)
-
-
+    
+    def gen_link(self):
+        return '''<a href="/players/'''+self.id+''' ">'''+self.name+'''</a>'''
 
 class Team(models.Model):
     """
@@ -54,6 +55,8 @@ class Team(models.Model):
              "\nmgr: " + self.mgr + \
              "\nsocial: " + self.social
       
+    def gen_link(self):
+      return '''<a href="/teams/'''+self.abbr+''' ">'''+self.abbr+'''</a>'''
 
 
 class Year(models.Model):
@@ -73,6 +76,8 @@ class Year(models.Model):
     AL_CY = models.CharField(max_length=30)
     standings = models.TextField()
 
+    def gen_link(self):
+      return '''<a href="/years/'''+self.year+''' ">'''+self.year+'''</a>'''
 
 
 class Team_Year(models.Model):
