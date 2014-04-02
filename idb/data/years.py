@@ -1,4 +1,4 @@
-year_2013 = { "id": "2013", "champion": "Boston Red Sox", "AL_MVP": "Miguel Cabrera", "NL_MVP": "Andrew McCutchen", "AL_CY": "Max Scherzer", "NL_CY": "Clayton Kershaw", 
+year_2013 = { "year": "2013", "champion": "Boston Red Sox", "AL_MVP": "Miguel Cabrera", "NL_MVP": "Andrew McCutchen", "AL_CY": "Max Scherzer", "NL_CY": "Clayton Kershaw", 
 		      "standings": [ { "rank": 1, "team": "BOS", "league": "AL", "wins": 97, "losses": 65 }, 
 						    { "rank": 2, "team": "STL", "league": "NL", "wins": 97, "losses": 65 }, 
 						    { "rank": 3, "team": "OAK", "league": "AL", "wins": 96, "losses": 66 }, 
@@ -30,7 +30,7 @@ year_2013 = { "id": "2013", "champion": "Boston Red Sox", "AL_MVP": "Miguel Cabr
 						    { "rank": 29, "team": "MIA", "league": "NL", "wins": 62, "losses": 100 }, 
 						    { "rank": 30, "team": "HOU", "league": "AL", "wins": 51, "losses": 111 }]}
 			    
-year_2012 = { "id": "2012", "champion": "San Francisco Giants", "AL_MVP": "Miguel Cabrera", "NL_MVP": "Buster Posey", "AL_CY": "David Price", "NL_CY": "RA Dickey", 
+year_2012 = { "year": "2012", "champion": "San Francisco Giants", "AL_MVP": "Miguel Cabrera", "NL_MVP": "Buster Posey", "AL_CY": "David Price", "NL_CY": "RA Dickey", 
 		      "standings": [ { "rank": 1, "team": "WSN", "league": "NL", "wins": 98, "losses": 64 }, 
 						    { "rank": 2, "team": "CIN", "league": "NL", "wins": 97, "losses": 65 }, 
 						    { "rank": 3, "team": "NYY", "league": "AL", "wins": 95, "losses": 67 }, 
@@ -61,7 +61,7 @@ year_2012 = { "id": "2012", "champion": "San Francisco Giants", "AL_MVP": "Migue
 						    { "rank": 28, "team": "COL", "league": "NL", "wins": 64, "losses": 98 }, 
 						    { "rank": 29, "team": "CHC", "league": "NL", "wins": 61, "losses": 101 }, 
 						    { "rank": 30, "team": "HOU", "league": "NL", "wins": 55, "losses": 107 }]}
-year_2011 = { "id": "2011", "champion": "St. Louis Cardinals", "AL_MVP": "Justin Verlander", "NL_MVP": "Ryan Braun", "AL_CY": "Justin Verlander", "NL_CY": "Clayton Kershaw", 
+year_2011 = { "year": "2011", "champion": "St. Louis Cardinals", "AL_MVP": "Justin Verlander", "NL_MVP": "Ryan Braun", "AL_CY": "Justin Verlander", "NL_CY": "Clayton Kershaw", 
 			  "standings": [ 
 			  				{ "rank": 1, "team": "PHI", "league": "NL", "wins": 102, "losses": 60 }, 
 			  				{ "rank": 2, "team": "NYY", "league": "AL", "wins": 97, "losses": 65 }, 
@@ -93,7 +93,7 @@ year_2011 = { "id": "2011", "champion": "St. Louis Cardinals", "AL_MVP": "Justin
 							{ "rank": 28, "team": "SEA", "league": "AL", "wins": 67, "losses": 95 }, 
 							{ "rank": 29, "team": "MIN", "league": "AL", "wins": 63, "losses": 99 }, 
 							{ "rank": 30, "team": "HOU", "league": "NL", "wins": 56, "losses": 106 }]}
-year_2010 = { "id": "2010", "champion": "San Francisco Giants", "AL_MVP": "Josh Hamilton", "NL_MVP": "Joey Votto", "AL_CY": "Felix Hernandez", "NL_CY": "Roy Halladay", 
+year_2010 = { "year": "2010", "champion": "San Francisco Giants", "AL_MVP": "Josh Hamilton", "NL_MVP": "Joey Votto", "AL_CY": "Felix Hernandez", "NL_CY": "Roy Halladay", 
 			  "standings": [ 
 			  				{ "rank": 1, "team": "PHI", "league": "NL", "wins": 97, "losses": 65 }, 
 			  				{ "rank": 2, "team": "TBR", "league": "AL", "wins": 96, "losses": 66 }, 
@@ -124,7 +124,7 @@ year_2010 = { "id": "2010", "champion": "San Francisco Giants", "AL_MVP": "Josh 
 							{ "rank": 28, "team": "ARI", "league": "NL", "wins": 65, "losses": 97 }, 
 							{ "rank": 29, "team": "SEA", "league": "AL", "wins": 61, "losses": 101 }, 
 							{ "rank": 30, "team": "PIT", "league": "NL", "wins": 57, "losses": 105 }]}
-year_2009 = { "id": "2009", "champion": "New York Yankees", "AL_MVP": "Joe Mauer", "NL_MVP": "Albert Pujols", "AL_CY": "Zach Greinke", "NL_CY": "Tim Lincecum", 
+year_2009 = { "year": "2009", "champion": "New York Yankees", "AL_MVP": "Joe Mauer", "NL_MVP": "Albert Pujols", "AL_CY": "Zach Greinke", "NL_CY": "Tim Lincecum", 
 			  "standings": [ 
 			  				{ "rank": 1, "team": "NYY", "league": "AL", "wins": 103, "losses": 59 }, 
 			  				{ "rank": 2, "team": "LAA", "league": "AL", "wins": 97, "losses": 65 }, 
@@ -156,7 +156,7 @@ year_2009 = { "id": "2009", "champion": "New York Yankees", "AL_MVP": "Joe Mauer
 							{ "rank": 28, "team": "BAL", "league": "AL", "wins": 64, "losses": 98 }, 
 							{ "rank": 29, "team": "PIT", "league": "NL", "wins": 62, "losses": 99 }, 
 							{ "rank": 30, "team": "WSN", "league": "NL", "wins": 59, "losses": 103 }]}
-year_2008 = { "id": "2008", "champion": "Philadelphia Phillies", "AL_MVP": "Dustin Pedroia", "NL_MVP": "Albert Pujols", "AL_CY": "Cliff Lee", "NL_CY": "Tim Lincecum", 
+year_2008 = { "year": "2008", "champion": "Philadelphia Phillies", "AL_MVP": "Dustin Pedroia", "NL_MVP": "Albert Pujols", "AL_CY": "Cliff Lee", "NL_CY": "Tim Lincecum", 
 			  "standings": [ 
 			  				{ "rank": 1, "team": "LAA", "league": "AL", "wins": 100, "losses": 62 }, 
 			  				{ "rank": 2, "team": "CHC", "league": "NL", "wins": 97, "losses": 64 }, 
@@ -188,7 +188,7 @@ year_2008 = { "id": "2008", "champion": "Philadelphia Phillies", "AL_MVP": "Dust
 							{ "rank": 28, "team": "SDP", "league": "NL", "wins": 63, "losses": 99 }, 
 							{ "rank": 29, "team": "SEA", "league": "AL", "wins": 61, "losses": 101 }, 
 							{ "rank": 30, "team": "WSN", "league": "NL", "wins": 59, "losses": 102 }]}
-year_2007 = { "id": "2007", "champion": "Boston Red Sox", "AL_MVP": "Alex Rodriguez", "NL_MVP": "Jimmy Rollins", "AL_CY": "CC Sabathia", "NL_CY": "Jake Peavy", 
+year_2007 = { "year": "2007", "champion": "Boston Red Sox", "AL_MVP": "Alex Rodriguez", "NL_MVP": "Jimmy Rollins", "AL_CY": "CC Sabathia", "NL_CY": "Jake Peavy", 
 			  "standings": [ 
 			  				{ "rank": 1, "team": "CLE", "league": "AL", "wins": 96, "losses": 66 }, 
 			  				{ "rank": 2, "team": "BOS", "league": "AL", "wins": 96, "losses": 66 }, 
@@ -220,7 +220,7 @@ year_2007 = { "id": "2007", "champion": "Boston Red Sox", "AL_MVP": "Alex Rodrig
 			 				{ "rank": 28, "team": "KCR", "league": "AL", "wins": 69, "losses": 93 }, 
 							{ "rank": 29, "team": "PIT", "league": "NL", "wins": 68, "losses": 94 }, 
 							{ "rank": 30, "team": "TBD", "league": "AL", "wins": 66, "losses": 96 }]}
-year_2006 = { "id": "2006", "champion": "St. Louis Cardinals", "AL_MVP": "Justin Morneau", "NL_MVP": "Ryan Howard", "AL_CY": "Johan Santana", "NL_CY": "Brandon Webb", 
+year_2006 = { "year": "2006", "champion": "St. Louis Cardinals", "AL_MVP": "Justin Morneau", "NL_MVP": "Ryan Howard", "AL_CY": "Johan Santana", "NL_CY": "Brandon Webb", 
 			  "standings": [ 
 			  				{ "rank": 1, "team": "NYM", "league": "NL", "wins": 97, "losses": 65 }, 
 			  				{ "rank": 2, "team": "NYY", "league": "AL", "wins": 97, "losses": 65 }, 
@@ -252,7 +252,7 @@ year_2006 = { "id": "2006", "champion": "St. Louis Cardinals", "AL_MVP": "Justin
 							{ "rank": 28, "team": "CHC", "league": "NL", "wins": 66, "losses": 96 }, 
 							{ "rank": 29, "team": "KCR", "league": "AL", "wins": 62, "losses": 100 }, 
 							{ "rank": 30, "team": "TBD", "league": "AL", "wins": 61, "losses": 101 }]}
-year_2005 = { "id": "2005", "champion": "Chicago White Sox", "AL_MVP": "Alex Rodriguez", "NL_MVP": "Albert Pujols", "AL_CY": "Bartolo Colon", "NL_CY": "Chris Carpenter", 
+year_2005 = { "year": "2005", "champion": "Chicago White Sox", "AL_MVP": "Alex Rodriguez", "NL_MVP": "Albert Pujols", "AL_CY": "Bartolo Colon", "NL_CY": "Chris Carpenter", 
 			  "standings": [ 
 			  				{ "rank": 1, "team": "STL", "league": "NL", "wins": 100, "losses": 62 }, 
 			  				{ "rank": 2, "team": "CHW", "league": "AL", "wins": 99, "losses": 63 }, 
@@ -284,7 +284,7 @@ year_2005 = { "id": "2005", "champion": "Chicago White Sox", "AL_MVP": "Alex Rod
 							{ "rank": 28, "team": "COL", "league": "NL", "wins": 67, "losses": 95 }, 
 							{ "rank": 29, "team": "PIT", "league": "NL", "wins": 67, "losses": 95 }, 
 							{ "rank": 30, "team": "KCR", "league": "AL", "wins": 56, "losses": 106 }]}
-year_2004 = { "id": "2004", "champion": "Boston Red Sox", "AL_MVP": "Vladimir Guerrero", "NL_MVP": "Barry Bonds", "AL_CY": "Johan Santana", "NL_CY": "Roger Clemens", 
+year_2004 = { "year": "2004", "champion": "Boston Red Sox", "AL_MVP": "Vladimir Guerrero", "NL_MVP": "Barry Bonds", "AL_CY": "Johan Santana", "NL_CY": "Roger Clemens", 
 			  "standings": [ 
 			  				{ "rank": 1, "team": "STL", "league": "NL", "wins": 105, "losses": 57 }, 
 			  				{ "rank": 2, "team": "NYY", "league": "AL", "wins": 101, "losses": 61 }, 

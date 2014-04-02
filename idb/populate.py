@@ -16,8 +16,8 @@ def populate_teams():
   for team in teams:
     # Create a Team and Team_Image model
     t = Team(**team["team"])
-    i = Team_Image(team=t, image=team["image"], kind="default")
     t.save()
+    i = Team_Image(team=t, image=team["image"], kind="default")
     i.save()
     for team_year in team["years"]:
       y = Year.objects.get(year=team_year.pop("year", None))      
@@ -28,13 +28,18 @@ def populate_teams():
 def populate_players():
   for player in players:
     p = Player(**player["player"])
-    i = Player_Image(image=player["image"], kind="default")
     p.save()
+    i = Player_Image(player=p, image=player["image"], kind="default")
     i.save()
     for player_year in player["years"]:
       y = Year.objects.get(year=player_year.pop("year", None))
       t = Team.objects.get(name=player_year.pop("team", None))
-      py = Player_Year(player=p, team=t, **player_year)
+      
+      # get the associated team_year
+      tyk = y.team_years.filter(team=t)
+      ty = Team_Year.objects.get(pk=tyk)
+      print ty
+      py = Player_Year(player=p, team_year=ty, year=y ,**player_year)
       py.save()
 
    

@@ -20,7 +20,7 @@ class Player(models.Model):
     throws = models.CharField(max_length=1)
     height = models.IntegerField()
     weight = models.IntegerField()
-    school = models.CharField(max_length=30)
+    school = models.CharField(max_length=50)
     social = models.CharField(max_length=30)
 
 
@@ -74,38 +74,6 @@ class Year(models.Model):
     standings = models.TextField()
 
 
-class Player_Year(models.Model):
-    """
-    Contains player statistics for a given year.
-
-    The Player_Year model holds information about a player which
-    is likely to change from year to year. For example, any yearly
-    statistics such as batting average or the team the player played
-    for that specific year would be attributes of this model.
-
-    The Player_Year model has a many to one relationship with the Team_Year, Year, and
-    Player models.
-    """
-    player = models.ForeignKey(Player, related_name='years')
-    team_year = models.ForeignKey('Team_Year', related_name='player_years') 
-    year = models.ForeignKey(Year, related_name='player_years')
-    games = models.IntegerField()
-    kind = models.CharField(max_length=10) #choices = hitter/pitcher
-    # hitting stats
-    pa = models.IntegerField(blank=True, null=True)
-    avg = models.FloatField(blank=True, null=True)
-    obp = models.FloatField(blank=True, null=True)
-    slg = models.FloatField(blank=True, null=True)
-    hr = models.IntegerField(blank=True, null=True)
-    rbi = models.IntegerField(blank=True, null=True)
-    #pitching stats
-    w = models.IntegerField(blank=True, null=True)
-    l = models.IntegerField(blank=True, null=True)
-    era = models.FloatField(blank=True, null=True)
-    gs = models.IntegerField(blank=True, null=True)
-    s = models.IntegerField(blank=True, null=True)
-    ip = models.IntegerField(blank=True, null=True)
-    whip = models.FloatField(blank=True, null=True)
 
 class Team_Year(models.Model):
     """
@@ -136,13 +104,52 @@ class Team_Year(models.Model):
     	     "\nattend: " + str(self.attend) + \
     	     "\npayroll: " + str(self.payroll)
 
+class Player_Year(models.Model):
+    """
+    Contains player statistics for a given year.
+
+    The Player_Year model holds information about a player which
+    is likely to change from year to year. For example, any yearly
+    statistics such as batting average or the team the player played
+    for that specific year would be attributes of this model.
+
+    The Player_Year model has a many to one relationship with the Team_Year, Year, and
+    Player models.
+    """
+    player = models.ForeignKey(Player, related_name='years')
+    team_year = models.ForeignKey(Team_Year, related_name='player_years') 
+    year = models.ForeignKey(Year, related_name='player_years')
+    games = models.IntegerField()
+    kind = models.CharField(max_length=10) #choices = hitter/pitcher
+    # hitting stats
+    pa = models.IntegerField(blank=True, null=True)
+    avg = models.FloatField(blank=True, null=True)
+    obp = models.FloatField(blank=True, null=True)
+    slg = models.FloatField(blank=True, null=True)
+    hr = models.IntegerField(blank=True, null=True)
+    rbi = models.IntegerField(blank=True, null=True)
+    #pitching stats
+    w = models.IntegerField(blank=True, null=True)
+    l = models.IntegerField(blank=True, null=True)
+    era = models.FloatField(blank=True, null=True)
+    gs = models.IntegerField(blank=True, null=True)
+    s = models.IntegerField(blank=True, null=True)
+    ip = models.IntegerField(blank=True, null=True)
+    whip = models.FloatField(blank=True, null=True)
+
+    	     
 class Player_Image(models.Model):
     """
     An image for a player
     """
     player = models.ForeignKey(Player, related_name='images')
     image = models.URLField() #might need type, but not sure what for
-    kind = models.CharField(max_length=10, null=True)
+    kind = models.CharField(max_length=10, blank=True, null=True)
+    
+    def __str__(self):
+      return "player: " + str(self.player.name) + \
+    	     "\nimage: " + str(self.image) + \
+    	     "\nkind: " + str(self.kind)
     
 class Team_Image(models.Model):
     """
@@ -150,7 +157,7 @@ class Team_Image(models.Model):
     """
     team = models.ForeignKey(Team, related_name='images')
     image = models.URLField()
-    kind = models.CharField(max_length=10, null=True) #choices logo/park?
+    kind = models.CharField(max_length=10, blank=True, null=True) #choices logo/park?
   
     def __str__(self):
       return "team: " + str(self.team.name) + \
