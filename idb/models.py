@@ -99,8 +99,8 @@ class Player_Year(models.Model):
     hr = models.IntegerField(blank=True, null=True)
     rbi = models.IntegerField(blank=True, null=True)
     #pitching stats
-    wins = models.IntegerField(blank=True, null=True)
-    losses = models.IntegerField(blank=True, null=True)
+    w = models.IntegerField(blank=True, null=True)
+    l = models.IntegerField(blank=True, null=True)
     era = models.FloatField(blank=True, null=True)
     gs = models.IntegerField(blank=True, null=True)
     s = models.IntegerField(blank=True, null=True)
