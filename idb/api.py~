@@ -130,8 +130,8 @@ def player_years(request, player_id):
   #POST
   if request.method == 'POST':
     body = json.loads(request.body)
-    team = Team.objects.get(id=body["team_id"])
-    year = Year.objects.get(id=body["year_id"])
+    team = Team.objects.get(id=body["team_id"]
+    year = Year.objects.get(id=body["year_id"]
     player_year = Player_Year(year=year, team=team, **body)
     player_year.save()
     response = HttpResponse(serializers.serialize('json', [ player_year, ]), content_type="application/json")
