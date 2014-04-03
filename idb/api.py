@@ -26,7 +26,7 @@ def player(request, player_id):
 def players(request):
   #GET 
   if request.method == 'GET':
-    players = Player.objects
+    players = Player.objects.all()
     response = HttpResponse(serializers.serialize('json', players), content_type="application/json")
   #POST
   if request.method == 'POST':
@@ -56,7 +56,7 @@ def team(request, team_id):
 def teams(request):
   #GET
   if request.method == 'GET':
-    teams = Team.objects
+    teams = Team.objects.all()
     response = HttpResponse(serializers.serialize('json', teams ), content_type="application/json")
   #POST
   if request.method == 'POST':
@@ -86,7 +86,7 @@ def year(request, year_id):
 def years(request):
   #GET 
   if request.method == 'GET':
-    years = Year.objects
+    years = Year.objects.all()
     response = HttpResponse(serializers.serialize('json', years), content_type="application/json")
   #POST
   if request.method == 'POST':
