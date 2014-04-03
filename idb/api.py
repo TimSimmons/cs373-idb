@@ -7,25 +7,25 @@ from django.views.decorators.csrf import csrf_exempt
 
 @csrf_exempt
 def player(request, player_id):
-    # GET
-    if request.method == 'GET':
-      player = Player.objects.get(id=player_id)
-      response = HttpResponse(serializers.serialize('json', [ player, ]), content_type="application/json")
-    # PUT
-    if request.method == 'PUT':
-      player = Player.objects.get(id=player_id)
-      body = json.loads(request.body)
-      for k,v in body.items():
-	setattr(player, k, v)
-	player.save() 
-      response = HttpResponse(serializers.serialize('json', [ player, ]), content_type="application/json")
-    #DELETE
-    if request.method == 'DELETE':
-      player = Player.objects.get(id=player_id)
-      player.delete()
-      response = HttpResponse()
-      response.status_code = 204
-    return response
+  # GET
+  if request.method == 'GET':
+    player = Player.objects.get(id=player_id)
+    response = HttpResponse(serializers.serialize('json', [ player, ]), content_type="application/json")
+  # PUT
+  if request.method == 'PUT':
+    player = Player.objects.get(id=player_id)
+    body = json.loads(request.body)
+    for k,v in body.items():
+      setattr(player, k, v)
+      player.save() 
+    response = HttpResponse(serializers.serialize('json', [ player, ]), content_type="application/json")
+  #DELETE
+  if request.method == 'DELETE':
+    player = Player.objects.get(id=player_id)
+    player.delete()
+    response = HttpResponse()
+    response.status_code = 204
+  return response
   
 
 @csrf_exempt
@@ -95,10 +95,10 @@ def year(request, year_id):
     response = HttpResponse(serializers.serialize('json', [ year, ]), content_type="application/json")
   #DELETE
   if request.method == 'DELETE':
-      year = Year.objects.get(year=year_id)
-      year.delete()
-      response = HttpResponse()
-      response.status_code = 204
+    year = Year.objects.get(year=year_id)
+    year.delete()
+    response = HttpResponse()
+    response.status_code = 204
   return response
 
 
@@ -183,14 +183,20 @@ def team_year(request, team_id, year_id):
   """
     teams/{id}/year/{id}
   """
-  if request.method == 'GET':
-    team = Team.objects.get(id=team_id)
+  team = Team.objects.get(id=team_id)
     ty_key = team.years.filter(year=year_id)
     team_year = Team_Year.objects.get(pk=ty_key)
+  if request.method == 'GET':
     response = HttpResponse(serializers.serialize('json', [ team_year, ]), content_type="application/json")
   if request.method == 'PUT':
-    pass
+    body = json.loads(body)
+    for k,v in body.items():
+      setattr(team_year, k, v)
+      team_year.save()
+      response = HttpResponse(serializers.serialize('json', [ team_year, ]), content_type="application/json")
   if request.method == 'DELETE':
-    pass
+    team_year.delete()
+    response = response = HttpResponse()
+    response.status_code = 204
   return response
   
