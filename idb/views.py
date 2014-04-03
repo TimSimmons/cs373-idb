@@ -36,3 +36,23 @@ def year(request, year_id):
     except Year.DoesNotExist:
        raise Http404
     return render(request, "year.html", {'year':year, 'standings':team_years} )
+
+def players(request):
+    try:
+        players = Player.objects.all()
+    except:
+       raise Http404
+    return render(request, "player-list.html", {'players':players} )
+
+def teams(request):
+    try:
+        teams = Team.objects.all()
+    except:
+       raise Http404
+    return render(request, "team-list.html", {'teams':teams} )
+def years(request):
+    try:
+        years = Year.objects.all()
+    except:
+       raise Http404
+    return render(request, "year-list.html", {'years':years} )
