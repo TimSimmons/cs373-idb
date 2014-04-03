@@ -16,8 +16,13 @@ urlpatterns = patterns('',
     url(r'^years/(\d{4})/$', year),
     url(r'^admin/', include(admin.site.urls)),
     
+    url(r'^api/players/', api.players),
     url(r'^api/players/(\d{2})/$', api.player),
+    
+    url(r'^api/teams/', api.teams),
     url(r'^api/teams/(\d{2})/$', api.team),
+    
+    url(r'^api/years/', api.years),
     url(r'^api/years/(\d{4})/$', api.year)
 )
 
