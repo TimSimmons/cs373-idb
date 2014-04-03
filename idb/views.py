@@ -24,10 +24,11 @@ def team_model(request, team_id):
 def year_model(request, year_id):
     try:
         year = Year.objects.get(year=year_id)
-        standings = json.loads(year.standings)
+        team_years = year.team_years.all().order_by('-wins')
+        #standings = json.loads(year.standings)
     except Year.DoesNotExist:
        raise Http404
-    return render(request, "year_model.html", {'year':year, 'standings':standings} )
+    return render(request, "year_model.html", {'year':year, 'standings':team_years} )
 
 def player(request, player_id):
     if player_id == "01":
