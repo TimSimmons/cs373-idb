@@ -19,6 +19,12 @@ def player(request, player_id):
 	setattr(player, k, v)
 	player.save() 
       response = HttpResponse(serializers.serialize('json', [ player, ]), content_type="application/json")
+    #DELETE
+    if request.method == 'DELETE':
+      player = Player.objects.get(id=player_id)
+      player.delete()
+      response = HttpResponse()
+      response.status_code = 204
     return response
   
 
@@ -50,6 +56,12 @@ def team(request, team_id):
       setattr(team, k, v)
       team.save()
     response = HttpResponse(serializers.serialize('json', [ team, ]), content_type="application/json")
+  #DELETE
+  if request.method == 'DELETE':
+      team = Team.objects.get(id=team_id)
+      team.delete()
+      response = HttpResponse()
+      response.status_code = 204
   return response
  
 
@@ -66,7 +78,7 @@ def teams(request):
     team.save()
     response = HttpResponse(serializers.serialize('json', [ team, ]), content_type="application/json")
   return response
- 
+
  
 @csrf_exempt
 def year(request, year_id):
@@ -81,6 +93,12 @@ def year(request, year_id):
       setattr(year, k, v)
       year.save()
     response = HttpResponse(serializers.serialize('json', [ year, ]), content_type="application/json")
+  #DELETE
+  if request.method == 'DELETE':
+      year = Year.objects.get(year=year_id)
+      year.delete()
+      response = HttpResponse()
+      response.status_code = 204
   return response
 
 
