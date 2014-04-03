@@ -83,7 +83,7 @@
 <tbody>
 {% for y in standings %}
 <tr>
-      <td>{{ forloop.counter }}</td><td>{{ y.team.abbr }}</td><td>{{ y.wins }}</td><td>{{ y.losses }}</td>
+      <td>{{ forloop.counter }}</td><td><a href="{{ y.team.gen_link }}">{{ y.team.abbr }}</a></td><td>{{ y.wins }}</td><td>{{ y.losses }}</td>
 </tr>
 {% endfor %}
 </tbody>
