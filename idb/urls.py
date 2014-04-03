@@ -2,11 +2,14 @@ from django.conf.urls import patterns, include, url
 
 from django.contrib import admin
 import idb.api as api
-from idb.views import home, player, team, year, team_abbr
+from idb.views import home, player, team, year, team_abbr, players, teams, years
 admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^$', home),
+    url(r'^players/$', players),
+    url(r'^teams/$', teams),
+    url(r'^years/$', years),
     url(r'^players/(\d*)/$', player),
     url(r'^teams/(\d*)/$', team),
     url(r'^teams/([A-Za-z]{3})/$', team_abbr),
