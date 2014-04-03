@@ -42,4 +42,7 @@ def populate_players():
       py = Player_Year(player=p, team_year=ty, year=y ,**player_year)
       py.save()
 
-   
+def populate_all():
+  populate_years()
+  populate_teams()
+  populate_years()
