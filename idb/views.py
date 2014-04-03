@@ -39,20 +39,20 @@ def year(request, year_id):
 
 def players(request):
     try:
-        players = Player.objects.all()
+        players = Player.objects.all().order_by('name')
     except:
        raise Http404
     return render(request, "player-list.html", {'players':players} )
 
 def teams(request):
     try:
-        teams = Team.objects.all()
+        teams = Team.objects.all().order_by('name')
     except:
        raise Http404
     return render(request, "team-list.html", {'teams':teams} )
 def years(request):
     try:
-        years = Year.objects.all()
+        years = Year.objects.all().order_by('year')
     except:
        raise Http404
     return render(request, "year-list.html", {'years':years} )
