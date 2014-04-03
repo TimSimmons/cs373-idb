@@ -35,26 +35,26 @@
 	<div class = "container-fluid">
 	<div class="row">
 		<div class="col-md-2">
-			<img src=" {{ images }} " class="img-responsive"><br>
+			<img src=" {{ team.images.all.0.image }} " class="img-responsive"><br>
 		</div>
-		<h1> {{ name }}  </h1>
+		<h1> {{ team.name }}  </h1>
 	</div>
 	<div class = "row">
 		<div class="col-md-2">
-			City: {{city}}<br>
-			State: {{state}}<br>
-			Park: {{park}}<br>
-			Division: {{div}}<br>
-			Manager: {{mgr}}<br>
+			City: {{ team.city }}<br>
+			State: {{ team.state }}<br>
+			Park: {{ team.park }}<br>
+			Division: {{ team.div }}<br>
+			Manager: {{ team.mgr }}<br>
 		</div>
 		<div class=container-fluid>
 		<div class="col-md-3">
 
 
-   		<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/{{social}}"
+   		<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/{{ team.social}}"
   		data-widget-id="446046951486676992"
-   		data-screen-name="{{social|slice:"1:"}}" data-show-replies="false" width="300" height="300" 
-		>Tweets by {{social}}</a>
+   		data-screen-name="{{ team.social|slice:"1:"}}" data-show-replies="false" width="300" height="300" 
+		>Tweets by {{ team.social }}</a>
    		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 	
 		</div>
@@ -76,7 +76,7 @@ function httpGet(theUrl) {
 
 
   function init_map(){
-      var address = encodeURIComponent("{{park}},{{state}}")
+      var address = encodeURIComponent("{{team.park}},{{team.state}}")
       var jsonResponse = jQuery.parseJSON(httpGet("https://maps.googleapis.com/maps/api/geocode/json?address="+address+"&sensor=false&key=AIzaSyBActeEqWee-gv7iH32gAfTpUbfMzym2uA"))
       var lat = jsonResponse.results[0].geometry.location.lat
       var lng = jsonResponse.results[0].geometry.location.lng
@@ -108,9 +108,9 @@ function httpGet(theUrl) {
 </tr>
 </thead>
 <tbody>
-{% for year in years %}
+{% for year in team.years.all %}
 <tr>
-      <td>{{ year.year }}</td><td>{{ year.w }}</td><td>{{ year.l }}</td><td>{{ year.standings }}</td><td>{{ year.attend|intcomma }}</td><td>{{ year.playoffs }}</td><td>${{ year.payroll|slice:"1:"|intcomma }}</td>
+      <td>{{ year.year.year }}</td><td>{{ year.wins }}</td><td>{{ year.losses }}</td><td>{{ year.standing }}</td><td>{{ year.attend|intcomma }}</td><td>{{ year.playoffs }}</td><td>${{ year.payroll|slice:"1:"|intcomma }}</td>
 </tr>
 {% endfor %}
 </tbody>
