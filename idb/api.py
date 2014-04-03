@@ -127,6 +127,14 @@ def player_years(request, player_id):
     player = Player.objects.get(id=player_id)
     player_years = player.years.all()
     response = HttpResponse(serializers.serialize('json', player_years), content_type="application/json")
+  #POST
+  if request.method == 'POST':
+    body = json.loads(request.body)
+    team = Team.objects.get(id=body["team_id"]
+    year = Year.objects.get(id=body["year_id"]
+    player_year = Player_Year(year=year, team=team, **body)
+    player_year.save()
+    response = HttpResponse(serializers.serialize('json', [ player_year, ]), content_type="application/json")
   return response  
   
   
@@ -135,11 +143,24 @@ def player_year(request, player_id, year_id):
   """
       players/{id}/years/{year}
   """
+  player = Player.objects.get(id=player_id)
+  py_key = player.years.filter(year=year_id)
+  player_year = Player_Year.objects.get(pk=py_key)
   if request.method == 'GET':
     player = Player.objects.get(id=player_id)
     py_key = player.years.filter(year=year_id)
     player_year = Player_Year.objects.get(pk=py_key)
     response = HttpResponse(serializers.serialize('json', [ player_year, ]), content_type="application/json")
+  if request.method == 'PUT':
+    body = json.loads(body)
+    for k,v in body.items():
+      setattr(player_year, k, v)
+      player_year.save()
+      response = HttpResponse(serializers.serialize('json', [ player_year, ]), content_type="application/json")
+  if request.method == 'DELETE':
+    player_year.delete()
+    response = response = HttpResponse()
+    response.status_code = 204
   return response
   
 
@@ -148,10 +169,14 @@ def team_years(request, team_id):
   """
       teams/{id}/years
   """
-  team = Team.objects.get(id=team_id)
-  team_years = team.years.all()
-  response = HttpResponse(serializers.serialize('json', team_years), content_type="application/json")
+  if request.method == 'GET':
+    team = Team.objects.get(id=team_id)
+    team_years = team.years.all()
+    response = HttpResponse(serializers.serialize('json', team_years), content_type="application/json")
+  if request.method == 'POST':
+    pass
   return response
+  
   
 @csrf_exempt
 def team_year(request, team_id, year_id):
@@ -163,5 +188,9 @@ def team_year(request, team_id, year_id):
     ty_key = team.years.filter(year=year_id)
     team_year = Team_Year.objects.get(pk=ty_key)
     response = HttpResponse(serializers.serialize('json', [ team_year, ]), content_type="application/json")
+  if request.method == 'PUT':
+    pass
+  if request.method == 'DELETE':
+    pass
   return response
   
