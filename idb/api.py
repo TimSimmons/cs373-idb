@@ -19,19 +19,23 @@ def player(request, player_id):
 	setattr(player, k, v)
 	player.save() 
       response = HttpResponse(serializers.serialize('json', [ player, ]), content_type="application/json")
-    #POST
-    if request.method == 'POST':
-      body = json.loads(request.body)
-      player = Player(**body)
-      response = HttpResponse(serializers.serialize('json', [ player, ]), content_type="application/json")
     return response
   
 
 @csrf_exempt
 def players(request):
-  pass
+  #GET 
+  if request.method == 'GET':
+    players = Player.objects
+    response = HttpResponse(serializers.serialize('json', players), content_type="application/json")
+  #POST
+  if request.method == 'POST':
+    body = json.loads(request.body)
+    player = Player(**body)
+    response = HttpResponse(serializers.serialize('json', [ player, ]), content_type="application/json")
+  return response  
   
-  
+
 @csrf_exempt
 def team(request, team_id):
   #GET
@@ -45,17 +49,21 @@ def team(request, team_id):
       setattr(team, k, v)
       team.save()
     response = HttpResponse(serializers.serialize('json', [ team, ]), content_type="application/json")
+  return response
+ 
+
+@csrf_exempt
+def teams(request):
+  #GET
+  if request.method == 'GET'
+    teams = Team.objects
+    response = HttpResponse(serializers.serialize('json', teams ), content_type="application/json")
   #POST
   if request.method == 'POST':
     body = json.loads(request.body)
     team = Team(**body)
     response = HttpResponse(serializers.serialize('json', [ team, ]), content_type="application/json")
   return response
- 
-
-@csrf_exempt
-def teams(request):
-  pass
  
  
 @csrf_exempt
@@ -71,13 +79,18 @@ def year(request, year_id):
       setattr(year, k, v)
       year.save()
     response = HttpResponse(serializers.serialize('json', [ year, ]), content_type="application/json")
+  return response
+
+
+@csrf_exempt
+def years(request):
+  #GET 
+  if request.method == 'GET':
+    years = Year.objects
+    response = HttpResponse(serializers.serialize('json', years), content_type="application/json")
   #POST
   if request.method == 'POST':
     body = json.loads(request.body)
     year = Year(**body)
     response = HttpResponse(serializers.serialize('json', [ year, ]), content_type="application/json")
   return response
-
-@csrf_exempt
-def years(request);
-  pass
