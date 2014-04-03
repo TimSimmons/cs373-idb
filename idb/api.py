@@ -32,6 +32,7 @@ def players(request):
   if request.method == 'POST':
     body = json.loads(request.body)
     player = Player(**body)
+    player.save()
     response = HttpResponse(serializers.serialize('json', [ player, ]), content_type="application/json")
   return response  
   
@@ -62,6 +63,7 @@ def teams(request):
   if request.method == 'POST':
     body = json.loads(request.body)
     team = Team(**body)
+    team.save()
     response = HttpResponse(serializers.serialize('json', [ team, ]), content_type="application/json")
   return response
  
@@ -92,5 +94,6 @@ def years(request):
   if request.method == 'POST':
     body = json.loads(request.body)
     year = Year(**body)
+    year.save()
     response = HttpResponse(serializers.serialize('json', [ year, ]), content_type="application/json")
   return response
