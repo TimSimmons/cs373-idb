@@ -74,7 +74,6 @@ class Year(models.Model):
     NL_MVP = models.CharField(max_length=30)
     NL_CY = models.CharField(max_length=30)
     AL_CY = models.CharField(max_length=30)
-    standings = models.TextField()
 
     def gen_link(self):
       return '''<a href="/years/'''+self.year+''' ">'''+self.year+'''</a>'''
