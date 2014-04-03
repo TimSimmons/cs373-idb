@@ -52,6 +52,7 @@ def team(request, team_id):
   #PUT
   if request.method == 'PUT':
     team = Team.objects.get(id=team_id)
+    body = json.loads(request.body)
     for k,v in body.items():
       setattr(team, k, v)
       team.save()
@@ -89,6 +90,7 @@ def year(request, year_id):
   #PUT
   if request.method == 'PUT':
     year = Year.objects.get(year=year_id)
+    body = json.loads(request.body)
     for k,v in body.items():
       setattr(year, k, v)
       year.save()
@@ -130,9 +132,9 @@ def player_years(request, player_id):
   #POST
   if request.method == 'POST':
     body = json.loads(request.body)
-    team = Team.objects.get(id=body["team_id"])
-    year = Year.objects.get(id=body["year_id"])
-    player_year = Player_Year(year=year, team=team, **body)
+    player = Player.objects.get(player_id)
+    year = Year.objects.get(year=body.pop("year", None))
+    player_year = Player_Year(year=year, player=player, **body)
     player_year.save()
     response = HttpResponse(serializers.serialize('json', [ player_year, ]), content_type="application/json")
   return response  
@@ -152,7 +154,7 @@ def player_year(request, player_id, year_id):
     player_year = Player_Year.objects.get(pk=py_key)
     response = HttpResponse(serializers.serialize('json', [ player_year, ]), content_type="application/json")
   if request.method == 'PUT':
-    body = json.loads(body)
+    body = json.loads(request.body)
     for k,v in body.items():
       setattr(player_year, k, v)
       player_year.save()
@@ -174,22 +176,27 @@ def team_years(request, team_id):
     team_years = team.years.all()
     response = HttpResponse(serializers.serialize('json', team_years), content_type="application/json")
   if request.method == 'POST':
-    pass
+    body = json.loads(request.body)
+    team = Team.objects.get(id=team_id)
+    year = Year.objects.get(year=body.pop("year", None))
+    team_year = Team_Year(year=year, team=team, **body)
+    team_year.save()
+    response = HttpResponse(serializers.serialize('json', [ team_year, ]), content_type="application/json")
   return response
   
   
 @csrf_exempt
 def team_year(request, team_id, year_id):
   """
-    teams/{id}/year/{id}
+    teams/{id}/years/{id}
   """
   team = Team.objects.get(id=team_id)
-    ty_key = team.years.filter(year=year_id)
-    team_year = Team_Year.objects.get(pk=ty_key)
+  ty_key = team.years.filter(year=year_id)
+  team_year = Team_Year.objects.get(pk=ty_key)
   if request.method == 'GET':
     response = HttpResponse(serializers.serialize('json', [ team_year, ]), content_type="application/json")
   if request.method == 'PUT':
-    body = json.loads(body)
+    body = json.loads(request.body)
     for k,v in body.items():
       setattr(team_year, k, v)
       team_year.save()

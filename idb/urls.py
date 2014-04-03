@@ -29,5 +29,6 @@ urlpatterns = patterns('',
     url(r'^api/teams/$', api.teams),
    
     url(r'^api/years/(\d{4})/$', api.year),
+    url(r'^api/years/$', api.years)
 )
 
