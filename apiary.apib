@@ -13,31 +13,169 @@ Player related resources of the **MLB API**
     
         [
             {
-                "id": 1,
-                "name": "Bryce Harper",
-                "social": "@Bharper3407",
-                "position": "OF",
-                "number": 34,
-                "bats": "L",
-                "throws": "L",
-                "height": 74,
-                "weight": 230,
-                "school": "College of Southern Nevada",
-                "years": [2012, 2013],
-                "images": ["http://mlb.com/images/players/525x330/547180.jpg"]
-            }, {
-                "id": 2,
-                "name": "Mike Trout",
-                "social": "@Trouty20",
-                "position": "OF",
-                "number": 27,
-                "bats": "R",
-                "throws": "R",
-                "height": 74,
-                "weight": 230,
-                "school": "Millville Senior HS",
-                "years": [2011, 2012, 2013],
-                "images": ["http://mlb.com/images/players/525x330/545361.jpg"]
+                "pk": 1,
+                "fields": {
+                    "throws": "R",
+                    "bats": "L",
+                    "number": 34,
+                    "position": "OF",
+                    "height": 74,
+                    "name": "Bryce Harper",
+                    "school": "College of Southern Nevada",
+                    "social": "@Bharper3407",
+                    "weight": 230
+                },
+                "model": "idb.player"
+            },
+            {
+                "pk": 2,
+                "fields": {
+                    "throws": "R",
+                    "bats": "R",
+                    "number": 11,
+                    "position": "P",
+                    "height": 77,
+                    "name": "Yu Darvish",
+                    "school": "Sendai, Japan",
+                    "social": "@faridyu",
+                    "weight": 225
+                },
+                "model": "idb.player"
+            },
+            {
+                "pk": 3,
+                "fields": {
+                    "throws": "R",
+                    "bats": "R",
+                    "number": 24,
+                    "position": "1B",
+                    "height": 76,
+                    "name": "Miguel Cabrera",
+                    "school": "Maracay, Venezuela",
+                    "social": "@MiguelCabrera",
+                    "weight": 240
+                },
+                "model": "idb.player"
+            },
+            {
+                "pk": 4,
+                "fields": {
+                    "throws": "R",
+                    "bats": "R",
+                    "number": 35,
+                    "position": "P",
+                    "height": 77,
+                    "name": "Justin Verlander",
+                    "school": "Old Dominion University",
+                    "social": "@JustinVerlander",
+                    "weight": 225
+                },
+                "model": "idb.player"
+            },
+            {
+                "pk": 5,
+                "fields": {
+                    "throws": "L",
+                    "bats": "L",
+                    "number": 22,
+                    "position": "P",
+                    "height": 75,
+                    "name": "Clayton Kershaw",
+                    "school": "Highland Park HS (Dallas, TX)",
+                    "social": "@ClaytonKersh22",
+                    "weight": 220
+                },
+                "model": "idb.player"
+            },
+            {
+                "pk": 6,
+                "fields": {
+                    "throws": "R",
+                    "bats": "R",
+                    "number": 27,
+                    "position": "OF",
+                    "height": 74,
+                    "name": "Mike Trout",
+                    "school": "Millville Senior HS (Millville, NJ)",
+                    "social": "@Trouty20",
+                    "weight": 230
+                },
+                "model": "idb.player"
+            },
+            {
+                "pk": 7,
+                "fields": {
+                    "throws": "R",
+                    "bats": "R",
+                    "number": 22,
+                    "position": "OF",
+                    "height": 61,
+                    "name": "Andrew McCutchen",
+                    "school": "Fort Meade HS (Fort Meade, FL)",
+                    "social": "@TheCUTCH22",
+                    "weight": 190
+                },
+                "model": "idb.player"
+            },
+            {
+                "pk": 8,
+                "fields": {
+                    "throws": "R",
+                    "bats": "R",
+                    "number": 2,
+                    "position": "SS",
+                    "height": 75,
+                    "name": "Derek Jeter",
+                    "school": "Central HS (Kalamazoo, MI)",
+                    "social": "",
+                    "weight": 195
+                },
+                "model": "idb.player"
+            },
+            {
+                "pk": 9,
+                "fields": {
+                    "throws": "L",
+                    "bats": "L",
+                    "number": 34,
+                    "position": "1B",
+                    "height": 76,
+                    "name": "David Ortiz",
+                    "school": "Haina, Dominican Republic",
+                    "social": "@davidortiz",
+                    "weight": 250
+                },
+                "model": "idb.player"
+            },
+            {
+                "pk": 10,
+                "fields": {
+                    "throws": "R",
+                    "bats": "R",
+                    "number": 5,
+                    "position": "1B",
+                    "height": 75,
+                    "name": "Albert Pujols",
+                    "school": "Maple Woods Community College (Kansas City, MO)",
+                    "social": "@PujolsFive",
+                    "weight": 230
+                },
+                "model": "idb.player"
+            },
+            {
+                "pk": 60,
+                "fields": {
+                    "throws": "L",
+                    "bats": "R",
+                    "number": 10,
+                    "position": "OF",
+                    "height": 74,
+                    "name": "A Guy",
+                    "school": "College of Southern Nevada",
+                    "social": "@Bharper3407",
+                    "weight": 230
+                },
+                "model": "idb.player"
             }
         ]
 
@@ -45,59 +183,63 @@ Player related resources of the **MLB API**
 + Request (application/json)
 
         {
-            "name": "Bryce Harper",
-            "social": "@Bharper3407",
-            "position": "OF",
-            "number": 34,
+            "throws": "R",
             "bats": "L",
-            "throws": "L",
+            "number": 34,
+            "position": "OF",
             "height": 74,
-            "weight": 230,
+            "name": "Bryce Harper",
             "school": "College of Southern Nevada",
-            "years": [2012, 2013],
-            "images": ["http://mlb.com/images/players/525x330/547180.jpg"]    
+            "social": "@Bharper3407",
+            "weight": 230
         }
 
 + Response 201 (application/json)
 
-        {
-            "id": 3,
-            "name": "Bryce Harper",
-            "social": "@Bharper3407",
-            "position": "OF",
-            "number": 34,
-            "bats": "L",
-            "throws": "L",
-            "height": 74,
-            "weight": 230,
-            "school": "College of Southern Nevada",
-            "years": [2012, 2013],
-            "images": ["http://mlb.com/images/players/525x330/547180.jpg"]
-        }
+        [
+            {
+                "pk": 1,
+                "fields": {
+                    "throws": "R",
+                    "bats": "L",
+                    "number": 34,
+                    "position": "OF",
+                    "height": 74,
+                    "name": "Bryce Harper",
+                    "school": "College of Southern Nevada",
+                    "social": "@Bharper3407",
+                    "weight": 230
+                },
+                "model": "idb.player"
+            }
+        ]
 
 ## Player [/players/{id}]
 A single Player object with all its details
 
 + Parameters
-    + id (required, number, `3`) ... Numeric `id` of the Player.
+    + id (required, number, `01`) ... Numeric `id` of the Player.
 
 ### Retrieve Information on a Player [GET]
 + Response 200 (application/json)
 
-        {
-            "id": 3,
-            "name": "Bryce Harper",
-            "social": "@Bharper3407",
-            "position": "OF",
-            "number": 34,
-            "bats": "L",
-            "throws": "L",
-            "height": 74,
-            "weight": 230,
-            "school": "College of Southern Nevada",
-            "years": [2012, 2013],
-            "images": ["http://mlb.com/images/players/525x330/547180.jpg"]
-        }
+        [
+            {
+                "pk": 1,
+                "fields": {
+                    "throws": "R",
+                    "bats": "L",
+                    "number": 34,
+                    "position": "OF",
+                    "height": 74,
+                    "name": "Bryce Harper",
+                    "school": "College of Southern Nevada",
+                    "social": "@Bharper3407",
+                    "weight": 230
+                },
+                "model": "idb.player"
+            }
+        ]
 
 ### Modify a Player [PUT]
 + Request (application/json)
@@ -108,20 +250,23 @@ A single Player object with all its details
 
 + Response 200 (application/json)
 
-        {
-            "id": 3,
-            "name": "Bryce Harper",
-            "social": "@Bharper3407",
-            "position": "1B",
-            "number": 34,
-            "bats": "L",
-            "throws": "L",
-            "height": 74,
-            "weight": 230,
-            "school": "College of Southern Nevada",
-            "years": [2012, 2013],
-            "images": ["http://mlb.com/images/players/525x330/547180.jpg"]  
-        }
+        [
+            {
+                "pk": 1,
+                "fields": {
+                    "throws": "R",
+                    "bats": "L",
+                    "number": 34,
+                    "position": "1B",
+                    "height": 74,
+                    "name": "Bryce Harper",
+                    "school": "College of Southern Nevada",
+                    "social": "@Bharper3407",
+                    "weight": 230
+                },
+                "model": "idb.player"
+            }
+        ]
 
 ### Delete a Player [DELETE]
 + Response 204
@@ -132,31 +277,52 @@ A single Player object with all its details
 
         [
             {
-                "id": 1,
-                "year": 2012,
-                "team": "WSN",
-                "type": "hitter",
-                "games": 139,
-                "pa": 597,
-                "avg": .270,
-                "obp": .340,
-                "slg": .477,
-                "hr": 22,
-                "rbi": 59,
-                "player_id": 1
-            }, {
-                "id": 2,
-                "year": 2013,            
-                "team": "WSN",
-                "type": "hitter",
-                "games": 118,
-                "pa": 497,
-                "avg": .274,
-                "obp": .368,
-                "slg": .486,
-                "hr": 20,
-                "rbi": 58,
-                "player_id": 1
+                "pk": 1,
+                "fields": {
+                    "era": null,
+                    "w": null,
+                    "pa": 597,
+                    "ip": null,
+                    "s": null,
+                    "team_year": 32,
+                    "player": 1,
+                    "obp": 0.34,
+                    "avg": 0.27,
+                    "games": 139,
+                    "gs": null,
+                    "year": 2012,
+                    "hr": 22,
+                    "l": null,
+                    "slg": 0.477,
+                    "rbi": 59,
+                    "kind": "hitter",
+                    "whip": null
+                },
+                "model": "idb.player_year"
+            },
+            {
+                "pk": 2,
+                "fields": {
+                    "era": null,
+                    "w": null,
+                    "pa": 497,
+                    "ip": null,
+                    "s": null,
+                    "team_year": 31,
+                    "player": 1,
+                    "obp": 0.368,
+                    "avg": 0.274,
+                    "games": 118,
+                    "gs": null,
+                    "year": 2013,
+                    "hr": 20,
+                    "l": null,
+                    "slg": 0.486,
+                    "rbi": 58,
+                    "kind": "hitter",
+                    "whip": null
+                },
+                "model": "idb.player_year"
             }
         ]
         
@@ -164,77 +330,114 @@ A single Player object with all its details
 + Request (application/json)
 
         {
-            "year": 2012,
-            "team": "WSN",
-            "type": "hitter",
-            "games": 139,
             "pa": 597,
-            "avg": .270,
-            "obp": .340,
-            "slg": .477,
+            "team_year": 32,
+            "player": 1,
+            "obp": 0.34,
+            "avg": 0.27,
+            "games": 139,
+            "year": 2012,
             "hr": 22,
-            "rbi": 59
+            "slg": 0.477,
+            "rbi": 59,
+            "kind": "hitter"
         }
 
 + Response 201 (application/json)
 
-        {
-            "id": 1, 
-            "year": 2012,
-            "team": "WSN",
-            "type": "hitter",
-            "games": 139,
-            "pa": 597,
-            "avg": .270,
-            "obp": .340,
-            "slg": .477,
-            "hr": 22,
-            "rbi": 59,
-            "player_id": 1
-        }
+        [
+            {
+                "pk": 1,
+                "fields": {
+                    "era": null,
+                    "w": null,
+                    "pa": 597,
+                    "ip": null,
+                    "s": null,
+                    "team_year": 32,
+                    "player": 1,
+                    "obp": 0.34,
+                    "avg": 0.27,
+                    "games": 139,
+                    "gs": null,
+                    "year": 2012,
+                    "hr": 22,
+                    "l": null,
+                    "slg": 0.477,
+                    "rbi": 59,
+                    "kind": "hitter",
+                    "whip": null
+                },
+                "model": "idb.player_year"
+            }
+        ]
         
 ## Player Year [/players/{id}/years/{id}]
 ### Get details for a specific player year [GET]
 + Response 200 (application/json)
 
-        {
-            "id": 1, 
-            "year": 2012,
-            "team": "WSN",
-            "type": "hitter",
-            "games": 139,
-            "pa": 597,
-            "avg": .270",
-            "obp": .340",
-            "slg": .477",
-            "hr": 22,
-            "rbi": 59,
-            "player_id": 1
-        }
+        [
+            {
+                "pk": 1,
+                "fields": {
+                    "era": null,
+                    "w": null,
+                    "pa": 597,
+                    "ip": null,
+                    "s": null,
+                    "team_year": 32,
+                    "player": 1,
+                    "obp": 0.34,
+                    "avg": 0.27,
+                    "games": 139,
+                    "gs": null,
+                    "year": 2012,
+                    "hr": 22,
+                    "l": null,
+                    "slg": 0.477,
+                    "rbi": 59,
+                    "kind": "hitter",
+                    "whip": null
+                },
+                "model": "idb.player_year"
+            }
+        ]
         
 ### Modify a player year [PUT]
 + Request (application/json)
 
         {
-            "team": "TEX"
+            "games": 140,
         }
 
 + Response 200 (application/json)
 
-        {
-            "id": 1, 
-            "year": 2012,
-            "team": "TEX",
-            "type": "hitter",
-            "games": 139,
-            "pa": 597,
-            "avg": .270",
-            "obp": .340",
-            "slg": .477",
-            "hr": 22,
-            "rbi": 59,
-            "player_id": 1
-        }
+        [
+            {
+                "pk": 1,
+                "fields": {
+                    "era": null,
+                    "w": null,
+                    "pa": 597,
+                    "ip": null,
+                    "s": null,
+                    "team_year": 32,
+                    "player": 1,
+                    "obp": 0.34,
+                    "avg": 0.27,
+                    "games": 140,
+                    "gs": null,
+                    "year": 2012,
+                    "hr": 22,
+                    "l": null,
+                    "slg": 0.477,
+                    "rbi": 59,
+                    "kind": "hitter",
+                    "whip": null
+                },
+                "model": "idb.player_year"
+            }
+        ]
         
 ### Delete a Player Year [DELETE]
 + Response 204
@@ -249,29 +452,158 @@ Team related resources of the **MLB API**
     
         [
             {
-                "id": 1,
-                "name": "Los Angeles Angels of Anaheim",
-                "abbr": "LAA",
-                "city": "Los Angeles",
-                "state": "CA",
-                "park": "Angel Stadium of Anaheim",
-                "div": "AL West",
-                "social": "@Angels",
-                "mgr": "Mike Scioscia",
-                "years": [2004,2005,2006,2007,2008,2009,2010,2011,2012, 2013],
-                "images": ["http://content.sportslogos.net/logos/53/922/thumbs/wsghhaxkh5qq0hdkbt1b5se41.gif"]
-            }, {
-                "id": 2,
-                "name": "St. Louis Cardinals",
-                "abbr": "STL",
-                "city": "St. Louis",
-                "state": "MO",
-                "park": "Busch Stadium III",
-                "div": "NL Central",
-                "social": "@Cardinals",
-                "mgr": "Mike Matheny",
-                "years": [2004,2005,2006,2007,2008,2009,2010,2011,2012, 2013],
-                "images": ["http://content.sportslogos.net/logos/54/72/thumbs/3zhma0aeq17tktge1huh7yok5.gif"]
+                "pk": 2,
+                "fields": {
+                    "abbr": "STL",
+                    "state": "MO",
+                    "name": "St. Louis Cardinals",
+                    "div": "NL Central",
+                    "social": "@Cardinals",
+                    "city": "St. Louis",
+                    "mgr": "Mike Matheny",
+                    "park": "Busch Stadium III"
+                },
+                "model": "idb.team"
+            },
+            {
+                "pk": 3,
+                "fields": {
+                    "abbr": "LAD",
+                    "state": "CA",
+                    "name": "Los Angeles Dodgers",
+                    "div": "NL West",
+                    "social": "@Dodgers",
+                    "city": "Los Angeles",
+                    "mgr": "Don Mattingly",
+                    "park": "Dodger Stadium"
+                },
+                "model": "idb.team"
+            },
+            {
+                "pk": 4,
+                "fields": {
+                    "abbr": "WAS",
+                    "state": "DC",
+                    "name": "Washington Nationals",
+                    "div": "NL East",
+                    "social": "@Nationals",
+                    "city": "Washington",
+                    "mgr": "Matt Williams",
+                    "park": "Nationals Park"
+                },
+                "model": "idb.team"
+            },
+            {
+                "pk": 5,
+                "fields": {
+                    "abbr": "MIA",
+                    "state": "FL",
+                    "name": "Miami Marlins",
+                    "div": "NL East",
+                    "social": "@Marlins",
+                    "city": "Miami",
+                    "mgr": "Mike Redmond",
+                    "park": "Marlins Park"
+                },
+                "model": "idb.team"
+            },
+            {
+                "pk": 6,
+                "fields": {
+                    "abbr": "MIN",
+                    "state": "MN",
+                    "name": "Minnesota Twins",
+                    "div": "AL Central",
+                    "social": "@Twins",
+                    "city": "Minneapolis",
+                    "mgr": "Ron Gardenhire",
+                    "park": "Target Field"
+                },
+                "model": "idb.team"
+            },
+            {
+                "pk": 7,
+                "fields": {
+                    "abbr": "BOS",
+                    "state": "MA",
+                    "name": "Boston Red Sox",
+                    "div": "AL East",
+                    "social": "@RedSox",
+                    "city": "Boston",
+                    "mgr": "John Farrell",
+                    "park": "Fenway Park"
+                },
+                "model": "idb.team"
+            },
+            {
+                "pk": 8,
+                "fields": {
+                    "abbr": "NYY",
+                    "state": "NY",
+                    "name": "New York Yankees",
+                    "div": "AL East",
+                    "social": "@Yankees",
+                    "city": "New York",
+                    "mgr": "Joe Girardi",
+                    "park": "Yankee Stadium III"
+                },
+                "model": "idb.team"
+            },
+            {
+                "pk": 9,
+                "fields": {
+                    "abbr": "PIT",
+                    "state": "PA",
+                    "name": "Pittsburgh Pirates",
+                    "div": "NL Central",
+                    "social": "@Pirates",
+                    "city": "Pittsburgh",
+                    "mgr": "Clint Hurdle",
+                    "park": "PNC Park"
+                },
+                "model": "idb.team"
+            },
+            {
+                "pk": 10,
+                "fields": {
+                    "abbr": "DET",
+                    "state": "MI",
+                    "name": "Detroit Tigers",
+                    "div": "AL Central",
+                    "social": "@Tigers",
+                    "city": "Detroit",
+                    "mgr": "Brad Ausmus",
+                    "park": "Comerica Park"
+                },
+                "model": "idb.team"
+            },
+            {
+                "pk": 11,
+                "fields": {
+                    "abbr": "TEX",
+                    "state": "TX",
+                    "name": "Texas Rangers",
+                    "div": "AL West",
+                    "social": "@Rangers",
+                    "city": "Dallas",
+                    "mgr": "Ron Washington",
+                    "park": "Rangers Ballpark"
+                },
+                "model": "idb.team"
+            },
+            {
+                "pk": 1,
+                "fields": {
+                    "abbr": "LAA",
+                    "state": "CA",
+                    "name": "The Guy",
+                    "div": "AL West",
+                    "social": "@Angels",
+                    "city": "Los Angeles",
+                    "mgr": "Mike Scioscia",
+                    "park": "Angel Stadium of Anaheim"
+                },
+                "model": "idb.team"
             }
         ]
 
@@ -279,33 +611,34 @@ Team related resources of the **MLB API**
 + Request (application/json)
 
         {
-            "name": "Los Angeles Dodgers",
             "abbr": "LAD",
-            "city": "Los Angeles",
             "state": "CA",
-            "park": "Dodger Stadium",
+            "name": "Los Angeles Dodgers",
             "div": "NL West",
             "social": "@Dodgers",
+            "city": "Los Angeles",
             "mgr": "Don Mattingly",
-            "years": [2004,2005,2006,2007,2008,2009,2010,2011,2012, 2013],
-            "images": ["http://content.sportslogos.net/logos/54/63/thumbs/efvfv5b5g1zgpsf56gb04lthx.gif"]
+            "park": "Dodger Stadium"
         }
 
 + Response 201 (application/json)
 
-        {
-            "id": 3,
-            "name": "Los Angeles Dodgers",
-            "abbr": "LAD",
-            "city": "Los Angeles",
-            "state": "CA",
-            "park": "Dodger Stadium",
-            "div": "NL West",
-            "social": "@Dodgers",
-            "mgr": "Don Mattingly",
-            "years": [2004,2005,2006,2007,2008,2009,2010,2011,2012, 2013],
-            "images": ["http://content.sportslogos.net/logos/54/63/thumbs/efvfv5b5g1zgpsf56gb04lthx.gif"]
-        }
+        [
+            {
+                "pk": 12,
+                "fields": {
+                    "abbr": "LAD",
+                    "state": "CA",
+                    "name": "Los Angeles Dodgers",
+                    "div": "NL West",
+                    "social": "@Dodgers",
+                    "city": "Los Angeles",
+                    "mgr": "Don Mattingly",
+                    "park": "Dodger Stadium"
+                },
+                "model": "idb.team"
+            }
+        ]
 
 ## Team [/teams/{id}]
 A single Team object with all its details
@@ -316,19 +649,22 @@ A single Team object with all its details
 ### Retrieve Information on a Team [GET]
 + Response 200 (application/json)
 
-        {
-            "id": 1,
-            "name": "Los Angeles Angels of Anaheim",
-            "abbr": "LAA",
-            "city": "Los Angeles",
-            "state": "CA",
-            "park": "Angel Stadium of Anaheim",
-            "div": "AL West",
-            "social": "@Angels",
-            "mgr": "Mike Scioscia",
-            "years": [2004,2005,2006,2007,2008,2009,2010,2011,2012, 2013],
-            "images": ["http://content.sportslogos.net/logos/54/72/thumbs/3zhma0aeq17tktge1huh7yok5.gif"]
-        }
+        [
+            {
+                "pk": 1,
+                "fields": {
+                    "abbr": "LAA",
+                    "state": "CA",
+                    "name": "The Guy",
+                    "div": "AL West",
+                    "social": "@Angels",
+                    "city": "Los Angeles",
+                    "mgr": "Mike Scioscia",
+                    "park": "Angel Stadium of Anaheim"
+                },
+                "model": "idb.team"
+            }
+        ]
 
 ### Modify a Team [PUT]
 + Request (application/json)
@@ -339,19 +675,22 @@ A single Team object with all its details
 
 + Response 200 (application/json)
 
-        {
-            "id": 1,
-            "name": "Los Angeles Angels of Anaheim",
-            "abbr": "LAA",
-            "city": "Los Angeles",
-            "state": "CA",
-            "park": "Angel Stadium of Anaheim",
-            "div": "AL West",
-            "social": "@LA_Angels",
-            "mgr": "Mike Scioscia",
-            "years": [2004,2005,2006,2007,2008,2009,2010,2011,2012, 2013],
-            "images": ["http://content.sportslogos.net/logos/54/72/thumbs/3zhma0aeq17tktge1huh7yok5.gif"]
-        }
+        [
+            {
+                "pk": 1,
+                "fields": {
+                    "abbr": "LAA",
+                    "state": "CA",
+                    "name": "The Guy",
+                    "div": "AL West",
+                    "social": "@LA_Angels",
+                    "city": "Los Angeles",
+                    "mgr": "Mike Scioscia",
+                    "park": "Angel Stadium of Anaheim"
+                },
+                "model": "idb.team"
+            }
+        ]
 
 ### Delete a Team [DELETE]
 + Response 204
@@ -362,25 +701,144 @@ A single Team object with all its details
 
         [
             {
-                "id": 1,
-                "year": 2013,
-                "wins": 78,
-                "losses": 84,
-                "standing": 4,
-                "playoffs": "Lost LDS (3-2)",
-                "attend": 3019505,
-                "payroll": 116032500,
-                "team_id": 1
-            }, {
-                "id": 2,
-                "year": 2012,
-                "wins": 89,
-                "losses": 73,
-                "standing": 3,
-                "playoffs": "Lost LDS (3-2)",
-                "attend": 3061770,
-                "payroll": 140581000,
-                "team_id": 1
+                "pk": 1,
+                "fields": {
+                    "standing": 3,
+                    "team": 1,
+                    "wins": 78,
+                    "attend": 3019505,
+                    "payroll": 116032500,
+                    "losses": 84,
+                    "year": 2013,
+                    "playoffs": ""
+                },
+                "model": "idb.team_year"
+            },
+            {
+                "pk": 2,
+                "fields": {
+                    "standing": 3,
+                    "team": 1,
+                    "wins": 89,
+                    "attend": 3061770,
+                    "payroll": 140581000,
+                    "losses": 73,
+                    "year": 2012,
+                    "playoffs": ""
+                },
+                "model": "idb.team_year"
+            },
+            {
+                "pk": 3,
+                "fields": {
+                    "standing": 2,
+                    "team": 1,
+                    "wins": 86,
+                    "attend": 3166321,
+                    "payroll": 138543166,
+                    "losses": 76,
+                    "year": 2011,
+                    "playoffs": ""
+                },
+                "model": "idb.team_year"
+            },
+            {
+                "pk": 4,
+                "fields": {
+                    "standing": 3,
+                    "team": 1,
+                    "wins": 80,
+                    "attend": 3250814,
+                    "payroll": 104963866,
+                    "losses": 82,
+                    "year": 2010,
+                    "playoffs": ""
+                },
+                "model": "idb.team_year"
+            },
+            {
+                "pk": 5,
+                "fields": {
+                    "standing": 1,
+                    "team": 1,
+                    "wins": 97,
+                    "attend": 3240386,
+                    "payroll": 118169000,
+                    "losses": 65,
+                    "year": 2009,
+                    "playoffs": "Lost ALCS (4-2)"
+                },
+                "model": "idb.team_year"
+            },
+            {
+                "pk": 6,
+                "fields": {
+                    "standing": 1,
+                    "team": 1,
+                    "wins": 100,
+                    "attend": 3336747,
+                    "payroll": 119216333,
+                    "losses": 62,
+                    "year": 2008,
+                    "playoffs": "Lost LDS (3-1)"
+                },
+                "model": "idb.team_year"
+            },
+            {
+                "pk": 7,
+                "fields": {
+                    "standing": 1,
+                    "team": 1,
+                    "wins": 94,
+                    "attend": 3365632,
+                    "payroll": 109251333,
+                    "losses": 68,
+                    "year": 2007,
+                    "playoffs": "Lost LDS (3-0)"
+                },
+                "model": "idb.team_year"
+            },
+            {
+                "pk": 8,
+                "fields": {
+                    "standing": 2,
+                    "team": 1,
+                    "wins": 89,
+                    "attend": 3406790,
+                    "payroll": 103472000,
+                    "losses": 73,
+                    "year": 2006,
+                    "playoffs": ""
+                },
+                "model": "idb.team_year"
+            },
+            {
+                "pk": 9,
+                "fields": {
+                    "standing": 1,
+                    "team": 1,
+                    "wins": 95,
+                    "attend": 3404686,
+                    "payroll": 94867822,
+                    "losses": 67,
+                    "year": 2005,
+                    "playoffs": "Lost ALCS (4-1)"
+                },
+                "model": "idb.team_year"
+            },
+            {
+                "pk": 10,
+                "fields": {
+                    "standing": 1,
+                    "team": 1,
+                    "wins": 92,
+                    "attend": 3375677,
+                    "payroll": 100534667,
+                    "losses": 70,
+                    "year": 2004,
+                    "playoffs": "Lost LDS (3-0)"
+                },
+                "model": "idb.team_year"
             }
         ]
         
@@ -388,45 +846,55 @@ A single Team object with all its details
 + Request (application/json)
 
         {
-            "year": 2011,
-            "wins": 86,
-            "losses": 76,
-            "standing": 2,
-            "playoffs": "Lost LDS (3-2)",
-            "attend": 3166321,
-            "payroll": 138543166,
-            "team_id": 1
+            "standing": 1,
+            "team": 1,
+            "wins": 92,
+            "attend": 3375677,
+            "payroll": 100534667,
+            "losses": 70,
+            "year": 2014,
+            "playoffs": "Lost LDS (3-0)"
         }
 
 + Response 201 (application/json)
 
-        {
-            "id": 3,
-            "year": 2011,
-            "wins": 86,
-            "losses": 76,
-            "standing": 2,
-            "playoffs": "Lost LDS (3-2)",
-            "attend": 3166321,
-            "payroll": 138543166,
-            "team_id": 1
-        }
+        [
+            {
+                "pk": 11,
+                "fields": {
+                    "standing": 1,
+                    "team": 1,
+                    "wins": 92,
+                    "attend": 3375677,
+                    "payroll": 100534667,
+                    "losses": 70,
+                    "year": 2014,
+                    "playoffs": "Lost LDS (3-0)"
+                },
+                "model": "idb.team_year"
+            }
+        ]
         
 ## Team Year [/teams/{id}/years/{id}]
 ### Get details for a specific team year [GET]
 + Response 200 (application/json)
 
-        {
-            "id": 1,
-            "year": 2013,
-            "wins": 78,
-            "losses": 84,
-            "standing": 4,
-            "playoffs": "Lost LDS (3-2)",
-            "attend": 3019505,
-            "payroll": 116032500,
-            "team_id": 1
-        }
+        [
+            {
+                "pk": 1,
+                "fields": {
+                    "standing": 3,
+                    "team": 1,
+                    "wins": 78,
+                    "attend": 3019505,
+                    "payroll": 116032500,
+                    "losses": 84,
+                    "year": 2013,
+                    "playoffs": ""
+                },
+                "model": "idb.team_year"
+            }
+        ]
         
 ### Modify a team year [PUT]
 + Request (application/json)
@@ -437,17 +905,22 @@ A single Team object with all its details
 
 + Response 200 (application/json)
 
-        {
-            "id": 1,
-            "year": 2013,
-            "wins": 79,
-            "losses": 84,
-            "standing": 4,
-            "playoffs": "Lost LDS (3-2)",
-            "attend": 3019505,
-            "payroll": 116032500,
-            "team_id": 1
-        }
+        [
+            {
+                "pk": 1,
+                "fields": {
+                    "standing": 3,
+                    "team": 1,
+                    "wins": 79,
+                    "attend": 3019505,
+                    "payroll": 116032500,
+                    "losses": 84,
+                    "year": 2013,
+                    "playoffs": ""
+                },
+                "model": "idb.team_year"
+            }
+        ]
         
 ### Delete a Team [DELETE]
 + Response 204
@@ -461,21 +934,136 @@ Year-related resources of the **MLB API**
 
         [
             {
-                "id": 2013,
-                "champion": "Boston Red Sox",
-                "standings": ["BOS", "STL", "OAK", "ATL", "PIT", "DET", "LAD", "CLE", "TBR", "TEX", "CIN", "WSN", "KCR", "NYY", "BAL", "ARI", "LAA", "SDP", "SFG", "NYM", "MIL", "TOR", "COL", "PHI", "SEA", "MIN", "CHC", "CHW", "MIA", "HOU"],
-                "AL_MVP": "Cabrera",
-                "NL_MVP": "McCutchen",
-                "AL_CY": "Max Scherzer",
-                "NL_CY": "Clayton Kershaw"
-            }, {
-                "id": 2012,
-                "champion": "San Francisco Giants",
-                "standings": ["WSN", "CIN", "NYY", "OAK", "SFG", "ATL", "BAL", "TEX", "TBR", "LAA", "DET", "STL", "LAD", "CHW", "MIL", "PHI", "ARI", "PIT", "SDP", "SEA", "NYM", "TOR", "KCR", "MIA", "BOS", "CLE", "MIN", "COL", "CHC", "HOU"],
-                "AL_MVP": "Cabrera",
-                "NL_MVP": "Buster Posey",
-                "AL_CY": "David Price",
-                "NL_CY": "RA Dickey"
+                "pk": 2004,
+                "fields": {
+                    "AL_MVP": "Vladimir Guerrero",
+                    "NL_CY": "Roger Clemens",
+                    "champion": "Boston Red Sox",
+                    "AL_CY": "Johan Santana",
+                    "year": "2004",
+                    "NL_MVP": "Barry Bonds"
+                },
+                "model": "idb.year"
+            },
+            {
+                "pk": 2005,
+                "fields": {
+                    "AL_MVP": "Alex Rodriguez",
+                    "NL_CY": "Chris Carpenter",
+                    "champion": "Chicago White Sox",
+                    "AL_CY": "Bartolo Colon",
+                    "year": "2005",
+                    "NL_MVP": "Albert Pujols"
+                },
+                "model": "idb.year"
+            },
+            {
+                "pk": 2006,
+                "fields": {
+                    "AL_MVP": "Justin Morneau",
+                    "NL_CY": "Brandon Webb",
+                    "champion": "St. Louis Cardinals",
+                    "AL_CY": "Johan Santana",
+                    "year": "2006",
+                    "NL_MVP": "Ryan Howard"
+                },
+                "model": "idb.year"
+            },
+            {
+                "pk": 2007,
+                "fields": {
+                    "AL_MVP": "Alex Rodriguez",
+                    "NL_CY": "Jake Peavy",
+                    "champion": "Boston Red Sox",
+                    "AL_CY": "CC Sabathia",
+                    "year": "2007",
+                    "NL_MVP": "Jimmy Rollins"
+                },
+                "model": "idb.year"
+            },
+            {
+                "pk": 2008,
+                "fields": {
+                    "AL_MVP": "Dustin Pedroia",
+                    "NL_CY": "Tim Lincecum",
+                    "champion": "Philadelphia Phillies",
+                    "AL_CY": "Cliff Lee",
+                    "year": "2008",
+                    "NL_MVP": "Albert Pujols"
+                },
+                "model": "idb.year"
+            },
+            {
+                "pk": 2009,
+                "fields": {
+                    "AL_MVP": "Joe Mauer",
+                    "NL_CY": "Tim Lincecum",
+                    "champion": "New York Yankees",
+                    "AL_CY": "Zach Greinke",
+                    "year": "2009",
+                    "NL_MVP": "Albert Pujols"
+                },
+                "model": "idb.year"
+            },
+            {
+                "pk": 2010,
+                "fields": {
+                    "AL_MVP": "Josh Hamilton",
+                    "NL_CY": "Roy Halladay",
+                    "champion": "San Francisco Giants",
+                    "AL_CY": "Felix Hernandez",
+                    "year": "2010",
+                    "NL_MVP": "Joey Votto"
+                },
+                "model": "idb.year"
+            },
+            {
+                "pk": 2011,
+                "fields": {
+                    "AL_MVP": "Justin Verlander",
+                    "NL_CY": "Clayton Kershaw",
+                    "champion": "St. Louis Cardinals",
+                    "AL_CY": "Justin Verlander",
+                    "year": "2011",
+                    "NL_MVP": "Ryan Braun"
+                },
+                "model": "idb.year"
+            },
+            {
+                "pk": 2012,
+                "fields": {
+                    "AL_MVP": "Miguel Cabrera",
+                    "NL_CY": "RA Dickey",
+                    "champion": "San Francisco Giants",
+                    "AL_CY": "David Price",
+                    "year": "2012",
+                    "NL_MVP": "Buster Posey"
+                },
+                "model": "idb.year"
+            },
+            {
+                "pk": 2013,
+                "fields": {
+                    "AL_MVP": "Miguel Cabrera",
+                    "NL_CY": "Clayton Kershaw",
+                    "champion": "Boston Red Sox",
+                    "AL_CY": "Max Scherzer",
+                    "year": "2013",
+                    "NL_MVP": "Andrew McCutchen"
+                },
+                "model": "idb.year"
+            },
+            {
+                "pk": 2050,
+                "fields": {
+                    "AL_MVP": "Migdf asCabrera",
+                    "NL_CY": "Clayton Kershaw",
+                    "champion": "hello",
+                    "AL_CY": "Max Scherzer",
+                    "year": "2050",
+                    "NL_MVP": "Ddfsdf McCutchen"
+                },
+                "model": "idb.year"
             }
         ]
 
@@ -483,26 +1071,30 @@ Year-related resources of the **MLB API**
 + Request (application/json)
 
         {
-            "id": 2011,
-            "champion": "St. Louis Cardinals",
-            "standings": ["PHI", "NYY", "MIL", "TEX", "ARI", "DET", "TBR", "STL", "BOS", "ATL", "LAA", "SFG", "LAD", "TOR", "WSN", "CLE", "CHW", "CIN", "NYM", "OAK", "COL", "PIT", "FLA", "KCR", "SDP", "CHC", "BAL", "SEA", "MIN", "HOU"],
-            "AL_MVP": "Justin Verlander",
-            "NL_MVP": "Ryan Braun",
-            "AL_CY": "Justin Verlander",
-            "NL_CY": "Clayton Kershaw"
+            "AL_MVP": "Miguel Cabrera",
+            "NL_CY": "Clayton Kershaw",
+            "champion": "Boston Red Sox",
+            "AL_CY": "Max Scherzer",
+            "year": "2014",
+            "NL_MVP": "Andrew McCutchen"
         }
 
 + Response 201 (application/json)
 
-        {
-            "id": 2011,
-            "champion": "St. Louis Cardinals",
-            "standings": ["PHI", "NYY", "MIL", "TEX", "ARI", "DET", "TBR", "STL", "BOS", "ATL", "LAA", "SFG", "LAD", "TOR", "WSN", "CLE", "CHW", "CIN", "NYM", "OAK", "COL", "PIT", "FLA", "KCR", "SDP", "CHC", "BAL", "SEA", "MIN", "HOU"],
-            "AL_MVP": "Justin Verlander",
-            "NL_MVP": "Ryan Braun",
-            "AL_CY": "Justin Verlander",
-            "NL_CY": "Clayton Kershaw"
-        }
+        [
+            {
+                "pk": 2013,
+                "fields": {
+                    "AL_MVP": "Miguel Cabrera",
+                    "NL_CY": "Clayton Kershaw",
+                    "champion": "Boston Red Sox",
+                    "AL_CY": "Max Scherzer",
+                    "year": "2014",
+                    "NL_MVP": "Andrew McCutchen"
+                },
+                "model": "idb.year"
+            }
+        ]
 
 ## Year [/years/{id}]
 A single Year object with all its details
@@ -513,15 +1105,20 @@ A single Year object with all its details
 ### Retrieve Information on a Year [GET]
 + Response 200 (application/json)
 
-        {
-            "id": 2013,
-            "champion": "Boston Red Sox",
-            "standings": ["BOS", "STL", "OAK", "ATL", "PIT", "DET", "LAD", "CLE", "TBR", "TEX", "CIN", "WSN", "KCR", "NYY", "BAL", "ARI", "LAA", "SDP", "SFG", "NYM", "MIL", "TOR", "COL", "PHI", "SEA", "MIN", "CHC", "CHW", "MIA", "HOU"],
-            "AL_MVP": "Cabrera",
-            "NL_MVP": "McCutchen",
-            "AL_CY": "Max Scherzer",
-            "NL_CY": "Clayton Kershaw"
-        }
+        [
+            {
+                "pk": 2013,
+                "fields": {
+                    "AL_MVP": "Miguel Cabrera",
+                    "NL_CY": "Clayton Kershaw",
+                    "champion": "Boston Red Sox",
+                    "AL_CY": "Max Scherzer",
+                    "year": "2013",
+                    "NL_MVP": "Andrew McCutchen"
+                },
+                "model": "idb.year"
+            }
+        ]
 
 ### Modify a Year [PUT]
 + Request (application/json)
@@ -532,15 +1129,20 @@ A single Year object with all its details
 
 + Response 200 (application/json)
 
-        {
-            "id": 2013,
-            "champion": "Boston Red Sox",
-            "standings": ["BOS", "STL", "OAK", "ATL", "PIT", "DET", "LAD", "CLE", "TBR", "TEX", "CIN", "WSN", "KCR", "NYY", "BAL", "ARI", "LAA", "SDP", "SFG", "NYM", "MIL", "TOR", "COL", "PHI", "SEA", "MIN", "CHC", "CHW", "MIA", "HOU"],
-            "AL_MVP": "Cabrera",
-            "NL_MVP": "Ryan Braun",
-            "AL_CY": "Max Scherzer",
-            "NL_CY": "Clayton Kershaw"
-        }
+        [
+            {
+                "pk": 2013,
+                "fields": {
+                    "AL_MVP": "Miguel Cabrera",
+                    "NL_CY": "Clayton Kershaw",
+                    "champion": "Boston Red Sox",
+                    "AL_CY": "Max Scherzer",
+                    "year": "2013",
+                    "NL_MVP": "Ryan Braun"
+                },
+                "model": "idb.year"
+            }
+        ]
 
 ### Delete a Year [DELETE]
 + Response 204
