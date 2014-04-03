@@ -8,7 +8,7 @@ from models import *
 
 def populate_years():
   for year in years:
-    y = Year(id=year["year"], **year)
+    y = Year(**year)
     y.save()
   
 
