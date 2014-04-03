@@ -97,7 +97,7 @@ function httpGet(theUrl) {
 <thead>
 <tr>
 <b>
-{% if player.years.all.0.type == "hitter" %}
+{% if player.years.all.0.kind == "hitter" %}
       <th>Year</th><th>Team</th><th>G</th><th>PA</th><th>BA</th><th>OBP</th><th>SLG</th><th>HR</th><th>RBI</th>
 {% else %}
       <th>Year</th><th>Team</th><th>W</th><th>L</th><th>G</th><th>GS</th><th>S</th><th>IP</th><th>WHIP</th>
@@ -109,7 +109,7 @@ function httpGet(theUrl) {
 <tbody>
 {% for year in player.years.all %}
 <tr>
-      {% if year.type == "hitter" %}
+      {% if year.kind == "hitter" %}
             <td>{{ year.year.year }}</td><td> {{ year.team_year.team.abbr }} </td><td> {{ year.games }}</td><td>{{ year.pa }}</td><td>{{ year.avg }}</td><td>{{ year.obp }}</td><td>{{ year.slg }}</td><td>{{ year.hr }}</td><td>{{ year.rbi }}</td>
             
       {% else %}

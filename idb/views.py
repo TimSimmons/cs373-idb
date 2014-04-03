@@ -1,9 +1,8 @@
 from django.shortcuts import render
-import datetime
 from django.http import HttpResponse, Http404
 from idb.data import *
 from idb.models import *
-from django.forms.models import model_to_dict
+import json
 
 def home(request):
     return render(request, "index.html")
@@ -14,6 +13,22 @@ def player_model(request, player_id):
     except Player.DoesNotExist:
        raise Http404
     return render(request, "player_model.html", {'player':player} )
+
+def team_model(request, team_id):
+    try:
+        team = Team.objects.get(id=team_id)
+    except Team.DoesNotExist:
+       raise Http404
+    return render(request, "team_model.html", {'team':team} )
+
+def year_model(request, year_id):
+    try:
+        year = Year.objects.get(year=year_id)
+        team_years = year.team_years.all().order_by('-wins')
+        #standings = json.loads(year.standings)
+    except Year.DoesNotExist:
+       raise Http404
+    return render(request, "year_model.html", {'year':year, 'standings':team_years} )
 
 def player(request, player_id):
     if player_id == "01":
