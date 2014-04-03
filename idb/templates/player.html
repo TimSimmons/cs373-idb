@@ -129,7 +129,7 @@ function httpGet(theUrl) {
 {% for year in player.years.all %}
 <tr>
       {% if year.kind == "hitter" %}
-            <td>{{ year.year.year }}</td><td> {{ year.team_year.team.abbr }} </td><td> {{ year.games }}</td><td>{{ year.pa }}</td><td>{{ year.avg }}</td><td>{{ year.obp }}</td><td>{{ year.slg }}</td><td>{{ year.hr }}</td><td>{{ year.rbi }}</td>
+            <td><a href="{{ year.year.gen_link }}">{{ year.year.year }}</a></td><td><a href="{{ year.team_year.team.gen_link}}"> {{ year.team_year.team.abbr }} </a></td><td> {{ year.games }}</td><td>{{ year.pa }}</td><td>{{ year.avg }}</td><td>{{ year.obp }}</td><td>{{ year.slg }}</td><td>{{ year.hr }}</td><td>{{ year.rbi }}</td>
             
       {% else %}
             <td>{{ year.year.year }}</td><td> {{year.team }} </td><td>{{ year.w }}</td><td>{{ year.l }}</td><td> {{ year.games }}</td><td> {{ year.gs }}</td><td> {{ year.s }}</td><td>{{ year.ip }}</td><td>{{ year.whip }}</td>

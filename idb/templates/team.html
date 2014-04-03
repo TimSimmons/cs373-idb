@@ -126,8 +126,8 @@ function httpGet(theUrl) {
 </thead>
 <tbody>
 {% for year in team.years.all %}
-<tr>
-      <td>{{ year.year.year }}</td><td>{{ year.wins }}</td><td>{{ year.losses }}</td><td>{{ year.standing }}</td><td>{{ year.attend|intcomma }}</td><td>{{ year.playoffs }}</td><td>${{ year.payroll|slice:"1:"|intcomma }}</td>
+<tr>      
+      <td><a href="{{ year.year.gen_link }}">{{ year.year.year }}</a></td><td>{{ year.wins }}</td><td>{{ year.losses }}</td><td>{{ year.standing }}</td><td>{{ year.attend|intcomma }}</td><td>{{ year.playoffs }}</td><td>${{ year.payroll|slice:"1:"|intcomma }}</td>
 </tr>
 {% endfor %}
 </tbody>

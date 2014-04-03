@@ -24,8 +24,8 @@ class Player(models.Model):
     social = models.CharField(max_length=30)
     
     def gen_link(self):
-        return '''<a href="/players/'''+self.id+''' ">'''+self.name+'''</a>'''
-
+        return "/players/"+self.id
+        
 class Team(models.Model):
     """
     Conatins static information about a team.
@@ -56,7 +56,7 @@ class Team(models.Model):
              "\nsocial: " + self.social
       
     def gen_link(self):
-      return '''<a href="/teams/'''+self.abbr+''' ">'''+self.abbr+'''</a>'''
+      return "/teams/"+self.abbr
 
 
 class Year(models.Model):
@@ -76,7 +76,7 @@ class Year(models.Model):
     AL_CY = models.CharField(max_length=30)
 
     def gen_link(self):
-      return '''<a href="/years/'''+self.year+''' ">'''+self.year+'''</a>'''
+      return "/years/"+self.year
 
 
 class Team_Year(models.Model):
