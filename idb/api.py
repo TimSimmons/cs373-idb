@@ -55,7 +55,7 @@ def team(request, team_id):
 @csrf_exempt
 def teams(request):
   #GET
-  if request.method == 'GET'
+  if request.method == 'GET':
     teams = Team.objects
     response = HttpResponse(serializers.serialize('json', teams ), content_type="application/json")
   #POST
