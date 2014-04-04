@@ -16,7 +16,7 @@ def player(request, player_id):
   # PUT
   if request.method == 'PUT':
     player = Player.objects.get(id=player_id)
-    body = json.loads(request.body)
+    body = json.loads(request.body.decode())
     for k,v in body.items():
       setattr(player, k, v)
       player.save() 
