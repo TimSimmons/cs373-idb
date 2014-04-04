@@ -15,9 +15,9 @@ urlpatterns = patterns('',
     url(r'^teams/([A-Za-z]{3})/$', team_abbr),
     url(r'^years/(\d{4})/$', year),
     url(r'^admin/', include(admin.site.urls)),
-    
-    url(r'^api/players/(\d*)/years$', api.player_years),    
-    url(r'^api/players/(\d*)/years/(\d*)$', api.player_year),
+        
+    url(r'^api/players/(\d{2})/years/(\d{2})$', api.player_year),
+    url(r'^api/players/(\d{2})/years$', api.player_years),
     
     url(r'^api/players/(\d*)/$', api.player),
     url(r'^api/players/$', api.players),
