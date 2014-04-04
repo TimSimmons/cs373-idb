@@ -3,6 +3,8 @@ from django.core import serializers
 from idb.models import *
 import json
 from django.views.decorators.csrf import csrf_exempt
+import sys
+
 
 
 @csrf_exempt
@@ -36,10 +38,12 @@ def players(request):
     response = HttpResponse(serializers.serialize('json', players), content_type="application/json")
   #POST
   if request.method == 'POST':
-    body = json.loads(request.body)
+    body = json.loads(request.body, encoding='utf-8')
+    response = HttpResponse(json.dumps(body), content_type="application/json")
     player = Player(**body)
     player.save()
     response = HttpResponse(serializers.serialize('json', [ player, ]), content_type="application/json")
+    response.status_code = 201 
   return response  
   
 
@@ -78,6 +82,7 @@ def teams(request):
     team = Team(**body)
     team.save()
     response = HttpResponse(serializers.serialize('json', [ team, ]), content_type="application/json")
+    response.status_code = 201  
   return response
 
  
@@ -95,6 +100,7 @@ def year(request, year_id):
       setattr(year, k, v)
       year.save()
     response = HttpResponse(serializers.serialize('json', [ year, ]), content_type="application/json")
+    response.status_code = 200
   #DELETE
   if request.method == 'DELETE':
     year = Year.objects.get(year=year_id)
@@ -112,10 +118,11 @@ def years(request):
     response = HttpResponse(serializers.serialize('json', years), content_type="application/json")
   #POST
   if request.method == 'POST':
-    body = json.loads(request.body)
-    year = Year(**body)
+    body = json.loads(request.body, encoding='utf-8')
+    year = Year(id=body["year"], **body)
     year.save()
     response = HttpResponse(serializers.serialize('json', [ year, ]), content_type="application/json")
+    response.status_code = 201
   return response
 
   
@@ -131,12 +138,13 @@ def player_years(request, player_id):
     response = HttpResponse(serializers.serialize('json', player_years), content_type="application/json")
   #POST
   if request.method == 'POST':
-    body = json.loads(request.body)
+    body = json.loads(request.body, encoding='utf-8')   
     player = Player.objects.get(player_id)
     year = Year.objects.get(year=body.pop("year", None))
     player_year = Player_Year(year=year, player=player, **body)
     player_year.save()
     response = HttpResponse(serializers.serialize('json', [ player_year, ]), content_type="application/json")
+    response.status_code = 201
   return response  
   
   
@@ -176,12 +184,13 @@ def team_years(request, team_id):
     team_years = team.years.all()
     response = HttpResponse(serializers.serialize('json', team_years), content_type="application/json")
   if request.method == 'POST':
-    body = json.loads(request.body)
+    body = json.loads(request.body, encoding='utf-8')
     team = Team.objects.get(id=team_id)
     year = Year.objects.get(year=body.pop("year", None))
     team_year = Team_Year(year=year, team=team, **body)
     team_year.save()
     response = HttpResponse(serializers.serialize('json', [ team_year, ]), content_type="application/json")
+    response.status_code = 201
   return response
   
   

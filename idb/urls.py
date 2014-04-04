@@ -16,16 +16,16 @@ urlpatterns = patterns('',
     url(r'^years/(\d{4})/$', year),
     url(r'^admin/', include(admin.site.urls)),
         
-    url(r'^api/players/(\d{2})/years/(\d{2})$', api.player_year),
-    url(r'^api/players/(\d{2})/years$', api.player_years),
+    url(r'^api/players/(\d*)/years/(\d{4})$', api.player_year),
+    url(r'^api/players/(\d*)/years$', api.player_years),
     
-    url(r'^api/players/(\d{2})/$', api.player),
+    url(r'^api/players/(\d*)/$', api.player),
     url(r'^api/players/$', api.players),
     
-    url(r'^api/teams/(\d{2})/years/(\d{2})$', api.team_year),
-    url(r'^api/teams/(\d{2})/years$', api.team_years),
+    url(r'^api/teams/(\d*)/years/(\d{4})$', api.team_year),
+    url(r'^api/teams/(\d*)/years$', api.team_years),
     
-    url(r'^api/teams/(\d{2})/$', api.team),
+    url(r'^api/teams/(\d*)/$', api.team),
     url(r'^api/teams/$', api.teams),
    
     url(r'^api/years/(\d{4})/$', api.year),
