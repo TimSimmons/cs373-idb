@@ -1,15 +1,17 @@
 #!/usr/bin/env python3
+from django.test import TestCase
 
-from urllib.request import urlopen
-from urllib.request import Request
-from urllib.request import HTTPError
-from urllib.parse import urlencode
+import requests
+#from urllib.request import Request
+#from urllib.request import HTTPError
+#from urllib.parse import urlencode
 from json import dumps
 import re
 import json
 import logging
 import unittest
 from copy import deepcopy
+from idb.models import *
 
 # ----------------
 # Unit Tests - IDB
@@ -44,8 +46,8 @@ year = { "year": "2050",
           "NL_CY": "Clayton Kershaw"
         }
 player_year = {
-          "year": "2050", #year["year"], 
-          "team": "A Team", #team["name"], 
+          "year": "2004", #year["year"], 
+          "team": "Washington Nationals", #team["name"], 
           "kind": "hitter", 
           "games": 1, 
           "pa": 111, 
@@ -67,7 +69,7 @@ team_year = {
 
 url_main = "http://frozen-plateau-5382.herokuapp.com/api"
 
-class TestIDB(unittest.TestCase):
+class TestIDB(TestCase):
   
     def test_player(self):
         headers = {"Content-Type": "application/json"}  
@@ -76,26 +78,19 @@ class TestIDB(unittest.TestCase):
         """
         data = json.dumps(player)
         data = data.encode('utf-8')
-        request = Request(url_main + "/players/", data=data, headers=headers)
-        response = urlopen(request)
-        data = response.readall().decode('utf-8')
-        data = json.loads(data)
+        response = requests.post(url_main + "/players/", data=data)
+        data = response.json()
         p_id = data[0]["pk"]
-        self.assertTrue(request.get_method() == "POST")
-        self.assertTrue(response.getcode() == 201)
+        self.assertTrue(response.status_code == 201)
         #self.assertTrue(len(data) == 1) #TODO this is going to be false until we have our own json serializer
         #self.assertTrue(data == expected)
         self.assertDictEqual(player, data[0]["fields"])
-        print("Created player with id: " + str(p_id))
-        
         """
             GET
         """
-        request = Request(url_main + "/players/" + str(p_id), headers=headers)
-        response = urlopen(request)
-        data = json.loads(response.readall().decode('utf-8'))
-        self.assertTrue(request.get_method() == "GET")
-        self.assertTrue(response.getcode() == 200)
+        response = requests.get(url_main + "/players/" + str(p_id))
+        data = response.json()
+        self.assertTrue(response.status_code == 200)
         self.assertTrue(len(data) == 1)
         #self.check_data(data)
  
@@ -106,12 +101,9 @@ class TestIDB(unittest.TestCase):
         data = {"name" : "The Guy"}
         data = json.dumps(data)
         data = data.encode('utf-8')
-        request = Request(url_main + "/players/" + str(p_id) + "/", headers=headers, data=data)
-        request.get_method = lambda: 'PUT'
-        self.assertTrue(request.get_method() == "PUT")
-        response = urlopen(request)
-        data = json.loads(response.readall().decode('utf-8'))
-        self.assertTrue(response.getcode() == 200)
+        response = requests.put(url_main + "/players/" + str(p_id) + "/", data=data)
+        data = response.json()
+        self.assertTrue(response.status_code == 200)
         _player = deepcopy(player)
         _player["name"] = "The Guy"
         self.assertTrue(data[0]["fields"]["name"] == "The Guy")
@@ -121,11 +113,9 @@ class TestIDB(unittest.TestCase):
            DELETE
         """    
         
-        request = Request(url_main + "/players/" + str(p_id) + "/", headers=headers)
-        request.get_method = lambda: 'DELETE' # StackOverflow hack :/
-        response = urlopen(request)
-        self.assertTrue(response.getcode() == 204)
-        self.assertTrue(request.get_method() == "DELETE") # bit superfluous
+        response = requests.delete(url_main + "/players/" + str(p_id) + "/")
+        self.assertTrue(response.status_code == 204)
+        
         
     def test_team(self):
         headers = {"Content-Type": "application/json"}  
@@ -134,24 +124,17 @@ class TestIDB(unittest.TestCase):
         """
         data = json.dumps(team)
         data = data.encode('utf-8')
-        request = Request(url_main + "/teams/", data=data, headers=headers)
-        response = urlopen(request)
-        data = json.loads(response.readall().decode('utf-8'))
+        response = requests.post(url_main + "/teams/", data=data)
+        data = response.json()
         t_id = data[0]["pk"]      
-        self.assertTrue(request.get_method() == "POST")
-        self.assertTrue(response.getcode() == 201)
+        self.assertTrue(response.status_code == 201)
         self.assertDictEqual(data[0]["fields"],team)
-      
-        print("Created team with id: " + str(t_id))
-      
         """
            GET
         """
-        request = Request(url_main + "/teams/" + str(t_id), headers=headers)
-        response = urlopen(request)
-        data = json.loads(response.readall().decode('utf-8'))
-        self.assertTrue(request.get_method() == "GET")
-        self.assertTrue(response.getcode() == 200)
+        response = requests.get(url_main + "/teams/" + str(t_id))
+        data = response.json()
+        self.assertTrue(response.status_code == 200)
         self.assertTrue(len(data) == 1)
         #self.check_data(data)
 
@@ -162,12 +145,9 @@ class TestIDB(unittest.TestCase):
         data = {"city": "Test City"}
         data = json.dumps(data)
         data = data.encode('utf-8')
-        request = Request(url_main + "/teams/" + str(t_id) + "/", data=data, headers=headers)
-        request.get_method = lambda: 'PUT' 
-        response = urlopen(request)
-        data = json.loads(response.readall().decode('utf-8'))
-        self.assertTrue(request.get_method() == "PUT") # bit superfluous
-        self.assertTrue(response.getcode() == 200)
+        response = requests.put(url_main + "/teams/" + str(t_id) + "/", data=data)
+        data = response.json()
+        self.assertTrue(response.status_code == 200)
         _team = deepcopy(team)
         _team["city"] = "Test City"
         self.assertTrue(data[0]["fields"]["city"] == "Test City")
@@ -178,11 +158,8 @@ class TestIDB(unittest.TestCase):
            DELETE
         """
         
-        request = Request(url_main + "/teams/" + str(t_id) + "/", headers=headers)
-        request.get_method = lambda: 'DELETE' # StackOverflow hack :/
-        response = urlopen(request)
-        self.assertTrue(response.getcode() == 204)
-        self.assertTrue(request.get_method() == "DELETE") # bit superfluous
+        response = requests.delete(url_main + "/teams/" + str(t_id) + "/")
+        self.assertTrue(response.status_code == 204)
         
         
         
@@ -193,25 +170,19 @@ class TestIDB(unittest.TestCase):
         """
         data = json.dumps(year)
         data = data.encode('utf-8')
-        request = Request(url_main + "/years/", data=data, headers=headers)
-        response = urlopen(request)
-        data = json.loads(response.readall().decode('utf-8'))
-        self.assertTrue(request.get_method() == "POST")
-        self.assertTrue(response.getcode() == 201)
+        response = requests.post(url_main + "/years/", data=data)
+        data = response.json()
+        self.assertTrue(response.status_code == 201)
         y_id = data[0]["pk"]
         self.assertDictEqual(year, data[0]["fields"])
 
-        print("Created year with id: " + str(y_id))
-        
         """
            GET
         """
-        request = Request(url_main + "/years/" + str(y_id), headers=headers)
-        response = urlopen(request)
-        data = json.loads(response.readall().decode('utf-8'))
+        response = requests.get(url_main + "/years/" + str(y_id))
+        data = response.json()
         
-        self.assertTrue(request.get_method() == "GET")
-        self.assertTrue(response.getcode() == 200)
+        self.assertTrue(response.status_code == 200)
         self.assertDictEqual(year, data[0]["fields"])
    
         """
@@ -220,13 +191,10 @@ class TestIDB(unittest.TestCase):
         data = {"champion": "me"}
         data = json.dumps(data)
         data = data.encode('utf-8')
-        request = Request(url_main + "/years/" + str(y_id) + "/", data=data, headers=headers)
-        request.get_method = lambda: 'PUT' 
-        response = urlopen(request)
-        data = json.loads(response.readall().decode('utf-8'))
+        response = requests.put(url_main + "/years/" + str(y_id) + "/", data=data)
+        data = response.json()
 
-        self.assertTrue(request.get_method() == "PUT") # bit superfluous
-        self.assertTrue(response.getcode() == 200)
+        self.assertTrue(response.status_code == 200)
         self.assertTrue(data[0]["fields"]["champion"] == "me")
         _year = deepcopy(year)
         _year["champion"] = "me"
@@ -237,110 +205,81 @@ class TestIDB(unittest.TestCase):
            DELETE
         """
         headers = {"Content-Type": "application/json"}
-        request = Request(url_main + "/years/" + str(y_id) + "/", headers=headers)
-        request.get_method = lambda: 'DELETE' 
-        response = urlopen(request)
-        self.assertTrue(response.getcode() == 204)
-        self.assertTrue(request.get_method() == "DELETE") # bit superfluous
+        response = requests.delete(url_main + "/years/" + str(y_id) + "/")
+        self.assertTrue(response.status_code == 204)
         
     
     # Float fields are causing issues
-    # @unittest.skip("Don't mess with shit.")
-    # def test_playerYear(self):
-    #     headers = {"Content-Type": "application/json"}       
-    #     """
-    #         POST
-    #     """
-    #     # Create a Team
-    #     data = json.dumps(team)
-    #     data = data.encode('utf-8')
-    #     request = Request(url_main + "/teams/", data=data, headers=headers)
-    #     response = urlopen(request)
-    #     data = json.loads(response.readall().decode('utf-8'))
-    #     t_id = data[0]["pk"]      
-    #     print("Test_playerYear - Created team: " + str(data))
-    #     # Create a Year
-    #     data = json.dumps(year)
-    #     data = data.encode('utf-8')
-    #     request = Request(url_main + "/years/", data=data, headers=headers)
-    #     response = urlopen(request)
-    #     data = json.loads(response.readall().decode('utf-8'))
-    #     self.assertTrue(request.get_method() == "POST")
-    #     self.assertTrue(response.getcode() == 201)
-    #     y_id = data[0]["pk"]
-    #     print("Test_playerYear - Created year: " + str(data))
-    #     # Create a Team_Year
-    #     data = json.dumps(team_year)
-    #     data = data.encode('utf-8')
-    #     request = Request(url_main + "/teams/" + str(t_id) + "/years", data=data, headers=headers)
-    #     response = urlopen(request)
-    #     data = json.loads(response.readall().decode('utf-8'))
-    #     ty_id = data[0]["pk"]
-    #     print("Test_playerYear - Created team_year: " + str(json.loads(data)))
-    #     # player
-    #     data = json.dumps(player)
-    #     data = data.encode('utf-8')
-    #     request = Request(url_main + "/players/", data=data, headers=headers)
-    #     response = urlopen(request)
-    #     data = response.readall().decode('utf-8')
-    #     data = json.loads(data)
-    #     p_id = data[0]["pk"]
-    #     print("Test_playerYear - Created player with id: " + str(p_id))
+    def test_playerYear(self):
+    	headers = {"Content-Type": "application/json"}       
+    	"""
+    	    POST
+    	"""
+    	# Create a Year
+        data = json.dumps(year)
+        data = data.encode('utf-8')
+        response = requests.post(url_main + "/years/", data=data)
+        data = response.json()
+        self.assertTrue(response.status_code == 201)
+        y_id = data[0]["pk"]
+        # Create a Team
+        data = json.dumps(team)
+        data = data.encode('utf-8')
+        response = requests.post(url_main + "/teams/", data=data)
+        data = response.json()
+        t_id = data[0]["pk"]      
+        # Create a Player
+        data = json.dumps(player)
+        data = data.encode('utf-8')
+        response = requests.post(url_main + "/players/", data=data)
+        data = response.json()
+        p_id = data[0]["pk"]
+        # Create a Team Year
+        data = json.dumps(team_year)
+        data = data.encode('utf-8')
+        response = requests.post(url_main + "/teams/" + str(t_id) + "/years", data=data)
+        data = response.json()
+        # Create a Player_Year
+        data = json.dumps(player_year)
+        data = data.encode('utf-8')
+        response = requests.post(url_main + "/players/" + str(p_id) + "/years", data=data)
+        data = response.json()
+        self.assertTrue(response.status_code == 201)
 
-        # # Create a Player_Year
-        # data = json.dumps(player_year)
-        # print ("DATA = " + data)
-        # data = data.encode('utf-8')
+        py_id = data[0]["pk"]
 
-        # request = Request(url_main + "/players/" + str(p_id) + "/years", data=data, headers=headers)
-        # response = urlopen(request)
-        # data = response.readall().decode('utf-8')
-        # data = json.loads(data)        
-        # self.assertTrue(request.get_method() == "POST")
-        # self.assertTrue(response.getcode() == 201)
+        """
+           GET
+        """    
+        response = requests.get(url_main + "/players/" + str(p_id) + "/years/" + "2004")
+        data = response.json()
+        self.assertTrue(response.status_code == 200)
         #self.assertTrue(len(data) == 12)
         #self.assertTrue(data == expected)
 
-        # py_id = data[0]["pk"]
-    
-        # """
-        #    GET
-        # """    
-        # request = Request(url_main + "/players/" + str(p_id) + "/years/" + str(year["year"]), headers=headers)
-        # response = urlopen(request)
-        # data = json.loads(response.readall().decode('utf-8'))
+        """
+           PUT
+        """  
+        
+        data = {"hr" : 2}
+        data = json.dumps(data)
+        data = data.encode('utf-8')
+        response = requests.put(url_main + "/players/" + str(p_id) + "/years/2004", data=data)
+        data = response.json()
 
-        # self.assertTrue(request.get_method() == "GET")
-        # self.assertTrue(response.getcode() == 200)
-        # #self.assertTrue(len(data) == 12)
-        # #self.assertTrue(data == expected)
-   
-        # """
-        #    PUT
-        # """  
+        self.assertTrue(response.status_code == 200)
         
-        # data = {"games" : "111"}
-        # data = json.dumps(data)
-        # data = data.encode('utf-8')
-        # request = Request(url_main + "/players/" + str(p_id) + "/years/" + str(year["year"]) + "/", headers=headers)
-        # request.get_method = lambda: 'PUT' 
-        # response = urlopen(request)
-        # data = json.loads(response.readall().decode('utf-8'))
-
-        # self.assertTrue(request.get_method() == "PUT") # bit superfluous
-        # self.assertTrue(response.getcode() == 200)
-        # self.assertTrue(len(data) == 12)
-        # self.assertTrue(data == expected)
+        """
+           DELETE
+        """
+        response = requests.delete(url_main + "/players/" + str(p_id) + "/years/" + "2004")
+        self.assertTrue(response.status_code == 204)
         
-        # """
-        #    DELETE
-        # """
-        # request = Request(url_main + "/players/" + str(p_id) + "/years/" + str(year["year"]) + "/", headers=headers)
-        # request.get_method = lambda: 'DELETE' 
-        # response = urlopen(request)
-        # self.assertTrue(response.getcode() == 204)
-        # self.assertTrue(request.get_method() == "DELETE") # bit superfluous
-        
+        # CleanUp
+        response = requests.delete(url_main + "/teams/" + str(t_id) + "/years/" + "2004")
+        response = requests.delete(url_main + "/years/" + str(y_id) + "/")
+        response = requests.delete(url_main + "/teams/" + str(t_id) + "/")
+        response = requests.delete(url_main + "/players/" + str(p_id) + "/")
         
     def test_teamYear(self):
         headers = {"Content-Type": "application/json"}  
@@ -350,27 +289,22 @@ class TestIDB(unittest.TestCase):
         # Create a Team
         data = json.dumps(team)
         data = data.encode('utf-8')
-        request = Request(url_main + "/teams/", data=data, headers=headers)
-        response = urlopen(request)
-        data = json.loads(response.readall().decode('utf-8'))
+        response = requests.post(url_main + "/teams/", data=data)
+        data = response.json()
         t_id = data[0]["pk"]      
         # Create a Year
         data = json.dumps(year)
         data = data.encode('utf-8')
-        request = Request(url_main + "/years/", data=data, headers=headers)
-        response = urlopen(request)
-        data = json.loads(response.readall().decode('utf-8'))
-        self.assertTrue(request.get_method() == "POST")
-        self.assertTrue(response.getcode() == 201)
+        response = requests.post(url_main + "/years/", data=data)
+        data = response.json()
+        self.assertTrue(response.status_code == 201)
         y_id = data[0]["pk"]  
         # Create a Team_Year
         data = json.dumps(team_year)
         data = data.encode('utf-8')
-        request = Request(url_main + "/teams/" + str(t_id) + "/years", data=data, headers=headers)
-        response = urlopen(request)
-        data = json.loads(response.readall().decode('utf-8'))
-        self.assertTrue(request.get_method() == "POST")
-        self.assertTrue(response.getcode() == 201)
+        response = requests.post(url_main + "/teams/" + str(t_id) + "/years", data=data)
+        data = response.json()
+        self.assertTrue(response.status_code == 201)
         _team_year = deepcopy(team_year)
         _team_year.pop("year", None)
         _team_year.pop("team", None)
@@ -381,12 +315,10 @@ class TestIDB(unittest.TestCase):
         """
             GET
         """
-        request = Request(url_main + "/teams/" + str(t_id) + "/years/" + str(y_id), headers=headers)
-        response = urlopen(request)
-        data = json.loads(response.readall().decode('utf-8'))
+        response = requests.get(url_main + "/teams/" + str(t_id) + "/years/" + str(y_id))
+        data = response.json()
 
-        self.assertTrue(request.get_method() == "GET")
-        self.assertTrue(response.getcode() == 200)
+        self.assertTrue(response.status_code == 200)
         _team_year = deepcopy(team_year)
         _team_year.pop("year", None)
         _team_year.pop("team", None)
@@ -400,12 +332,9 @@ class TestIDB(unittest.TestCase):
         data = {"wins": "11"}
         data = json.dumps(data)
         data = data.encode('utf-8')
-        request = Request(url_main + "/teams/" + str(t_id) + "/years/" + str(y_id), data=data, headers=headers)
-        request.get_method = lambda: 'PUT' 
-        response = urlopen(request)
-        data = json.loads(response.readall().decode('utf-8'))
-        self.assertTrue(request.get_method() == "PUT") # bit superfluous
-        self.assertTrue(response.getcode() == 200)
+        response = requests.put(url_main + "/teams/" + str(t_id) + "/years/" + str(y_id), data=data)
+        data = response.json()
+        self.assertTrue(response.status_code == 200)
         _team_year = deepcopy(team_year)
         _team_year.pop("year", None)
         _team_year.pop("team", None)
@@ -417,19 +346,12 @@ class TestIDB(unittest.TestCase):
         """
            DELETE
         """    
-        request = Request(url_main + "/teams/" + str(t_id) + "/years/" + str(y_id), headers=headers)
-        request.get_method = lambda: 'DELETE' 
-        response = urlopen(request)
-        self.assertTrue(response.getcode() == 204)
-        self.assertTrue(request.get_method() == "DELETE") # bit superfluous
+        response = requests.delete(url_main + "/teams/" + str(t_id) + "/years/" + str(y_id))
+        self.assertTrue(response.status_code == 204)
         
-        request = Request(url_main + "/years/" + str(y_id) + "/", headers=headers)
-        request.get_method = lambda: 'DELETE' 
-        response = urlopen(request)
-        
-        request = Request(url_main + "/teams/" + str(t_id) + "/", headers=headers)
-        request.get_method = lambda: 'DELETE' # StackOverflow hack :/
-        response = urlopen(request) 
+        # clean up
+        response = requests.delete(url_main + "/years/" + str(y_id) + "/")
+        response = requests.delete(url_main + "/teams/" + str(t_id) + "/")
     # -----------------
     # Test Player Group
     # -----------------
@@ -439,13 +361,9 @@ class TestIDB(unittest.TestCase):
     def test_list_players(self):
       
         headers = {"Content-Type": "application/json"}
-        request = Request(url_main + "/players/", headers=headers)
-        response = urlopen(request)
-        data = json.loads(response.readall().decode('utf-8'))
-
-        self.assertTrue(request.get_method() == "GET")
-        self.assertTrue(response.getcode() == 200)
-        self.check_data(data)
+        response = requests.get(url_main + "/players/")
+        data = response.json()
+        self.assertTrue(response.status_code == 200)
 
     # ----------------------
     # Test Player Year Group
@@ -456,43 +374,14 @@ class TestIDB(unittest.TestCase):
     def test_list_playerYears(self):
         headers = {"Content-Type": "application/json"}
     
-        request = Request(url_main + "/players/1/years", headers=headers)
-        response = urlopen(request)
-        data = json.loads(response.readall().decode('utf-8'))
-        expected = [
-            {
-                "id": "1",
-                "year": "2012",
-                "team": "WSN",
-                "type": "hitter",
-                "games": "139",
-                "pa": "597",
-                "avg": ".270",
-                "obp": ".340",
-                "slg": ".477",
-                "hr": "22",
-                "rbi": "59",
-                "player_id": "1"
-            }, {
-                "id": "2",
-                "year": "2013",            
-                "team": "WSN",
-                "type": "hitter",
-                "games": "118",
-                "pa": "497",
-                "avg": ".274",
-                "obp": ".368",
-                "slg": ".486",
-                "hr": "20",
-                "rbi": "58",
-                "player_id": "1"
-            }
-        ]
+        response = requests.get(url_main + "/players/1/years")
+        data = response.json()
+        
+        #print("List PlayerYears: " + str(data))
 
-        self.assertTrue(request.get_method() == "GET")
-        self.assertTrue(response.getcode() == 200)
-        self.assertTrue(len(data) == 2)
-        self.assertTrue(len(data[0]) == len(data[1]))
+        self.assertTrue(response.status_code == 200)
+        #self.assertTrue(len(data) == 2)
+        #self.assertTrue(len(data[0]) == len(data[1]))
     
     
     
@@ -504,56 +393,23 @@ class TestIDB(unittest.TestCase):
     """
     Tests the GET functionality of api/teams/
     """
-    # @unittest.skip("Don't mess with shit.")
     def test_list_teams(self):
         headers = {"Content-Type": "application/json"}
     
-        request = Request(url_main + "/teams/", headers=headers)
-        response = urlopen(request)
-        data = json.loads(response.readall().decode('utf-8'))
-        self.assertTrue(request.get_method() == "GET")
-        self.assertTrue(response.getcode() == 200)
-        # self.assertTrue(len(data) == 11)
-        #self.check_data(data)
+        response = requests.get(url_main + "/teams/")
+        data = response.json()
+        self.assertTrue(response.status_code == 200)
     
     # -------------------
     # Test Team Year Group
     # --------------------
 
-    # @unittest.skip("Don't mess with shit.")
     def test_list_teamYears(self):
         headers = {"Content-Type": "application/json"}
     
-        request = Request(url_main + "/teams/1/years", headers=headers)
-        response = urlopen(request)
-        data = json.loads(response.readall().decode('utf-8'))
-        expected = [
-            {
-                "id": "1",
-                "year": "2013",
-                "wins": "78",
-                "losses": "84",
-                "standing": "4",
-                "playoffs": "Lost LDS (3-2)",
-                "attend": "3019505",
-                "payroll": "$116032500",
-                "team_id": "1"
-            }, {
-                "id": "2",
-                "year": "2012",
-                "wins": "89",
-                "losses": "73",
-                "standing": "3",
-                "playoffs": "Lost LDS (3-2)",
-                "attend": "3061770",
-                "payroll": "$140581000",
-                "team_id": "1"
-            }
-        ]
-
-        self.assertTrue(request.get_method() == "GET")
-        self.assertTrue(response.getcode() == 200)
-        self.assertTrue(len(data[0]) == len(data[1]))
+        response = requests.get(url_main + "/teams/1/years")
+        data = response.json()
+        self.assertTrue(response.status_code == 200)
     
     # ---------------
     # Test Year Group
@@ -562,17 +418,11 @@ class TestIDB(unittest.TestCase):
     """
     Tests the GET functionality of api/years/
     """
-    # @unittest.skip("Don't mess with shit.")
     def test_list_years(self):
         headers = {"Content-Type": "application/json"}
-        request = Request(url_main + "/years/", headers=headers)
-        response = urlopen(request)
-        data = json.loads(response.readall().decode('utf-8'))
-
-        self.assertTrue(request.get_method() == "GET")
-        self.assertTrue(response.getcode() == 200)
-        self.assertTrue(len(data) == 10)
-        self.check_data(data)
+        response = requests.get(url_main + "/years/")
+        data = response.json()
+        self.assertTrue(response.status_code == 200)
     
     
     """
@@ -660,9 +510,4 @@ class TestIDB(unittest.TestCase):
     def check_num(self, num):
         return (re.match("[0-9]*", str(num)) is not None)
 
-# ----
-# main
-# ----
-
-unittest.main()
 

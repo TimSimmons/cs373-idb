@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 import dj_database_url
+import sys
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 # Quick-start development settings - unsuitable for production
@@ -54,23 +56,41 @@ ROOT_URLCONF = 'idb.urls'
 
 WSGI_APPLICATION = 'idb.wsgi.application'
 
-
+if 'test' in sys.argv:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': 'mydatabase'
+        }
+    } 
+else:
+    DATABASES = {
+      'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'davacj035mpk75',
+        'HOST': 'ec2-107-21-100-118.compute-1.amazonaws.com',
+        'PORT': 5432,
+        'USER': 'eaatwhssfytxhg',
+        'PASSWORD': 'bXIHj-CyG6_9yHipb0-UTigyZu'
+      }
+    }
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
 #DATABASES = {
 #    'default': dj_database_url.config(default='sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3'))
 #}
-DATABASES = {
-  'default': {
-    'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    'NAME': 'davacj035mpk75',
-    'HOST': 'ec2-107-21-100-118.compute-1.amazonaws.com',
-    'PORT': 5432,
-    'USER': 'eaatwhssfytxhg',
-    'PASSWORD': 'bXIHj-CyG6_9yHipb0-UTigyZu'
-  }
-}
+# DATABASES = {
+#   'default': {
+#     'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#     'NAME': 'davacj035mpk75',
+#     'HOST': 'ec2-107-21-100-118.compute-1.amazonaws.com',
+#     'PORT': 5432,
+#     'USER': 'eaatwhssfytxhg',
+#     'PASSWORD': 'bXIHj-CyG6_9yHipb0-UTigyZu'
+#   }
+# }
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
