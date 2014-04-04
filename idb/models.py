@@ -144,7 +144,7 @@ class Player_Year(models.Model):
     	     
 class Player_Image(models.Model):
     """
-    An image for a player
+    Model representation of an image that is associated with a player. 
     """
     player = models.ForeignKey(Player, related_name='images')
     image = models.URLField() #might need type, but not sure what for
@@ -157,7 +157,7 @@ class Player_Image(models.Model):
     
 class Team_Image(models.Model):
     """
-    An image for a team
+    Model representation of an image that is associated with a team. 
     """
     team = models.ForeignKey(Team, related_name='images')
     image = models.URLField()
