@@ -65,7 +65,7 @@ team_year = {
               "payroll": 111111 
               }
 
-url_main = "http://localhost:5000/api"
+url_main = "http://frozen-plateau-5382.herokuapp.com/api"
 
 class TestIDB(unittest.TestCase):
   
