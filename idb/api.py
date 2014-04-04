@@ -139,10 +139,18 @@ def player_years(request, player_id):
   #POST
   if request.method == 'POST':
     body = json.loads(request.body, encoding='utf-8')   
-    player = Player.objects.get(player_id)
+    player = Player.objects.get(id=player_id)
     year = Year.objects.get(year=body.pop("year", None))
-    player_year = Player_Year(year=year, player=player, **body)
+    team = Team.objects.get(name=body.pop("team", None))
+    team_year = Team_Year.objects.get(team=team, year=year)
+
+    body["avg"] = float(body["avg"])
+    body["obp"] = float(body["obp"])
+    body["slg"] = float(body["slg"])
+    # return HttpResponse(json.dumps(body))
+    player_year = Player_Year(year=year, player=player, team_year=team_year, **body)
     player_year.save()
+
     response = HttpResponse(serializers.serialize('json', [ player_year, ]), content_type="application/json")
     response.status_code = 201
   return response  
