@@ -16,7 +16,7 @@
   <tr valign="middle">
   <!-- Home link -->
       <th>&nbsp;&nbsp;&nbsp;<a
-        href="idb-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+        href="idb.models-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
 
   <!-- Tree link -->
       <th>&nbsp;&nbsp;&nbsp;<a
@@ -37,7 +37,7 @@
   <tr valign="top">
     <td width="100%">
       <span class="breadcrumbs">
-        <a href="idb-module.html">Package&nbsp;idb</a> ::
+        Package&nbsp;idb ::
         <a href="idb.models-module.html">Module&nbsp;models</a> ::
         Class&nbsp;Player_Year
       </span>
@@ -58,9 +58,9 @@
 <!-- ==================== CLASS DESCRIPTION ==================== -->
 <h1 class="epydoc">Class Player_Year</h1><p class="nomargin-top"><span class="codelink"><a href="idb.models-pysrc.html#Player_Year">source&nbsp;code</a></span></p>
 <pre class="base-tree">
-??-10 --+
-        |
-       <strong class="uidshort">Player_Year</strong>
+django.db.models.Model --+
+                         |
+                        <strong class="uidshort">Player_Year</strong>
 </pre>
 
 <hr />
@@ -93,7 +93,7 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="player"></a><span class="summary-name">player</span> = <code title="models.ForeignKey(Player, related_name= 'player_years')">models.ForeignKey(Player, related_name= 'player_years')</code>
+        <a name="player"></a><span class="summary-name">player</span> = <code title="models.ForeignKey(Player, related_name= 'years')">models.ForeignKey(Player, related_name= 'years')</code>
     </td>
   </tr>
 <tr>
@@ -114,13 +114,6 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="pa"></a><span class="summary-name">pa</span> = <code title="models.IntegerField()">models.IntegerField()</code>
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
         <a name="games"></a><span class="summary-name">games</span> = <code title="models.IntegerField()">models.IntegerField()</code>
     </td>
   </tr>
@@ -128,98 +121,98 @@
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="avg"></a><span class="summary-name">avg</span> = <code title="models.FloatField()">models.FloatField()</code>
+        <a name="kind"></a><span class="summary-name">kind</span> = <code title="models.CharField(max_length= 10)">models.CharField(max_length= 10)</code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="obp"></a><span class="summary-name">obp</span> = <code title="models.FloatField()">models.FloatField()</code>
+        <a name="pa"></a><span class="summary-name">pa</span> = <code title="models.IntegerField(blank= True, null= True)">models.IntegerField(blank= True, null= True)</code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="slg"></a><span class="summary-name">slg</span> = <code title="models.FloatField()">models.FloatField()</code>
+        <a name="avg"></a><span class="summary-name">avg</span> = <code title="models.FloatField(blank= True, null= True)">models.FloatField(blank= True, null= True)</code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="hr"></a><span class="summary-name">hr</span> = <code title="models.IntegerField()">models.IntegerField()</code>
+        <a name="obp"></a><span class="summary-name">obp</span> = <code title="models.FloatField(blank= True, null= True)">models.FloatField(blank= True, null= True)</code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="rbi"></a><span class="summary-name">rbi</span> = <code title="models.IntegerField()">models.IntegerField()</code>
+        <a name="slg"></a><span class="summary-name">slg</span> = <code title="models.FloatField(blank= True, null= True)">models.FloatField(blank= True, null= True)</code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="wins"></a><span class="summary-name">wins</span> = <code title="models.IntegerField()">models.IntegerField()</code>
+        <a name="hr"></a><span class="summary-name">hr</span> = <code title="models.IntegerField(blank= True, null= True)">models.IntegerField(blank= True, null= True)</code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="losses"></a><span class="summary-name">losses</span> = <code title="models.IntegerField()">models.IntegerField()</code>
+        <a name="rbi"></a><span class="summary-name">rbi</span> = <code title="models.IntegerField(blank= True, null= True)">models.IntegerField(blank= True, null= True)</code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="era"></a><span class="summary-name">era</span> = <code title="models.FloatField()">models.FloatField()</code>
+        <a name="w"></a><span class="summary-name">w</span> = <code title="models.IntegerField(blank= True, null= True)">models.IntegerField(blank= True, null= True)</code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="games_pitched"></a><span class="summary-name">games_pitched</span> = <code title="models.IntegerField()">models.IntegerField()</code>
+        <a name="l"></a><span class="summary-name">l</span> = <code title="models.IntegerField(blank= True, null= True)">models.IntegerField(blank= True, null= True)</code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="games_started"></a><span class="summary-name">games_started</span> = <code title="models.IntegerField()">models.IntegerField()</code>
+        <a name="era"></a><span class="summary-name">era</span> = <code title="models.FloatField(blank= True, null= True)">models.FloatField(blank= True, null= True)</code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="saves"></a><span class="summary-name">saves</span> = <code title="models.IntegerField()">models.IntegerField()</code>
+        <a name="gs"></a><span class="summary-name">gs</span> = <code title="models.IntegerField(blank= True, null= True)">models.IntegerField(blank= True, null= True)</code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="innings_pitched"></a><span class="summary-name">innings_pitched</span> = <code title="models.IntegerField()">models.IntegerField()</code>
+        <a name="s"></a><span class="summary-name">s</span> = <code title="models.IntegerField(blank= True, null= True)">models.IntegerField(blank= True, null= True)</code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="walks_per_inning"></a><span class="summary-name">walks_per_inning</span> = <code title="models.FloatField()">models.FloatField()</code>
+        <a name="ip"></a><span class="summary-name">ip</span> = <code title="models.IntegerField(blank= True, null= True)">models.IntegerField(blank= True, null= True)</code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="pitched"></a><span class="summary-name">pitched</span> = <code title="models.Floatfield()">models.Floatfield()</code>
+        <a name="whip"></a><span class="summary-name">whip</span> = <code title="models.FloatField(blank= True, null= True)">models.FloatField(blank= True, null= True)</code>
     </td>
   </tr>
 </table>
@@ -266,7 +259,7 @@ models.ForeignKey(Team_Year, related_name= 'player_years')
   <tr valign="middle">
   <!-- Home link -->
       <th>&nbsp;&nbsp;&nbsp;<a
-        href="idb-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+        href="idb.models-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
 
   <!-- Tree link -->
       <th>&nbsp;&nbsp;&nbsp;<a
@@ -286,7 +279,7 @@ models.ForeignKey(Team_Year, related_name= 'player_years')
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Thu Mar 20 16:05:33 2014
+    Generated by Epydoc 3.0.1 on Fri Apr  4 11:54:14 2014
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"
