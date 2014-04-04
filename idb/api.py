@@ -38,7 +38,7 @@ def players(request):
     response = HttpResponse(serializers.serialize('json', players), content_type="application/json")
   #POST
   if request.method == 'POST':
-    body = json.loads(request.body, encoding='utf-8')
+    body = json.loads(request.body.decode())
     response = HttpResponse(json.dumps(body), content_type="application/json")
     player = Player(**body)
     player.save()
