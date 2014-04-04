@@ -16,7 +16,7 @@ def player(request, player_id):
   # PUT
   if request.method == 'PUT':
     player = Player.objects.get(id=player_id)
-    body = json.loads(request.body)
+    body = json.loads(request.body.decode())
     for k,v in body.items():
       setattr(player, k, v)
       player.save() 
@@ -56,7 +56,7 @@ def team(request, team_id):
   #PUT
   if request.method == 'PUT':
     team = Team.objects.get(id=team_id)
-    body = json.loads(request.body)
+    body = json.loads(request.body.decode())
     for k,v in body.items():
       setattr(team, k, v)
       team.save()
@@ -78,7 +78,7 @@ def teams(request):
     response = HttpResponse(serializers.serialize('json', teams ), content_type="application/json")
   #POST
   if request.method == 'POST':
-    body = json.loads(request.body)
+    body = json.loads(request.body.decode())
     team = Team(**body)
     team.save()
     response = HttpResponse(serializers.serialize('json', [ team, ]), content_type="application/json")
@@ -95,7 +95,7 @@ def year(request, year_id):
   #PUT
   if request.method == 'PUT':
     year = Year.objects.get(year=year_id)
-    body = json.loads(request.body)
+    body = json.loads(request.body.decode())
     for k,v in body.items():
       setattr(year, k, v)
       year.save()
@@ -118,7 +118,7 @@ def years(request):
     response = HttpResponse(serializers.serialize('json', years), content_type="application/json")
   #POST
   if request.method == 'POST':
-    body = json.loads(request.body, encoding='utf-8')
+    body = json.loads(request.body.decode())
     year = Year(id=body["year"], **body)
     year.save()
     response = HttpResponse(serializers.serialize('json', [ year, ]), content_type="application/json")
@@ -138,7 +138,7 @@ def player_years(request, player_id):
     response = HttpResponse(serializers.serialize('json', player_years), content_type="application/json")
   #POST
   if request.method == 'POST':
-    body = json.loads(request.body, encoding='utf-8')   
+    body = json.loads(request.body.decode())   
     player = Player.objects.get(id=player_id)
     year = Year.objects.get(year=body.pop("year", None))
     team = Team.objects.get(name=body.pop("team", None))
@@ -170,7 +170,7 @@ def player_year(request, player_id, year_id):
     player_year = Player_Year.objects.get(pk=py_key)
     response = HttpResponse(serializers.serialize('json', [ player_year, ]), content_type="application/json")
   if request.method == 'PUT':
-    body = json.loads(request.body)
+    body = json.loads(request.body.decode())
     for k,v in body.items():
       setattr(player_year, k, v)
       player_year.save()
@@ -192,7 +192,7 @@ def team_years(request, team_id):
     team_years = team.years.all()
     response = HttpResponse(serializers.serialize('json', team_years), content_type="application/json")
   if request.method == 'POST':
-    body = json.loads(request.body, encoding='utf-8')
+    body = json.loads(request.body.decode())
     team = Team.objects.get(id=team_id)
     year = Year.objects.get(year=body.pop("year", None))
     team_year = Team_Year(year=year, team=team, **body)
@@ -213,7 +213,7 @@ def team_year(request, team_id, year_id):
   if request.method == 'GET':
     response = HttpResponse(serializers.serialize('json', [ team_year, ]), content_type="application/json")
   if request.method == 'PUT':
-    body = json.loads(request.body)
+    body = json.loads(request.body.decode())
     for k,v in body.items():
       setattr(team_year, k, v)
       team_year.save()
