@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, Http404
 from idb.data import *
 from idb.models import *
+from clientside import clientside
 import json
 
 def home(request):
