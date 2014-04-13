@@ -11,7 +11,6 @@ def clientside(request):
         temp = {}
         wins = 0
         playoffs = 1
-        print 'http://frozen-plateau-5382.herokuapp.com/api/teams/'+str(x)+'/years'
         r = requests.get('http://frozen-plateau-5382.herokuapp.com/api/teams/'+str(x)+'/years')
         years = r.json()
         for i in range(0,10):
@@ -29,7 +28,6 @@ def clientside(request):
         team = money_per_win[x]
         avg = float(sum([num for num in team.values()]))/10.0
         averages[x] = int(round(avg))
-        print x + " " + str(avg) + " wins: " + str(total_wins[x])
 
     efficiency = {}
     for x in averages.keys():
