@@ -59,7 +59,7 @@ class Team(models.Model):
              "\nsocial: " + self.social
       
     def gen_link(self):
-      return "/teams/"+self.abbr
+      return "/teams/"+str(self.abbr)
 
 
 class Year(models.Model):
@@ -79,7 +79,7 @@ class Year(models.Model):
     AL_CY = models.CharField(max_length=30)
 
     def gen_link(self):
-      return "/years/"+self.year
+      return "/years/"+str(self.year)
 
 
 class Team_Year(models.Model):

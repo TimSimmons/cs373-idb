@@ -1,0 +1,8 @@
+{{ object.name }}
+{{ object.abbr }}
+{{ object.city }}
+{{ object.state }}
+{{ object.park }}
+{{ object.div }}
+{{ object.mgr }}
+{{ object.social }}

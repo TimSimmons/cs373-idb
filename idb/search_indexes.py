@@ -1,5 +1,5 @@
 from haystack import indexes
-from idb.models import Player
+from idb.models import Player, Team, Year
 
 
 class PlayerIndex(indexes.SearchIndex, indexes.Indexable):
@@ -18,8 +18,29 @@ class PlayerIndex(indexes.SearchIndex, indexes.Indexable):
     def get_model(self):
         return Player
 
-class PlayerIndex(indexes.SearchIndex, indexes.Indexable):
+class TeamIndex(indexes.SearchIndex, indexes.Indexable):
     text     = indexes.CharField(document=True, use_template=True)
-
+    name     = indexes.CharField(model_attr='name')
+    abbr     = indexes.CharField(model_attr='abbr')
+    city     = indexes.CharField(model_attr='city')
+    state    = indexes.CharField(model_attr='state')
+    park     = indexes.CharField(model_attr='park')
+    div      = indexes.CharField(model_attr='div')
+    mgr      = indexes.CharField(model_attr='mgr')
+    social   = indexes.CharField(model_attr='social')
+    
     def get_model(self):
         return Team
+    
+    
+class YearIndex(indexes.SearchIndex, indexes.Indexable):
+    text     = indexes.CharField(document=True, use_template=True)
+    year     = indexes.CharField(model_attr='year')
+    champion = indexes.CharField(model_attr='champion')
+    AL_MVP   = indexes.CharField(model_attr='AL_MVP')
+    NL_MVP   = indexes.CharField(model_attr='NL_MVP')
+    NL_CY    = indexes.CharField(model_attr='NL_CY')
+    AL_CY    = indexes.CharField(model_attr='AL_CY')
+
+    def get_model(self):
+        return Year
