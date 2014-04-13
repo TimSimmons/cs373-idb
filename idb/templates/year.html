@@ -66,14 +66,14 @@
            <br>
            AL MVP:
            {% if AL_MVP %} 
-           <a href="{{ AL_MVP.gen_link }}">{{ year.AL_MVP }}</a>
+           <a href="/players/{{ AL_MVP.id }}">{{ year.AL_MVP }}</a>
            {% else %}
            {{ year.AL_MVP }}
            {% endif %}
            <br>
            NL MVP:
            {% if NL_MVP %} 
-           <a href="{{ NL_MVP.gen_link }}">{{ year.NL_MVP }}</a>
+           <a href="/players/{{ NL_MVP.id }}">{{ year.NL_MVP }}</a>
            {% else %}
            {{ year.NL_MVP }}
            {% endif %}
