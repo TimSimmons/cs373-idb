@@ -50,6 +50,16 @@ def year(request, year_id):
         except Player.DoesNotExist:
             NL_MVP = ''
 
+        try:
+            AL_CY = Player.objects.get(name=year.AL_CY)
+        except Player.DoesNotExist:
+            AL_CY = ''
+
+        try:
+            NL_CY = Player.objects.get(name=year.NL_CY)
+        except Player.DoesNotExist:
+            NL_CY = ''
+
     except Year.DoesNotExist:
        raise Http404
     return render(request, "year.html", 
@@ -58,7 +68,9 @@ def year(request, year_id):
             'standings':team_years,
             'champion': champion,
             'AL_MVP': AL_MVP, 
-            'NL_MVP': NL_MVP
+            'NL_MVP': NL_MVP, 
+            'AL_CY': AL_CY, 
+            'NL_CY': NL_CY
         } )
 
 def players(request):

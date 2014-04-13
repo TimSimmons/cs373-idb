@@ -78,8 +78,20 @@
            {{ year.NL_MVP }}
            {% endif %}
            <br>
-           AL Cy Young: {{ year.AL_CY }}<br>
-           NL Cy Young: {{ year.NL_CY }}<br>
+           AL Cy Young:
+           {% if AL_CY %} 
+           <a href="/players/{{ AL_CY.id }}">{{ year.AL_CY }}</a>
+           {% else %}
+           {{ year.AL_CY }}
+           {% endif %}
+           <br>
+           NL Cy Young:
+           {% if NL_CY %} 
+           <a href="/players/{{ NL_CY.id }}">{{ year.NL_CY }}</a>
+           {% else %}
+           {{ year.NL_CY }}
+           {% endif %}
+           <br>
          </div>
        </div>
      </div>
