@@ -34,9 +34,32 @@ def year(request, year_id):
         year = Year.objects.get(year=year_id)
         team_years = year.team_years.all().order_by('-wins')
         #standings = json.loads(year.standings)
+
+        try:
+            champion = Team.objects.get(name=year.champion)
+        except Team.DoesNotExist:
+            champion = ''
+
+        try:
+            AL_MVP = Player.objects.get(name=year.AL_MVP)
+        except Player.DoesNotExist:
+            AL_MVP = ''
+
+        try:
+            NL_MVP = Player.objects.get(name=year.NL_MVP)
+        except Player.DoesNotExist:
+            NL_MVP = ''
+
     except Year.DoesNotExist:
        raise Http404
-    return render(request, "year.html", {'year':year, 'standings':team_years} )
+    return render(request, "year.html", 
+        {
+            'year':year,
+            'standings':team_years,
+            'champion': champion,
+            'AL_MVP': AL_MVP, 
+            'NL_MVP': NL_MVP
+        } )
 
 def players(request):
     try:
