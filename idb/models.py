@@ -31,7 +31,7 @@ class Player(models.Model):
         
 class Team(models.Model):
     """
-    Conatins static information about a team.
+    Contains static information about a team.
 
     The Team model serves a purpose similar to the Player model in that it
     contains information about a team that generally does not change through
