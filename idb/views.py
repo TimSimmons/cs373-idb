@@ -51,9 +51,13 @@ def teams(request):
     except:
        raise Http404
     return render(request, "team-list.html", {'teams':teams} )
+
 def years(request):
     try:
         years = Year.objects.all().order_by('year')
     except:
        raise Http404
     return render(request, "year-list.html", {'years':years} )
+
+def sql(request):
+    return render(request, "sql.html")
