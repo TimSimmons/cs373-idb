@@ -24,7 +24,10 @@ class Player(models.Model):
     social = models.CharField(max_length=30)
     
     def gen_link(self):
-        return "/players/"+self.id
+        return "/players/"+str(self.id)
+
+    def __unicode__(self):
+        return self.name
         
 class Team(models.Model):
     """

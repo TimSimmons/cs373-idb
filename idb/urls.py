@@ -26,6 +26,8 @@ urlpatterns = patterns('',
     url(r'^api/teams/(\d*)/$', api.team),
     url(r'^api/teams/$', api.teams),
     url(r'^api/years/(\d*)/$', api.year),
-    url(r'^api/years/$', api.years)
+    url(r'^api/years/$', api.years),
+    #Search
+    url(r'^search/', include('haystack.urls'))
 )
 
