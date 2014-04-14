@@ -57,11 +57,41 @@
         </div>
         <div class = "row">
           <div class="col-md-6">
-           Champion: {{  year.champion }}<br>
-           AL MVP: {{ year.AL_MVP }}<br>
-           NL MVP: {{ year.NL_MVP }}<br>
-           AL Cy Young: {{ year.AL_CY }}<br>
-           NL Cy Young: {{ year.NL_CY }}<br>
+           Champion: 
+           {% if champion %} 
+           <a href="{{ champion.gen_link }}">{{ year.champion }}</a>
+           {% else %}
+           {{ year.champion }}
+           {% endif %}
+           <br>
+           AL MVP:
+           {% if AL_MVP %} 
+           <a href="/players/{{ AL_MVP.id }}">{{ year.AL_MVP }}</a>
+           {% else %}
+           {{ year.AL_MVP }}
+           {% endif %}
+           <br>
+           NL MVP:
+           {% if NL_MVP %} 
+           <a href="/players/{{ NL_MVP.id }}">{{ year.NL_MVP }}</a>
+           {% else %}
+           {{ year.NL_MVP }}
+           {% endif %}
+           <br>
+           AL Cy Young:
+           {% if AL_CY %} 
+           <a href="/players/{{ AL_CY.id }}">{{ year.AL_CY }}</a>
+           {% else %}
+           {{ year.AL_CY }}
+           {% endif %}
+           <br>
+           NL Cy Young:
+           {% if NL_CY %} 
+           <a href="/players/{{ NL_CY.id }}">{{ year.NL_CY }}</a>
+           {% else %}
+           {{ year.NL_CY }}
+           {% endif %}
+           <br>
          </div>
        </div>
      </div>
