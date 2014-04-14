@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+{% load staticfiles %}
+{% load humanize %}
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="shortcut icon" href="{% static "favicon.ico" %}">
+<title>The Internet Baseball Database - Financial Playoff Efficiency Rating</title>
+
+<!-- Bootstrap core CSS -->
+<link href="../../static/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="starter-template.css" rel="stylesheet">
+
+<!-- Just for debugging purposes. Don't actually copy this line! -->
+<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+    </head>
+
+    <body>
+      <div class="navbar navbar-inverse" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="/"><img src = "{%static "MLB_Logo_Small.png"  %}" class="img-responsive" style="max-width:100px; margin-top: -10px;"></a>
+          </div>
+          <div class="navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="/teams">Teams</a></li>
+              <li><a href="/players">Players</a></li>
+              <li><a href="/years">Years</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="jumbotron">
+        <h1>Interesting SQL Queries</h1>
+        <p>If a player has a .300 batting average, .400 on base percentage, .500 slugigng percentage and 30 home runs it would be classified as one of the better seasons in baseball history. This uncommon feat hasn't been achieved by many players. </p>
+<pre>
+select * from
+    (select name from idb_player 
+    where id in
+            (select player_id from idb_player_year 
+            where hr>30 and avg>.3 and obp>.4 and slg>.5)) as R;
+     
+      name      
+----------------
+ Miguel Cabrera
+ David Ortiz
+ Albert Pujols
+(3 rows)
+</pre>
+        <p>We want to see the years in which a player achieved the historic feat of a .300 batting average, .400 on base percentage, .500 slugigng percentage and 30 home runs.</p>
+<pre>
+select name, year_id, avg, obp, slg, hr 
+    from idb_player, idb_player_year 
+    where idb_player.id = idb_player_year.player_id 
+    and hr>30 and avg>.3 and obp>.4 and slg>.5;
+
+      name      | year_id |  avg  |  obp  |  slg  | hr 
+----------------+---------+-------+-------+-------+----
+ Miguel Cabrera |    2007 |  0.32 | 0.401 | 0.565 | 34
+ Miguel Cabrera |    2010 | 0.328 |  0.42 | 0.622 | 38
+ Miguel Cabrera |    2013 | 0.348 | 0.442 | 0.636 | 44
+ David Ortiz    |    2007 | 0.332 | 0.445 | 0.621 | 35
+ Albert Pujols  |    2004 | 0.331 | 0.415 | 0.657 | 46
+ Albert Pujols  |    2005 |  0.33 |  0.43 | 0.609 | 41
+ Albert Pujols  |    2006 | 0.331 | 0.431 | 0.671 | 49
+ Albert Pujols  |    2007 | 0.327 | 0.429 | 0.568 | 32
+ Albert Pujols  |    2008 | 0.357 | 0.462 | 0.653 | 37
+ Albert Pujols  |    2009 | 0.327 | 0.443 | 0.658 | 47
+ Albert Pujols  |    2010 | 0.312 | 0.414 | 0.596 | 42
+(11 rows)
+</pre>
+        <p>This is a count of the World Series victories by team in the last ten years. </p>
+<pre>
+select name, count(*) as championships 
+    from idb_year, idb_team 
+    where idb_year.champion = idb_team.name 
+    group by name;
+
+        name         | championships 
+---------------------+---------------
+ St. Louis Cardinals |             2
+ New York Yankees    |             1
+ Boston Red Sox      |             3
+(3 rows)
+</pre>
+        <p>This shows a distribution of yearly award winners over the last ten years.</p>
+<pre>
+select name, count(*) as awards from 
+    idb_player, idb_year 
+    where idb_year."NL_MVP" = idb_player.name 
+        or idb_year."AL_MVP" = idb_player.name 
+        or idb_year."NL_CY" = idb_player.name 
+        or idb_year."AL_CY" = idb_player.name 
+        group by name
+        order by awards;
+
+       name       | awards 
+------------------+--------
+ Justin Verlander |      1
+ Andrew McCutchen |      1
+ Miguel Cabrera   |      2
+ Clayton Kershaw  |      2
+ Albert Pujols    |      3
+</pre>
+        <p>This shows the average MLB payroll by year.</p>
+<pre>
+select year_id, round(avg(payroll)) as avgpayroll
+    from idb_team_year 
+    group by year_id 
+    order by year_id;
+
+ year_id | avgpayroll 
+---------+------------
+    2004 |   78237304
+    2005 |   84552357
+    2006 |   85849386
+    2007 |   90846711
+    2008 |   97483974
+    2009 |   97304363
+    2010 |  100888686
+    2011 |  109576831
+    2012 |  123888218
+    2013 |  135994782
+(10 rows)
+</pre>
+        <p>This shows the average payroll by team over the last ten years.</p>
+<pre>
+select name, round(avg(payroll)) as avgpayroll
+    from idb_team, idb_team_year 
+    where idb_team.id = idb_team_year.team_id 
+    group by name 
+    order by round(avg(payroll));
+
+             name              | avgpayroll 
+-------------------------------+------------
+ Miami Marlins                 |   45715950
+ Pittsburgh Pirates            |   50499080
+ Washington Nationals          |   65028768
+ Minnesota Twins               |   74205320
+ Texas Rangers                 |   80820737
+ St. Louis Cardinals           |   96980654
+ Detroit Tigers                |  106872874
+ Los Angeles Angels of Anaheim |  114563169
+ Los Angeles Dodgers           |  123388693
+ Boston Red Sox                |  139224551
+ New York Yankees              |  207785079
+(11 rows)
+</pre>
+        <p>This shows the average number of home runs per player over the last ten years. This is interesting because it's commonly known that players used steroids in the early two thousands, and that their use has declined since then.</p>
+<pre>
+select round(avg(hr)) as hr, year_id 
+    from idb_player_year 
+    group by year_id 
+    order by year_id;
+
+ hr | year_id 
+----+---------
+ 36 |    2004
+ 35 |    2005
+ 36 |    2006
+ 28 |    2007
+ 27 |    2008
+ 28 |    2009
+ 28 |    2010
+ 22 |    2011
+ 28 |    2012
+ 23 |    2013
+(10 rows)
+</pre>
+      </div>
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../static/js/jquery-2.1.0.min.js"></script>
+    <script src="../../static/js/bootstrap.min.js"></script>
+
+
+  </body>
+  </html>
