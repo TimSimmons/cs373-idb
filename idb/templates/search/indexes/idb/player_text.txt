@@ -1,0 +1,9 @@
+{{ object.name }}
+{{ object.number }}
+{{ object.position }} 
+{{ object.bats }} 
+{{ object.throws }}
+{{ object.height }}
+{{ object.weight }}
+{{ object.school }}
+{{ object.gen_link }}

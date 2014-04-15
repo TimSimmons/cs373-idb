@@ -24,11 +24,14 @@ class Player(models.Model):
     social = models.CharField(max_length=30)
     
     def gen_link(self):
-        return "/players/"+self.id
+        return "/players/"+str(self.id)
+
+    def __unicode__(self):
+        return self.name
         
 class Team(models.Model):
     """
-    Conatins static information about a team.
+    Contains static information about a team.
 
     The Team model serves a purpose similar to the Player model in that it
     contains information about a team that generally does not change through
@@ -56,7 +59,7 @@ class Team(models.Model):
              "\nsocial: " + self.social
       
     def gen_link(self):
-      return "/teams/"+self.abbr
+      return "/teams/"+str(self.abbr)
 
 
 class Year(models.Model):
@@ -76,7 +79,7 @@ class Year(models.Model):
     AL_CY = models.CharField(max_length=30)
 
     def gen_link(self):
-      return "/years/"+self.year
+      return "/years/"+str(self.year)
 
 
 class Team_Year(models.Model):
