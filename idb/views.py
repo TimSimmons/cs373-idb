@@ -2,7 +2,6 @@ from django.shortcuts import render
 from django.http import HttpResponse, Http404
 from idb.data import *
 from idb.models import *
-from idb.clientside import clientside
 import json
 
 def home(request):
@@ -96,3 +95,6 @@ def years(request):
 
 def sql(request):
     return render(request, "sql.html")
+
+def client(request):
+    return render(request, "client.html")
