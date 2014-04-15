@@ -2,7 +2,7 @@ from django.conf.urls import patterns, include, url
 
 from django.contrib import admin
 import idb.api as api
-from idb.views import home, player, team, year, team_abbr, players, teams, years, clientside, sql
+from idb.views import home, player, team, year, team_abbr, players, teams, years, client, sql
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -15,7 +15,7 @@ urlpatterns = patterns('',
     url(r'^teams/([A-Za-z]{3})/$', team_abbr),
     url(r'^years/(\d{4})/$', year),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^client/$', clientside),
+    url(r'^client/$', client),
     url(r'^sql/$', sql),
     #API URLS       
     url(r'^api/players/(\d*)/years/(\d*)$', api.player_year),
