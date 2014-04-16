@@ -41,7 +41,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.humanize',
     'idb',
-    'haystack',
+    # 'haystack',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -119,9 +119,9 @@ TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'idb/templates'),
 )
 
-HAYSTACK_CONNECTIONS = {
-    'default': {
-        'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
-        'PATH': os.path.join(BASE_DIR, 'idb/whoosh_index'),
-    },
-}
+# HAYSTACK_CONNECTIONS = {
+#     'default': {
+#         'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
+#         'PATH': os.path.join(BASE_DIR, 'idb/whoosh_index'),
+#     },
+# }
