@@ -63,7 +63,7 @@ body {
 .site-wrapper {
   display: table;
   width: 100%;
-  height: 100%; /* For at least Firefox */
+  height: 85%; /* For at least Firefox */
 }
 .site-wrapper-inner {
   display: table-cell;
@@ -78,9 +78,6 @@ body {
 .inner {
   padding: 30px;
 }
-
-
-
 
 
 /*
@@ -175,7 +172,7 @@ body {
 
 
 
-  <div class="navbar navbar-inverse" role="navigation">
+  <div class="navbar navbar-inverse navbar-static-top" role="navigation">
     <div class="container">
       <div class="navbar-header">
         <a class="navbar-brand" href="/"><img src = "{%static "MLB_Logo_Small.png"  %}" class="img-responsive" style="max-width:100px; margin-top: -10px;"></a>
@@ -191,18 +188,40 @@ body {
   </div>
 
   <div class="site-wrapper">
-
     <div class="site-wrapper-inner">
-
       <div class="cover-container">
         <div class="inner cover">
           <h1 class="cover-heading">The Internet Baseball Database</h1>
           <p class="lead">The definitive source for all things Baseball.</p>
         </div>
-
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+        <!-- Three columns -->
+        <div class="row">
+          <div class="col-lg-4">
+            <a href="/players">
+            <img class="img-circle" class="img-responsive" src="/static/player_circle.jpg">
+            <h2>Players</h2>
+            <p></p>
+          </a>
+          </div><!-- /.col-lg-4 -->
+          <div class="col-lg-4">
+            <a href="/teams">
+            <img class="img-circle" class="img-responsive" src="/static/team_circle.jpg">
+            <h2>Teams</h2>
+            <p></p>
+          </a>
+          </div><!-- /.col-lg-4 -->
+          <div class="col-lg-4">
+            <a href="years">
+            <img class="img-circle" class="img-responsive" src="/static/year_circle.jpg">
+            <h2>Years</h2>
+            <p></p>
+          </a>
+          </div><!-- /.col-lg-4 -->
+        </div><!-- /.row -->
         <div class="mastfoot">
           <div class="inner">
-            <p>Clare Coleman, Tim Simmons, Jordan Graves, Deneb Garza, and Kendall Ahrendsen</p>
+            <p>Django Tango: Clare Coleman, Tim Simmons, Jordan Graves, Deneb Garza, and Kendall Ahrendsen</p>
           </div>
         </div>
 
