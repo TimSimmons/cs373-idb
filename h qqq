@@ -1,0 +1,1529 @@
+[33mcommit 8631b0bea607884c696e584c22e7505f64ff3daa[m
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Wed Apr 16 09:19:09 2014 -0500
+
+    Add Haystack to Requirements.txt
+
+[33mcommit 8e69a1621ae981431dd2873f963cfeb2ee9b6bbb[m
+Author: ccoleman812 <ccoleman812@gmail.com>
+Date:   Tue Apr 15 17:58:01 2014 -0500
+
+    More descriptive field names
+
+[33mcommit efe4649628ad5e74bdcf73df9ccd6f6defdc3290[m
+Merge: 6a17ae0 84efce1
+Author: ccoleman812 <ccoleman812@gmail.com>
+Date:   Tue Apr 15 17:23:28 2014 -0500
+
+    Merge pull request #133 from Squab/haystack-search
+    
+    Haystack search
+
+[33mcommit 6a17ae0352c15e7a78f728ba8cb9cecc5011d5a1[m
+Merge: 866b404 991fb31
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Tue Apr 15 13:11:44 2014 -0500
+
+    Merge pull request #132 from Squab/fix-client
+    
+    Fix the Client Page to use JavaScript Closes #131
+
+[33mcommit 991fb31f0237e0b615c2ad5d37062c2c2614784e[m
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Tue Apr 15 13:04:42 2014 -0500
+
+    Fix the Client Page to use JavaScript Closes #131
+
+[33mcommit 866b404003e02a7b53e5401af52a10892cf9fb3d[m
+Merge: f15b1cd 9525877
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Mon Apr 14 11:03:20 2014 -0500
+
+    Merge pull request #125 from Squab/sql-page
+    
+    Add a page on interesting SQL queries Closes #110
+
+[33mcommit f15b1cd048c64d41de243be31b198a7a3b837f38[m
+Merge: 44d7153 c5921d7
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Mon Apr 14 11:03:00 2014 -0500
+
+    Merge pull request #126 from Squab/year-connections
+    
+    Year connections Closes #102
+
+[33mcommit 84efce1a006205d602cf596ad03867104b5ad62b[m
+Author: Jordan Graves <jgraves8205@aol.com>
+Date:   Sun Apr 13 18:06:08 2014 -0500
+
+    added search support for teams and years
+
+[33mcommit 95258779165ebf34ef79bf0201fff6af3d817e7d[m
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Sun Apr 13 17:09:47 2014 -0500
+
+    Add a page on interesting SQL queries Closes #110
+
+[33mcommit c5921d790135833ffcf6fe104830b666390f58f4[m
+Author: Deneb Garza <deneb@cs.utexas.edu>
+Date:   Sun Apr 13 17:07:04 2014 -0500
+
+    Made AL CY and NL CY linkable
+
+[33mcommit 17f52f82ec83cbf7783956dfab1861b6dfc1eb6e[m
+Author: ccoleman812 <ccoleman812@gmail.com>
+Date:   Sun Apr 13 17:06:19 2014 -0500
+
+    Actual commit with actual adds.
+
+[33mcommit 03201431e5ce9377f1da5bf06f97a03df01ee6fb[m
+Author: ccoleman812 <ccoleman812@gmail.com>
+Date:   Sun Apr 13 17:03:02 2014 -0500
+
+    Minor search edits.
+
+[33mcommit 3b510077adce9f2e2657a4633486d53378878542[m
+Author: ccoleman812 <ccoleman812@gmail.com>
+Date:   Sun Apr 13 16:57:00 2014 -0500
+
+    Basic search working, begun linkability.
+
+[33mcommit 1aa1ab8782cf4fc63ce2829ce921fa89a5f71696[m
+Author: Deneb Garza <deneb@cs.utexas.edu>
+Date:   Sun Apr 13 17:03:34 2014 -0500
+
+    Ghetto fix to player links. gen_link wasn't working properly
+
+[33mcommit 1591bc898e6ba87da5e5e00c8f8a0ea3a4931652[m
+Author: Deneb Garza <deneb@cs.utexas.edu>
+Date:   Sun Apr 13 16:59:37 2014 -0500
+
+    Teams, NL MVP, and AL MVP are linkable if they exist
+
+[33mcommit 44d715379b6007b7af7fb7cb1735b04dee5f0a84[m
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Sun Apr 13 14:37:25 2014 -0500
+
+    Quick patch of client page
+
+[33mcommit 357846a461ce2340ce895e3f8841e8cfa3100af6[m
+Merge: a59221f a4e94ec
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Sun Apr 13 13:49:52 2014 -0500
+
+    Merge pull request #120 from Squab/fix-html-indent
+    
+    Fix some indentation Closes #119
+
+[33mcommit a4e94ecb236695187946701a5b0534472701325f[m
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Sun Apr 13 13:49:05 2014 -0500
+
+    Fix some indentation Closes #119
+
+[33mcommit a59221feaf61b5d542b15750a73d0881bfad9101[m
+Merge: 8b9fa79 5ff1a6c
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Sun Apr 13 13:29:56 2014 -0500
+
+    Merge pull request #118 from Squab/clientside
+    
+    Add a Page that Utilizes the API Closes #109
+
+[33mcommit 5ff1a6cabc63a938b4fdf4aef2f847948b5773b8[m
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Sat Apr 12 17:43:48 2014 -0500
+
+    Add a Page that Utilizes the API Closes #109
+    
+    Added a page at url /client that uses the API to present information
+    about a made up (but pretty awesome) new baseball statistic.
+
+[33mcommit 8b9fa7972620320fd89dc4988b80e7c714d101c7[m
+Merge: c54af65 baa6395
+Author: JordanGraves <j.l.graves03@gmail.com>
+Date:   Fri Apr 4 18:40:27 2014 -0500
+
+    Merge pull request #100 from Squab/api-tests-fixes
+    
+    Api tests fixes
+
+[33mcommit baa63953c7e20921ca160ffa88aeb0d2b549d1e8[m
+Author: Jordan Graves <jgraves8205@aol.com>
+Date:   Fri Apr 4 18:37:44 2014 -0500
+
+    Latest tests
+
+[33mcommit e4a46083b42285e13003febfef6956af087c8d07[m
+Merge: fcddb0b c54af65
+Author: Jordan Graves <jgraves8205@aol.com>
+Date:   Fri Apr 4 18:33:22 2014 -0500
+
+    Merge branch 'master' of https://github.com/Squab/cs373-idb
+
+[33mcommit c54af6504f6f329dc5e608842169afb0217cf52a[m
+Author: ccoleman812 <ccoleman812@gmail.com>
+Date:   Fri Apr 4 18:24:15 2014 -0500
+
+    Remove old report. Oops.
+
+[33mcommit 980c36e12ceba6d03abeedc4591c7ca801d3de17[m
+Author: ccoleman812 <ccoleman812@gmail.com>
+Date:   Fri Apr 4 18:22:15 2014 -0500
+
+    Add project report
+
+[33mcommit ac1718688a6b48b2ce0cdf1ca7888797c442f07a[m
+Merge: bb26ad4 8a2a2f2
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Fri Apr 4 18:14:23 2014 -0500
+
+    Merge pull request #99 from Squab/hallelujah
+    
+    FIX THINGS
+
+[33mcommit 8a2a2f21f4890f8174bf9495d81268d378f5c37c[m
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Fri Apr 4 18:13:47 2014 -0500
+
+    Fix things really
+
+[33mcommit d92185518d38fc8aed141c91e40f55d8b1527530[m
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Fri Apr 4 18:08:47 2014 -0500
+
+    FIX THINGS
+
+[33mcommit bb26ad43613c8091046a701bac2124106181c49d[m
+Merge: 78e5260 3a265c9
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Fri Apr 4 18:02:50 2014 -0500
+
+    Merge pull request #98 from Squab/plzgod
+    
+    Please work
+
+[33mcommit 3a265c91426a228850163062de82bdbf7adbfe74[m
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Fri Apr 4 18:02:16 2014 -0500
+
+    Please work
+
+[33mcommit fcddb0b51e0cda6aa5d71fe56ef58bcc26398295[m
+Merge: 7b651ad 46a472d
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Fri Apr 4 16:12:06 2014 -0500
+
+    Merge pull request #97 from Squab/fixsettingsfortest
+    
+    Lilsetttings
+
+[33mcommit 46a472df13c626de00b90c722a267ca2edaf1110[m
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Fri Apr 4 16:11:24 2014 -0500
+
+    Lilsetttings
+
+[33mcommit 7b651ad4b284fd39880b3e8c84a7ba8188bc117e[m
+Merge: 0bca2b1 78e5260
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Fri Apr 4 15:45:51 2014 -0500
+
+    Merge pull request #96 from Squab/fixin-units
+    
+    Fixin units
+
+[33mcommit 78e52608594f89a48caefddd0ee782b3503e7843[m
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Fri Apr 4 15:45:14 2014 -0500
+
+    Modify tests
+
+[33mcommit 0bca2b1e7f48ae8399d33b9b953aeaef1731420a[m
+Merge: 175c8d1 9b83c58
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Fri Apr 4 11:58:09 2014 -0500
+
+    Merge pull request #95 from Squab/gendoc
+    
+    Generate Documentation for IDB2 Closes #94
+
+[33mcommit 9b83c58dd30bbdebcdaa9261a7c84cdb77e10bfd[m
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Fri Apr 4 11:57:29 2014 -0500
+
+    Generate Documentation for IDB2 Closes #94
+
+[33mcommit 0982390cf2997f490874272dcd27ddc2ea5804e1[m
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Fri Apr 4 11:52:06 2014 -0500
+
+    No failures
+
+[33mcommit 175c8d1c0389c9824a62a81a749eed58bda98976[m
+Merge: 05a3422 9e75c2c
+Author: Jordan Graves <jgraves8205@aol.com>
+Date:   Thu Apr 3 22:24:33 2014 -0500
+
+    merge
+
+[33mcommit 9e75c2cffedad5284bdff745c5e105167c111eb3[m
+Author: Jordan Graves <jgraves8205@aol.com>
+Date:   Thu Apr 3 22:05:35 2014 -0500
+
+    added more assertions, PUT and DELETE calls working
+
+[33mcommit 6b1fb45d6f64176fd6b5bfe22b9b4813b08010df[m
+Author: Jordan Graves <jgraves8205@aol.com>
+Date:   Thu Apr 3 21:18:00 2014 -0500
+
+    removed mysterious screenshot files
+
+[33mcommit 76bef9442627733be4c96829438896cee5596a8c[m
+Author: Jordan Graves <jgraves8205@aol.com>
+Date:   Thu Apr 3 21:11:12 2014 -0500
+
+    modified tests, maybe some url changes, very small api changes
+
+[33mcommit 05a342261c0fe299aeded8cf1edb67a54a64b2de[m
+Author: ccoleman812 <ccoleman812@gmail.com>
+Date:   Thu Apr 3 18:16:18 2014 -0500
+
+    Apiary documentation updated to reflect actual db.
+
+[33mcommit 3e1f567f4a78f47dba2998364cef5a00c7498ceb[m
+Merge: d1e45a0 86f5714
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Thu Apr 3 15:15:13 2014 -0500
+
+    Merge pull request #89 from Squab/fixurls
+    
+    Fix some regexes in the urls
+
+[33mcommit 86f57147eedfa8d8877d584542505cc2de798395[m
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Thu Apr 3 15:13:13 2014 -0500
+
+    Fix some regexes in the urls
+
+[33mcommit d1e45a0f1fb971549558a594d4435c34045a7ffc[m
+Merge: 882af4b cacb184
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Thu Apr 3 01:07:21 2014 -0500
+
+    Merge pull request #88 from Squab/more-bootstrap
+    
+    forgot to add favicon to git
+
+[33mcommit 882af4bcec797e0e45b002fa83886ecf3bb5d869[m
+Merge: ae494ef acb7e61
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Thu Apr 3 01:05:23 2014 -0500
+
+    Merge pull request #87 from Squab/add-links
+    
+    Add links between all of the things
+
+[33mcommit acb7e610a68b9957f8fbf7b422033e55227a65e7[m
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Thu Apr 3 01:04:47 2014 -0500
+
+    Add links between all of the things
+
+[33mcommit ae494ef3a8bfc106b6110303fa5909ca0cd7ec09[m
+Merge: 5be3b5b 08b1616
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Thu Apr 3 00:41:02 2014 -0500
+
+    Merge pull request #86 from Squab/playerhate
+    
+    fix players data
+
+[33mcommit 08b1616bec16f144c1daac38a4558c60cbd084c2[m
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Thu Apr 3 00:40:23 2014 -0500
+
+    fix players data
+
+[33mcommit 5be3b5b9028dac4cc423e7386b49140fabdca497[m
+Merge: 5c504da 5ec3d6b
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Thu Apr 3 00:12:23 2014 -0500
+
+    Merge pull request #85 from Squab/add-popall
+    
+    Add populate all
+
+[33mcommit 5ec3d6b6bc6b2ba3864c16deaf06f2c61ef73747[m
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Thu Apr 3 00:12:00 2014 -0500
+
+    Add populate all
+
+[33mcommit cacb1846533fed5dba742951ee322faf96ad4916[m
+Author: Kendall Ahrendsen <kendall@cs.utexas.edu>
+Date:   Thu Apr 3 00:11:54 2014 -0500
+
+    forgot to add favicon to git
+
+[33mcommit 5c504dac242b01a84e863830bc8f07a0edfd0dcb[m
+Merge: f1c5ddf 3e30ca2
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Thu Apr 3 00:08:21 2014 -0500
+
+    Merge pull request #84 from Squab/add_all_players
+    
+    Added all 10 players
+
+[33mcommit 3e30ca272a7c4e80acde805ec6ad54ee47f5400f[m
+Author: Deneb Garza <deneb@cs.utexas.edu>
+Date:   Thu Apr 3 00:05:21 2014 -0500
+
+    Added all 10 players
+
+[33mcommit f1c5ddf8ec5ae3620133991e0d70a9cd512be849[m
+Merge: b631243 eb6b640
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Wed Apr 2 23:59:55 2014 -0500
+
+    Merge pull request #83 from Squab/kill-standings
+    
+    kill standings field
+
+[33mcommit eb6b64050c50026408c4dd2b355d160bff00ee9f[m
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Wed Apr 2 23:59:29 2014 -0500
+
+    kill standings field
+
+[33mcommit b631243b743cee947650f6873332f52afb916bf4[m
+Merge: fda0e74 bc1bb40
+Author: kahrendsen <kendall.ahrendsen@gmail.com>
+Date:   Wed Apr 2 23:54:09 2014 -0500
+
+    Merge pull request #81 from Squab/more-bootstrap
+    
+    More bootstrap
+
+[33mcommit bc1bb405c5076c766377d482df29e008b84179a2[m
+Author: Kendall Ahrendsen <kendall@cs.utexas.edu>
+Date:   Wed Apr 2 23:53:33 2014 -0500
+
+    added favicons and fixed titles
+
+[33mcommit fda0e7401b4aed82adbfd8b537069bbee2c81a01[m
+Merge: f453dc6 e9c7c0c
+Author: JordanGraves <j.l.graves03@gmail.com>
+Date:   Wed Apr 2 23:51:14 2014 -0500
+
+    Merge pull request #82 from Squab/populate-db
+    
+    id for years uses 'year' value
+
+[33mcommit e9c7c0c0b27dc61ecdeb7b62567204a092246434[m
+Author: Jordan Graves <jgraves8205@aol.com>
+Date:   Wed Apr 2 23:48:43 2014 -0500
+
+    remove ~
+
+[33mcommit 14301989c0d7ee4c9657a113025337f2c1e728fd[m
+Author: Jordan Graves <jgraves8205@aol.com>
+Date:   Wed Apr 2 23:47:17 2014 -0500
+
+    id for years uses 'year' value
+
+[33mcommit f453dc637f3ead1cd48c432f37fc047149224ccd[m
+Merge: 1983dc4 68ad9ac
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Wed Apr 2 23:37:22 2014 -0500
+
+    Merge pull request #80 from Squab/fixident
+    
+    fix an indent
+
+[33mcommit 68ad9ac0d032050fca801493ff820e7b9c8760c9[m
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Wed Apr 2 23:37:06 2014 -0500
+
+    fix an indent
+
+[33mcommit 5acb9d63bdad54f1909b97eac775507374aef7e4[m
+Author: Kendall Ahrendsen <kendall@cs.utexas.edu>
+Date:   Wed Apr 2 23:36:12 2014 -0500
+
+    finished lists and added navbars to everything
+
+[33mcommit d0a6ce0110c48809c451d84e44420146e3881f03[m
+Author: Kendall Ahrendsen <kendall@cs.utexas.edu>
+Date:   Wed Apr 2 23:24:29 2014 -0500
+
+    implemented team and player list pages
+
+[33mcommit 1983dc40a6c40ba4b04a8ec1c5ab9239fab2b962[m
+Merge: 4bd70a2 5aab4a7
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Wed Apr 2 23:23:19 2014 -0500
+
+    Merge branch 'master' into working-api
+    
+    Conflicts:
+    	idb/api.py
+
+[33mcommit 4bd70a26bf2dc7f6b83dc5b1773a9d7418eb549c[m
+Author: Jordan Graves <jgraves8205@aol.com>
+Date:   Wed Apr 2 23:14:54 2014 -0500
+
+    added post, delete for player_years and team_years
+
+[33mcommit 5aab4a7cab7f09b97bdd06c7bcf7d2d56d06a726[m
+Merge: d584a1d dfc67a3
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Wed Apr 2 22:25:02 2014 -0500
+
+    Merge pull request #78 from Squab/basic-generic-views
+    
+    Add skeleton views/urls for /resources
+
+[33mcommit dfc67a36b163c82fc13ef625d0d5f908cee4d5a3[m
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Wed Apr 2 22:24:19 2014 -0500
+
+    Add skeleton views/urls for /resources
+
+[33mcommit d584a1db10f860315528fa04862ddd80f2acd405[m
+Merge: 28cd15c 7746630
+Author: kahrendsen <kendall.ahrendsen@gmail.com>
+Date:   Wed Apr 2 22:14:03 2014 -0500
+
+    Merge pull request #76 from Squab/more-bootstrap
+    
+    More bootstrap
+
+[33mcommit 28cd15c0960f53278b3da9f11dbcdfb2f2894b3d[m
+Merge: 031ecac e665e18
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Wed Apr 2 22:07:01 2014 -0500
+
+    Merge pull request #77 from Squab/indentz
+    
+    Fix indents
+
+[33mcommit e665e18ac3145ff6c10843cad2cfb94523a7aa5a[m
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Wed Apr 2 22:06:37 2014 -0500
+
+    Fix indents
+
+[33mcommit 77466305e6cadad8f0a487a53ea7ae43cf41fc36[m
+Author: Kendall Ahrendsen <kendall@cs.utexas.edu>
+Date:   Wed Apr 2 22:00:29 2014 -0500
+
+    added list pages
+
+[33mcommit 869d1073ebbd1aadae6e96c9352d27dd89563be8[m
+Author: Kendall Ahrendsen <kendall@cs.utexas.edu>
+Date:   Wed Apr 2 21:57:41 2014 -0500
+
+    added meta tag to maybe make site search possible
+
+[33mcommit 031ecacab3716683067ca2680a8e476fa5177f21[m
+Merge: 231b0f9 bc169c9
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Wed Apr 2 21:57:10 2014 -0500
+
+    Merge pull request #75 from Squab/working-api
+    
+    stupid tabs and spaces fix
+
+[33mcommit b65932bf1f9d0e18ba84e2d8443b4555f81aa9a1[m
+Author: Kendall Ahrendsen <kendall@cs.utexas.edu>
+Date:   Wed Apr 2 21:56:51 2014 -0500
+
+    more overhaul of index.html, but now nothing is linked :(
+
+[33mcommit bc169c99745ef82ac36c48e9080ed0693e2af3e9[m
+Author: Jordan Graves <jgraves8205@aol.com>
+Date:   Wed Apr 2 21:54:40 2014 -0500
+
+    stupid tabs and spaces fix
+
+[33mcommit 231b0f9bd6d89e42a824df90fe934911546e36a8[m
+Merge: 01939bd 7698d4b
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Wed Apr 2 21:48:36 2014 -0500
+
+    Merge branch 'master' into working-api
+    
+    Conflicts:
+    	idb/urls.py
+
+[33mcommit 01939bd6aa53f2edee7fe47a0033b3b0960b24ee[m
+Author: Jordan Graves <jgraves8205@aol.com>
+Date:   Wed Apr 2 21:46:17 2014 -0500
+
+    fixes
+
+[33mcommit 6196e2f15ad1403c39389a4b0c42bdb509cff60b[m
+Author: Jordan Graves <jgraves8205@aol.com>
+Date:   Wed Apr 2 21:45:47 2014 -0500
+
+    fixed syntax error
+
+[33mcommit 8f6fc1dbce871f90425fd8e3e0e9191c679105e0[m
+Author: Jordan Graves <jgraves8205@aol.com>
+Date:   Wed Apr 2 21:42:13 2014 -0500
+
+    additions to player_years, team_years
+
+[33mcommit 7698d4bb18fdb53c49ee539b07e11a6379116a7a[m
+Merge: dc5fe1b 426dd68
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Wed Apr 2 21:38:23 2014 -0500
+
+    Merge pull request #74 from Squab/cleanup-templates-views
+    
+    Update views/urls to only use the DB
+
+[33mcommit 426dd68e65c0a0dbe8c096a3405aff6d5730ce49[m
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Wed Apr 2 21:36:34 2014 -0500
+
+    Update views/urls to only use the DB
+
+[33mcommit 7452f4d9dd1519b9fb748f044a346ccef3e2c6ca[m
+Author: Jordan Graves <jgraves8205@aol.com>
+Date:   Wed Apr 2 21:29:55 2014 -0500
+
+    added team_years (GET)
+
+[33mcommit dc5fe1b4d0cd23b4f04fcb4a8d7b7dfe8aec090e[m
+Merge: 5012079 963a010
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Wed Apr 2 20:56:20 2014 -0500
+
+    Merge pull request #73 from Squab/change-standings
+    
+    Change Years page to display only standings in the db
+
+[33mcommit 963a010326cfc398a0705045ecf5c27176e61dea[m
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Wed Apr 2 20:50:22 2014 -0500
+
+    Change Years page to display only standings in the db
+
+[33mcommit af7ca4abdcf3ecd578bb560c34f42a23d057a112[m
+Author: Jordan Graves <jgraves8205@aol.com>
+Date:   Wed Apr 2 20:48:56 2014 -0500
+
+    added and tested, DELETE and POSTS for players, teams, years
+
+[33mcommit 0c44758cab0a63a9dec36a699797e8ba555421d1[m
+Author: Kendall Ahrendsen <kendall@cs.utexas.edu>
+Date:   Wed Apr 2 20:31:50 2014 -0500
+
+    overhaul of index.html
+
+[33mcommit d7e16b5caee7819c05d4e845a49040f12ce4bafc[m
+Author: Jordan Graves <jgraves8205@aol.com>
+Date:   Wed Apr 2 20:31:15 2014 -0500
+
+    posts working for years, players and teams
+
+[33mcommit bf692c1e9dc1dbd31e86ac0aa84ef72bc57237c7[m
+Author: Jordan Graves <jgraves8205@aol.com>
+Date:   Wed Apr 2 20:16:25 2014 -0500
+
+    fixes
+
+[33mcommit a564e517ed6408c4d11cce066db887d0ae8b8473[m
+Author: JordanGraves <j.l.graves03@gmail.com>
+Date:   Wed Apr 2 20:13:55 2014 -0500
+
+    Update api.py
+
+[33mcommit 47a0f1e431bf7d46e9768df47286d9f36abf9030[m
+Author: Jordan Graves <jgraves8205@aol.com>
+Date:   Wed Apr 2 20:10:30 2014 -0500
+
+    added post and get for all (players,teams,years)
+
+[33mcommit 9772557ee05faf6c5284777a5e49f2b7f4c04bd1[m
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Wed Apr 2 20:09:48 2014 -0500
+
+    Adapt players/years templates to read from db
+
+[33mcommit 612c26ae18dbfd0bc06667123a9abe27f06de8f5[m
+Author: Jordan Graves <jgraves8205@aol.com>
+Date:   Wed Apr 2 20:03:16 2014 -0500
+
+    add teams, years, players endpoint
+
+[33mcommit 91756cbe612c559a30201b7b608ac6fadc363770[m
+Author: Jordan Graves <jgraves8205@aol.com>
+Date:   Wed Apr 2 19:38:14 2014 -0500
+
+    add post for players, need to test
+
+[33mcommit 64af55326bfc40a784a284872d5f033046ce148d[m
+Author: Jordan Graves <jgraves8205@aol.com>
+Date:   Wed Apr 2 19:34:18 2014 -0500
+
+    added get for teams, years, players / added put for players
+
+[33mcommit ed8ca7433dba260c5df76b54ad51f00f3e51a3f3[m
+Author: Jordan Graves <jgraves8205@aol.com>
+Date:   Wed Apr 2 18:54:10 2014 -0500
+
+    begin working api
+
+[33mcommit 68dc01e26a0f1b15db4fc79f93a7f49160b166fd[m
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Tue Apr 1 20:18:50 2014 -0500
+
+    Fixing things, it's mostly working
+
+[33mcommit 713194346d1cb5dd8c83bac017e3df4002ca9834[m
+Author: Squab <tim.r.simmons@gmail.com>
+Date:   Tue Apr 1 19:52:18 2014 -0500
+
+    First attempt at making teams/years pull from db
+
+[33mcommit 50120799636678c1874efbdd405b7f651f5f0b3c[m
+Merge: 1681fb2 676ec61
+Author: JordanGraves <j.l.graves03@gmail.com>
+Date:   Wed Apr 2 17:17:59 2014 -0500
+
+    Merge pull request #70 from Squab/populate-db-two
+    
+    Populate the database
+
+[33mcommit 676ec61442c08e76cc047eaa2105e23630f2699e[m
+Author: Jordan Graves <jgraves8205@aol.com>
+Date:   Wed Apr 2 17:16:48 2014 -0500
+
+    Populate the database
+
+[33mcommit 1681fb290e415547b2ab8e98187adb50779a7fdb[m
+Merge: f1d178a f052d40
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Wed Apr 2 14:01:41 2014 -0500
+
+    Merge pull request #69 from Squab/populate-db
+    
+    Populate db
+
+[33mcommit f052d407cadb27d674a5c8f3feffc3ebfa67ec78[m
+Merge: 92c2d64 95aedb7
+Author: Jordan Graves <jgraves8205@aol.com>
+Date:   Wed Apr 2 13:59:10 2014 -0500
+
+    Merge branch 'populate-db' of https://github.com/Squab/cs373-idb into populate-db
+
+[33mcommit 92c2d64aacca9449be4b3810d23d751b995c9666[m
+Author: Jordan Graves <jgraves8205@aol.com>
+Date:   Wed Apr 2 13:58:41 2014 -0500
+
+    ~ in gitignore, wins/losses to w/l
+
+[33mcommit 95aedb7f869b00347f2d6846d6f0a1d76a29e8a4[m
+Author: JordanGraves <j.l.graves03@gmail.com>
+Date:   Wed Apr 2 00:34:38 2014 -0500
+
+    Delete years.py~
+
+[33mcommit 5602743f98d3ad2d44005642510406aba6984631[m
+Author: JordanGraves <j.l.graves03@gmail.com>
+Date:   Wed Apr 2 00:34:24 2014 -0500
+
+    Delete players.py~
+
+[33mcommit b82e6c130e3ba07b391c4eeab682af65759c36f5[m
+Author: JordanGraves <j.l.graves03@gmail.com>
+Date:   Wed Apr 2 00:34:06 2014 -0500
+
+    Update players.py~
+
+[33mcommit 757790c26d47661ddf335e07078266f9cb9710d6[m
+Merge: 94813b2 b5405b6
+Author: Jordan Graves <jgraves8205@aol.com>
+Date:   Wed Apr 2 00:33:04 2014 -0500
+
+    Merge branch 'populate-db' of https://github.com/Squab/cs373-idb into populate-db
+
+[33mcommit 94813b2a01da555f679bed9788831abaf1bd8200[m
+Author: Jordan Graves <jgraves8205@aol.com>
+Date:   Wed Apr 2 00:32:28 2014 -0500
+
+    change w/l in player_years, removed _id
+
+[33mcommit b5405b67c44a2a0bac86cd56e1ae1b8690ceb41a[m
+Author: JordanGraves <j.l.graves03@gmail.com>
+Date:   Tue Apr 1 23:37:07 2014 -0500
+
+    Delete models.py~
+
+[33mcommit dd54f849d190628de4c8dc7ef221290c5517a690[m
+Author: Jordan Graves <jgraves8205@aol.com>
+Date:   Tue Apr 1 23:32:08 2014 -0500
+
+    remove swp
+
+[33mcommit d8f7ff319046ca88beb71d485a6dc5bf41048ce4[m
+Author: Jordan Graves <jgraves8205@aol.com>
+Date:   Tue Apr 1 23:30:36 2014 -0500
+
+    remove populate swap file
+
+[33mcommit 70a2463ade45fbbd87627fc9c837fb68829f5d1d[m
+Author: Jordan Graves <jgraves8205@aol.com>
+Date:   Tue Apr 1 23:29:31 2014 -0500
+
+    cleanup
+
+[33mcommit 03ca01e868af0f26170509c182a7196805792c41[m
+Author: Jordan Graves <jgraves8205@aol.com>
+Date:   Tue Apr 1 23:24:22 2014 -0500
+
+    delete my_settings.py
+
+[33mcommit 52e01cb4367fa6ec5aee809bc683cae1f93e0371[m
+Author: Jordan Graves <jgraves8205@aol.com>
+Date:   Tue Apr 1 23:19:12 2014 -0500
+
+    moved data, updated pop script
+
+[33mcommit efa2c52d041201a682ef97dbc84e495b879cfe10[m
+Author: Jordan Graves <jgraves8205@aol.com>
+Date:   Tue Apr 1 16:19:01 2014 -0500
+
+    add files
+
+[33mcommit 5f3276bdf8b766dd16410cb0d1ffd53fa4259785[m
+Author: Jordan Graves <jgraves8205@aol.com>
+Date:   Tue Apr 1 16:16:09 2014 -0500
+
+    adding population script, TODO players
+
+[33mcommit e6db7a8de7c30a5c3b387ee411850d5916b787a5[m
+Author: Kendall Ahrendsen <kendall@cs.utexas.edu>
+Date:   Mon Mar 31 18:24:07 2014 -0500
+
+    Added logo, currently broken
+
+[33mcommit f1d178a413fbc3b53fca64183b6a98eb3ed23d44[m
+Merge: a3ecb61 04a7fda
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Mon Mar 31 16:58:35 2014 -0500
+
+    Merge pull request #67 from Squab/add-admin
+    
+    Add Admin interface Closes #66
+
+[33mcommit 04a7fda50b36fbd892f3da06509501cdde8e0409[m
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Mon Mar 31 16:57:58 2014 -0500
+
+    Add Admin interface Closes #66
+
+[33mcommit a3ecb6113bf4f7805c2b3461c51b0ed6eb407327[m
+Author: ccoleman812 <ccoleman812@gmail.com>
+Date:   Sun Mar 30 21:51:42 2014 -0500
+
+    Converted number fields from string to number values.
+
+[33mcommit 58005c95fd6ca09ae962cf7390279da1780a0d8b[m
+Merge: f18c67d 13bd864
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Sun Mar 30 15:02:18 2014 -0500
+
+    Merge pull request #64 from Squab/fixstupid
+    
+    Add playeryear-teamyear relationship back
+
+[33mcommit 13bd864dc1f6aa6a88e17a3bd0b494283445d624[m
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Sun Mar 30 14:56:30 2014 -0500
+
+    Add playeryear-teamyear relationship back
+    
+    So dumb
+
+[33mcommit f18c67df4d8a595dd6ab3637d504effbb297c060[m
+Merge: 748757b eec6e24
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Sun Mar 30 14:44:52 2014 -0500
+
+    Merge pull request #63 from Squab/player-serve-model
+    
+    Add preliminary player page to be served by model
+
+[33mcommit eec6e24a82e6d52db2c158a11863238eef1575cc[m
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Sun Mar 30 14:42:59 2014 -0500
+
+    Add preliminary player page to be served by model
+    
+    Serve player model from the database. Keeping it in a sepearate template/view/url for now.
+
+[33mcommit 748757b7d3e043e6e1d69741690a01bf10ad86be[m
+Merge: e43405e 893aaad
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Sun Mar 30 11:41:33 2014 -0500
+
+    Merge pull request #61 from Squab/fixmodels
+    
+    Make the Models Work Closes #55 Closes #59 Closes #60
+
+[33mcommit e43405e36295c256b9179bb79c77580c38e5f0d9[m
+Merge: c0caa2c 5008088
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Sun Mar 30 11:41:22 2014 -0500
+
+    Merge pull request #54 from Squab/api-tests-fix
+    
+    Api tests fix
+
+[33mcommit 893aaadaa02c5f85f40a1e7f1c8da69fea2f37d3[m
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Sat Mar 29 18:57:02 2014 -0500
+
+    Make the Models Work Closes #55 Closes #59 Closes #60
+    
+    A few small changes to the models to make them work properly
+    Tested and it works
+    
+    Also added the database, which is necessary for the models to work
+
+[33mcommit 5008088dfea30a6bdbde348ee61c72e9d203361a[m
+Author: ccoleman812 <ccoleman812@gmail.com>
+Date:   Thu Mar 27 14:51:05 2014 -0500
+
+    Removed extra comparisons from API unit tests
+
+[33mcommit e89c2fc28efcf3cc2cc2898afc32a8cbd2272379[m
+Author: ccoleman812 <ccoleman812@gmail.com>
+Date:   Thu Mar 27 14:42:55 2014 -0500
+
+    Fixed API unit tests to conform to phase 1 feedback
+
+[33mcommit c0caa2c65347ad63b5038b993986440fc679594f[m
+Merge: a98adcd 77be01d
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Thu Mar 20 18:10:06 2014 -0500
+
+    Merge pull request #39 from Squab/addreport
+    
+    Add the report. Closes #5
+
+[33mcommit 77be01d32363d03435faa90b361a03eca1ef7877[m
+Author: Squab <tim.r.simmons@gmail.com>
+Date:   Thu Mar 20 18:09:38 2014 -0500
+
+    Add the report. Closes #5
+
+[33mcommit a98adcdf888f97e879ada77a00bdc811686fe5ae[m
+Merge: 3c8d364 8c7c021
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Thu Mar 20 16:15:27 2014 -0500
+
+    Merge pull request #38 from Squab/updatedocs
+    
+    Add Documentation Closes #9
+
+[33mcommit 8c7c0217d8b5368d2f000c7922b966c04f1735ad[m
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Thu Mar 20 16:12:25 2014 -0500
+
+    Add Documentation Closes #9
+
+[33mcommit 3c8d364f35d21ef79cb961bbc3ffc7d98b28d72f[m
+Merge: 397d8ff 17c53bf
+Author: ccoleman812 <ccoleman812@gmail.com>
+Date:   Thu Mar 20 12:35:17 2014 -0500
+
+    Merge pull request #37 from Squab/api-unitsts
+    
+    Added tests.out
+
+[33mcommit 17c53bfd18a14b8f50b4acf9c3d1dd20dc3985bd[m
+Author: ccoleman812 <ccoleman812@gmail.com>
+Date:   Thu Mar 20 12:30:36 2014 -0500
+
+    Added tests.out
+
+[33mcommit 397d8ff3ac37f0cc7ce33ac72f28228ec0f1cc21[m
+Merge: 7fcc394 166940a
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Thu Mar 20 11:41:54 2014 -0500
+
+    Merge pull request #36 from Squab/html-tweaks
+    
+    Tweaking HTML to fix a couple small bugs. Closes #35
+
+[33mcommit 166940aa7de592bd603e6cc1dcc70526f48359c1[m
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Thu Mar 20 11:38:48 2014 -0500
+
+    Tweaking HTML to fix a couple small bugs. Closes #35
+
+[33mcommit 7fcc39421d800dad34d4d1d4a75b6ded595b1dd9[m
+Merge: ee3d242 f7b35d8
+Author: ccoleman812 <ccoleman812@gmail.com>
+Date:   Thu Mar 20 11:28:13 2014 -0500
+
+    Merge pull request #34 from Squab/api-unitsts
+    
+    API Unit Tests
+
+[33mcommit f7b35d8861674c235b180e22b394d52d82b93ee6[m
+Author: ccoleman812 <ccoleman812@gmail.com>
+Date:   Thu Mar 20 02:25:08 2014 -0500
+
+    All unit tests finished, passing.
+
+[33mcommit 8813085448a4cae619a39307450d1c237552adf7[m
+Author: ccoleman812 <ccoleman812@gmail.com>
+Date:   Wed Mar 19 23:36:06 2014 -0500
+
+    Unit tests for Players, Player Years, and Teams all done and thorough and passing
+
+[33mcommit d1664c237a1c66cf695154f45d432c8022961d9e[m
+Author: ccoleman812 <ccoleman812@gmail.com>
+Date:   Wed Mar 19 21:53:46 2014 -0500
+
+    Converted to py unittests
+
+[33mcommit 2b5c47fab9c29fa6d2f0348cde3420aa7a4dffe2[m
+Author: ccoleman812 <ccoleman812@gmail.com>
+Date:   Wed Mar 19 21:00:36 2014 -0500
+
+    unit tests skeleton, POST figured out
+
+[33mcommit ee3d24223a7519d78204d904b1284ccf7ee426ef[m
+Merge: 5663160 033e9d1
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Thu Mar 20 00:37:36 2014 -0500
+
+    Merge pull request #33 from Squab/link-list
+    
+    Add index page links to all other pages
+
+[33mcommit 033e9d1ea6cbc239acb5cca973ce7decc193d7ed[m
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Thu Mar 20 00:37:01 2014 -0500
+
+    Add index page links to all other pages
+
+[33mcommit 566316050d09a62051a0c167c57a430eedb2aa4f[m
+Merge: 6643502 343270c
+Author: kahrendsen <kendall.ahrendsen@gmail.com>
+Date:   Wed Mar 19 23:41:16 2014 -0500
+
+    Merge pull request #32 from Squab/bootstrap
+    
+    Bootstrap
+
+[33mcommit 343270c4a9e5b92fb70fbb426f1a13ae41dde68e[m
+Author: Kendall Ahrendsen <kendall@cs.utexas.edu>
+Date:   Wed Mar 19 23:09:56 2014 -0500
+
+    fixed twitter height issue
+
+[33mcommit 6643502eb2fe6b82034d1237f768e92f295c6f10[m
+Author: ccoleman812 <ccoleman812@gmail.com>
+Date:   Wed Mar 19 23:07:12 2014 -0500
+
+    So goddamn trivial goddamnit. Except it now outputs json correctly, too.
+
+[33mcommit e6fffdac2c4a78c4d61880d96d20cd8bb5fa7bf0[m
+Author: Kendall Ahrendsen <kendall@cs.utexas.edu>
+Date:   Wed Mar 19 22:44:22 2014 -0500
+
+    hopefully fixed map-twitter distance issue
+
+[33mcommit 39bba92eb71d77a05ce4203bedee0655c87cabd7[m
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Wed Mar 19 22:33:57 2014 -0500
+
+    Changed API playoffs from binary to result values
+
+[33mcommit f1be6a7fa2983d8ef7553163ac3e6ad802129f1c[m
+Author: ccoleman812 <ccoleman812@gmail.com>
+Date:   Wed Mar 19 22:15:59 2014 -0500
+
+    Fixed lists of json objects
+
+[33mcommit 43d891fefb0faf6c088aa8e588580dfa0f2f7ee5[m
+Author: Kendall Ahrendsen <kendall@cs.utexas.edu>
+Date:   Wed Mar 19 22:02:30 2014 -0500
+
+    moved player map
+
+[33mcommit 6dc402014acbf0880ddfb0ecaed944aeb0fe5c07[m
+Merge: 2f4fe4b 978e729
+Author: Kendall Ahrendsen <kendall@cs.utexas.edu>
+Date:   Wed Mar 19 21:54:33 2014 -0500
+
+    Merge branch 'bootstrap' of github.com:Squab/cs373-idb into bootstrap
+
+[33mcommit 2f4fe4b4234b96eed3a438f49ee3fc69b48e5ada[m
+Author: Kendall Ahrendsen <kendall@cs.utexas.edu>
+Date:   Wed Mar 19 21:54:18 2014 -0500
+
+    moved embedded media into jumbotron
+
+[33mcommit 534e900493ce75535136f5b8646cae5379c3458b[m
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Wed Mar 19 21:34:35 2014 -0500
+
+    Update README.md
+
+[33mcommit 1699a2930e77c4801f8db50805fb745614ac2653[m
+Merge: e0125ba 978e729
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Wed Mar 19 20:48:05 2014 -0500
+
+    Merge pull request #31 from Squab/bootstrap
+    
+    Add google maps to player pages Closes #19
+
+[33mcommit 978e729513166a84052f97f8c4e9441b7f4e62dd[m
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Wed Mar 19 20:47:09 2014 -0500
+
+    Add google maps to player pages Closes #19
+
+[33mcommit e0125bafbf4f074fadddf1c3100d5dbdadf3455c[m
+Merge: 1c95d97 2e3ffe3
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Wed Mar 19 20:10:41 2014 -0500
+
+    Merge pull request #30 from Squab/improved-views
+    
+    Improved views
+
+[33mcommit 2e3ffe34b173d187fa71915eef22606949831782[m
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Wed Mar 19 20:07:20 2014 -0500
+
+    adding two players to views
+
+[33mcommit 798cc2e260d09b635c4df2b8453822efc820cbad[m
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Wed Mar 19 19:54:04 2014 -0500
+
+    Adding teams and years to views
+
+[33mcommit 1c95d976e8ca02d1efcd400fc69c79b33ac2718c[m
+Merge: 45e2c5e 7135751
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Wed Mar 19 20:05:15 2014 -0500
+
+    Merge pull request #29 from Squab/add-players
+    
+    Added two additional players
+
+[33mcommit 7135751bd08d7732fda9580ac1461941813a6456[m
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Wed Mar 19 20:04:39 2014 -0500
+
+    Tweaking Yu Darvish stats
+
+[33mcommit dc5ed1c9891a79915a5c975e0b16ba693c9efd10[m
+Author: Deneb Garza <deneb@cs.utexas.edu>
+Date:   Wed Mar 19 18:25:18 2014 -0500
+
+    Added two additional players
+
+[33mcommit 45e2c5e4b9578d0dfab716ed812e717e98a4c1ce[m
+Merge: d65e4df 1e2cece
+Author: denebo <deneb@utexas.edu>
+Date:   Wed Mar 19 17:48:59 2014 -0500
+
+    Merge pull request #28 from Squab/repeat-data
+    
+    Removed repeating data
+
+[33mcommit 1e2cece8d2f76f708f60150249583d165f18b11d[m
+Author: Deneb Garza <deneb@cs.utexas.edu>
+Date:   Wed Mar 19 17:39:22 2014 -0500
+
+    Removed repeating data
+
+[33mcommit d65e4df6e43c30a34fb56331a7b02ee984303f23[m
+Merge: aff8df3 6b872af
+Author: kahrendsen <kendall.ahrendsen@gmail.com>
+Date:   Wed Mar 19 17:26:48 2014 -0500
+
+    Merge pull request #27 from Squab/bootstrap
+    
+    Bootstrap
+
+[33mcommit 6b872afca6577d2d0bb08389c0d1e83177621868[m
+Author: Kendall Ahrendsen <kendall@cs.utexas.edu>
+Date:   Wed Mar 19 17:12:38 2014 -0500
+
+    fixed index.html image resizing
+
+[33mcommit a49db0cb7fd7316196fe343a45e8a58b4db6550e[m
+Author: Kendall Ahrendsen <kendall@cs.utexas.edu>
+Date:   Wed Mar 19 16:56:50 2014 -0500
+
+    removed the guy who dropped the class from the credits
+
+[33mcommit aff8df3dc5e1af07b9b76bca6ce0a4d2cd3d3f89[m
+Merge: a8bcb66 34f8c07
+Author: denebo <deneb@utexas.edu>
+Date:   Wed Mar 19 16:56:34 2014 -0500
+
+    Merge pull request #26 from Squab/add-data
+    
+    Add data
+
+[33mcommit 34f8c07740318fd36f4ebf3d8e35ad1f138ab7f0[m
+Author: Deneb Garza <deneb@cs.utexas.edu>
+Date:   Wed Mar 19 16:55:56 2014 -0500
+
+    changed year id
+
+[33mcommit 0c1fb1aac60a0cc1aff03633d442d7c7ad89e9a3[m
+Author: Kendall Ahrendsen <kendall@cs.utexas.edu>
+Date:   Wed Mar 19 16:55:13 2014 -0500
+
+    made images responsive and added maps to teams.html
+
+[33mcommit ca503a7f08ca476fca021f590a7851c52a4db40f[m
+Author: Deneb Garza <deneb@cs.utexas.edu>
+Date:   Wed Mar 19 16:52:33 2014 -0500
+
+    Getting out of rebase hell
+
+[33mcommit d49a206e0a83149eeb44d339f37969fd52fb60b8[m
+Author: Deneb Garza <deneb@cs.utexas.edu>
+Date:   Wed Mar 19 16:36:13 2014 -0500
+
+    Added teams and years
+
+[33mcommit c8c618ae80f5468636102f94edf90965ac4e7a90[m
+Author: Deneb Garza <deneb@cs.utexas.edu>
+Date:   Wed Mar 19 12:20:40 2014 -0500
+
+    Added more teams
+
+[33mcommit aa146b86c1e4b324ade24b06a1ae5da251b4bb9c[m
+Author: Deneb Garza <deneb@cs.utexas.edu>
+Date:   Wed Mar 19 04:30:03 2014 -0500
+
+    Added years from 2012 to 2004
+
+[33mcommit 2850b93693d912eae242b32238f278f47e2e26a8[m
+Author: Deneb Garza <deneb@cs.utexas.edu>
+Date:   Tue Mar 18 01:00:44 2014 -0500
+
+    Initial Skeleton
+
+[33mcommit a8bcb662477cb1a5627dfaec327aec34b97a043e[m
+Merge: c1800d5 22a2b6f
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Wed Mar 19 16:20:17 2014 -0500
+
+    Merge pull request #25 from Squab/model_tweak
+    
+    Tweak Models Documentation Closes #24
+
+[33mcommit 22a2b6f5ce8071ab8b9fb28f67be312f99862551[m
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Wed Mar 19 16:09:58 2014 -0500
+
+    Tweak Models Documentation Closes #24
+
+[33mcommit c1800d57b6bcb2ef4c372d8d967c00c3f9dc7572[m
+Merge: 73ed328 35bd33e
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Wed Mar 19 16:02:05 2014 -0500
+
+    Merge branch 'master' into branch_models
+    
+    Conflicts:
+    	README.md
+
+[33mcommit 8458f41abd87e3e321ce36efeebf12193a39c7d5[m
+Author: Kendall Ahrendsen <kendall@cs.utexas.edu>
+Date:   Wed Mar 19 15:45:18 2014 -0500
+
+    made images responsive
+
+[33mcommit 35bd33e9a3d515eb267069c66d88d5995fe008b0[m
+Merge: a23b09e b859caf
+Author: kahrendsen <kendall.ahrendsen@gmail.com>
+Date:   Wed Mar 19 15:22:14 2014 -0500
+
+    Merge pull request #23 from Squab/bootstrap
+    
+    Bootstrap
+
+[33mcommit b859cafe28b16789c3f46b4119efa319e66a51b6[m
+Author: Kendall Ahrendsen <kendall@cs.utexas.edu>
+Date:   Wed Mar 19 15:13:25 2014 -0500
+
+    fixed the way we refer to the context in the template
+
+[33mcommit 5bce70355adebcf741b683c5a5601d7d43dca1ce[m
+Merge: 87f3a2f 9eda209
+Author: Kendall Ahrendsen <kendall@cs.utexas.edu>
+Date:   Tue Mar 18 23:36:20 2014 -0500
+
+    using responsive tables instead of columns
+
+[33mcommit 9eda209c5d87233ac004f711f581303612b852bf[m
+Author: Kendall Ahrendsen <kendall@cs.utexas.edu>
+Date:   Tue Mar 18 23:22:27 2014 -0500
+
+    using tables instead of columns in all pages
+
+[33mcommit 73ed32800ec513a68b6fb99afaeb03197bf63948[m
+Author: JordanGraves <jgraves8205@aol.com>
+Date:   Tue Mar 18 22:41:05 2014 -0500
+
+    added comments to doc
+
+[33mcommit 3a1fad69048e6d341091850d94e52b3bfef5c836[m
+Author: Kendall Ahrendsen <kendall@cs.utexas.edu>
+Date:   Tue Mar 18 22:28:57 2014 -0500
+
+    got teams.html and year.html bootstrapped
+
+[33mcommit a23b09ed74121571d0a1b5c641f71aac2daa1fb1[m
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Tue Mar 18 19:40:08 2014 -0500
+
+    Fix spelling errors in Apiary doc. Closes #22
+
+[33mcommit 0cc41620ef3c6ab0d97b276cdca111a06ba97114[m
+Author: JordanGraves <jgraves8205@aol.com>
+Date:   Tue Mar 18 18:34:19 2014 -0500
+
+    add documentation
+
+[33mcommit 71a36a19b430ab54fcb3e6779f23c033f2db0b85[m
+Author: JordanGraves <j.l.graves03@gmail.com>
+Date:   Tue Mar 18 18:30:01 2014 -0500
+
+    Update models.py
+
+[33mcommit 87f3a2f0648980dffd05492f427642df106fbb87[m
+Author: Kendall Ahrendsen <kendall@cs.utexas.edu>
+Date:   Tue Mar 18 17:46:35 2014 -0500
+
+    added placeholder twitter feed, issue with social attribute of players causes data-screen-name to misbehave
+
+[33mcommit 0985e24350ce379593bfbd3dbb4389a44b432150[m
+Merge: 7f7cc5b 738858c
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Tue Mar 18 17:10:15 2014 -0500
+
+    Merge pull request #20 from Squab/bootstrap
+    
+    index.html is bootstrapped but currently pretty sparse. Added static folder for content like libraries and images, can be accessed in Django with {%static %} in templates
+
+[33mcommit 738858caa4d15d48dc29b5bbad85b89984c4394d[m
+Author: Kendall Ahrendsen <kendall@cs.utexas.edu>
+Date:   Tue Mar 18 16:53:02 2014 -0500
+
+    overhaul of player.html's tables, now dynamically stack with window size
+
+[33mcommit 9df3624693d3826be7c38aeea82abc3dbfcfd356[m
+Author: Kendall Ahrendsen <kendall@cs.utexas.edu>
+Date:   Tue Mar 18 16:19:52 2014 -0500
+
+    added bootstrap to players.html, made jumbotron
+
+[33mcommit 499cf50825575f6bea2f875aabe25667870d5f05[m
+Author: Kendall Ahrendsen <kendall@cs.utexas.edu>
+Date:   Tue Mar 18 15:37:52 2014 -0500
+
+    made alignment of index.html better
+
+[33mcommit d548953f58f91d4e9cf43f50e6c35b18fbad1d72[m
+Author: Kendall Ahrendsen <kendall@cs.utexas.edu>
+Date:   Tue Mar 18 14:04:18 2014 -0500
+
+    forgot to add image for index.html
+
+[33mcommit 0d369c839f199cbf875139876fa0f22f507cb8de[m
+Author: JordanGraves <j.l.graves03@gmail.com>
+Date:   Tue Mar 18 13:46:48 2014 -0500
+
+    Create Models.html
+
+[33mcommit f77d0364f14fef68d1402e0a0c14b037e8ade3f4[m
+Author: JordanGraves <j.l.graves03@gmail.com>
+Date:   Tue Mar 18 13:45:52 2014 -0500
+
+    Update models.py
+
+[33mcommit 5e9f240b545cdc89ea7e3856e1f207198c97ecce[m
+Author: JordanGraves <j.l.graves03@gmail.com>
+Date:   Tue Mar 18 12:12:14 2014 -0500
+
+    Update models.py
+
+[33mcommit 475bfc550d92fe750b42a5dce1b0e34ffed71c2c[m
+Author: JordanGraves <j.l.graves03@gmail.com>
+Date:   Tue Mar 18 12:09:45 2014 -0500
+
+    Update models.py
+
+[33mcommit 60f6ea1256713a39403c8391ff97dac2f0de6487[m
+Author: Kendall Ahrendsen <kendall@cs.utexas.edu>
+Date:   Tue Mar 18 00:25:42 2014 -0500
+
+    made index.html prettier, fixed overlap issue
+
+[33mcommit 6c01b6cc17d932921a9a730b2d015bd423c907ce[m
+Author: JordanGraves <j.l.graves03@gmail.com>
+Date:   Mon Mar 17 12:41:55 2014 -0500
+
+    Update models.py
+
+[33mcommit 4f7b220d65c5b0ef87b5e1b1830012444b609f65[m
+Author: JordanGraves <j.l.graves03@gmail.com>
+Date:   Mon Mar 17 12:37:08 2014 -0500
+
+    Update models.py
+    
+    I believe this is the correct implementation for having a collection of Models in another Model. There is no need to have the collection of Models as a field of another Model. So we don't need a list of Player_Years as a field a Player, we just need we just need the Player Foreign Key Field in each Player_Year. The link to the doc can explain this better.
+    
+    https://docs.djangoproject.com/en/1.4/topics/db/examples/many_to_one/
+
+[33mcommit a0a783e5568ce0fcabbb1650bd0a30adec6f789b[m
+Author: JordanGraves <j.l.graves03@gmail.com>
+Date:   Mon Mar 17 11:52:22 2014 -0500
+
+    Update README.md
+
+[33mcommit 7f7cc5bdbb647a9d6a3227a12cf9e694c0c51b14[m
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Mon Mar 17 11:42:12 2014 -0500
+
+    Adding a README
+    
+    Mainly so that the Heroku site can be there.
+
+[33mcommit cb77968e578564bae89a74abcccff71fead8e2eb[m
+Merge: 2d38bca c1edc21
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Mon Mar 17 11:35:50 2014 -0500
+
+    Merge pull request #17 from Squab/herokuimports
+    
+    Fix Heroku Imports Closes #16
+
+[33mcommit c1edc2104c9f77c73988441cffd5c1e66633fe56[m
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Mon Mar 17 11:34:02 2014 -0500
+
+    Fix Heroku Imports Closes #16
+
+[33mcommit 7745c58fda0d3d556b96cfd29c7c4e5232a28a81[m
+Author: Kendall Ahrendsen <kendall@cs.utexas.edu>
+Date:   Mon Mar 17 02:39:12 2014 -0500
+
+    bare-bones bootstrap of index.html
+
+[33mcommit 2a7fa69ee90c14d60c5fe2ebfbabb0db875c73cd[m
+Author: Kendall Ahrendsen <kendall@cs.utexas.edu>
+Date:   Mon Mar 17 02:23:14 2014 -0500
+
+    added jquery
+
+[33mcommit ffab497e7d69b6ae805a96c1b266db9469534a8a[m
+Author: Kendall Ahrendsen <kendall@cs.utexas.edu>
+Date:   Mon Mar 17 02:15:04 2014 -0500
+
+    added bootstrap files
+
+[33mcommit 2d38bcac4f53de3ee14fb8a471d27fa22b52b792[m
+Merge: 6a9f842 eb1f898
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Sun Mar 16 22:36:41 2014 -0500
+
+    Merge pull request #15 from Squab/html-start
+    
+    Add a Basic Framwork for Serving HTML Pages with Django Templates
+
+[33mcommit 6a9f84253010d7cb8579c40b8489bf0af4550890[m
+Author: ccoleman812 <ccoleman812@gmail.com>
+Date:   Sun Mar 16 20:12:25 2014 -0500
+
+    tweaked, added images/social media to players/teams
+
+[33mcommit eb1f89886bb0aad5c85526765bdadd600c87578b[m
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Sun Mar 16 17:58:21 2014 -0500
+
+    Add a Basic Framwork for Serving HTML Pages with Django Templates
+
+[33mcommit ee82bf65fada40b4843a15edc64c2783b15135d6[m
+Author: JordanGraves <j.l.graves03@gmail.com>
+Date:   Sun Mar 16 16:40:17 2014 -0500
+
+    Create README.md
+
+[33mcommit 582980e1994f2a75b05c0b3a66d70425b93878c8[m
+Author: JordanGraves <j.l.graves03@gmail.com>
+Date:   Sun Mar 16 14:41:17 2014 -0500
+
+    Update models.py
+
+[33mcommit 6528cc7250e09780e895ab6779bf297a35905a97[m
+Author: ccoleman812 <ccoleman812@gmail.com>
+Date:   Sat Mar 15 18:41:51 2014 -0500
+
+    Finished up initial API
+
+[33mcommit 6a430bc201eaf5de06d75a3a4b834d7cd2ca7389[m
+Author: ccoleman812 <ccoleman812@gmail.com>
+Date:   Sat Mar 15 16:17:09 2014 -0500
+
+    API for teams, team years
+
+[33mcommit bdff1d019ee7431af45bb9fb2fef094a3e80a5f4[m
+Author: Jordan Graves <jgraves8205@aol.com>
+Date:   Sat Mar 15 16:00:32 2014 -0500
+
+    add models.py
+
+[33mcommit df47454c93c2929f3b5ddd67da95561d441eda43[m
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Sat Mar 15 11:27:32 2014 -0500
+
+    Updating Players, Player Years in the Apiary Doc
+
+[33mcommit 707185cbd7174a36e42b8ea88142ffe99d205c73[m
+Merge: 688cb8a 540df16
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Wed Mar 12 20:12:49 2014 -0500
+
+    Merge pull request #12 from Squab/addmakefile
+    
+    Adding a makefile
+
+[33mcommit 540df16550f39eff70673ab14df855bdf914bb9e[m
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Wed Mar 12 20:08:17 2014 -0500
+
+    Adding a makefile
+
+[33mcommit 688cb8a581dfacc7d0eccfdbc245e01e1b4bb81e[m
+Author: Tim Simmons <tim.r.simmons@gmail.com>
+Date:   Wed Mar 12 16:58:12 2014 -0500
+
+    Transferring blueprint from apiary.io
+
+[33mcommit 3819cc18dc247ffd2c36002206877bd18b798ce6[m
+Author: Squab <timsim@cs.utexas.edu>
+Date:   Wed Mar 12 16:43:51 2014 -0500
+
+    Initial Skeleton
