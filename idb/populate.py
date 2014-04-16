@@ -8,9 +8,10 @@ from models import *
 
 def populate_years():
   for year in years:
-    y = Year(id=year["year"], **year)
+    y = Year(id=year["year"]["year"], **year["year"])
+    i = Year_Image(year=y, image=year["image"], kind="default")
     y.save()
-  
+    i.save()
 
 def populate_teams():
   for team in teams:
