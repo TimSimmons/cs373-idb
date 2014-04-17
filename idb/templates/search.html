@@ -205,11 +205,15 @@ body {
   <script type="text/javascript"> 
       // wait for the DOM to be loaded 
       $(document).ready(function() {
+          $('#search-field').keypress(function(e){
+             if(e.which == 13)
+                $('#search-button').trigger('click');
+          });
           $("#search-button").click(
               
               function() {
                   var query = $("#search-field").val();
-                  $.getJSON( "http://frozen-plateau-5382.herokuapp.com/api/search/" + query + "/", 
+                  $.getJSON( "http://frozen-plateau-5382.herokuapp.com/search/" + query + "/", 
                       function(data) {
                           console.log(data);
                           var teams = data["teams"];
@@ -217,7 +221,7 @@ body {
                           var years = data["years"];
                           for (var i=0, len=teams.length; i < len; i++) {
                               // Put this stuff into a table
-                              //console.log(teams[i]["name"]);
+                              console.log(teams[i]["name"]);
                               $("#result-placeholder").append('<div class="row">\
                                                                   <div class="container-fluid">\
                                                                     <div class="table-responsive">\

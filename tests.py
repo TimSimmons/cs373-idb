@@ -18,16 +18,16 @@ from idb.models import *
 # ----------------
 
 player = { 
-	  "name": "A Guy", 
-	  "number": 10, 
-	  "position": "OF",  
-	  "social": "@Bharper3407",
-	  "bats": "R", 
-	  "throws": "L", 
-	  "height": 74, 
-	  "weight": 230, 
-	  "school": "College of Southern Nevada"
-	}
+      "name": "A Guy", 
+      "number": 10, 
+      "position": "OF",  
+      "social": "@Bharper3407",
+      "bats": "R", 
+      "throws": "L", 
+      "height": 74, 
+      "weight": 230, 
+      "school": "College of Southern Nevada"
+    }
 team = { 
           "abbr": "ZZZ", 
           "name": "A Team", 
@@ -211,11 +211,11 @@ class TestIDB(TestCase):
     
     # Float fields are causing issues
     def test_playerYear(self):
-    	headers = {"Content-Type": "application/json"}       
-    	"""
-    	    POST
-    	"""
-    	# Create a Year
+        headers = {"Content-Type": "application/json"}       
+        """
+            POST
+        """
+        # Create a Year
         data = json.dumps(year)
         data = data.encode('utf-8')
         response = requests.post(url_main + "/years/", data=data)
