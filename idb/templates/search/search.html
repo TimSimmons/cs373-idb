@@ -198,22 +198,8 @@ body {
   </div>
   
 
-  <div class="row">
-    <div class="container-fluid">
-      <div class="table-responsive">
-        <table class="table table-striped" id="results-table">
-          <thead>
-            <tr>
-              <b>
-                <th style="display:none;"> Results</th>
-              </b>
-            </tr>
-          </thead>
-          <tbody>
-          </tbody>
-        </table>
-      </div>
-    </div>
+  <div id="result-placeholder">
+
   </div>
 
   <script type="text/javascript"> 
@@ -232,7 +218,59 @@ body {
                           for (var i=0, len=teams.length; i < len; i++) {
                               // Put this stuff into a table
                               //console.log(teams[i]["name"]);
-                              $("#results-table tr:last").after('<tr><td>' + teams[i]["name"] + '</td><td>' + teams[i]["abbr"] +'</td></tr>');
+                              $("#result-placeholder").append('<div class="row">\
+                                                                  <div class="container-fluid">\
+                                                                    <div class="table-responsive">\
+                                                                      <table class="table table-striped" id="results-table">\
+                                                                        <thead>\
+                                                                          <tr>\
+                                                                            <b>\
+                                                                              <th colspan="2">(' + teams[i]["abbr"] + ")  " + teams[i]["name"] + '</th>\
+                                                                            </b>\
+                                                                          </tr>\
+                                                                        </thead>\
+                                                                        <tbody>\
+                                                                            <tr>\
+                                                                                <td>\
+                                                                                  <div>\
+                                                                                      <h6>' + 'Division: ' + teams[i]["div"] + '<h6>\
+                                                                                  <\div>\
+                                                                                </td>\
+                                                                                <td>\
+                                                                                  <div>\
+                                                                                      <h6>' + 'Park: ' + teams[i]["park"] + '<h6>\
+                                                                                  <\div>\
+                                                                                </td>\
+                                                                            </tr>\
+                                                                            <tr>\
+                                                                                <td>\
+                                                                                  <div>\
+                                                                                      <h6>' + 'State: ' + teams[i]["state"] + '<h6>\
+                                                                                  <\div>\
+                                                                                </td>\
+                                                                                <td>\
+                                                                                  <div>\
+                                                                                      <h6>' + 'City: ' + teams[i]["city"] + '<h6>\
+                                                                                  <\div>\
+                                                                                </td>\
+                                                                            </tr>\
+                                                                            <tr>\
+                                                                                <td>\
+                                                                                  <div>\
+                                                                                      <h6>' + 'Social: ' + teams[i]["social"] + '<h6>\
+                                                                                  <\div>\
+                                                                                </td>\
+                                                                                <td>\
+                                                                                  <div>\
+                                                                                      <h6>' + 'Manager: ' + teams[i]["mgr"] + '<h6>\
+                                                                                  <\div>\
+                                                                                </td>\
+                                                                            </tr>\
+                                                                        </tbody>\
+                                                                      </table>\
+                                                                    </div>\
+                                                                  </div>\
+                                                                </div>');
                           }
                           for (var i=0, len=players.length; i < len; i++) {
                               //    console.log(players[i]["name"]);
