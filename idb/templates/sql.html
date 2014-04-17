@@ -43,9 +43,11 @@
         </div>
       </div>
 
-      <div class="jumbotron">
-        <h1>Interesting SQL Queries</h1>
-        <p>If a player has a .300 batting average, .400 on base percentage, .500 slugigng percentage and 30 home runs it would be classified as one of the better seasons in baseball history. This uncommon feat hasn't been achieved by many players. </p>
+      <div class="container">
+          <div class="jumbotron">
+              <h1>Interesting SQL Queries</h1>
+          </div>
+           <p>If a player has a .300 batting average, .400 on base percentage, .500 slugigng percentage and 30 home runs it would be classified as one of the better seasons in baseball history. This uncommon feat hasn't been achieved by many players. </p>
 <pre>
 select * from
     (select name from idb_player 
@@ -180,7 +182,7 @@ select round(avg(hr)) as hr, year_id
  23 |    2013
 (10 rows)
 </pre>
-      </div>
+        </div>
     </div><!-- /.container -->
 
 
