@@ -213,7 +213,7 @@ body {
               
               function() {
                   var query = $("#search-field").val();
-                  $.getJSON( "http://0.0.0.0:12345/search/" + query + "/", 
+                  $.getJSON( "http://frozen-plateau-5382.herokuapp.com/search/" + query + "/", 
                       function(data) {
                           console.log(data);
                           var teams = data["teams"];
