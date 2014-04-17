@@ -7,6 +7,7 @@ from django.views.decorators.csrf import csrf_exempt
 import sys
 from django.utils import simplejson
 import logging
+import itertools
 log = logging.getLogger(__name__)
 
 @csrf_exempt
@@ -228,9 +229,39 @@ def team_year(request, team_id, year_id):
   
 @csrf_exempt
 def search(request, q):
-  query_result = []
-  teams = [t.to_dict() for t in Team.query(q)]
-  players = [p.to_dict() for p in Player.query(q)]
-  years = [y.to_dict() for y in Year.query(q)]
+  q = q.replace('%20', ' ').split(' ')
+  perm = []
+  for x in range(1, len(q)+1):
+    perm.append(list(itertools.permutations(q, x)))
+  comb = []
+  for x in perm:
+      for i in x:
+        comb.append(' '.join(a for a in i))
+
+
+  teams = []
+  for z in comb:
+    for t in Team.query(z):
+      temp = t.to_dict()
+      if temp not in teams:
+        teams.append(temp)
+  # list(t.to_dict() for t in Team.query(z) for z in comb)
+  # players = [p.to_dict() for p in Player.query(q)]
+  players = []
+  for z in comb:
+    for t in Player.query(z):
+      temp = t.to_dict()
+      if temp not in players:
+        players.append(temp)
+  # years = [y.to_dict() for y in Year.query(q)]
+  years = []
+  for z in comb:
+    for t in Year.query(z):
+      temp = t.to_dict()
+      if temp not in years:
+        years.append(temp)
   d = dict(num_results=len(teams) + len(players) + len(years) ,teams=teams, players=players, years=years)
   return HttpResponse(simplejson.dumps(d), mimetype='application/json')
+
+#New York Yankees Mike
+#Mike Trout Miguel

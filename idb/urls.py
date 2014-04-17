@@ -30,7 +30,7 @@ urlpatterns = patterns('',
     url(r'^api/teams/$', api.teams),
     url(r'^api/years/(\d*)/$', api.year),
     url(r'^api/years/$', api.years),
-    url(r'^api/search/([a-zA-Z0-9]+)/$', api.search),
+    url(r'^api/search/([ a-zA-Z0-9\%]+)/$', api.search),
     
     #Search
     url(r'^search/', search)
