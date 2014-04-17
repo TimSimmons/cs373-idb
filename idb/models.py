@@ -235,3 +235,16 @@ class Team_Image(models.Model):
       return "team: " + str(self.team.name) + \
     	     "\nimage: " + str(self.image) + \
     	     "\nkind: " + str(self.kind)
+
+class Year_Image(models.Model):
+    """
+    Model representation of an image that is associated with a year. 
+    """
+    year = models.ForeignKey(Year, related_name='images')
+    image = models.URLField()
+    kind = models.CharField(max_length=10, blank=True, null=True) 
+  
+    def __str__(self):
+      return "year: " + str(self.year.year) + \
+             "\nimage: " + str(self.image) + \
+             "\nkind: " + str(self.kind)

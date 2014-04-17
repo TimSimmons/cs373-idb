@@ -34,5 +34,6 @@ urlpatterns = patterns('',
     
     #Search
     url(r'^search/', search)
+
 )
 
