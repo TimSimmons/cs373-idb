@@ -55,4 +55,4 @@ staticfiles
 docs/_build/
 
 #backup files
-*.~
+.*~
