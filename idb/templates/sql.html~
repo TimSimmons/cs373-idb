@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-{% block sqlactive %}class="active"{% endblock %}
 {% load staticfiles %}
 {% load humanize %}
 {% load staticfiles %}

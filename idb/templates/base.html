@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="google-site-verification" content="8TF7HJ1ecoBh6ctbOTo9ONW5wPD1PK3yPoMfyz2R_DQ" />
+  <link rel="shortcut icon" href="{% static "favicon.ico" %}">
+
+  <title>Internet Baseball {% block title %}{% endblock %}</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../../static/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="starter-template.css" rel="stylesheet">
+
+  <style type="text/css">
+  {% block style %}
+  {% endblock %}
+	.navbar {
+	  background-image: url('/static/nav_bg.png');
+	  background-repeat: repeat-x;
+	}	
+	</style>
+</head>
+<body>
+  <div class="navbar navbar-inverse " role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/"><img src = "{%static "MLB_Logo_Small.png"  %}" class="img-responsive" style="max-width:100px; margin-top: -10px;"></a>
+      </div>
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li {% block teamsactive %}{% endblock %}><a href="/teams">Teams</a></li>
+          <li {% block playersactive %}{% endblock %}><a href="/players">Players</a></li>
+          <li {% block yearsactive %}{% endblock %}><a href="/years">Years</a></li>
+          <li {% block clientactive %}{% endblock %}><a href="/client">Research</a></li>
+          <li {% block sqlactive %}{% endblock %}><a href="/sql">SQL</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+{% block content %}
+
+{% endblock %}
+</body>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="../../static/js/jquery-2.1.0.min.js"></script>
+  <script src="../../static/js/bootstrap.min.js"></script>
+</html>
