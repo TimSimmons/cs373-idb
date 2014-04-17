@@ -51,15 +51,17 @@
 
 
 
-      
+      <div class = container>
       <div class="jumbotron">
        <div class = "container-fluid">
          <div class="row">
-          <h1> {{ year.year }}  </h1>
-        </div>
-        <div class = "row">
+          <div class="col-md-2">
+            <h1> {{ year.year }}  </h1>
+            <img src=" {{ year.images.all.0.image }} " class="img-responsive"><br>
+          </div>
           <div class="col-md-6">
-          <img src=" {{ year.images.all.0.image }} " class="img-responsive"><br>
+            <br><br>
+          
            Champion: 
            {% if champion %} 
            <a href="{{ champion.gen_link }}">{{ year.champion }}</a>
@@ -125,7 +127,7 @@
     </div>
   </div>
 </div>
-
+</div>
 
 
 
