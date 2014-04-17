@@ -3,7 +3,7 @@
           "DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <title>idb.models.Year</title>
+  <title>idb.models.Year_Image</title>
   <link rel="stylesheet" href="epydoc.css" type="text/css" />
   <script type="text/javascript" src="epydoc.js"></script>
 </head>
@@ -39,7 +39,7 @@
       <span class="breadcrumbs">
         Package&nbsp;idb ::
         <a href="idb.models-module.html">Module&nbsp;models</a> ::
-        Class&nbsp;Year
+        Class&nbsp;Year_Image
       </span>
     </td>
     <td>
@@ -49,27 +49,22 @@
     onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
         <tr><td align="right"><span class="options"
             >[<a href="frames.html" target="_top">frames</a
-            >]&nbsp;|&nbsp;<a href="idb.models.Year-class.html"
+            >]&nbsp;|&nbsp;<a href="idb.models.Year_Image-class.html"
             target="_top">no&nbsp;frames</a>]</span></td></tr>
       </table>
     </td>
   </tr>
 </table>
 <!-- ==================== CLASS DESCRIPTION ==================== -->
-<h1 class="epydoc">Class Year</h1><p class="nomargin-top"><span class="codelink"><a href="idb.models-pysrc.html#Year">source&nbsp;code</a></span></p>
+<h1 class="epydoc">Class Year_Image</h1><p class="nomargin-top"><span class="codelink"><a href="idb.models-pysrc.html#Year_Image">source&nbsp;code</a></span></p>
 <pre class="base-tree">
 django.db.models.Model --+
                          |
-                        <strong class="uidshort">Year</strong>
+                        <strong class="uidshort">Year_Image</strong>
 </pre>
 
 <hr />
-<p>Contains information about award winners for a given year.</p>
-  <p>The Year model serves as a filter for standings across teams for a 
-  particular year as well as awards for individual players for that 
-  year.</p>
-  <p>The Year model has a one to many relationship with the Player_Year and
-  Team_Year models.</p>
+<p>Model representation of an image that is associated with a year.</p>
 
 <!-- ==================== INSTANCE METHODS ==================== -->
 <a name="section-InstanceMethods"></a>
@@ -94,59 +89,9 @@ django.db.models.Model --+
     </td><td class="summary">
       <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td><span class="summary-sig"><a name="gen_link"></a><span class="summary-sig-name">gen_link</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td><span class="summary-sig"><a name="__str__"></a><span class="summary-sig-name">__str__</span>(<span class="summary-sig-arg">self</span>)</span></td>
           <td align="right" valign="top">
-            <span class="codelink"><a href="idb.models-pysrc.html#Year.gen_link">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td><span class="summary-sig"><a name="to_dict"></a><span class="summary-sig-name">to_dict</span>(<span class="summary-sig-arg">self</span>)</span></td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="idb.models-pysrc.html#Year.to_dict">source&nbsp;code</a></span>
-            
-          </td>
-        </tr>
-      </table>
-      
-    </td>
-  </tr>
-</table>
-<!-- ==================== STATIC METHODS ==================== -->
-<a name="section-StaticMethods"></a>
-<table class="summary" border="1" cellpadding="3"
-       cellspacing="0" width="100%" bgcolor="white">
-<tr bgcolor="#70b0f0" class="table-header">
-  <td colspan="2" class="table-header">
-    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-      <tr valign="top">
-        <td align="left"><span class="table-header">Static Methods</span></td>
-        <td align="right" valign="top"
-         ><span class="options">[<a href="#section-StaticMethods"
-         class="privatelink" onclick="toggle_private();"
-         >hide private</a>]</span></td>
-      </tr>
-    </table>
-  </td>
-</tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td><span class="summary-sig"><a name="query"></a><span class="summary-sig-name">query</span>(<span class="summary-sig-arg">q</span>)</span></td>
-          <td align="right" valign="top">
-            <span class="codelink"><a href="idb.models-pysrc.html#Year.query">source&nbsp;code</a></span>
+            <span class="codelink"><a href="idb.models-pysrc.html#Year_Image.__str__">source&nbsp;code</a></span>
             
           </td>
         </tr>
@@ -176,42 +121,21 @@ django.db.models.Model --+
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="year"></a><span class="summary-name">year</span> = <code title="models.CharField(max_length= 4)">models.CharField(max_length= 4)</code>
+        <a name="year"></a><span class="summary-name">year</span> = <code title="models.ForeignKey(Year, related_name= 'images')">models.ForeignKey(Year, related_name= 'images')</code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="champion"></a><span class="summary-name">champion</span> = <code title="models.CharField(max_length= 30)">models.CharField(max_length= 30)</code>
+        <a name="image"></a><span class="summary-name">image</span> = <code title="models.URLField()">models.URLField()</code>
     </td>
   </tr>
 <tr>
     <td width="15%" align="right" valign="top" class="summary">
       <span class="summary-type">&nbsp;</span>
     </td><td class="summary">
-        <a name="AL_MVP"></a><span class="summary-name">AL_MVP</span> = <code title="models.CharField(max_length= 30)">models.CharField(max_length= 30)</code>
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-        <a name="NL_MVP"></a><span class="summary-name">NL_MVP</span> = <code title="models.CharField(max_length= 30)">models.CharField(max_length= 30)</code>
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-        <a name="NL_CY"></a><span class="summary-name">NL_CY</span> = <code title="models.CharField(max_length= 30)">models.CharField(max_length= 30)</code>
-    </td>
-  </tr>
-<tr>
-    <td width="15%" align="right" valign="top" class="summary">
-      <span class="summary-type">&nbsp;</span>
-    </td><td class="summary">
-        <a name="AL_CY"></a><span class="summary-name">AL_CY</span> = <code title="models.CharField(max_length= 30)">models.CharField(max_length= 30)</code>
+        <a name="kind"></a><span class="summary-name">kind</span> = <code title="models.CharField(max_length= 10, blank= True, null= True)">models.CharField(max_length= 10, blank= True, null= True)</code>
     </td>
   </tr>
 </table>

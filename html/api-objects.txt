@@ -7,9 +7,12 @@ idb.models.Player.gen_link	idb.models.Player-class.html#gen_link
 idb.models.Player.number	idb.models.Player-class.html#number
 idb.models.Player.height	idb.models.Player-class.html#height
 idb.models.Player.bats	idb.models.Player-class.html#bats
+idb.models.Player.to_dict	idb.models.Player-class.html#to_dict
 idb.models.Player.social	idb.models.Player-class.html#social
 idb.models.Player.position	idb.models.Player-class.html#position
+idb.models.Player.query	idb.models.Player-class.html#query
 idb.models.Player.throws	idb.models.Player-class.html#throws
+idb.models.Player.__unicode__	idb.models.Player-class.html#__unicode__
 idb.models.Player_Image	idb.models.Player_Image-class.html
 idb.models.Player_Image.player	idb.models.Player_Image-class.html#player
 idb.models.Player_Image.image	idb.models.Player_Image-class.html#image
@@ -44,7 +47,9 @@ idb.models.Team.mgr	idb.models.Team-class.html#mgr
 idb.models.Team.state	idb.models.Team-class.html#state
 idb.models.Team.abbr	idb.models.Team-class.html#abbr
 idb.models.Team.social	idb.models.Team-class.html#social
+idb.models.Team.query	idb.models.Team-class.html#query
 idb.models.Team.div	idb.models.Team-class.html#div
+idb.models.Team.to_dict	idb.models.Team-class.html#to_dict
 idb.models.Team_Image	idb.models.Team_Image-class.html
 idb.models.Team_Image.image	idb.models.Team_Image-class.html#image
 idb.models.Team_Image.__str__	idb.models.Team_Image-class.html#__str__
@@ -67,4 +72,11 @@ idb.models.Year.gen_link	idb.models.Year-class.html#gen_link
 idb.models.Year.NL_MVP	idb.models.Year-class.html#NL_MVP
 idb.models.Year.NL_CY	idb.models.Year-class.html#NL_CY
 idb.models.Year.AL_MVP	idb.models.Year-class.html#AL_MVP
+idb.models.Year.to_dict	idb.models.Year-class.html#to_dict
 idb.models.Year.year	idb.models.Year-class.html#year
+idb.models.Year.query	idb.models.Year-class.html#query
+idb.models.Year_Image	idb.models.Year_Image-class.html
+idb.models.Year_Image.image	idb.models.Year_Image-class.html#image
+idb.models.Year_Image.__str__	idb.models.Year_Image-class.html#__str__
+idb.models.Year_Image.kind	idb.models.Year_Image-class.html#kind
+idb.models.Year_Image.year	idb.models.Year_Image-class.html#year
