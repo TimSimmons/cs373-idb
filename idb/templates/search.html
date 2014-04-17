@@ -205,6 +205,10 @@ body {
   <script type="text/javascript"> 
       // wait for the DOM to be loaded 
       $(document).ready(function() {
+          $('#search-field').keypress(function(e){
+             if(e.which == 13)
+                $('#search-button').trigger('click');
+          });
           $("#search-button").click(
               
               function() {
@@ -217,7 +221,7 @@ body {
                           var years = data["years"];
                           for (var i=0, len=teams.length; i < len; i++) {
                               // Put this stuff into a table
-                              //console.log(teams[i]["name"]);
+                              console.log(teams[i]["name"]);
                               $("#result-placeholder").append('<div class="row">\
                                                                   <div class="container-fluid">\
                                                                     <div class="table-responsive">\
