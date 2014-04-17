@@ -18,10 +18,22 @@
       <div class="row-fluid" style="padding-left:50px;">
         {% for i in years %}
         <div style ="width: 200px; height:200px; overflow:hidden;" class="col-md-4">
-          <a href="{{i.year}}" class="list-group-item"><img src="{{ i.images.all.0.image }}" class="img-responsive">
+          <a href="{{i.year}}" class="list-group-item"><img id="btn-{{i.year}}"  src="{{ i.images.all.0.image }}" class="img-responsive">
             <center>{{i.year}}</center>
           </a>
         </div>
+        <script>
+          $(document).ready(function() {
+            $("#btn-{{i.year}}").hover(
+              function() {
+                $(this).fadeTo("fast", 0.5);
+              },
+              function() {
+                $(this).fadeTo("slow", 1.0);
+              }
+            );
+          });
+        </script>
         {%endfor%}
       </div>
     </div>
