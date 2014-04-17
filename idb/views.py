@@ -98,3 +98,6 @@ def sql(request):
 
 def client(request):
     return render(request, "client.html")
+
+def search(request):
+    return render(request, "search.html")

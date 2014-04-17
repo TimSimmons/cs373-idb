@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.db.models import Q
 
 class Player(models.Model):
     """
@@ -28,6 +28,30 @@ class Player(models.Model):
 
     def __unicode__(self):
         return self.name
+        
+    @staticmethod
+    def query(q):
+      return Player.objects.all().filter( Q(name__icontains=q) |
+                                          Q(number__icontains=q) |
+                                          Q(position__icontains=q) |
+                                          Q(bats__icontains=q) |
+                                          Q(throws__icontains=q) |
+                                          Q(height__icontains=q) |
+                                          Q(weight__icontains=q) |
+                                          Q(school__icontains=q) |
+                                          Q(social__icontains=q) )
+                                        
+    def to_dict(self):
+      return dict(name=self.name, 
+                  number=self.number, 
+                  position=self.position,
+                  bats=self.bats,
+                  throws=self.throws,
+                  height=self.height,
+                  weight=self.weight,
+                  school=self.school,
+                  social=self.social,
+                  link=self.gen_link())
         
 class Team(models.Model):
     """
@@ -61,7 +85,28 @@ class Team(models.Model):
     def gen_link(self):
       return "/teams/"+str(self.abbr)
 
-
+    @staticmethod
+    def query(q):
+      return Team.objects.all().filter( Q(name__icontains=q) |
+                                        Q(abbr__icontains=q) |
+                                        Q(city__icontains=q) |
+                                        Q(state__icontains=q) |
+                                        Q(park__icontains=q) |
+                                        Q(div__icontains=q) |
+                                        Q(mgr__icontains=q) |
+                                        Q(social__icontains=q) )
+                                        
+    def to_dict(self):
+      return dict(name=self.name, 
+                  abbr=self.abbr, 
+                  city=self.city,
+                  state=self.state,
+                  park=self.park,
+                  div=self.div,
+                  mgr=self.mgr,
+                  social=self.social,
+                  link=self.gen_link())
+                                        
 class Year(models.Model):
     """
     Contains information about award winners for a given year.
@@ -81,7 +126,25 @@ class Year(models.Model):
     def gen_link(self):
       return "/years/"+str(self.year)
 
+    @staticmethod
+    def query(q):
+      return Year.objects.all().filter( Q(year__icontains=q) |
+                                        Q(champion__icontains=q) |
+                                        Q(AL_MVP__icontains=q) |
+                                        Q(NL_MVP__icontains=q) |
+                                        Q(NL_CY__icontains=q) |
+                                        Q(AL_CY__icontains=q) )
+                                      
+    def to_dict(self):
+      return dict(year=self.year, 
+                  champion=self.champion, 
+                  AL_MVP=self.AL_MVP,
+                  NL_MVP=self.NL_MVP,
+                  NL_CY=self.NL_CY,
+                  AL_CY=self.AL_CY,
+                  link=self.gen_link() )
 
+                  
 class Team_Year(models.Model):
     """
     Contains team statistics for a given year.
@@ -111,6 +174,7 @@ class Team_Year(models.Model):
     	     "\nattend: " + str(self.attend) + \
     	     "\npayroll: " + str(self.payroll)
 
+    	     
 class Player_Year(models.Model):
     """
     Contains player statistics for a given year.
@@ -157,7 +221,8 @@ class Player_Image(models.Model):
       return "player: " + str(self.player.name) + \
     	     "\nimage: " + str(self.image) + \
     	     "\nkind: " + str(self.kind)
-    
+   
+   
 class Team_Image(models.Model):
     """
     Model representation of an image that is associated with a team. 

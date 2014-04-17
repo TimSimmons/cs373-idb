@@ -65,58 +65,57 @@
             <tr>
               <b>
                 <th>Team</th><th>Average Payroll $ Spent Per Win</th><th>Total Wins</th><th>Playoff Appearances</th><th>FPER</th>
-            </b>
-        </tr>
-    </thead>
-    <tbody>
-
-        <script>
-        function get(theUrl) {
-            var xmlHttp = null;
-            xmlHttp = new XMLHttpRequest();
-            xmlHttp.open("GET", theUrl, false);
-            xmlHttp.send(null);
-            return xmlHttp.responseText;
-        }
-        function numberWithCommas(x) {
-            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        }
-        for( j = 1; j < 12; j++){
-            document.write("<tr>")
-            //for going through teams
-            var txt = get("http://frozen-plateau-5382.herokuapp.com/api/teams/"+j+"/years");
-            txt = JSON.parse(txt);
-
-            //get name
-            var nametxt = get("http://frozen-plateau-5382.herokuapp.com/api/teams/"+j);
-            nametxt = JSON.parse(nametxt);
-            var name = nametxt[0].fields.name;
-            document.write("<td>"+name+"</td>");
-            pay = 0;
-            win = 0;
-            playoff = 1;
-            for (var i = 0; i < 10; i++) {
-                _teamyr = txt[i].fields;
-                pay += _teamyr.payroll;
-                win += _teamyr.wins;
-                if (_teamyr.playoffs != ""){
-                    playoff += 1;
+              </b>
+            </tr>
+          </thead>
+          <tbody>
+            <script>
+                function get(theUrl) {
+                    var xmlHttp = null;
+                    xmlHttp = new XMLHttpRequest();
+                    xmlHttp.open("GET", theUrl, false);
+                    xmlHttp.send(null);
+                    return xmlHttp.responseText;
                 }
-            };
+                function numberWithCommas(x) {
+                    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                }
+                for( j = 1; j < 12; j++){
+                    document.write("<tr>")
+                    //for going through teams
+                    var txt = get("http://frozen-plateau-5382.herokuapp.com/api/teams/"+j+"/years");
+                    txt = JSON.parse(txt);
 
-            document.write("<td>$"+numberWithCommas(Math.round(pay/win))+"</td>");
-            document.write("<td>"+win+"</td>");
-            document.write("<td>"+(playoff-1)+"</td>");
-            document.write("<td>"+numberWithCommas(Math.round( (pay/(win*win))/playoff))+"</td>");
-            document.write("</tr>")
-        };
+                    //get name
+                    var nametxt = get("http://frozen-plateau-5382.herokuapp.com/api/teams/"+j);
+                    nametxt = JSON.parse(nametxt);
+                    var name = nametxt[0].fields.name;
+                    document.write("<td>"+name+"</td>");
+                    pay = 0;
+                    win = 0;
+                    playoff = 1;
+                    for (var i = 0; i < 10; i++) {
+                        _teamyr = txt[i].fields;
+                        pay += _teamyr.payroll;
+                        win += _teamyr.wins;
+                        if (_teamyr.playoffs != ""){
+                            playoff += 1;
+                        }
+                    };
 
-        </script>
-    </tbody>
-    </table>
+                    document.write("<td>$"+numberWithCommas(Math.round(pay/win))+"</td>");
+                    document.write("<td>"+win+"</td>");
+                    document.write("<td>"+(playoff-1)+"</td>");
+                    document.write("<td>"+numberWithCommas(Math.round( (pay/(win*win))/playoff))+"</td>");
+                    document.write("</tr>")
+                };
+
+              </script>
+            </tbody>
+        </table>
+      </div>
     </div>
-    </div>
-</div>
+  </div>
 </div>
 
 <!-- Bootstrap core JavaScript

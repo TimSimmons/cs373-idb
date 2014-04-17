@@ -2,10 +2,12 @@ from django.http import HttpResponse, Http404
 from django.core import serializers
 from idb.models import *
 import json
+import requests
 from django.views.decorators.csrf import csrf_exempt
 import sys
-
-
+from django.utils import simplejson
+import logging
+log = logging.getLogger(__name__)
 
 @csrf_exempt
 def player(request, player_id):
@@ -223,3 +225,12 @@ def team_year(request, team_id, year_id):
     response = response = HttpResponse()
     response.status_code = 204
   return response
+  
+@csrf_exempt
+def search(request, q):
+  query_result = []
+  teams = [t.to_dict() for t in Team.query(q)]
+  players = [p.to_dict() for p in Player.query(q)]
+  years = [y.to_dict() for y in Year.query(q)]
+  d = dict(num_results=len(teams) + len(players) + len(years) ,teams=teams, players=players, years=years)
+  return HttpResponse(simplejson.dumps(d), mimetype='application/json')

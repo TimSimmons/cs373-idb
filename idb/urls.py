@@ -2,8 +2,10 @@ from django.conf.urls import patterns, include, url
 
 from django.contrib import admin
 import idb.api as api
-from idb.views import home, player, team, year, team_abbr, players, teams, years, client, sql
+from idb.views import home, player, team, year, team_abbr, players, teams, years, client, sql, search
 admin.autodiscover()
+import logging
+log = logging.getLogger(__name__)
 
 urlpatterns = patterns('',
     url(r'^$', home),
@@ -27,8 +29,11 @@ urlpatterns = patterns('',
     url(r'^api/teams/(\d*)/$', api.team),
     url(r'^api/teams/$', api.teams),
     url(r'^api/years/(\d*)/$', api.year),
-    url(r'^api/years/$', api.years)
+    url(r'^api/years/$', api.years),
+    url(r'^api/search/([a-zA-Z0-9]+)/$', api.search),
+    
     #Search
-    # url(r'^search/', include('haystack.urls'))
+    url(r'^search/', search)
+
 )
 
