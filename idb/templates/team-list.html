@@ -12,10 +12,22 @@
       <div class="row-fluid" style="padding-left:50px;">
         {% for i in teams %}
         <div style ="width: 200px; height:200px; overflow:hidden;" class="col-md-4">
-          <a href="{{i.id}}" class="list-group-item"><img src="{{ i.images.all.0.image }}" class="img-responsive">
+          <a href="{{i.id}}" class="list-group-item"><img src="{{ i.images.all.0.image }}" class="img-responsive" id="btn-{{i.id}}">
             <center>{{i.name}}</center>
           </a>
         </div>
+        <script>
+          $(document).ready(function() {
+            $("#btn-{{i.id}}").hover(
+              function() {
+                $(this).fadeTo("fast", 0.5);
+              },
+              function() {
+                $(this).fadeTo("slow", 1.0);
+              }
+            );
+          });
+        </script>
         {%endfor%}
       </div>
     </div>
