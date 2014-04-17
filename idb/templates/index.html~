@@ -136,6 +136,7 @@ body {
 
 
 {% block content %}
+    <body>
   <div class="site-wrapper">
     <div class="site-wrapper-inner">
       <div class="cover-container">
@@ -178,5 +179,6 @@ body {
       </div>
 
     </div>
+
   </div>
 {% endblock %}

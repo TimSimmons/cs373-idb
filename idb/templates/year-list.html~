@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-{% block yearsactive %}class="active"{% endblock %}
 {% load staticfiles %}
 {% block title %} - Years{% endblock %}
 {% block content %}

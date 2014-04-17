@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-{% block teamsactive %}class="active"{% endblock %}
 {% load staticfiles %}
 {% block title %} - Teams{% endblock %}
 {% block content %}
