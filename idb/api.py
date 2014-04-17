@@ -232,5 +232,5 @@ def search(request, q):
   teams = [t.to_dict() for t in Team.query(q)]
   players = [p.to_dict() for p in Player.query(q)]
   years = [y.to_dict() for y in Year.query(q)]
-  d = dict(teams=teams, players=players, years=years)
+  d = dict(num_results=len(teams) + len(players) + len(years) ,teams=teams, players=players, years=years)
   return HttpResponse(simplejson.dumps(d), mimetype='application/json')
