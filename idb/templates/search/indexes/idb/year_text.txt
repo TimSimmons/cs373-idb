@@ -1,6 +1,0 @@
-{{ object.year }}
-{{ object.champion }}
-{{ object.AL_MVP }}
-{{ object.NL_MVP }}
-{{ object.NL_CY }}
-{{ object.AL_CY }}

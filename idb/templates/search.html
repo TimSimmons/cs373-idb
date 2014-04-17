@@ -209,7 +209,7 @@ body {
               
               function() {
                   var query = $("#search-field").val();
-                  $.getJSON( "http://0.0.0.0:1111/api/search/" + query + "/", 
+                  $.getJSON( "http://0.0.0.0:5000/api/search/" + query + "/", 
                       function(data) {
                           console.log(data);
                           var teams = data["teams"];
