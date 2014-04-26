@@ -11,124 +11,124 @@
     </div>
     <div class = "row">
         <div class="col-md-4">
-        <img src=" {{ player.images.all.0.image }} " class="img-responsive"><br>
-        <div class="col-md-4">
-        <canvas id="spiderChart" width="300" height="300"></canvas>
-        <script src="../../static/js/Chart.js"></script>
-        <script>
-            // maybe this works...???
-            function makeChart(position, vals) {
-                var ctx = document.getElementById("spiderChart").getContext("2d");
-                var data = {};
-                var options = {};
-                if (position != "P") {
-                  data = {
-                    labels : ["Batting","On Base","Slugging"],
-                    datasets : [
-                      {
-                        fillColor : "rgba(220,220,220,0.5)",
-                        strokeColor : "rgba(220,220,220,1)",
-                        pointColor : "rgba(220,220,220,1)",
-                        pointStrokeColor : "#fff",
-                        // normalizing because chart uses 100 for max vals
-                        data : [(vals["ba"]/.366)*100, (vals["obp"]/.4817)*100, (vals["slg"]/.6997)*100]
-                      }
-                    ]
-                  }
-                  var max = 100;
-                  var steps = 3;
-                  options = {
-                      //Boolean - If we show the scale above the chart data                   
-                      scaleOverlay : false,
-                      //Boolean - If we want to override with a hard coded scale
-                      scaleOverride : true,
-                      //** Required if scaleOverride is true **
-                      //Number - The number of steps in a hard coded scale
-                      scaleSteps : steps,
-                      //Number - The value jump in the hard coded scale
-                      scaleStepWidth : Math.ceil(max / steps),
-                      //Number - The centre starting value
-                      scaleStartValue : 0
-                  }               
-                }
-                else {
-                  data = {
-                    labels : ["Win %","WHIP","Game Saves per Season"],
-                    datasets : [
-                      {
-                        fillColor : "rgba(220,220,220,0.5)",
-                        strokeColor : "rgba(220,220,220,1)",
-                        pointColor : "rgba(220,220,220,1)",
-                        pointStrokeColor : "#fff",
-                        // normalizing becasue chart uses 100 for max vals
-                        data : [win_perc * 100, whip, game_saves_per_year]
-                      }
-                    ],
-                    // These are the records holders' stats
-                        fillColor : "rgba(151,187,205,0.5)",
-                        strokeColor : "rgba(151,187,205,1)",
-                        pointColor : "rgba(151,187,205,1)",
-                        pointStrokeColor : "#fff",
-                        data : [71.7 , 100, 652/19]
-                  }
-                }
-                console.log(data);
-                console.log(options);
-                var myNewChart = new Chart(ctx).Radar(data, options);
-            }
-            
-            // A way to add a method callback to the load event without
-            // overwriting existing onload callbacks
-            function addLoadEvent(func) {
-                var oldonload = window.onload;
-                if (typeof window.onload != 'function') {
-                  window.onload = func;
-                } else {
-                  window.onload = function() {
-                    if (oldonload) {
-                      oldonload();
-                    }
-                    func();
-                  }
-                }
-              }
-              addLoadEvent(function() {
-                // Maybe we can get the player object this way?
-                var player_id = "{{ player.id }}";
-                var player_pos = "{{ player.position }}";
-                console.log("ID: " + player_id);
-                console.log("POS: " + player_pos);
-                $.getJSON("http://0.0.0.0:5000/api/players/" + player_id + "/years", 
-                    function(data) {
-                    console.log(data);
-                    if (player_pos != "P") {
-                        var avg = 0;
-                        var slg = 0;
-                        var obp = 0;
-                        var games_total = 0;
-                        for (var i = 0; i < data.length; i++) {
-                          // This api call is straight-up stupid
-                          var fields = data[i]["fields"];
-                          console.log(fields);
-                          obp += fields["obp"] * fields["games"]; 
-                          slg += fields["slg"] * fields["games"]; 
-                          avg += fields["avg"] * fields["games"]; 
-                          games_total += fields["games"];
+            <img src=" {{ player.images.all.0.image }} " class="img-responsive"><br>
+            <div class="col-md-4">
+                <canvas id="spiderChart" width="250" height="250"></canvas>
+                <script src="../../static/js/Chart.js"></script>
+                <script>
+                    // maybe this works...???
+                    function makeChart(position, vals) {
+                        var ctx = document.getElementById("spiderChart").getContext("2d");
+                        var data = {};
+                        var options = {};
+                        if (position != "P") {
+                          data = {
+                            labels : ["Batting","On Base","Slugging"],
+                            datasets : [
+                              {
+                                fillColor : "rgba(220,220,220,0.5)",
+                                strokeColor : "rgba(220,220,220,1)",
+                                pointColor : "rgba(220,220,220,1)",
+                                pointStrokeColor : "#fff",
+                                // normalizing because chart uses 100 for max vals
+                                data : [(vals["ba"]/.366)*100, (vals["obp"]/.4817)*100, (vals["slg"]/.6997)*100]
+                              }
+                            ]
+                          }
+                          var max = 100;
+                          var steps = 3;
+                          options = {
+                              //Boolean - If we show the scale above the chart data                   
+                              scaleOverlay : false,
+                              //Boolean - If we want to override with a hard coded scale
+                              scaleOverride : true,
+                              //** Required if scaleOverride is true **
+                              //Number - The number of steps in a hard coded scale
+                              scaleSteps : steps,
+                              //Number - The value jump in the hard coded scale
+                              scaleStepWidth : Math.ceil(max / steps),
+                              //Number - The centre starting value
+                              scaleStartValue : 0
+                          }               
                         }
-                        obp /= games_total;
-                        slg /= games_total;
-                        avg /= games_total;       
-                        vals = { "ba" : avg, "slg" : slg, "obp" : obp };
-                        console.log(vals);
-                        makeChart(player_pos, vals);
+                        else {
+                          data = {
+                            labels : ["Win %","WHIP","Game Saves per Season"],
+                            datasets : [
+                              {
+                                fillColor : "rgba(220,220,220,0.5)",
+                                strokeColor : "rgba(220,220,220,1)",
+                                pointColor : "rgba(220,220,220,1)",
+                                pointStrokeColor : "#fff",
+                                // normalizing becasue chart uses 100 for max vals
+                                data : [win_perc * 100, whip, game_saves_per_year]
+                              }
+                            ],
+                            // These are the records holders' stats
+                                fillColor : "rgba(151,187,205,0.5)",
+                                strokeColor : "rgba(151,187,205,1)",
+                                pointColor : "rgba(151,187,205,1)",
+                                pointStrokeColor : "#fff",
+                                data : [71.7 , 100, 652/19]
+                          }
+                        }
+                        console.log(data);
+                        console.log(options);
+                        var myNewChart = new Chart(ctx).Radar(data, options);
                     }
-                  })
-                //console.log("Player " + player);
-               // makeChart(player);
-              });
-         
-        </script>
-     </div>
+                    
+                    // A way to add a method callback to the load event without
+                    // overwriting existing onload callbacks
+                    function addLoadEvent(func) {
+                        var oldonload = window.onload;
+                        if (typeof window.onload != 'function') {
+                          window.onload = func;
+                        } else {
+                          window.onload = function() {
+                            if (oldonload) {
+                              oldonload();
+                            }
+                            func();
+                          }
+                        }
+                      }
+                      addLoadEvent(function() {
+                        // Maybe we can get the player object this way?
+                        var player_id = "{{ player.id }}";
+                        var player_pos = "{{ player.position }}";
+                        console.log("ID: " + player_id);
+                        console.log("POS: " + player_pos);
+                        $.getJSON("http://0.0.0.0:5000/api/players/" + player_id + "/years", 
+                            function(data) {
+                            console.log(data);
+                            if (player_pos != "P") {
+                                var avg = 0;
+                                var slg = 0;
+                                var obp = 0;
+                                var games_total = 0;
+                                for (var i = 0; i < data.length; i++) {
+                                  // This api call is straight-up stupid
+                                  var fields = data[i]["fields"];
+                                  console.log(fields);
+                                  obp += fields["obp"] * fields["games"]; 
+                                  slg += fields["slg"] * fields["games"]; 
+                                  avg += fields["avg"] * fields["games"]; 
+                                  games_total += fields["games"];
+                                }
+                                obp /= games_total;
+                                slg /= games_total;
+                                avg /= games_total;       
+                                vals = { "ba" : avg, "slg" : slg, "obp" : obp };
+                                console.log(vals);
+                                makeChart(player_pos, vals);
+                            }
+                          })
+                        //console.log("Player " + player);
+                      // makeChart(player);
+                      });
+                
+                </script>
+            </div>
         </div>
         <div class="col-md-2">
             Position: {{player.position}}<br>
@@ -175,10 +175,6 @@
           infowindow = new google.maps.InfoWindow(
             {content:"<span class='gmap'><b>{{park}}</b></span><span class='gmap'>"+jsonResponse.results[0].address_components[1].long_name+" "+jsonResponse.results[0].address_components[2].long_name+"</span><span class='gmap'> "+jsonResponse.results[0].address_components[3].long_name+","+jsonResponse.results[0].address_components[4].long_name+"</span>" });google.maps.event.addListener(marker, "click", function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, "load", init_map);
           </script>
-
-
-
-
         </div>
       </div>
     </div>
