@@ -14,41 +14,17 @@
        <img src=" {{ player.images.all.0.image }} " class="img-responsive"><br>
      </div>
      <div class="col-md-4">
-        <script src="Chart.js"></script>
-        <canvas id="spiderChart" width="200" height="200"></canvas>
-        <script type="text/javascript">
+        <canvas id="spiderChart" width="300" height="300"></canvas>
+        <script src="../../static/js/Chart.js"></script>
+        <script>
             // maybe this works...???
-            function makeChart(player) {
+            function makeChart(position, vals) {
                 var ctx = document.getElementById("spiderChart").getContext("2d");
                 var data = {};
-                if (player.position != "P") {
-                  // data for batter
-                  var total_pa = 0;
-                  var ba = 0;
-                  var avg = 0;
-                  var slg = 0;
-                  var count = 0
-                  for (var year in player.years.all) {
-                      count += 1;
-                      total_pa += year.pa;
-                      ba += year.ba * year.pa;
-                      obp += year.obp * year.pa;
-                      slg += year.slg * year.pa;
-                  }
-                  ba /= total_pa;
-                  obp /= total_pa;
-                  slg /= total_pa;
+                if (position != "P") {
                   data = {
                     labels : ["Batting Avg","On Base %","Slugging %"],
                     datasets : [
-                      {
-                        fillColor : "rgba(220,220,220,0.5)",
-                        strokeColor : "rgba(220,220,220,1)",
-                        pointColor : "rgba(220,220,220,1)",
-                        pointStrokeColor : "#fff",
-                        // normalizing because chart uses 100 for max vals
-                        data : [ba * 100, obp * 100, slg * 100]
-                      },
                       {
                         // These are the record PA, OBP, SLUG %
                         fillColor : "rgba(151,187,205,0.5)",
@@ -56,32 +32,19 @@
                         pointColor : "rgba(151,187,205,1)",
                         pointStrokeColor : "#fff",
                         data : [36.6, 48.17, 69.97]
+                      },
+                      {
+                        fillColor : "rgba(220,220,220,0.5)",
+                        strokeColor : "rgba(220,220,220,1)",
+                        pointColor : "rgba(220,220,220,1)",
+                        pointStrokeColor : "#fff",
+                        // normalizing because chart uses 100 for max vals
+                        data : [vals["ba"], vals["obp"], vals["slg"]]
                       }
                     ]
                   }
                 }
                 else {
-                  var whip = 0;
-                  var wins = 0;
-                  var losses = 0;
-                  var game_saves_per_year = 0;
-                  var total_ip = 0;
-                  var count = 0;
-                  for (var year in player.years.all) {
-                    total_ip += year.ip;
-                    count +=1;
-                    wins += year.w;
-                    losses += year.l;
-                    game_saves += year.gs;
-                    whip += year.whip * year.ip;
-                  }
-                  var games_total = wins+losses;
-                  game_saves_per_year = game_saves/count;
-                  var win_perc = wins/games_total;
-                  // Best Whip .9678
-                  whip /= total_ip;
-                  whip = 100 - (100 * (0.9678 - whip))
-                  gsp_record = 652/19;
                   data = {
                     labels : ["Win %","WHIP","Game Saves per Season"],
                     datasets : [
@@ -122,11 +85,42 @@
               }
               addLoadEvent(function() {
                 // Maybe we can get the player object this way?
-                var player = "{{ player }}";
-                console.log(player);
-                makeChart(player);
+                var player_id = "{{ player.id }}";
+                var player_pos = "{{ player.position }}";
+                console.log("ID: " + player_id);
+                console.log("POS: " + player_pos);
+                $.getJSON("http://0.0.0.0:5000/api/players/" + player_id + "/years", 
+                    function(data) {
+                    console.log(data);
+                    if (player_pos != "P") {
+                        var avg = 0;
+                        var slg = 0;
+                        var obp = 0;
+                        var games_total = 0;
+                        for (var i = 0; i < data.length; i++) {
+                          // This api call is straight-up stupid
+                          var fields = data[i]["fields"];
+                          console.log(fields);
+                          obp += fields["obp"] * fields["games"]; 
+                          slg += fields["slg"] * fields["games"]; 
+                          avg += fields["avg"] * fields["games"]; 
+                          games_total += fields["games"];
+                        }
+                        obp /= games_total;
+                        slg /= games_total;
+                        avg /= games_total;       
+                        vals = { "ba" : avg*100, "slg" : slg*100, "obp" : obp*100 };
+                        console.log(vals);
+                        makeChart(player_pos, vals);
+                    }
+                    
+
+                  })
+                
+                //console.log("Player " + player);
+               // makeChart(player);
               });
-            
+         
         </script>
      </div>
      <div class="col-md-2">
