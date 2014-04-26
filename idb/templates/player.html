@@ -10,10 +10,9 @@
       <h2>#{{ player.number }}</h2>
     </div>
     <div class = "row">
-      <div class="col-md-4">
-       <img src=" {{ player.images.all.0.image }} " class="img-responsive"><br>
-     </div>
-     <div class="col-md-4">
+        <div class="col-md-4">
+        <img src=" {{ player.images.all.0.image }} " class="img-responsive"><br>
+        <div class="col-md-4">
         <canvas id="spiderChart" width="300" height="300"></canvas>
         <script src="../../static/js/Chart.js"></script>
         <script>
@@ -21,28 +20,36 @@
             function makeChart(position, vals) {
                 var ctx = document.getElementById("spiderChart").getContext("2d");
                 var data = {};
+                var options = {};
                 if (position != "P") {
                   data = {
-                    labels : ["Batting Avg","On Base %","Slugging %"],
+                    labels : ["Batting","On Base","Slugging"],
                     datasets : [
-                      {
-                        // These are the record PA, OBP, SLUG %
-                        fillColor : "rgba(151,187,205,0.5)",
-                        strokeColor : "rgba(151,187,205,1)",
-                        pointColor : "rgba(151,187,205,1)",
-                        pointStrokeColor : "#fff",
-                        data : [36.6, 48.17, 69.97]
-                      },
                       {
                         fillColor : "rgba(220,220,220,0.5)",
                         strokeColor : "rgba(220,220,220,1)",
                         pointColor : "rgba(220,220,220,1)",
                         pointStrokeColor : "#fff",
                         // normalizing because chart uses 100 for max vals
-                        data : [vals["ba"], vals["obp"], vals["slg"]]
+                        data : [(vals["ba"]/.366)*100, (vals["obp"]/.4817)*100, (vals["slg"]/.6997)*100]
                       }
                     ]
                   }
+                  var max = 100;
+                  var steps = 3;
+                  options = {
+                      //Boolean - If we show the scale above the chart data                   
+                      scaleOverlay : false,
+                      //Boolean - If we want to override with a hard coded scale
+                      scaleOverride : true,
+                      //** Required if scaleOverride is true **
+                      //Number - The number of steps in a hard coded scale
+                      scaleSteps : steps,
+                      //Number - The value jump in the hard coded scale
+                      scaleStepWidth : Math.ceil(max / steps),
+                      //Number - The centre starting value
+                      scaleStartValue : 0
+                  }               
                 }
                 else {
                   data = {
@@ -65,7 +72,9 @@
                         data : [71.7 , 100, 652/19]
                   }
                 }
-                var myNewChart = new Chart(ctx).Radar(data);
+                console.log(data);
+                console.log(options);
+                var myNewChart = new Chart(ctx).Radar(data, options);
             }
             
             // A way to add a method callback to the load event without
@@ -109,28 +118,27 @@
                         obp /= games_total;
                         slg /= games_total;
                         avg /= games_total;       
-                        vals = { "ba" : avg*100, "slg" : slg*100, "obp" : obp*100 };
+                        vals = { "ba" : avg, "slg" : slg, "obp" : obp };
                         console.log(vals);
                         makeChart(player_pos, vals);
                     }
-                    
-
                   })
-                
                 //console.log("Player " + player);
                // makeChart(player);
               });
          
         </script>
      </div>
-     <div class="col-md-2">
-      Position: {{player.position}}<br>
-      Bats: {{player.bats}}<br>
-      Throws: {{player.throws}}<br>
-      Height: {{player.height}}<br>
-      Weight: {{player.weight}}<br>
-      School: {{player.school}}<br>
-    </div>
+        </div>
+        <div class="col-md-2">
+            Position: {{player.position}}<br>
+            Bats: {{player.bats}}<br>
+            Throws: {{player.throws}}<br>
+            Height: {{player.height}}<br>
+            Weight: {{player.weight}}<br>
+            School: {{player.school}}<br>
+        </div>
+    
     <div class="container-fluid">
       <div class="col-md-3">
 
