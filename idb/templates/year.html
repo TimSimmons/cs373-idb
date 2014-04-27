@@ -3,58 +3,58 @@
 {% load humanize %}
 {% load staticfiles %}
 {% block title %} - {{ year.year}}{% endblock %}
-{% block content %}
-      <div class = container>
-      <div class="jumbotron">
-       <div class = "container-fluid">
-         <div class="row">
-          <div class="col-md-2">
-            <h1> {{ year.year }}  </h1>
-            <img src=" {{ year.images.all.0.image }} " class="img-responsive"><br>
-          </div>
-          <div class="col-md-6">
-            <br><br>
-          
-           Champion: 
-           {% if champion %} 
-           <a href="{{ champion.gen_link }}">{{ year.champion }}</a>
-           {% else %}
-           {{ year.champion }}
-           {% endif %}
-           <br>
-           AL MVP:
-           {% if AL_MVP %} 
-           <a href="/players/{{ AL_MVP.id }}">{{ year.AL_MVP }}</a>
-           {% else %}
-           {{ year.AL_MVP }}
-           {% endif %}
-           <br>
-           NL MVP:
-           {% if NL_MVP %} 
-           <a href="/players/{{ NL_MVP.id }}">{{ year.NL_MVP }}</a>
-           {% else %}
-           {{ year.NL_MVP }}
-           {% endif %}
-           <br>
-           AL Cy Young:
-           {% if AL_CY %} 
-           <a href="/players/{{ AL_CY.id }}">{{ year.AL_CY }}</a>
-           {% else %}
-           {{ year.AL_CY }}
-           {% endif %}
-           <br>
-           NL Cy Young:
-           {% if NL_CY %} 
-           <a href="/players/{{ NL_CY.id }}">{{ year.NL_CY }}</a>
-           {% else %}
-           {{ year.NL_CY }}
-           {% endif %}
-           <br>
-         </div>
-       </div>
-     </div>
-   
-   <div class="container-fluid">
+{% block content %}      
+<div class="container">
+  <div class="jumbotron">
+   <div class = "container-fluid">
+     <div class="row">
+      <div class="col-md-2">
+        <h1> {{ year.year }}  </h1>
+        <img src=" {{ year.images.all.0.image }} " class="img-responsive"><br>
+      </div>
+      <div class="col-md-6">
+        <br><br>
+
+        Champion: 
+        {% if champion %} 
+        <a href="{{ champion.gen_link }}">{{ year.champion }}</a>
+        {% else %}
+        {{ year.champion }}
+        {% endif %}
+        <br>
+        AL MVP:
+        {% if AL_MVP %} 
+        <a href="/players/{{ AL_MVP.id }}">{{ year.AL_MVP }}</a>
+        {% else %}
+        {{ year.AL_MVP }}
+        {% endif %}
+        <br>
+        NL MVP:
+        {% if NL_MVP %} 
+        <a href="/players/{{ NL_MVP.id }}">{{ year.NL_MVP }}</a>
+        {% else %}
+        {{ year.NL_MVP }}
+        {% endif %}
+        <br>
+        AL Cy Young:
+        {% if AL_CY %} 
+        <a href="/players/{{ AL_CY.id }}">{{ year.AL_CY }}</a>
+        {% else %}
+        {{ year.AL_CY }}
+        {% endif %}
+        <br>
+        NL Cy Young:
+        {% if NL_CY %} 
+        <a href="/players/{{ NL_CY.id }}">{{ year.NL_CY }}</a>
+        {% else %}
+        {{ year.NL_CY }}
+        {% endif %}
+        <br>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
 
     <div class="row">
 
@@ -76,6 +76,56 @@
             {% endfor %}
           </tbody>
         </table>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <h2 class="sub-header">Players</h2>
+      <h4 class="sub-header">Hitters</h4>
+      <div class="container-fluid">
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <b>
+                  <th>Name</th><th>Team</th><th>G</th><th>PA</th><th>BA</th><th>OBP</th><th>SLG</th><th>HR</th><th>RBI</th> 
+                </b>
+              </tr>
+            </thead>
+            <tbody>
+              {% for year in year.player_years.all %}
+              {% if year.kind == "hitter" %}
+              <tr>
+                <td><a href="{{ year.player.gen_link }}">{{ year.player.name }}</a></td><td><a href="{{ year.team_year.team.gen_link}}"> {{ year.team_year.team.abbr }} </a></td><td> {{ year.games }}</td><td>{{ year.pa }}</td><td>{{ year.avg }}</td><td>{{ year.obp }}</td><td>{{ year.slg }}</td><td>{{ year.hr }}</td><td>{{ year.rbi }}</td>
+              </tr>
+              {% endif %}
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        <h4 class="sub-header">Pitchers</h4>  
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <b>
+                  <th>Name</th><th>Team</th><th>W</th><th>L</th><th>G</th><th>GS</th><th>S</th><th>IP</th><th>ERA</th><th>WHIP</th>
+                </b>
+              </tr>
+            </thead>
+            <tbody>
+              {% for year in year.player_years.all %}
+              
+              {% if year.kind == "pitcher" %}
+              <tr>
+                <td><a href="{{ year.player.gen_link }}">{{ year.player.name }}</a></td><td><a href="{{ year.team_year.team.gen_link}}"> {{ year.team_year.team.abbr }} </a></td><td>{{ year.w }}</td><td>{{ year.l }}</td><td> {{ year.games }}</td><td> {{ year.gs }}</td><td> {{ year.s }}</td><td>{{ year.ip }}</td><td>{{ year.era }}</td><td>{{ year.whip }}</td>
+              </tr>
+              {% endif %}
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>

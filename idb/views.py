@@ -32,8 +32,7 @@ def year(request, year_id):
     try:
         year = Year.objects.get(year=year_id)
         team_years = year.team_years.all().order_by('-wins')
-        #standings = json.loads(year.standings)
-
+        player_years = year.player_years.all()
         try:
             champion = Team.objects.get(name=year.champion)
         except Team.DoesNotExist:
@@ -65,6 +64,7 @@ def year(request, year_id):
         {
             'year':year,
             'standings':team_years,
+            'player_years':player_years,
             'champion': champion,
             'AL_MVP': AL_MVP, 
             'NL_MVP': NL_MVP, 
