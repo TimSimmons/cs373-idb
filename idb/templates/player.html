@@ -72,7 +72,7 @@
                   {% if player.years.all.0.kind == "hitter" %}
                   <th>Year</th><th>Team</th><th>G</th><th>PA</th><th>BA</th><th>OBP</th><th>SLG</th><th>HR</th><th>RBI</th>
                   {% else %}
-                  <th>Year</th><th>Team</th><th>W</th><th>L</th><th>G</th><th>GS</th><th>S</th><th>IP</th><th>WHIP</th>
+                  <th>Year</th><th>Team</th><th>W</th><th>L</th><th>G</th><th>GS</th><th>S</th><th>IP</th><th>ERA</th><th>WHIP</th>
                   {% endif %}
                 </b>
               </tr>
@@ -85,7 +85,7 @@
                 <td><a href="{{ year.year.gen_link }}">{{ year.year.year }}</a></td><td><a href="{{ year.team_year.team.gen_link}}"> {{ year.team_year.team.abbr }} </a></td><td> {{ year.games }}</td><td>{{ year.pa }}</td><td>{{ year.avg }}</td><td>{{ year.obp }}</td><td>{{ year.slg }}</td><td>{{ year.hr }}</td><td>{{ year.rbi }}</td>
 
                 {% else %}
-                <td>{{ year.year.year }}</td><td> {{year.team }} </td><td>{{ year.w }}</td><td>{{ year.l }}</td><td> {{ year.games }}</td><td> {{ year.gs }}</td><td> {{ year.s }}</td><td>{{ year.ip }}</td><td>{{ year.whip }}</td>
+                <td><a href="{{ year.year.gen_link }}">{{ year.year.year }}</a></td><td><a href="{{ year.team_year.team.gen_link}}"> {{ year.team_year.team.abbr }} </a></td><td>{{ year.w }}</td><td>{{ year.l }}</td><td> {{ year.games }}</td><td> {{ year.gs }}</td><td> {{ year.s }}</td><td>{{ year.ip }}</td><td>{{ year.era }}<td>{{ year.whip }}</td>
                 {% endif %}
               </tr>
               {% endfor %}
